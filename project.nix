@@ -1,8 +1,15 @@
 {
   imports = [
+    ./book.nix
     ./ew.nix
     ./cocada-boa.nix
-    ./book.nix
+    ./nixops-datadog.nix
+    ./nixops-digitalocean.nix 
+    ./nixops-gce.nix 
+    ./nixops-hcloud.nix
+    ./nixops-libvirtd.nix
+    # ./nixos-modules-contrib.nix
+    ./flake-gemini.nix
   ];
   # enable .gitignore creation
   config.files.gitignore.enable = true;

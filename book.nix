@@ -1,3 +1,4 @@
+{ lib, ...}:
 let
   project = "frind-modules";
   author = "cruel-intentions";
@@ -18,6 +19,9 @@ in
   config.files.mdbook.output.html.git-repository-icon = "fa-github";
   config.files.mdbook.output.html.git-repository-url = "${org-url}/${project}";
   config.files.mdbook.output.html.edit-url-template = edit-path;
+  config.files.mdbook.summary = lib.mkBefore ''
+    # SUMMARY
+  '';
   config.files.gitignore.pattern."gh-pages" = true;
   config.gh-actions.gh-pages.enable = true;
   config.gh-actions.gh-pages.build = ''publish-as-gh-pages'';
