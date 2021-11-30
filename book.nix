@@ -21,6 +21,16 @@ in
   config.files.mdbook.output.html.edit-url-template = edit-path;
   config.files.mdbook.summary = lib.mkBefore ''
     # SUMMARY
+    - [About](./index.md)
+  '';
+  config.files.text."/gh-pages/src/index.md" = ''
+    # Friendly Modules
+
+    Random modules documentation collention
+
+    Source code, PR, issue, etc:
+
+    [Friendly Modules](https://github.com/hugosenari/friendly-modules/) at Github
   '';
   config.files.gitignore.pattern."gh-pages" = true;
   config.gh-actions.gh-pages.enable = true;
