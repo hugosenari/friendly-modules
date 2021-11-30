@@ -1,6 +1,7 @@
 let 
+  url = "https://github.com/lucasew/nixcfg.git";
   src =  builtins.fetchGit {
-    url = "https://github.com/lucasew/nixcfg.git";
+    inherit url;
     rev = "e6f04d70c5e3a81c712ef337d21b9dccb162243a";
   };
 in
@@ -19,4 +20,5 @@ in
     ---
     - [EW](./ew.md)
   '';
+  config.about.sources = "[Lucas Eduardo](${url})";
 }

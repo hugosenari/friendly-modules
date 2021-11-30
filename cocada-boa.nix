@@ -1,6 +1,7 @@
 let
+  url = "https://github.com/thiagokokada/nix-configs.git";
   src =  builtins.fetchGit {
-    url = "https://github.com/thiagokokada/nix-configs.git";
+    inherit url;
     rev = "da045ffb9b7a1aaa5c889431624347e89e7fb9a4";
   };
 in
@@ -16,4 +17,5 @@ in
     ---
     - [Cocada Boa](./cocada-boa.md)
   '';
+  config.about.sources = "[Thiago Okada](${url})";
 }

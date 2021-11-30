@@ -1,11 +1,13 @@
 { config, lib, ...}:
 let
+  url = "https://github.com/nix-community/nixops-gce.git";
   src =  builtins.fetchGit {
-    url = "https://github.com/nix-community/nixops-gce.git";
+    inherit url;
     rev = "712453027486e62e087b9c91e4a8a171eebb6ddd";
   };
 in
 {
+  config.about.sources = "[NixOps GCE](${url})";
   config.files.docs."/gh-pages/src/nixops-gce.md".modules = [
     "${src}/nixops_gcp/nix/image-options.nix"
     "${src}/nixops_gcp/nix/common-gce-options.nix"

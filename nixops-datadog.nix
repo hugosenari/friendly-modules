@@ -1,7 +1,8 @@
 { config, lib, ...}:
 let
+  url = "https://github.com/nix-community/nixops-datadog.git";
   src =  builtins.fetchGit {
-    url = "https://github.com/nix-community/nixops-datadog.git";
+    inherit url;
     rev = "07569e314c26a6fa0523f12aeafa8eb8aa80f13d";
   };
   importModule = path: import "${src}/${path}" {
@@ -10,6 +11,7 @@ let
   };
 in
 {
+  config.about.sources = "[NixOps Datadog](${url})";
   config.files.docs."/gh-pages/src/nixops-datadog-monitor.md".modules = [
     (importModule "nix/datadog-monitor.nix")
   ];

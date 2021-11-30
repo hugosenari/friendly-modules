@@ -1,11 +1,17 @@
-{ lib, ...}:
+{ lib, config, ...}:
 let
+  cfg = config.about;
   project = "frind-modules";
   author = "hugosenari";
   org-url = "https://github.com/${author}";
   edit-path = "${org-url}/${project}/edit/master/{path}";
 in
 {
+  options.about.sources = lib.mkOption {
+    type = lib.types.lines;
+    description = "sources lines front page";
+    default = "";
+  };
   config.files.mdbook.enable = true;
   config.files.mdbook.authors = ["Cruel Intentions <${org-url}>"];
   config.files.mdbook.language = "en";
@@ -31,6 +37,10 @@ in
     Source code, PR, issue, etc:
 
     [Friendly Modules](https://github.com/hugosenari/friendly-modules/) at Github
+
+    ### Sources
+
+    ${cfg.sources}
   '';
   config.files.gitignore.pattern."gh-pages" = true;
   config.gh-actions.gh-pages.enable = true;

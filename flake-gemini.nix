@@ -1,7 +1,8 @@
 { config, lib, pkgs, options, ...}:
 let
+  url = "https://github.com/nix-community/flake-gemini.git";
   src =  builtins.fetchGit {
-    url = "https://github.com/nix-community/flake-gemini.git";
+    inherit url;
     rev = "86e176305027f08e387b860f35dab6ac7fdfb814";
   };
   overlay = final: prev: {
@@ -32,4 +33,5 @@ in
     ---
     - [Flake Gemini](./flake-gemini.md)
   '';
+  config.about.sources = "[Flake Gemini](${url})";
 }

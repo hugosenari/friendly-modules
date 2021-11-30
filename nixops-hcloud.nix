@@ -1,7 +1,8 @@
 { config, lib, ...}:
 let
+  url = "https://github.com/nix-community/nixops_hcloud.git";
   src =  builtins.fetchGit {
-    url = "https://github.com/nix-community/nixops_hcloud.git";
+    inherit url;
     rev = "83e182cb849f599da35e0df8a7908a2edf617751";
   };
   importModule = path: import "${src}/${path}" {
@@ -10,6 +11,7 @@ let
   };
 in
 {
+  config.about.sources = "[NixOps HCloud](${url})";
   config.files.docs."/gh-pages/src/nixops-hcloud.md".modules = [
     "${src}/bootstrap/fetchHetznerKeys.nix"
     "${src}/nixops_hcloud/nix/hcloud.nix"

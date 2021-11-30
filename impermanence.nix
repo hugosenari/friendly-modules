@@ -1,7 +1,8 @@
 { config, lib, ...}:
 let
+  url = "https://github.com/nix-community/impermanence.git";
   src =  builtins.fetchGit {
-    url = "https://github.com/nix-community/impermanence.git";
+    inherit url;
     rev = "0616c64b0ebcf08cc74db7820e74b807274246f6";
   };
 in
@@ -18,4 +19,5 @@ in
     - [Impermanence](./impermanence.md)
     - [Impermanence HM](./impermanence-hm.md)
   '';
+  config.about.sources = "[Impermanence](${url})";
 }
