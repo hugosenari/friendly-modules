@@ -1,7 +1,7 @@
 { lib, ...}:
 let
   project = "frind-modules";
-  author = "cruel-intentions";
+  author = "hugosenari";
   org-url = "https://github.com/${author}";
   edit-path = "${org-url}/${project}/edit/master/{path}";
 in
