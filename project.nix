@@ -3,6 +3,7 @@
     ./book.nix
     ./ew.nix
     ./cocada-boa.nix
+    ./impermanence.nix
     ./nixops-datadog.nix
     ./nixops-digitalocean.nix 
     ./nixops-gce.nix 

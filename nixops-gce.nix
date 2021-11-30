@@ -4,10 +4,6 @@ let
     url = "https://github.com/nix-community/nixops-gce.git";
     rev = "712453027486e62e087b9c91e4a8a171eebb6ddd";
   };
-  importModule = path: import "${src}/${path}" {
-    inherit lib config;
-    name = "{name}"; uuid = "{uuid}";
-  };
 in
 {
   config.files.docs."/gh-pages/src/nixops-gce.md".modules = [
@@ -27,9 +23,6 @@ in
     # "${src}/nixops_gcp/nix/gse-bucket.nix"
 
   ];
-  #config.files.docs."/gh-pages/src/nixops-hcloud-volume.md".modules = [
-  #  (importModule "nixops_hcloud/nix/hcloud_volume.nix")
-  #];
 
   config.files.mdbook.summary = ''
     ---
