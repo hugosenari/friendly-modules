@@ -11,7 +11,7 @@ let
   };
 in
 {
-  config.about.sources = "[NixOps Datadog](${url})";
+  config.about.sources = "- [NixOps Datadog](${url})";
   config.files.docs."/gh-pages/src/nixops-datadog-monitor.md".modules = [
     (importModule "nix/datadog-monitor.nix")
   ];

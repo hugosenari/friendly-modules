@@ -33,5 +33,5 @@ in
     ---
     - [Flake Gemini](./flake-gemini.md)
   '';
-  config.about.sources = "[Flake Gemini](${url})";
+  config.about.sources = "- [Flake Gemini](${url})";
 }

@@ -10,6 +10,7 @@
     ./nixops-hcloud.nix
     ./nixops-libvirtd.nix
     # ./nixos-modules-contrib.nix
+    ./nur-combined.nix
     ./flake-gemini.nix
   ];
   # enable .gitignore creation

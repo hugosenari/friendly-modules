@@ -7,7 +7,7 @@ let
   };
 in
 {
-  config.about.sources = "[NixOps DigitalOcean](${url})";
+  config.about.sources = "- [NixOps DigitalOcean](${url})";
   config.files.docs."/gh-pages/src/nixops-digitalocean.md".modules = [
     "${src}/nixops_digitalocean/nix/droplet.nix"
   ];

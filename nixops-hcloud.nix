@@ -11,7 +11,7 @@ let
   };
 in
 {
-  config.about.sources = "[NixOps HCloud](${url})";
+  config.about.sources = "- [NixOps HCloud](${url})";
   config.files.docs."/gh-pages/src/nixops-hcloud.md".modules = [
     "${src}/bootstrap/fetchHetznerKeys.nix"
     "${src}/nixops_hcloud/nix/hcloud.nix"

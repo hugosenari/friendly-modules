@@ -7,7 +7,7 @@ let
   };
 in
 {
-  config.about.sources = "[NixOps GCE](${url})";
+  config.about.sources = "- [NixOps GCE](${url})";
   config.files.docs."/gh-pages/src/nixops-gce.md".modules = [
     "${src}/nixops_gcp/nix/image-options.nix"
     "${src}/nixops_gcp/nix/common-gce-options.nix"

@@ -17,5 +17,5 @@ in
     ---
     - [Cocada Boa](./cocada-boa.md)
   '';
-  config.about.sources = "[Thiago Okada](${url})";
+  config.about.sources = "- [Thiago Okada](${url})";
 }

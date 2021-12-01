@@ -20,5 +20,5 @@ in
     ---
     - [EW](./ew.md)
   '';
-  config.about.sources = "[Lucas Eduardo](${url})";
+  config.about.sources = "- [Lucas Eduardo](${url})";
 }

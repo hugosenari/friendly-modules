@@ -19,5 +19,5 @@ in
     - [Impermanence](./impermanence.md)
     - [Impermanence HM](./impermanence-hm.md)
   '';
-  config.about.sources = "[Impermanence](${url})";
+  config.about.sources = "- [Impermanence](${url})";
 }
