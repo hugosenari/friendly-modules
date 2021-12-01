@@ -11,7 +11,16 @@ let
 in
 {
   config.about.sources = "- [NUR Combined](${url})";
-  config.files.docs."/gh-pages/src/nur-combined.md".modules = [
+  config.files.text."/gh-pages/src/nur-combined.md" = ''
+    Modules that could be found at [NUR](https://github.com/nix-community/nur-combined)
+
+    Sadly it won't work for all modules, so there are some commented modules :(
+
+    ```sh
+    grep -rE '(mkOption|mkEnable|submodule)'|grep ./|cut -d':' -f1|sort -u|grep 'nix'
+    ```
+  '';
+  config.files.docs."/gh-pages/src/nur-combined-aasg.md".modules = [
     "${src}/repos/aasg/modules/programs/dma.nix"
     "${src}/repos/aasg/modules/services/cluster/ipfs-cluster.nix"
     "${src}/repos/aasg/modules/services/databases/postgresql-base-backup.nix"
@@ -338,235 +347,234 @@ in
   # "${src}/repos/immae/overlays/nixops/hetzner_cloud.patch"
   # "${src}/repos/immae/pkgs/mpd_0_21/default_old.nix"
   ];
-  #   config.files.docs."/gh-pages/src/nur-combined-aaasg".modules = [
-  #     "${src}/repos/instantos/modules/instantlock.nix"
-  #     "${src}/repos/instantos/modules/instantwm.nix"
-  #   ];
-  #   config.files.docs."/gh-pages/src/nur-combined-aaasg".modules = [
-  #     "${src}/repos/ivar/yuzu/base.nix"
-  #   ];
-  #   config.files.docs."/gh-pages/src/nur-combined-aaasg".modules = [
-  #     "${src}/repos/jbarthelmes/modules/fancontrol.nix"
-  #     "${src}/repos/jbarthelmes/modules/papermc.nix"
-  #     "${src}/repos/jbarthelmes/modules/qbittorrent-openvpn-container.nix"
-  #   ];
-  #   config.files.docs."/gh-pages/src/nur-combined-aaasg".modules = [
-  #     "${src}/repos/johnazoidberg/modules/ams.nix"
-  #     "${src}/repos/johnazoidberg/modules/ip-to-usb.nix"
-  #     "${src}/repos/johnazoidberg/modules/prosody-filer.nix"
-  #   ];
-  #   config.files.docs."/gh-pages/src/nur-combined-aaasg".modules = [
-  #     "${src}/repos/jomik/home-modules/fish.nix"
-  #   ];
-  #   config.files.docs."/gh-pages/src/nur-combined-aaasg".modules = [
-  #     "${src}/repos/kampka/modules/profiles/desktop.nix"
-  #     "${src}/repos/kampka/modules/profiles/headless.nix"
-  #     "${src}/repos/kampka/modules/programs/direnv/default.nix"
-  #     "${src}/repos/kampka/modules/programs/firefox/default.nix"
-  #     "${src}/repos/kampka/modules/programs/nix-search/default.nix"
-  #     "${src}/repos/kampka/modules/programs/zsh-history/default.nix"
-  #     "${src}/repos/kampka/modules/services/dns-cache/default.nix"
-  #     "${src}/repos/kampka/modules/services/luksopen/default.nix"
-  #     "${src}/repos/kampka/modules/services/matrix/default.nix"
-  #     "${src}/repos/kampka/modules/services/msmtp-mailqueue/default.nix"
-  #     "${src}/repos/kampka/modules/services/msmtp-relay/default.nix"
-  #     "${src}/repos/kampka/modules/services/nginx/default.nix"
-  #     "${src}/repos/kampka/modules/services/nixops-auto-upgrade/default.nix"
-  #     "${src}/repos/kampka/modules/services/ntp/default.nix"
-  #     "${src}/repos/kampka/modules/services/systemd-failure-email/default.nix"
-  #     "${src}/repos/kampka/modules/services/tmux/default.nix"
-  #   ];
-  #   config.files.docs."/gh-pages/src/nur-combined-aaasg".modules = [
-  #     "${src}/repos/kapack/modules/services/batsky.nix"
-  #     "${src}/repos/kapack/modules/services/bs-munge.nix"
-  #     "${src}/repos/kapack/modules/services/bs-slurm.nix"
-  #     "${src}/repos/kapack/modules/services/cigri.nix"
-  #     "${src}/repos/kapack/modules/services/fe-slurm.nix"
-  #     "${src}/repos/kapack/modules/services/my-startup.nix"
-  #     "${src}/repos/kapack/modules/services/oar.nix"
-  #     "${src}/repos/kapack/modules/services/phpfpm0.nix"
-  #   ];
-  #   config.files.docs."/gh-pages/src/nur-combined-aaasg".modules = [
-  #     "${src}/repos/kf5grd/modules/pinephone/sxmo.nix"
-  #   ];
-  #   config.files.docs."/gh-pages/src/nur-combined-aaasg".modules = [
-  #     "${src}/repos/kira-bruneau/modules/hardware/xpadneo.nix"
-  #     "${src}/repos/kira-bruneau/modules/programs/bash/undistract-me.nix"
-  #     "${src}/repos/kira-bruneau/modules/programs/gamemode.nix"
-  #     "${src}/repos/kira-bruneau/modules/services/networking/bluetooth-autoconnect.nix"
-  #     "${src}/repos/kira-bruneau/modules/services/video/replay-sorcery.nix"
-  #     "${src}/repos/kira-bruneau/modules/services/x11/display-managers/lightdm-greeters/webkit2.nix"
-  #   ];
-  #   config.files.docs."/gh-pages/src/nur-combined-aaasg".modules = [
-  #     "${src}/repos/kolloch/modules/jitsi/jicofo.nix"
-  #     "${src}/repos/kolloch/modules/jitsi/jitsi-meet.nix"
-  #     "${src}/repos/kolloch/modules/jitsi/jitsi-videobridge.nix"
-  #   ];
-  #   config.files.docs."/gh-pages/src/nur-combined-aaasg".modules = [
-  #     "${src}/repos/krebs/default.nix"
-  #     "${src}/repos/krebs/submodules/krops/lib/default.nix"
-  #     "${src}/repos/krebs/submodules/krops/lib/types/populate.nix"
-  #     "${src}/repos/krebs/submodules/krops/lib/types/posix.nix"
-  #     "${src}/repos/krebs/submodules/krops/pkgs/populate/default.nix"
-  #     "${src}/repos/krebs/submodules/nix-writers/lib/types.nix"
-  #   ];
-  #   config.files.docs."/gh-pages/src/nur-combined-aaasg".modules = [
-  #     "${src}/repos/kreisys/modules/bobthefish.nix"
-  #     "${src}/repos/kreisys/modules/cachix.nix"
-  #     "${src}/repos/kreisys/modules/consul.nix"
-  #     "${src}/repos/kreisys/modules/yabai.nix"
-  #     "${src}/repos/kreisys/pkgs/make-bash-cli/default.nix"
-  #   ];
-  #   config.files.docs."/gh-pages/src/nur-combined-aaasg".modules = [
-  #     "${src}/repos/linyinfeng/modules/programs/telegram-send.nix"
-  #     "${src}/repos/linyinfeng/modules/programs/tprofile/tprofile.nix"
-  #     "${src}/repos/linyinfeng/modules/services/commit-notifier.nix"
-  #     "${src}/repos/linyinfeng/modules/services/dot-tar.nix"
-  #     "${src}/repos/linyinfeng/modules/services/trojan.nix"
-  #     "${src}/repos/linyinfeng/modules/services/vlmcsd.nix"
-  #   ];
-  #   config.files.docs."/gh-pages/src/nur-combined-aaasg".modules = [
-  #     "${src}/repos/lschuermann/modules/files.nix"
-  #     "${src}/repos/lschuermann/modules/wekan.nix"
-  #   ];
-  #   config.files.docs."/gh-pages/src/nur-combined-aaasg".modules = [
-  #     "${src}/repos/lucasew/homes/main/modules/dummy_module.nix"
-  #     "${src}/repos/lucasew/homes/main/modules/espanso.nix"
-  #     "${src}/repos/lucasew/modules/cachix/system.nix"
-  #     "${src}/repos/lucasew/modules/cloudflared/system.nix"
-  #     "${src}/repos/lucasew/modules/hold-gc/system.nix"
-  #     "${src}/repos/lucasew/modules/randomtube/system.nix"
-  #     "${src}/repos/lucasew/modules/spotify/home.nix"
-  #     "${src}/repos/lucasew/modules/vercel-ddns/system.nix"
-  #     "${src}/repos/lucasew/nodes/vps/modules/alibot.nix"
-  #     "${src}/repos/lucasew/nodes/vps/modules/pgbackup.nix"
-  #     "${src}/repos/lucasew/packages/custom/emacs/magit.nix"
-  #   ];
-  #   config.files.docs."/gh-pages/src/nur-combined-aaasg".modules = [
-  #     "${src}/repos/misterio/modules/hardware/argonone.nix"
-  #     "${src}/repos/misterio/modules/hardware/openrgb.nix"
-  #   ];
-  #   config.files.docs."/gh-pages/src/nur-combined-aaasg".modules = [
-  #     "${src}/repos/mmilata/modules/jitsi-meet.nix"
-  #     "${src}/repos/mmilata/modules/jitsi-videobridge.nix"
-  #     "${src}/repos/mmilata/modules/prometheus-exporters-lnd.nix"
-  #     "${src}/repos/mmilata/modules/rtl.nix"
-  #   ];
-  #   config.files.docs."/gh-pages/src/nur-combined-aaasg".modules = [
-  #     "${src}/repos/moredhel/home-manager/modules/crostini/core.nix"
-  #     "${src}/repos/moredhel/home-manager/modules/crostini/docker.nix"
-  #     "${src}/repos/moredhel/home-manager/modules/dev.nix"
-  #     "${src}/repos/moredhel/home-manager/modules/home/default.nix"
-  #     "${src}/repos/moredhel/home-manager/modules/unison.nix"
-  #   ];
-  #   config.files.docs."/gh-pages/src/nur-combined-aaasg".modules = [
-  #     "${src}/repos/moredread/modules/throttled/default.nix"
-  #   ];
-  #   config.files.docs."/gh-pages/src/nur-combined-aaasg".modules = [
-  #     "${src}/repos/noneucat/modules/pinephone/sxmo.nix"
-  #   ];
-  #   config.files.docs."/gh-pages/src/nur-combined-aaasg".modules = [
-  #     "${src}/repos/onny/modules/services/iwd-autocaptiveauth.nix"
-  #     "${src}/repos/onny/pkgs/services/security/opensnitch/opensnitch.nix"
-  #   ];
-  #   config.files.docs."/gh-pages/src/nur-combined-aaasg".modules = [
-  #     "${src}/repos/pamplemousse/modules/services/web-apps/cryptpad.nix"
-  #   ];
-  #   config.files.docs."/gh-pages/src/nur-combined-aaasg".modules = [
-  #     "${src}/repos/pborzenkov/modules/services/gonic/default.nix"
-  #     "${src}/repos/pborzenkov/modules/services/vlmcsd/default.nix"
-  #   ];
-  #   config.files.docs."/gh-pages/src/nur-combined-aaasg".modules = [
-  #     "${src}/repos/peel/darwin-modules/services/development/bloop.nix"
-  #     "${src}/repos/peel/darwin-modules/services/networking/weechat.nix"
-  #     "${src}/repos/peel/darwin-modules/services/yabai.nix"
-  #     "${src}/repos/peel/modules/services/hardware/battery-notifier.nix"
-  #     "${src}/repos/peel/modules/services/hardware/udiskie.nix"
-  #     "${src}/repos/peel/modules/services/misc/autocutsel.nix"
-  #     "${src}/repos/peel/modules/services/misc/dunst.nix"
-  #     "${src}/repos/peel/modules/services/networking/weechat.nix"
-  #   ];
-  #   config.files.docs."/gh-pages/src/nur-combined-aaasg".modules = [
-  #     "${src}/repos/priegger/modules/services/cachix/default.nix"
-  #     "${src}/repos/priegger/modules/services/docker/default.nix"
-  #     "${src}/repos/priegger/modules/services/nginx/default.nix"
-  #     "${src}/repos/priegger/modules/services/opensmtpd-relay/default.nix"
-  #     "${src}/repos/priegger/modules/services/prometheus/default.nix"
-  #     "${src}/repos/priegger/modules/services/reresolve-dns/default.nix"
-  #     "${src}/repos/priegger/modules/services/smtp-to-sendmail/default.nix"
-  #     "${src}/repos/priegger/modules/services/tor/default.nix"
-  #   ];
-  #   config.files.docs."/gh-pages/src/nur-combined-aaasg".modules = [
-  #     "${src}/repos/ptival/pkgs/coqPackages/nix/sources.json"
-  #     "${src}/repos/ptival/pkgs/coqPackages/nix/sources.nix"
-  #   ];
-  #   config.files.docs."/gh-pages/src/nur-combined-aaasg".modules = [
-  #     "${src}/repos/qchem/benchmark/module.nix"
-  #     "${src}/repos/qchem/pkgs/apps/dalton/default.nix"
-  #     "${src}/repos/qchem/template_module.nix"
-  #   ];
-  #   config.files.docs."/gh-pages/src/nur-combined-aaasg".modules = [
-  #     "${src}/repos/rycee/hm-modules/emacs-init.nix"
-  #     "${src}/repos/rycee/hm-modules/theme-base16/bat.nix"
-  #     "${src}/repos/rycee/hm-modules/theme-base16/default.nix"
-  #     "${src}/repos/rycee/hm-modules/theme-base16/dunst.nix"
-  #     "${src}/repos/rycee/hm-modules/theme-base16/gnome-terminal.nix"
-  #     "${src}/repos/rycee/hm-modules/theme-base16/gtk.nix"
-  #     "${src}/repos/rycee/hm-modules/theme-base16/jq.nix"
-  #     "${src}/repos/rycee/hm-modules/theme-base16/polybar.nix"
-  #     "${src}/repos/rycee/hm-modules/theme-base16/rofi.nix"
-  #     "${src}/repos/rycee/hm-modules/theme-base16/screen-locker.nix"
-  #     "${src}/repos/rycee/hm-modules/theme-base16/xscreensaver.nix"
-  #     "${src}/repos/rycee/modules/containers-docker-support.nix"
-  #   ];
-  #   config.files.docs."/gh-pages/src/nur-combined-aaasg".modules = [
-  #     "${src}/repos/sehqlr/modules/p50/hm.nix"
-  #   ];
-  #   config.files.docs."/gh-pages/src/nur-combined-aaasg".modules = [
-  #     "${src}/repos/shados/overlays/lua-packages/effil.nix"
-  #   ];
-  #   config.files.docs."/gh-pages/src/nur-combined-aaasg".modules = [
-  #     "${src}/repos/shamilton/modules/autognirehtet.nix"
-  #     "${src}/repos/shamilton/modules/create-ap.nix"
-  #     "${src}/repos/shamilton/modules/day-night-plasma-wallpapers-home-manager.nix"
-  #     "${src}/repos/shamilton/modules/day-night-plasma-wallpapers-nixos.nix"
-  #     "${src}/repos/shamilton/modules/hamiltonsamba.nix"
-  #     "${src}/repos/shamilton/modules/myvim.nix"
-  #     "${src}/repos/shamilton/modules/numworks.nix"
-  #     "${src}/repos/shamilton/modules/pronotebot.nix"
-  #     "${src}/repos/shamilton/modules/pronote-timetable-fetch.nix"
-  #     "${src}/repos/shamilton/modules/protifygotify.nix"
-  #     "${src}/repos/shamilton/modules/redshift-auto.nix"
-  #     "${src}/repos/shamilton/modules/rpi-fan.nix"
-  #     "${src}/repos/shamilton/modules/scottslounge.nix"
-  #     "${src}/repos/shamilton/modules/simplehaproxy.nix"
-  #     "${src}/repos/shamilton/modules/slick-greeter.nix"
-  #     "${src}/repos/shamilton/modules/sync-database.nix"
-  #     "${src}/repos/shamilton/modules/tfk-api-unoconv.nix"
-  #     "${src}/repos/shamilton/modules/unoconv.nix"
-  #     "${src}/repos/shamilton/modules/unoconvservice.nix"
-  #   ];
-  #   config.files.docs."/gh-pages/src/nur-combined-aaasg".modules = [
-  #     "${src}/repos/sikmir/modules/home-manager/programs/aerc.nix"
-  #     "${src}/repos/sikmir/modules/home-manager/programs/goldendict.nix"
-  #     "${src}/repos/sikmir/modules/home-manager/programs/gpxsee.nix"
-  #     "${src}/repos/sikmir/modules/home-manager/programs/josm.nix"
-  #     "${src}/repos/sikmir/modules/home-manager/programs/merkaartor.nix"
-  #     "${src}/repos/sikmir/modules/home-manager/programs/nnn.nix"
-  #     "${src}/repos/sikmir/modules/home-manager/programs/openorienteering-mapper.nix"
-  #     "${src}/repos/sikmir/modules/home-manager/programs/qmapshack.nix"
-  #     "${src}/repos/sikmir/modules/home-manager/programs/slack-term.nix"
-  #     "${src}/repos/sikmir/modules/services/gmnisrv.nix"
-  #   ];
-  #   config.files.docs."/gh-pages/src/nur-combined-aaasg".modules = [
-  #     "${src}/repos/splintah/hm-modules/mopidy.nix"
-  #     "${src}/repos/splintah/hm-modules/mpdscribble.nix"
-  #     "${src}/repos/splintah/hm-modules/ncmpcpp.nix"
-  #     "${src}/repos/splintah/hm-modules/onedrive.nix"
-  #   ];
-  #   config.files.docs."/gh-pages/src/nur-combined-aaasg".modules = [
-  #     "${src}/repos/syberant/modules/shell-environments/default.nix"
-  #   ];
+  config.files.docs."/gh-pages/src/nur-combined-instantos.md".modules = [
+  # "${src}/repos/instantos/modules/instantlock.nix"
+    "${src}/repos/instantos/modules/instantwm.nix"
+  ];
+  #config.files.docs."/gh-pages/src/nur-combined-yuzu".modules = [
+  #  "${src}/repos/ivar/yuzu/base.nix"
+  #];
+  config.files.docs."/gh-pages/src/nur-combined-jbarthelmes.md".modules = [
+    "${src}/repos/jbarthelmes/modules/fancontrol.nix"
+    "${src}/repos/jbarthelmes/modules/papermc.nix"
+    "${src}/repos/jbarthelmes/modules/qbittorrent-openvpn-container.nix"
+  ];
+  config.files.docs."/gh-pages/src/nur-combined-johnazoidberg.md".modules = [
+    "${src}/repos/johnazoidberg/modules/ams.nix"
+  # "${src}/repos/johnazoidberg/modules/ip-to-usb.nix"
+  # "${src}/repos/johnazoidberg/modules/prosody-filer.nix"
+  ];
+  config.files.docs."/gh-pages/src/nur-combined-jomik.md".modules = [
+    "${src}/repos/jomik/home-modules/fish.nix"
+  ];
+  config.files.docs."/gh-pages/src/nur-combined-kampka.md".modules = [
+    "${src}/repos/kampka/modules/profiles/desktop.nix"
+    "${src}/repos/kampka/modules/profiles/headless.nix"
+  # "${src}/repos/kampka/modules/programs/direnv/default.nix"
+    "${src}/repos/kampka/modules/programs/firefox/default.nix"
+    "${src}/repos/kampka/modules/programs/nix-search/default.nix"
+    "${src}/repos/kampka/modules/programs/zsh-history/default.nix"
+    "${src}/repos/kampka/modules/services/dns-cache/default.nix"
+    "${src}/repos/kampka/modules/services/luksopen/default.nix"
+    "${src}/repos/kampka/modules/services/matrix/default.nix"
+    "${src}/repos/kampka/modules/services/msmtp-mailqueue/default.nix"
+    "${src}/repos/kampka/modules/services/msmtp-relay/default.nix"
+    "${src}/repos/kampka/modules/services/nginx/default.nix"
+    "${src}/repos/kampka/modules/services/nixops-auto-upgrade/default.nix"
+    "${src}/repos/kampka/modules/services/ntp/default.nix"
+    "${src}/repos/kampka/modules/services/systemd-failure-email/default.nix"
+  # "${src}/repos/kampka/modules/services/tmux/default.nix"
+  ];
+  config.files.docs."/gh-pages/src/nur-combined-kapack.md".modules = [
+    "${src}/repos/kapack/modules/services/batsky.nix"
+    "${src}/repos/kapack/modules/services/bs-munge.nix"
+  # "${src}/repos/kapack/modules/services/bs-slurm.nix"
+    "${src}/repos/kapack/modules/services/cigri.nix"
+  # "${src}/repos/kapack/modules/services/fe-slurm.nix"
+    "${src}/repos/kapack/modules/services/my-startup.nix"
+    "${src}/repos/kapack/modules/services/oar.nix"
+    "${src}/repos/kapack/modules/services/phpfpm0.nix"
+  ];
+  #config.files.docs."/gh-pages/src/nur-combined-kf5grd.md".modules = [
+  #  "${src}/repos/kf5grd/modules/pinephone/sxmo.nix"
+  #];
+  config.files.docs."/gh-pages/src/nur-combined-kira-bruneau.md".modules = [
+    "${src}/repos/kira-bruneau/modules/hardware/xpadneo.nix"
+    "${src}/repos/kira-bruneau/modules/programs/bash/undistract-me.nix"
+    "${src}/repos/kira-bruneau/modules/programs/gamemode.nix"
+    "${src}/repos/kira-bruneau/modules/services/networking/bluetooth-autoconnect.nix"
+    "${src}/repos/kira-bruneau/modules/services/video/replay-sorcery.nix"
+  # "${src}/repos/kira-bruneau/modules/services/x11/display-managers/lightdm-greeters/webkit2.nix"
+  ];
+  config.files.docs."/gh-pages/src/nur-combined-kolloch.md".modules = [
+    "${src}/repos/kolloch/modules/jitsi/jicofo.nix"
+    "${src}/repos/kolloch/modules/jitsi/jitsi-meet.nix"
+    "${src}/repos/kolloch/modules/jitsi/jitsi-videobridge.nix"
+  ];
+  config.files.docs."/gh-pages/src/nur-combined-krebs.md".modules = [
+  # "${src}/repos/krebs/default.nix"
+  # "${src}/repos/krebs/submodules/krops/lib/default.nix"
+  # "${src}/repos/krebs/submodules/krops/lib/types/populate.nix"
+  # "${src}/repos/krebs/submodules/krops/lib/types/posix.nix"
+  # "${src}/repos/krebs/submodules/krops/pkgs/populate/default.nix"
+    "${src}/repos/krebs/submodules/nix-writers/lib/types.nix"
+  ];
+  config.files.docs."/gh-pages/src/nur-combined-kreisys.md".modules = [
+    "${src}/repos/kreisys/modules/bobthefish.nix"
+    "${src}/repos/kreisys/modules/cachix.nix"
+    "${src}/repos/kreisys/modules/consul.nix"
+    "${src}/repos/kreisys/modules/yabai.nix"
+  # "${src}/repos/kreisys/pkgs/make-bash-cli/default.nix"
+  ];
+  config.files.docs."/gh-pages/src/nur-combined-linyinfeng.md".modules = [
+  # "${src}/repos/linyinfeng/modules/programs/telegram-send.nix"
+    "${src}/repos/linyinfeng/modules/programs/tprofile/tprofile.nix"
+    "${src}/repos/linyinfeng/modules/services/commit-notifier.nix"
+    "${src}/repos/linyinfeng/modules/services/dot-tar.nix"
+    "${src}/repos/linyinfeng/modules/services/trojan.nix"
+    "${src}/repos/linyinfeng/modules/services/vlmcsd.nix"
+  ];
+  config.files.docs."/gh-pages/src/nur-combined-lschuermann.md".modules = [
+    "${src}/repos/lschuermann/modules/files.nix"
+  # "${src}/repos/lschuermann/modules/wekan.nix"
+  ];
+  config.files.docs."/gh-pages/src/nur-combined-lucasew.md".modules = [
+    "${src}/repos/lucasew/homes/main/modules/dummy_module.nix"
+    "${src}/repos/lucasew/homes/main/modules/espanso.nix"
+    "${src}/repos/lucasew/modules/cachix/system.nix"
+    "${src}/repos/lucasew/modules/cloudflared/system.nix"
+    "${src}/repos/lucasew/modules/hold-gc/system.nix"
+  # "${src}/repos/lucasew/modules/randomtube/system.nix"
+    "${src}/repos/lucasew/modules/spotify/home.nix"
+    "${src}/repos/lucasew/modules/vercel-ddns/system.nix"
+  # "${src}/repos/lucasew/nodes/vps/modules/alibot.nix"
+    "${src}/repos/lucasew/nodes/vps/modules/pgbackup.nix"
+    "${src}/repos/lucasew/packages/custom/emacs/magit.nix"
+  ];
+  config.files.docs."/gh-pages/src/nur-combined-misterio.md".modules = [
+    "${src}/repos/misterio/modules/hardware/argonone.nix"
+    "${src}/repos/misterio/modules/hardware/openrgb.nix"
+  ];
+  config.files.docs."/gh-pages/src/nur-combined-mmilata.md".modules = [
+    "${src}/repos/mmilata/modules/jitsi-meet.nix"
+    "${src}/repos/mmilata/modules/jitsi-videobridge.nix"
+    "${src}/repos/mmilata/modules/prometheus-exporters-lnd.nix"
+    "${src}/repos/mmilata/modules/rtl.nix"
+  ];
+  config.files.docs."/gh-pages/src/nur-combined-moredhel.md".modules = [
+    "${src}/repos/moredhel/home-manager/modules/crostini/core.nix"
+    "${src}/repos/moredhel/home-manager/modules/crostini/docker.nix"
+    "${src}/repos/moredhel/home-manager/modules/dev.nix"
+    "${src}/repos/moredhel/home-manager/modules/home/default.nix"
+    "${src}/repos/moredhel/home-manager/modules/unison.nix"
+  ];
+  config.files.docs."/gh-pages/src/nur-combined-moredread.md".modules = [
+    "${src}/repos/moredread/modules/throttled/default.nix"
+  ];
+  config.files.docs."/gh-pages/src/nur-combined-noneucat.md".modules = [
+    "${src}/repos/noneucat/modules/pinephone/sxmo.nix"
+  ];
+  config.files.docs."/gh-pages/src/nur-combined-onny.md".modules = [
+    "${src}/repos/onny/modules/services/iwd-autocaptiveauth.nix"
+    "${src}/repos/onny/pkgs/services/security/opensnitch/opensnitch.nix"
+  ];
+  config.files.docs."/gh-pages/src/nur-combined-pamplemousse.md".modules = [
+    "${src}/repos/pamplemousse/modules/services/web-apps/cryptpad.nix"
+  ];
+  config.files.docs."/gh-pages/src/nur-combined-pborzenkov.md".modules = [
+    "${src}/repos/pborzenkov/modules/services/gonic/default.nix"
+    "${src}/repos/pborzenkov/modules/services/vlmcsd/default.nix"
+  ];
+  config.files.docs."/gh-pages/src/nur-combined-peel.md".modules = [
+    "${src}/repos/peel/darwin-modules/services/development/bloop.nix"
+  # "${src}/repos/peel/darwin-modules/services/networking/weechat.nix"
+    "${src}/repos/peel/darwin-modules/services/yabai.nix"
+    "${src}/repos/peel/modules/services/hardware/battery-notifier.nix"
+    "${src}/repos/peel/modules/services/hardware/udiskie.nix"
+    "${src}/repos/peel/modules/services/misc/autocutsel.nix"
+    "${src}/repos/peel/modules/services/misc/dunst.nix"
+    "${src}/repos/peel/modules/services/networking/weechat.nix"
+  ];
+  config.files.docs."/gh-pages/src/nur-combined-priegger.md".modules = [
+    "${src}/repos/priegger/modules/services/cachix/default.nix"
+    "${src}/repos/priegger/modules/services/docker/default.nix"
+    "${src}/repos/priegger/modules/services/nginx/default.nix"
+  # "${src}/repos/priegger/modules/services/opensmtpd-relay/default.nix"
+    "${src}/repos/priegger/modules/services/prometheus/default.nix"
+    "${src}/repos/priegger/modules/services/reresolve-dns/default.nix"
+    "${src}/repos/priegger/modules/services/smtp-to-sendmail/default.nix"
+    "${src}/repos/priegger/modules/services/tor/default.nix"
+  ];
+  #config.files.docs."/gh-pages/src/nur-combined-ptival.md".modules = [
+  #  "${src}/repos/ptival/pkgs/coqPackages/nix/sources.nix"
+  #];
+  config.files.docs."/gh-pages/src/nur-combined-qchem.md".modules = [
+    "${src}/repos/qchem/benchmark/module.nix"
+  # "${src}/repos/qchem/pkgs/apps/dalton/default.nix"
+  # "${src}/repos/qchem/template_module.nix"
+  ];
+  config.files.docs."/gh-pages/src/nur-combined-rycee.md".modules = [
+    "${src}/repos/rycee/hm-modules/emacs-init.nix"
+    "${src}/repos/rycee/hm-modules/theme-base16/bat.nix"
+    "${src}/repos/rycee/hm-modules/theme-base16/default.nix"
+    "${src}/repos/rycee/hm-modules/theme-base16/dunst.nix"
+    "${src}/repos/rycee/hm-modules/theme-base16/gnome-terminal.nix"
+    "${src}/repos/rycee/hm-modules/theme-base16/gtk.nix"
+    "${src}/repos/rycee/hm-modules/theme-base16/jq.nix"
+    "${src}/repos/rycee/hm-modules/theme-base16/polybar.nix"
+    "${src}/repos/rycee/hm-modules/theme-base16/rofi.nix"
+    "${src}/repos/rycee/hm-modules/theme-base16/screen-locker.nix"
+    "${src}/repos/rycee/hm-modules/theme-base16/xscreensaver.nix"
+    "${src}/repos/rycee/modules/containers-docker-support.nix"
+  ];
+  config.files.docs."/gh-pages/src/nur-combined-sehqlr.md".modules = [
+    "${src}/repos/sehqlr/modules/p50/hm.nix"
+  ];
+  #config.files.docs."/gh-pages/src/nur-combined-shados.md".modules = [
+  #  "${src}/repos/shados/overlays/lua-packages/effil.nix"
+  #];
+  config.files.docs."/gh-pages/src/nur-combined-shamilton.md".modules = [
+  # "${src}/repos/shamilton/modules/autognirehtet.nix"
+  # "${src}/repos/shamilton/modules/create-ap.nix"
+  # "${src}/repos/shamilton/modules/day-night-plasma-wallpapers-home-manager.nix"
+  # "${src}/repos/shamilton/modules/day-night-plasma-wallpapers-nixos.nix"
+    "${src}/repos/shamilton/modules/hamiltonsamba.nix"
+  # "${src}/repos/shamilton/modules/myvim.nix"
+    "${src}/repos/shamilton/modules/numworks.nix"
+    "${src}/repos/shamilton/modules/pronotebot.nix"
+    "${src}/repos/shamilton/modules/pronote-timetable-fetch.nix"
+  # "${src}/repos/shamilton/modules/protifygotify.nix"
+    "${src}/repos/shamilton/modules/redshift-auto.nix"
+  # "${src}/repos/shamilton/modules/rpi-fan.nix"
+    "${src}/repos/shamilton/modules/scottslounge.nix"
+    "${src}/repos/shamilton/modules/simplehaproxy.nix"
+    "${src}/repos/shamilton/modules/slick-greeter.nix"
+    "${src}/repos/shamilton/modules/sync-database.nix"
+  # "${src}/repos/shamilton/modules/tfk-api-unoconv.nix"
+    "${src}/repos/shamilton/modules/unoconv.nix"
+  # "${src}/repos/shamilton/modules/unoconvservice.nix"
+  ];
+  config.files.docs."/gh-pages/src/nur-combined-sikmir.md".modules = [
+    "${src}/repos/sikmir/modules/home-manager/programs/aerc.nix"
+    "${src}/repos/sikmir/modules/home-manager/programs/goldendict.nix"
+    "${src}/repos/sikmir/modules/home-manager/programs/gpxsee.nix"
+    "${src}/repos/sikmir/modules/home-manager/programs/josm.nix"
+    "${src}/repos/sikmir/modules/home-manager/programs/merkaartor.nix"
+    "${src}/repos/sikmir/modules/home-manager/programs/nnn.nix"
+    "${src}/repos/sikmir/modules/home-manager/programs/openorienteering-mapper.nix"
+    "${src}/repos/sikmir/modules/home-manager/programs/qmapshack.nix"
+    "${src}/repos/sikmir/modules/home-manager/programs/slack-term.nix"
+  # "${src}/repos/sikmir/modules/services/gmnisrv.nix"
+  ];
+  config.files.docs."/gh-pages/src/nur-combined-splintah.md".modules = [
+  # "${src}/repos/splintah/hm-modules/mopidy.nix"
+    "${src}/repos/splintah/hm-modules/mpdscribble.nix"
+    "${src}/repos/splintah/hm-modules/ncmpcpp.nix"
+  # "${src}/repos/splintah/hm-modules/onedrive.nix"
+  ];
+  config.files.docs."/gh-pages/src/nur-combined-syberant.md".modules = [
+    "${src}/repos/syberant/modules/shell-environments/default.nix"
+  ];
   config.files.docs."/gh-pages/src/nur-combined-tilpner.md".modules = [
     "${src}/repos/tilpner/modules/auto-tinc.nix"
     "${src}/repos/tilpner/modules/binfmt.nix"
@@ -648,29 +656,80 @@ in
   # "${src}/repos/zeratax/modules/nixos/systemd-unit-options.nix"
     "${src}/repos/zeratax/modules/restic.nix"
   ];
-
-  config.files.mdbook.summary = ''
+  config.files.mdbook.summary =  let
+    nurs = map (v: "- [${v}](./nur-combined-${v}.md)") [
+       "aasg"
+       "afreakk"
+       "alarsyo"
+       "ambroisie"
+       "arc"
+       "bb010g"
+       "bendlas"
+       "berbiche"
+       "c0deaddict"
+       "crazazy"
+      # "crazedprogrammer"
+       "crtified"
+       "cwyc"
+      # "dandellion"
+       "dawidsowa"
+      # "deeunderscore"
+      # "demyanrogozhin"
+       "dguibert"
+      # "drewrisinger"
+       "dtz"
+       "dukzcry"
+       "emmanuelrosa"
+      # "ethancedwards8"
+       "heph2"
+       "ilya-fedin"
+       "immae"
+       "instantos"
+      # "yuzu"
+       "jbarthelmes"
+       "johnazoidberg"
+       "jomik"
+       "kampka"
+       "kapack"
+      # "kf5grd"
+       "kira-bruneau"
+       "kolloch"
+       "krebs"
+       "kreisys"
+       "linyinfeng"
+       "lschuermann"
+       "lucasew"
+       "misterio"
+       "mmilata"
+       "moredhel"
+       "moredread"
+       "noneucat"
+       "onny"
+       "pamplemousse"
+       "pborzenkov"
+       "peel"
+       "priegger"
+      # "ptival"
+       "qchem"
+       "rycee"
+       "sehqlr"
+      # "shados"
+       "shamilton"
+       "sikmir"
+       "splintah"
+       "syberant"
+       "tilpner"
+       "tukuan"
+       "tox"
+       "vdmeester"
+       "vroad"
+       "xeals"
+      # "xe"
+       "zeratax"
+    ];
+  in lib.mkAfter ''
     ---
     - [NUR Combined](./nur-combined.md)
-      - [afreak    ](./nur-combined-afreakk.md)
-      - [alarsyo   ](./nur-combined-alarsyo.md)
-      - [ambroisie ](./nur-combined-ambroisie.md)
-      - [arc       ](./nur-combined-arc.md)
-      - [bb010g    ](./nur-combined-bb010g.md)
-      - [bendlas   ](./nur-combined-bendlas.md)
-      - [berbiche  ](./nur-combined-berbiche.md)
-      - [c0deaddict](./nur-combined-c0deaddict.md)
-      - [crazazy   ](./nur-combined-crazazy.md)
-      - [crtified  ](./nur-combined-crtified.md)
-      - [cwyc      ](./nur-combined-cwyc.md)
-      - [dawidsowa ](./nur-combined-dawidsowa.md)
-      - [dguibert  ](./nur-combined-dguibert.md)
-      - [dtz       ](./nur-combined-dtz.md)
-      - [dukzcry   ](./nur-combined-dukzcry.md)
-      - [emmanuel  ](./nur-combined-emmanuelrosa.md)
-      - [fgaz      ](./nur-combined-fgaz.md)
-      - [heph2     ](./nur-combined-heph2.md)
-      - [ilya      ](./nur-combined-ilya-fedin.md)
-      - [immae     ](./nur-combined-immae.md)
+      ${builtins.concatStringsSep "\n  " nurs}
   '';
 }
