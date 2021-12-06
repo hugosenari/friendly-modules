@@ -11,17 +11,17 @@ let
   };
 in
 {
-  config.about.sources = "- [NixOps HCloud](${url})";
-  config.files.docs."/gh-pages/src/nixops-hcloud.md".modules = [
+  about.sources = "- [NixOps HCloud](${url})";
+  files.docs."/gh-pages/src/nixops-hcloud.md".modules = [
     "${src}/bootstrap/fetchHetznerKeys.nix"
     "${src}/nixops_hcloud/nix/hcloud.nix"
     (importModule "nixops_hcloud/nix/hcloud_sshkey.nix")
   ];
-  config.files.docs."/gh-pages/src/nixops-hcloud-volume.md".modules = [
+  files.docs."/gh-pages/src/nixops-hcloud-volume.md".modules = [
     (importModule "nixops_hcloud/nix/hcloud_volume.nix")
   ];
 
-  config.files.mdbook.summary = ''
+  files.mdbook.summary = ''
     ---
     - [NixOps HCloud](./nixops-hcloud.md)
     - [NixOps HCloud Volume](./nixops-hcloud-volume.md)

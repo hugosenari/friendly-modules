@@ -11,12 +11,12 @@ let
   };
 in
 {
-  config.about.sources = "- [NixOps LibVirtd](${url})";
-  config.files.docs."/gh-pages/src/nixops-libvirtd.md".modules = [
+  about.sources = "- [NixOps LibVirtd](${url})";
+  files.docs."/gh-pages/src/nixops-libvirtd.md".modules = [
     "${src}/nixops_virtd/nix/libvirtd.nix"
   ];
 
-  config.files.mdbook.summary = ''
+  files.mdbook.summary = ''
     ---
     - [NixOps LibVirtd](./nixops-libvirtd.md)
   '';

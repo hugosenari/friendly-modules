@@ -6,16 +6,16 @@ let
   };
 in
 {
-  config.files.docs."/gh-pages/src/cocada-boa.md".modules = [
+  files.docs."/gh-pages/src/cocada-boa.md".modules = [
     "${src}/modules/theme.nix"
     "${src}/modules/meta.nix"
     "${src}/modules/device.nix"
     "${src}/modules/nixos/neovim.nix"
     "${src}/modules/home-manager/xsettingsd.nix"
   ];
-  config.files.mdbook.summary = ''
+  files.mdbook.summary = ''
     ---
     - [Cocada Boa](./cocada-boa.md)
   '';
-  config.about.sources = "- [Thiago Okada](${url})";
+  about.sources = "- [Thiago Okada](${url})";
 }

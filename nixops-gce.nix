@@ -7,8 +7,8 @@ let
   };
 in
 {
-  config.about.sources = "- [NixOps GCE](${url})";
-  config.files.docs."/gh-pages/src/nixops-gce.md".modules = [
+  about.sources = "- [NixOps GCE](${url})";
+  files.docs."/gh-pages/src/nixops-gce.md".modules = [
     "${src}/nixops_gcp/nix/image-options.nix"
     "${src}/nixops_gcp/nix/common-gce-options.nix"
     (import "${src}/nixops_gcp/nix/gce-credentials.nix" lib "{name}")
@@ -26,7 +26,7 @@ in
 
   ];
 
-  config.files.mdbook.summary = ''
+  files.mdbook.summary = ''
     ---
     - [NixOps GCE](./nixops-gce.md)
   '';

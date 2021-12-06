@@ -6,7 +6,7 @@ let
   };
 in
 {
-  config.files.docs."/gh-pages/src/ew.md".modules = [
+  files.docs."/gh-pages/src/ew.md".modules = [
     "${src}/homes/main/modules/espanso.nix"
     "${src}/homes/main/modules/dummy_module.nix"
     "${src}/modules/cachix/system.nix"
@@ -16,9 +16,9 @@ in
     "${src}/modules/spotify/home.nix"
     "${src}/modules/vercel-ddns/system.nix"
   ];
-  config.files.mdbook.summary = ''
+  files.mdbook.summary = ''
     ---
     - [EW](./ew.md)
   '';
-  config.about.sources = "- [Lucas Eduardo](${url})";
+  about.sources = "- [Lucas Eduardo](${url})";
 }

@@ -7,17 +7,17 @@ let
   };
 in
 {
-  config.files.docs."/gh-pages/src/impermanence.md".modules = [
+  files.docs."/gh-pages/src/impermanence.md".modules = [
     "${src}/nixos.nix"
   ];
-  config.files.docs."/gh-pages/src/impermanence-hm.md".modules = [
+  files.docs."/gh-pages/src/impermanence-hm.md".modules = [
     "${src}/home-manager.nix"
   ];
 
-  config.files.mdbook.summary = ''
+  files.mdbook.summary = ''
     ---
     - [Impermanence](./impermanence.md)
     - [Impermanence HM](./impermanence-hm.md)
   '';
-  config.about.sources = "- [Impermanence](${url})";
+  about.sources = "- [Impermanence](${url})";
 }

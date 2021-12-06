@@ -11,14 +11,14 @@ let
   };
 in
 {
-  config.about.sources = "- [NixOS Modules Contrib](${url})";
-  config.files.docs."/gh-pages/src/nixos-modules-contrib.md".modules = [
+  about.sources = "- [NixOS Modules Contrib](${url})";
+  files.docs."/gh-pages/src/nixos-modules-contrib.md".modules = [
   # failing
   #  (importModule "auto-raid0/default.nix")
   #  (importModule "auto-luks/default.nix")
   ];
 
-  config.files.mdbook.summary = ''
+  files.mdbook.summary = ''
     ---
     - [NixOS Contrib](./nixos-modules-contrib.md)
   '';

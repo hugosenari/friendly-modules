@@ -7,12 +7,12 @@ let
   };
 in
 {
-  config.about.sources = "- [NixOps DigitalOcean](${url})";
-  config.files.docs."/gh-pages/src/nixops-digitalocean.md".modules = [
+  about.sources = "- [NixOps DigitalOcean](${url})";
+  files.docs."/gh-pages/src/nixops-digitalocean.md".modules = [
     "${src}/nixops_digitalocean/nix/droplet.nix"
   ];
 
-  config.files.mdbook.summary = ''
+  files.mdbook.summary = ''
     ---
     - [NixOps DigitalOcean](./nixops-digitalocean.md)
   '';

@@ -10,8 +10,8 @@ let
   };
 in
 {
-  config.about.sources = "- [NUR Combined](${url})";
-  config.files.text."/gh-pages/src/nur-combined.md" = ''
+  about.sources = "- [NUR Combined](${url})";
+  files.text."/gh-pages/src/nur-combined.md" = ''
     Modules that could be found at [NUR](https://github.com/nix-community/nur-combined)
 
     Sadly it won't work for all modules, so there are some commented modules :(
@@ -20,7 +20,7 @@ in
     grep -rE '(mkOption|mkEnable|submodule)'|grep ./|cut -d':' -f1|sort -u|grep 'nix'
     ```
   '';
-  config.files.docs."/gh-pages/src/nur-combined-aasg.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-aasg.md".modules = [
     "${src}/repos/aasg/modules/programs/dma.nix"
     "${src}/repos/aasg/modules/services/cluster/ipfs-cluster.nix"
     "${src}/repos/aasg/modules/services/databases/postgresql-base-backup.nix"
@@ -30,14 +30,14 @@ in
     "${src}/repos/aasg/modules/services/networking/trust-dns.nix"
     "${src}/repos/aasg/modules/services/networking/wireguard-systemd.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-afreakk.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-afreakk.md".modules = [
     "${src}/repos/afreakk/modules/fzf-fork/default.nix"
     "${src}/repos/afreakk/modules/mcfly/default.nix"
   #  "${src}/repos/afreakk/modules/scheduled-rsync/default.nix"
     "${src}/repos/afreakk/modules/sdm/default.nix"
     "${src}/repos/afreakk/modules/systemd-cron/default.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-alarsyo.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-alarsyo.md".modules = [
     "${src}/repos/alarsyo/base/networking.nix"
     "${src}/repos/alarsyo/home/alacritty.nix"
     "${src}/repos/alarsyo/home/bat.nix"
@@ -82,7 +82,7 @@ in
     "${src}/repos/alarsyo/services/transmission.nix"
     "${src}/repos/alarsyo/services/vaultwarden.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-ambroisie.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-ambroisie.md".modules = [
     "${src}/repos/ambroisie/lib/options.nix"
     "${src}/repos/ambroisie/home/bluetooth/default.nix"
    # "${src}/repos/ambroisie/home/comma/default.nix"
@@ -149,7 +149,7 @@ in
     "${src}/repos/ambroisie/profiles/wm/default.nix"
     "${src}/repos/ambroisie/profiles/x/default.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-arc.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-arc.md".modules = [
    # ( import "${src}/repos/arc/modules/home/base16.nix" false baseArgs)
     "${src}/repos/arc/modules/home/bitbucket.nix"
    # "${src}/repos/arc/modules/home/buku.nix"
@@ -206,18 +206,18 @@ in
    # "${src}/repos/arc/modules/nixos/yggdrasil.nix"
     "${src}/repos/arc/pkgs/customized/default.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-bb010g.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-bb010g.md".modules = [
   #  "${src}/repos/bb010g/modules/home-manager/programs/pijul.nix"
     "${src}/repos/bb010g/modules/home-manager/xcompose.nix"
   #  "${src}/repos/bb010g/pkgs/development/tools/misc/edb-debugger/default.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-bendlas.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-bendlas.md".modules = [
     "${src}/repos/bendlas/modules/programs/lsd.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-berbiche.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-berbiche.md".modules = [
     "${src}/repos/berbiche/modules/home-manager/deadd-notification-center.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-c0deaddict.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-c0deaddict.md".modules = [
     "${src}/repos/c0deaddict/hm-modules/check-battery/default.nix"
     "${src}/repos/c0deaddict/hm-modules/gnome-keyring-daemon/default.nix"
     "${src}/repos/c0deaddict/hm-modules/mako/default.nix"
@@ -237,7 +237,7 @@ in
     "${src}/repos/c0deaddict/modules/solaredge-influx/default.nix"
     "${src}/repos/c0deaddict/modules/wordpress/default.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-crazazy.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-crazazy.md".modules = [
   #  "${src}/repos/crazazy/lib/importFromSubmodule.nix"
     "${src}/repos/crazazy/modules/bindfs/default.nix"
     "${src}/repos/crazazy/modules/home-configuration/default.nix"
@@ -247,41 +247,41 @@ in
     "${src}/repos/crazazy/modules/tmpfs-configuration/default.nix"
   #  "${src}/repos/crazazy/modules/users/default.nix"
   ];
-  # config.files.docs."/gh-pages/src/nur-combined-crazedprogrammer.md".modules = [
+  # files.docs."/gh-pages/src/nur-combined-crazedprogrammer.md".modules = [
   #   "${src}/repos/crazedprogrammer/modules/overrides/thinkfan.nix"
   # ];
-  config.files.docs."/gh-pages/src/nur-combined-crtified.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-crtified.md".modules = [
     "${src}/repos/crtified/modules/libvirt.nix"
     "${src}/repos/crtified/modules/vfio.nix"
     "${src}/repos/crtified/modules/virtualisation.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-cwyc.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-cwyc.md".modules = [
     "${src}/repos/cwyc/modules/veracrypt/default.nix"
   ];
-  #config.files.docs."/gh-pages/src/nur-combined-dandellion.md".modules = [
+  #files.docs."/gh-pages/src/nur-combined-dandellion.md".modules = [
   #  "${src}/repos/dandellion/modules/matrix-corporal.nix"
   #];
-  config.files.docs."/gh-pages/src/nur-combined-dawidsowa.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-dawidsowa.md".modules = [
     "${src}/repos/dawidsowa/modules/freshrss.nix"
   ];
-  #config.files.docs."/gh-pages/src/nur-combined-deeunderscore.md".modules = [
+  #files.docs."/gh-pages/src/nur-combined-deeunderscore.md".modules = [
   #  "${src}/repos/deeunderscore/pkgs/git-archive-all/default.nix"
   #];
-  #config.files.docs."/gh-pages/src/nur-combined-demyanrogozhin.md".modules = [
+  #files.docs."/gh-pages/src/nur-combined-demyanrogozhin.md".modules = [
   #  "${src}/repos/demyanrogozhin/modules/services/particld.nix"
   #];
-  config.files.docs."/gh-pages/src/nur-combined-dguibert.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-dguibert.md".modules = [
     "${src}/repos/dguibert/modules/qemu-user.nix"
   ];
-  #config.files.docs."/gh-pages/src/nur-combined-drewrisinger.md".modules = [
+  #files.docs."/gh-pages/src/nur-combined-drewrisinger.md".modules = [
   #  "${src}/repos/drewrisinger/pkgs/python-modules/scs/default.nix"
   #];
-  config.files.docs."/gh-pages/src/nur-combined-dtz.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-dtz.md".modules = [
     "${src}/repos/dtz/modules/allvm-cache.nix"
     "${src}/repos/dtz/modules/powerline-symbols.nix"
     #"${src}/repos/dtz/pkgs/stoke/default.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-dukzcry.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-dukzcry.md".modules = [
     "${src}/repos/dukzcry/modules/bambootracker.nix"
     "${src}/repos/dukzcry/modules/gtk.nix"
     "${src}/repos/dukzcry/modules/jack.nix"
@@ -297,24 +297,24 @@ in
     "${src}/repos/dukzcry/modules/steam.nix"
     "${src}/repos/dukzcry/modules/wifi.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-emmanuelrosa.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-emmanuelrosa.md".modules = [
     "${src}/repos/emmanuelrosa/modules/btrbk/default.nix"
     "${src}/repos/emmanuelrosa/modules/electrum-personal-server/default.nix"
     "${src}/repos/emmanuelrosa/modules/electrumx/default.nix"
     "${src}/repos/emmanuelrosa/modules/programs/fzf/default.nix"
   #  "${src}/repos/emmanuelrosa/modules/protonvpn/default.nix"
   ];
-  #config.files.docs."/gh-pages/src/nur-combined-ethancedwards8.md".modules = [
+  #files.docs."/gh-pages/src/nur-combined-ethancedwards8.md".modules = [
   #  "${src}/repos/ethancedwards8/modules/gc.nix"
   #];
-  config.files.docs."/gh-pages/src/nur-combined-fgaz.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-fgaz.md".modules = [
     "${src}/repos/fgaz/modules/ly/default.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-heph2.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-heph2.md".modules = [
     "${src}/repos/heph2/modules/services/atlas.nix"
     "${src}/repos/heph2/modules/services/pounce.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-ilya-fedin.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-ilya-fedin.md".modules = [
     "${src}/repos/ilya-fedin/modules/cascadia-code-fallback/default.nix"
     "${src}/repos/ilya-fedin/modules/dbus-broker/default.nix"
     "${src}/repos/ilya-fedin/modules/default-emoji-font/default.nix"
@@ -326,7 +326,7 @@ in
     "${src}/repos/ilya-fedin/modules/unified-kernel-image/default.nix"
     "${src}/repos/ilya-fedin/modules/vscode/default.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-immae.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-immae.md".modules = [
     "${src}/repos/immae/modules/duply_backup/default.nix"
     "${src}/repos/immae/modules/filesWatcher.nix"
   # "${src}/repos/immae/modules/naemon/default.nix"
@@ -347,27 +347,27 @@ in
   # "${src}/repos/immae/overlays/nixops/hetzner_cloud.patch"
   # "${src}/repos/immae/pkgs/mpd_0_21/default_old.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-instantos.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-instantos.md".modules = [
   # "${src}/repos/instantos/modules/instantlock.nix"
     "${src}/repos/instantos/modules/instantwm.nix"
   ];
-  #config.files.docs."/gh-pages/src/nur-combined-yuzu".modules = [
+  #files.docs."/gh-pages/src/nur-combined-yuzu".modules = [
   #  "${src}/repos/ivar/yuzu/base.nix"
   #];
-  config.files.docs."/gh-pages/src/nur-combined-jbarthelmes.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-jbarthelmes.md".modules = [
     "${src}/repos/jbarthelmes/modules/fancontrol.nix"
     "${src}/repos/jbarthelmes/modules/papermc.nix"
     "${src}/repos/jbarthelmes/modules/qbittorrent-openvpn-container.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-johnazoidberg.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-johnazoidberg.md".modules = [
     "${src}/repos/johnazoidberg/modules/ams.nix"
   # "${src}/repos/johnazoidberg/modules/ip-to-usb.nix"
   # "${src}/repos/johnazoidberg/modules/prosody-filer.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-jomik.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-jomik.md".modules = [
     "${src}/repos/jomik/home-modules/fish.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-kampka.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-kampka.md".modules = [
     "${src}/repos/kampka/modules/profiles/desktop.nix"
     "${src}/repos/kampka/modules/profiles/headless.nix"
   # "${src}/repos/kampka/modules/programs/direnv/default.nix"
@@ -385,7 +385,7 @@ in
     "${src}/repos/kampka/modules/services/systemd-failure-email/default.nix"
   # "${src}/repos/kampka/modules/services/tmux/default.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-kapack.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-kapack.md".modules = [
     "${src}/repos/kapack/modules/services/batsky.nix"
     "${src}/repos/kapack/modules/services/bs-munge.nix"
   # "${src}/repos/kapack/modules/services/bs-slurm.nix"
@@ -395,10 +395,10 @@ in
     "${src}/repos/kapack/modules/services/oar.nix"
     "${src}/repos/kapack/modules/services/phpfpm0.nix"
   ];
-  #config.files.docs."/gh-pages/src/nur-combined-kf5grd.md".modules = [
+  #files.docs."/gh-pages/src/nur-combined-kf5grd.md".modules = [
   #  "${src}/repos/kf5grd/modules/pinephone/sxmo.nix"
   #];
-  config.files.docs."/gh-pages/src/nur-combined-kira-bruneau.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-kira-bruneau.md".modules = [
     "${src}/repos/kira-bruneau/modules/hardware/xpadneo.nix"
     "${src}/repos/kira-bruneau/modules/programs/bash/undistract-me.nix"
     "${src}/repos/kira-bruneau/modules/programs/gamemode.nix"
@@ -406,12 +406,12 @@ in
     "${src}/repos/kira-bruneau/modules/services/video/replay-sorcery.nix"
   # "${src}/repos/kira-bruneau/modules/services/x11/display-managers/lightdm-greeters/webkit2.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-kolloch.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-kolloch.md".modules = [
     "${src}/repos/kolloch/modules/jitsi/jicofo.nix"
     "${src}/repos/kolloch/modules/jitsi/jitsi-meet.nix"
     "${src}/repos/kolloch/modules/jitsi/jitsi-videobridge.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-krebs.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-krebs.md".modules = [
   # "${src}/repos/krebs/default.nix"
   # "${src}/repos/krebs/submodules/krops/lib/default.nix"
   # "${src}/repos/krebs/submodules/krops/lib/types/populate.nix"
@@ -419,14 +419,14 @@ in
   # "${src}/repos/krebs/submodules/krops/pkgs/populate/default.nix"
     "${src}/repos/krebs/submodules/nix-writers/lib/types.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-kreisys.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-kreisys.md".modules = [
     "${src}/repos/kreisys/modules/bobthefish.nix"
     "${src}/repos/kreisys/modules/cachix.nix"
     "${src}/repos/kreisys/modules/consul.nix"
     "${src}/repos/kreisys/modules/yabai.nix"
   # "${src}/repos/kreisys/pkgs/make-bash-cli/default.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-linyinfeng.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-linyinfeng.md".modules = [
   # "${src}/repos/linyinfeng/modules/programs/telegram-send.nix"
     "${src}/repos/linyinfeng/modules/programs/tprofile/tprofile.nix"
     "${src}/repos/linyinfeng/modules/services/commit-notifier.nix"
@@ -434,11 +434,11 @@ in
     "${src}/repos/linyinfeng/modules/services/trojan.nix"
     "${src}/repos/linyinfeng/modules/services/vlmcsd.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-lschuermann.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-lschuermann.md".modules = [
     "${src}/repos/lschuermann/modules/files.nix"
   # "${src}/repos/lschuermann/modules/wekan.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-lucasew.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-lucasew.md".modules = [
     "${src}/repos/lucasew/homes/main/modules/dummy_module.nix"
     "${src}/repos/lucasew/homes/main/modules/espanso.nix"
     "${src}/repos/lucasew/modules/cachix/system.nix"
@@ -451,41 +451,41 @@ in
     "${src}/repos/lucasew/nodes/vps/modules/pgbackup.nix"
     "${src}/repos/lucasew/packages/custom/emacs/magit.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-misterio.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-misterio.md".modules = [
     "${src}/repos/misterio/modules/hardware/argonone.nix"
     "${src}/repos/misterio/modules/hardware/openrgb.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-mmilata.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-mmilata.md".modules = [
     "${src}/repos/mmilata/modules/jitsi-meet.nix"
     "${src}/repos/mmilata/modules/jitsi-videobridge.nix"
     "${src}/repos/mmilata/modules/prometheus-exporters-lnd.nix"
     "${src}/repos/mmilata/modules/rtl.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-moredhel.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-moredhel.md".modules = [
     "${src}/repos/moredhel/home-manager/modules/crostini/core.nix"
     "${src}/repos/moredhel/home-manager/modules/crostini/docker.nix"
     "${src}/repos/moredhel/home-manager/modules/dev.nix"
     "${src}/repos/moredhel/home-manager/modules/home/default.nix"
     "${src}/repos/moredhel/home-manager/modules/unison.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-moredread.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-moredread.md".modules = [
     "${src}/repos/moredread/modules/throttled/default.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-noneucat.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-noneucat.md".modules = [
     "${src}/repos/noneucat/modules/pinephone/sxmo.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-onny.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-onny.md".modules = [
     "${src}/repos/onny/modules/services/iwd-autocaptiveauth.nix"
     "${src}/repos/onny/pkgs/services/security/opensnitch/opensnitch.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-pamplemousse.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-pamplemousse.md".modules = [
     "${src}/repos/pamplemousse/modules/services/web-apps/cryptpad.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-pborzenkov.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-pborzenkov.md".modules = [
     "${src}/repos/pborzenkov/modules/services/gonic/default.nix"
     "${src}/repos/pborzenkov/modules/services/vlmcsd/default.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-peel.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-peel.md".modules = [
     "${src}/repos/peel/darwin-modules/services/development/bloop.nix"
   # "${src}/repos/peel/darwin-modules/services/networking/weechat.nix"
     "${src}/repos/peel/darwin-modules/services/yabai.nix"
@@ -495,7 +495,7 @@ in
     "${src}/repos/peel/modules/services/misc/dunst.nix"
     "${src}/repos/peel/modules/services/networking/weechat.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-priegger.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-priegger.md".modules = [
     "${src}/repos/priegger/modules/services/cachix/default.nix"
     "${src}/repos/priegger/modules/services/docker/default.nix"
     "${src}/repos/priegger/modules/services/nginx/default.nix"
@@ -505,15 +505,15 @@ in
     "${src}/repos/priegger/modules/services/smtp-to-sendmail/default.nix"
     "${src}/repos/priegger/modules/services/tor/default.nix"
   ];
-  #config.files.docs."/gh-pages/src/nur-combined-ptival.md".modules = [
+  #files.docs."/gh-pages/src/nur-combined-ptival.md".modules = [
   #  "${src}/repos/ptival/pkgs/coqPackages/nix/sources.nix"
   #];
-  config.files.docs."/gh-pages/src/nur-combined-qchem.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-qchem.md".modules = [
     "${src}/repos/qchem/benchmark/module.nix"
   # "${src}/repos/qchem/pkgs/apps/dalton/default.nix"
   # "${src}/repos/qchem/template_module.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-rycee.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-rycee.md".modules = [
     "${src}/repos/rycee/hm-modules/emacs-init.nix"
     "${src}/repos/rycee/hm-modules/theme-base16/bat.nix"
     "${src}/repos/rycee/hm-modules/theme-base16/default.nix"
@@ -527,13 +527,13 @@ in
     "${src}/repos/rycee/hm-modules/theme-base16/xscreensaver.nix"
     "${src}/repos/rycee/modules/containers-docker-support.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-sehqlr.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-sehqlr.md".modules = [
     "${src}/repos/sehqlr/modules/p50/hm.nix"
   ];
-  #config.files.docs."/gh-pages/src/nur-combined-shados.md".modules = [
+  #files.docs."/gh-pages/src/nur-combined-shados.md".modules = [
   #  "${src}/repos/shados/overlays/lua-packages/effil.nix"
   #];
-  config.files.docs."/gh-pages/src/nur-combined-shamilton.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-shamilton.md".modules = [
   # "${src}/repos/shamilton/modules/autognirehtet.nix"
   # "${src}/repos/shamilton/modules/create-ap.nix"
   # "${src}/repos/shamilton/modules/day-night-plasma-wallpapers-home-manager.nix"
@@ -554,7 +554,7 @@ in
     "${src}/repos/shamilton/modules/unoconv.nix"
   # "${src}/repos/shamilton/modules/unoconvservice.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-sikmir.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-sikmir.md".modules = [
     "${src}/repos/sikmir/modules/home-manager/programs/aerc.nix"
     "${src}/repos/sikmir/modules/home-manager/programs/goldendict.nix"
     "${src}/repos/sikmir/modules/home-manager/programs/gpxsee.nix"
@@ -566,16 +566,16 @@ in
     "${src}/repos/sikmir/modules/home-manager/programs/slack-term.nix"
   # "${src}/repos/sikmir/modules/services/gmnisrv.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-splintah.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-splintah.md".modules = [
   # "${src}/repos/splintah/hm-modules/mopidy.nix"
     "${src}/repos/splintah/hm-modules/mpdscribble.nix"
     "${src}/repos/splintah/hm-modules/ncmpcpp.nix"
   # "${src}/repos/splintah/hm-modules/onedrive.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-syberant.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-syberant.md".modules = [
     "${src}/repos/syberant/modules/shell-environments/default.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-tilpner.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-tilpner.md".modules = [
     "${src}/repos/tilpner/modules/auto-tinc.nix"
     "${src}/repos/tilpner/modules/binfmt.nix"
     "${src}/repos/tilpner/modules/duplicity.nix"
@@ -585,13 +585,13 @@ in
     "${src}/repos/tilpner/modules/user-files.nix"
     "${src}/repos/tilpner/modules/users.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-tukuan.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-tukuan.md".modules = [
     "${src}/repos/tokudan/modules/writefreely/default.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-tox.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-tox.md".modules = [
     "${src}/repos/tox/modules/services/tox-node.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-vdmeester.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-vdmeester.md".modules = [
     "${src}/repos/vdemeester/systems/modules/core/home-manager.nix"
     "${src}/repos/vdemeester/systems/modules/core/nix.nix"
     "${src}/repos/vdemeester/systems/modules/core/nur.nix"
@@ -634,21 +634,21 @@ in
     "${src}/repos/vdemeester/users/modules/services/emacs-server.nix"
     "${src}/repos/vdemeester/users/vincent/core/git.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-vroad.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-vroad.md".modules = [
     "${src}/repos/vroad/modules/looking-glass-module/default.nix"
     "${src}/repos/vroad/modules/qemu-verbatim-config/default.nix"
   ];
-  config.files.docs."/gh-pages/src/nur-combined-xeals.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-xeals.md".modules = [
     "${src}/repos/xeals/modules/services/hardware/amdgpu-common.nix"
     "${src}/repos/xeals/modules/services/hardware/amdgpu-fan.nix"
     "${src}/repos/xeals/modules/services/hardware/amdgpu-pwm.nix"
     "${src}/repos/xeals/modules/services/hardware/radeon-profile-daemon.nix"
     "${src}/repos/xeals/modules/services/x11/dunst.nix"
   ];
-  #config.files.docs."/gh-pages/src/nur-combined-xe.md".modules = [
+  #files.docs."/gh-pages/src/nur-combined-xe.md".modules = [
   #  "${src}/repos/xe/modules/dwm/default.nix"
   #];
-  config.files.docs."/gh-pages/src/nur-combined-zeratax.md".modules = [
+  files.docs."/gh-pages/src/nur-combined-zeratax.md".modules = [
   # "${src}/repos/zeratax/modules/bukkit-plugins/bukkit-plugin.nix"
   # "${src}/repos/zeratax/modules/bukkit-plugins/default.nix"
   # "${src}/repos/zeratax/modules/bukkit-server.nix"
@@ -656,7 +656,7 @@ in
   # "${src}/repos/zeratax/modules/nixos/systemd-unit-options.nix"
     "${src}/repos/zeratax/modules/restic.nix"
   ];
-  config.files.mdbook.summary =  let
+  files.mdbook.summary =  let
     nurs = map (v: "- [${v}](./nur-combined-${v}.md)") [
        "aasg"
        "afreakk"

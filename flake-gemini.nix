@@ -24,14 +24,14 @@ let
   };
 in
 {
-  config.files.docs."/gh-pages/src/flake-gemini.md".modules = [
+  files.docs."/gh-pages/src/flake-gemini.md".modules = [
     (importModule "kineto/nixos-module.nix")
     (importModule "duckling-proxy/nixos-module.nix")
   ];
 
-  config.files.mdbook.summary = ''
+  files.mdbook.summary = ''
     ---
     - [Flake Gemini](./flake-gemini.md)
   '';
-  config.about.sources = "- [Flake Gemini](${url})";
+  about.sources = "- [Flake Gemini](${url})";
 }
