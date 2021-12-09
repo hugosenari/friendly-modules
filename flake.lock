@@ -59,11 +59,11 @@
         "nmd": "nmd_2"
       },
       "locked": {
-        "lastModified": 1638799439,
-        "narHash": "sha256-2pDLfTQr9ZayzWfdxRD3FCbVqQMdMturrXpq3xB3kws=",
+        "lastModified": 1638814194,
+        "narHash": "sha256-bu50va1cwXK3vIV+gfvZ+HyCaNjguMnyW6YO3JwwamA=",
         "owner": "cruel-intentions",
         "repo": "devshell-files",
-        "rev": "5a5b46604a7e7b2ac9ea667c009d4d63ceffc558",
+        "rev": "69645ba41f4e1c3ec05be222fcd8bddc6e61e129",
         "type": "github"
       },
       "original": {
@@ -107,11 +107,11 @@
         "dsf": "dsf_2"
       },
       "locked": {
-        "lastModified": 1638814884,
-        "narHash": "sha256-OngPJzPPD85YkfSpEx+vvoMFf0GDfGHe9AYlyiuJ2J0=",
+        "lastModified": 1638835468,
+        "narHash": "sha256-X/lSPPcf+vcsb9M0frAAzXZBcGCrhIQJ2TKNnTCy05g=",
         "owner": "cruel-intentions",
         "repo": "gh-actions",
-        "rev": "ff95a9ead8c62490d083f4776b4bca04ef2ab07d",
+        "rev": "6f8cc8ff9932e2577e5ae4590208bfdc557d39d3",
         "type": "github"
       },
       "original": {
