@@ -1,3 +1,4 @@
+{ lib, pkgs, config, options, ...}:
 let
   url = "https://github.com/xtruder/kubenix.git";
   src =  builtins.fetchGit {
@@ -6,8 +7,10 @@ let
   };
 in
 {
-  files.docs."/gh-pages/src/cocada-boa.md".modules = [
-    "${src}/modules/default.nix"
+  files.docs."/gh-pages/src/kubenix.md".modules = [
+    ("${src}/modules/base.nix")
+    ("${src}/modules/istio.nix")
+    ("${src}/modules/submodule.nix")
   ];
   files.mdbook.summary = ''
     ---
