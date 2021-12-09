@@ -6,6 +6,7 @@
     ./flake-gemini.nix
     ./impermanence.nix
     ./nixops.nix
+    ./nixops-aws.nix
     ./nixops-datadog.nix
     ./nixops-digitalocean.nix 
     ./nixops-gce.nix 
