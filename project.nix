@@ -5,6 +5,7 @@
     ./ew.nix
     ./flake-gemini.nix
     ./impermanence.nix
+    ./kubenix.nix
     ./nixops.nix
     ./nixops-aws.nix
     ./nixops-datadog.nix

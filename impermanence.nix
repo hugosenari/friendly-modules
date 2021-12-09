@@ -17,7 +17,7 @@ in
   files.mdbook.summary = ''
     ---
     - [Impermanence](./impermanence.md)
-    - [Impermanence HM](./impermanence-hm.md)
+      - [Impermanence HM](./impermanence-hm.md)
   '';
   about.sources = "- [Impermanence](${url})";
 }
