@@ -16,5 +16,5 @@ in
     ---
     - [KubeNix](./kubenix.md)
   '';
-  about.sources = "- [KubeNix]](${url})";
+  about.sources = "- [KubeNix](${url})";
 }
