@@ -2,7 +2,7 @@ let
   url = "https://github.com/hugosenari/nixos-config.git";
   src =  builtins.fetchGit {
     inherit url;
-    rev = "9dc86f0b4e454654cb5279da1acdddec7860fa33";
+    rev = "4c80b4399c68fff57475e112d91e7d82d42d939b";
   };
 in
 {
