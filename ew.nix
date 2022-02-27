@@ -18,7 +18,7 @@ in
   ];
   files.mdbook.summary = ''
     ---
-    - [EW](./ew.md)
+    - [Lucas](./ew.md)
   '';
   about.sources = "- [Lucas Eduardo](${url})";
 }

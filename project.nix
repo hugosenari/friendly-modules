@@ -1,6 +1,7 @@
 {
   imports = [
     ./book.nix
+    ./hugosenari.nix
     ./cocada-boa.nix
     ./ew.nix
     ./flake-gemini.nix

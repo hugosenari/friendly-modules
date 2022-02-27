@@ -15,7 +15,7 @@ in
   ];
   files.mdbook.summary = ''
     ---
-    - [Cocada Boa](./cocada-boa.md)
+    - [Thiago](./cocada-boa.md)
   '';
   about.sources = "- [Thiago Okada](${url})";
 }
