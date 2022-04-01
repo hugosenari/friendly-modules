@@ -28,7 +28,7 @@ in
   files.text."/gh-pages/src/index.md" = ''
     # Friendly Modules
 
-    Random modules documentation collention
+    Random modules documentation collection
 
     Source code, PR, issue, etc:
 

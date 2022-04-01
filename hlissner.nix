@@ -5,7 +5,9 @@ let
     inherit url;
     rev = "fb0593af66ef8e560e89ea7e72699b84761597e0";
   };
-  inputs = {};
+  inputs = {
+    agenix.nixosModules.age = {};
+  };
   options = {};
   config.dotfiles.dir = src;
   config.dotfiles.modulesDir = "${src}/modules";
@@ -24,9 +26,9 @@ in
 {
   files.docs."/gh-pages/src/hlissner.md".modules = [
     (import "${src}/modules/options.nix" args)
-    #"${src}/modules/agenix.nix"
-    #"${src}/modules/security.nix"
-    #"${src}/modules/xdg.nix"
+    (import "${src}/modules/agenix.nix" args)
+    (import "${src}/modules/security.nix" args)
+    (import "${src}/modules/xdg.nix" args)
   ];
   files.mdbook.summary = ''
     ---
