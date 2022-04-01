@@ -2,6 +2,7 @@
   imports = [
     ./book.nix
     ./hugosenari.nix
+    ./hlissner.nix
     ./cocada-boa.nix
     ./ew.nix
     ./flake-gemini.nix
