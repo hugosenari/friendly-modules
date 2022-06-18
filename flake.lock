@@ -59,11 +59,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1655365765,
-        "narHash": "sha256-Q88gcs+ZYtLIOOsjhM70o6lBbzXBvZf1ZM9vJvnHSNY=",
+        "lastModified": 1655534213,
+        "narHash": "sha256-ccz9Nip1RSpF0PzJuz8Ubi0j5nSbepV6Mb/DVag+pc4=",
         "owner": "cruel-intentions",
         "repo": "devshell-files",
-        "rev": "8eb28ab1fa237d1b20c025f810d799d91ca9b67c",
+        "rev": "18ff870c275c5e160e287d6860dd667f0649804a",
         "type": "github"
       },
       "original": {

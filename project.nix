@@ -4,6 +4,7 @@
     ./hugosenari.nix
     ./hlissner.nix
     ./cocada-boa.nix
+    ./climod.nix
     ./ew.nix
     ./marcosrdac.nix
     ./flake-gemini.nix
