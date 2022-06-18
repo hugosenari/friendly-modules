@@ -582,8 +582,8 @@ in
     "${src}/repos/tilpner/modules/files.nix"
     "${src}/repos/tilpner/modules/hydra-poll.nix"
     "${src}/repos/tilpner/modules/unison.nix"
-    "${src}/repos/tilpner/modules/user-files.nix"
-    "${src}/repos/tilpner/modules/users.nix"
+  #  "${src}/repos/tilpner/modules/user-files.nix"
+  #  "${src}/repos/tilpner/modules/users.nix"
   ];
   files.docs."/gh-pages/src/nur-combined-tukuan.md".modules = [
     "${src}/repos/tokudan/modules/writefreely/default.nix"
@@ -649,9 +649,9 @@ in
   #  "${src}/repos/xe/modules/dwm/default.nix"
   #];
   files.docs."/gh-pages/src/nur-combined-zeratax.md".modules = [
-  # "${src}/repos/zeratax/modules/bukkit-plugins/bukkit-plugin.nix"
+   "${src}/repos/zeratax/modules/bukkit-plugins/bukkit-plugin.nix"
   # "${src}/repos/zeratax/modules/bukkit-plugins/default.nix"
-  # "${src}/repos/zeratax/modules/bukkit-server.nix"
+   "${src}/repos/zeratax/modules/bukkit-server.nix"
   # "${src}/repos/zeratax/modules/matrix-registration.nix"
   # "${src}/repos/zeratax/modules/nixos/systemd-unit-options.nix"
     "${src}/repos/zeratax/modules/restic.nix"

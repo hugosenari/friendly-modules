@@ -18,7 +18,7 @@
     ./nixops-libvirtd.nix
     ./nixos-hardware.nix
     # ./nixos-modules-contrib.nix
-    # ./nur-combined.nix
+    ./nur-combined.nix
   ];
   # enable .gitignore creation
   files.gitignore.enable = true;
