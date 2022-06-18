@@ -5,6 +5,7 @@
     ./hlissner.nix
     ./cocada-boa.nix
     ./ew.nix
+    ./marcosrdac.nix
     ./flake-gemini.nix
     ./impermanence.nix
     ./kubenix.nix
@@ -17,7 +18,7 @@
     ./nixops-libvirtd.nix
     ./nixos-hardware.nix
     # ./nixos-modules-contrib.nix
-    ./nur-combined.nix
+    # ./nur-combined.nix
   ];
   # enable .gitignore creation
   files.gitignore.enable = true;
