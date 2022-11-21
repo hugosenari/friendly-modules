@@ -2,14 +2,13 @@ let
   url = "https://github.com/hugosenari/nixos-config.git";
   src =  builtins.fetchGit {
     inherit url;
-    rev = "48fea340e38769b1ab16e9097b6025bbc7147a6f";
+    rev = "5ce39a2eaa82c870e7c2a32374920c7110757660";
   };
 in
 {
   files.docs."/gh-pages/src/hugosenari.md".modules = [
-    "${src}/hm-modules/espanso.nix"
-    "${src}/hm-modules/moe.nix"
-    "${src}/hm-modules/spacevim.nix"
+    "${src}/hugosenari/espanso.nix"
+    "${src}/hugosenari/moe.nix"
   ];
   files.mdbook.summary = ''
     ---
