@@ -17,6 +17,7 @@
     ./nixops-gce.nix 
     ./nixops-hcloud.nix
     ./nixops-libvirtd.nix
+    ./nixos-firehol.nix
     ./nixos-hardware.nix
     # ./nixos-modules-contrib.nix
     ./nur-combined.nix
