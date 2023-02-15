@@ -1,13 +1,19 @@
+{ pkgs, ...}:
 let
   url = "https://github.com/TinHead/nixos-firehol.git";
   src =  builtins.fetchGit {
     inherit url;
-    rev = "5ce39a2eaa82c870e7c2a32374920c7110757660";
+    rev = "8e5ac4ac7d14d16efaa9325b8a47d62e4f812b3d";
   };
+  pkg = pkgs.writeText "nixos-firehol.nix"
+    (builtins.replaceStrings
+      ["lib.mdDoc "]
+      [""]
+      (builtins.readFile "${src}/nixos-firehol.nix"));
 in
 {
   files.docs."/gh-pages/src/nixos-firehol.md".modules = [
-    "${src}/nixos-firehol.nix"
+    "${pkg}"
   ];
   files.mdbook.summary = ''
     ---
