@@ -1,0 +1,3613 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>alarsyo</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="hugosenari.html"><strong aria-hidden="true">2.</strong> Hugosenari</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="hlissner.html"><strong aria-hidden="true">3.</strong> hlissner</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="cocada-boa.html"><strong aria-hidden="true">4.</strong> Thiago</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="climod.html"><strong aria-hidden="true">5.</strong> Climod</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="ew.html"><strong aria-hidden="true">6.</strong> Lucas</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="marcosrdac.html"><strong aria-hidden="true">7.</strong> Marcos</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="flake-gemini.html"><strong aria-hidden="true">8.</strong> Flake Gemini</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="impermanence.html"><strong aria-hidden="true">9.</strong> Impermanence</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="impermanence-hm.html"><strong aria-hidden="true">9.1.</strong> Impermanence HM</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="kubenix.html"><strong aria-hidden="true">10.</strong> KubeNix</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops.html"><strong aria-hidden="true">11.</strong> NixOps</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops-aws.html"><strong aria-hidden="true">12.</strong> NixOps AWS</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="nixops-aws-data.html"><strong aria-hidden="true">12.1.</strong> data</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpn-connection.html"><strong aria-hidden="true">12.2.</strong> vpn-connection</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpn-connection-route.html"><strong aria-hidden="true">12.3.</strong> vpn-connection-route</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpn-gateway.html"><strong aria-hidden="true">12.4.</strong> vpn-gateway</a></li><li class="chapter-item expanded "><a href="nixops-aws-cloudwatch-log-group.html"><strong aria-hidden="true">12.5.</strong> cloudwatch-log-group</a></li><li class="chapter-item expanded "><a href="nixops-aws-cloudwatch-log-stream.html"><strong aria-hidden="true">12.6.</strong> cloudwatch-log-stream</a></li><li class="chapter-item expanded "><a href="nixops-aws-ec2-keypair.html"><strong aria-hidden="true">12.7.</strong> ec2-keypair</a></li><li class="chapter-item expanded "><a href="nixops-aws-ec2-placement.html"><strong aria-hidden="true">12.8.</strong> ec2-placement</a></li><li class="chapter-item expanded "><a href="nixops-aws-ec2-rds-dbinstance.html"><strong aria-hidden="true">12.9.</strong> ec2-rds-dbinstance</a></li><li class="chapter-item expanded "><a href="nixops-aws-ec2-rds-dbsecurity.html"><strong aria-hidden="true">12.10.</strong> ec2-rds-dbsecurity</a></li><li class="chapter-item expanded "><a href="nixops-aws-ec2-security.html"><strong aria-hidden="true">12.11.</strong> ec2-security</a></li><li class="chapter-item expanded "><a href="nixops-aws-eslatic-file-system.html"><strong aria-hidden="true">12.12.</strong> eslatic-file-system</a></li><li class="chapter-item expanded "><a href="nixops-aws-eslatic-file-sistem-mount.html"><strong aria-hidden="true">12.13.</strong> eslatic-file-sistem-mount</a></li><li class="chapter-item expanded "><a href="nixops-aws-eslatic-ip.html"><strong aria-hidden="true">12.14.</strong> eslatic-ip</a></li><li class="chapter-item expanded "><a href="nixops-aws-iam.html"><strong aria-hidden="true">12.15.</strong> iam</a></li><li class="chapter-item expanded "><a href="nixops-aws-rds.html"><strong aria-hidden="true">12.16.</strong> rds</a></li><li class="chapter-item expanded "><a href="nixops-aws-route53.html"><strong aria-hidden="true">12.17.</strong> route53</a></li><li class="chapter-item expanded "><a href="nixops-aws-s3.html"><strong aria-hidden="true">12.18.</strong> s3</a></li><li class="chapter-item expanded "><a href="nixops-aws-sqs.html"><strong aria-hidden="true">12.19.</strong> sqs</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc.html"><strong aria-hidden="true">12.20.</strong> vpc</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-customer.html"><strong aria-hidden="true">12.21.</strong> vpc-customer</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-dhcp.html"><strong aria-hidden="true">12.22.</strong> vpc-dhcp</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-egress.html"><strong aria-hidden="true">12.23.</strong> vpc-egress</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-endpoint.html"><strong aria-hidden="true">12.24.</strong> vpc-endpoint</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-internet.html"><strong aria-hidden="true">12.25.</strong> vpc-internet</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-nat.html"><strong aria-hidden="true">12.26.</strong> vpc-nat</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-network-interface.html"><strong aria-hidden="true">12.27.</strong> vpc-network-interface</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-network-interface-attachment.html"><strong aria-hidden="true">12.28.</strong> vpc-network-interface-attachment</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-route.html"><strong aria-hidden="true">12.29.</strong> vpc-route</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-route-table.html"><strong aria-hidden="true">12.30.</strong> vpc-route-table</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-route-table-association.html"><strong aria-hidden="true">12.31.</strong> vpc-route-table-association</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-subnet.html"><strong aria-hidden="true">12.32.</strong> vpc-subnet</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="nixops-datadog-monitor.html"><strong aria-hidden="true">13.</strong> NixOps Datadog</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops-digitalocean.html"><strong aria-hidden="true">14.</strong> NixOps DigitalOcean</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops-gce.html"><strong aria-hidden="true">15.</strong> NixOps GCE</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops-hcloud.html"><strong aria-hidden="true">16.</strong> NixOps HCloud</a></li><li class="chapter-item expanded "><a href="nixops-hcloud-volume.html"><strong aria-hidden="true">17.</strong> NixOps HCloud Volume</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops-libvirtd.html"><strong aria-hidden="true">18.</strong> NixOps LibVirtd</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixos-firehol.html"><strong aria-hidden="true">19.</strong> NixOS-FireHOL</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixos-hardware.html"><strong aria-hidden="true">20.</strong> NixOS Hardware</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="nixos-hardware-asus.html"><strong aria-hidden="true">20.1.</strong> asus</a></li><li class="chapter-item expanded "><a href="nixos-hardware-surface.html"><strong aria-hidden="true">20.2.</strong> surface</a></li><li class="chapter-item expanded "><a href="nixos-hardware-raspberry.html"><strong aria-hidden="true">20.3.</strong> raspberry</a></li><li class="chapter-item expanded "><a href="nixos-hardware-system76.html"><strong aria-hidden="true">20.4.</strong> system76</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="nur-combined.html"><strong aria-hidden="true">21.</strong> NUR Combined</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="nur-combined-aasg.html"><strong aria-hidden="true">21.1.</strong> aasg</a></li><li class="chapter-item expanded "><a href="nur-combined-afreakk.html"><strong aria-hidden="true">21.2.</strong> afreakk</a></li><li class="chapter-item expanded "><a href="nur-combined-alarsyo.html" class="active"><strong aria-hidden="true">21.3.</strong> alarsyo</a></li><li class="chapter-item expanded "><a href="nur-combined-ambroisie.html"><strong aria-hidden="true">21.4.</strong> ambroisie</a></li><li class="chapter-item expanded "><a href="nur-combined-arc.html"><strong aria-hidden="true">21.5.</strong> arc</a></li><li class="chapter-item expanded "><a href="nur-combined-bb010g.html"><strong aria-hidden="true">21.6.</strong> bb010g</a></li><li class="chapter-item expanded "><a href="nur-combined-bendlas.html"><strong aria-hidden="true">21.7.</strong> bendlas</a></li><li class="chapter-item expanded "><a href="nur-combined-berbiche.html"><strong aria-hidden="true">21.8.</strong> berbiche</a></li><li class="chapter-item expanded "><a href="nur-combined-c0deaddict.html"><strong aria-hidden="true">21.9.</strong> c0deaddict</a></li><li class="chapter-item expanded "><a href="nur-combined-crazazy.html"><strong aria-hidden="true">21.10.</strong> crazazy</a></li><li class="chapter-item expanded "><a href="nur-combined-crtified.html"><strong aria-hidden="true">21.11.</strong> crtified</a></li><li class="chapter-item expanded "><a href="nur-combined-cwyc.html"><strong aria-hidden="true">21.12.</strong> cwyc</a></li><li class="chapter-item expanded "><a href="nur-combined-dawidsowa.html"><strong aria-hidden="true">21.13.</strong> dawidsowa</a></li><li class="chapter-item expanded "><a href="nur-combined-dguibert.html"><strong aria-hidden="true">21.14.</strong> dguibert</a></li><li class="chapter-item expanded "><a href="nur-combined-dtz.html"><strong aria-hidden="true">21.15.</strong> dtz</a></li><li class="chapter-item expanded "><a href="nur-combined-dukzcry.html"><strong aria-hidden="true">21.16.</strong> dukzcry</a></li><li class="chapter-item expanded "><a href="nur-combined-emmanuelrosa.html"><strong aria-hidden="true">21.17.</strong> emmanuelrosa</a></li><li class="chapter-item expanded "><a href="nur-combined-heph2.html"><strong aria-hidden="true">21.18.</strong> heph2</a></li><li class="chapter-item expanded "><a href="nur-combined-ilya-fedin.html"><strong aria-hidden="true">21.19.</strong> ilya-fedin</a></li><li class="chapter-item expanded "><a href="nur-combined-immae.html"><strong aria-hidden="true">21.20.</strong> immae</a></li><li class="chapter-item expanded "><a href="nur-combined-instantos.html"><strong aria-hidden="true">21.21.</strong> instantos</a></li><li class="chapter-item expanded "><a href="nur-combined-jbarthelmes.html"><strong aria-hidden="true">21.22.</strong> jbarthelmes</a></li><li class="chapter-item expanded "><a href="nur-combined-johnazoidberg.html"><strong aria-hidden="true">21.23.</strong> johnazoidberg</a></li><li class="chapter-item expanded "><a href="nur-combined-jomik.html"><strong aria-hidden="true">21.24.</strong> jomik</a></li><li class="chapter-item expanded "><a href="nur-combined-kampka.html"><strong aria-hidden="true">21.25.</strong> kampka</a></li><li class="chapter-item expanded "><a href="nur-combined-kapack.html"><strong aria-hidden="true">21.26.</strong> kapack</a></li><li class="chapter-item expanded "><a href="nur-combined-kira-bruneau.html"><strong aria-hidden="true">21.27.</strong> kira-bruneau</a></li><li class="chapter-item expanded "><a href="nur-combined-kolloch.html"><strong aria-hidden="true">21.28.</strong> kolloch</a></li><li class="chapter-item expanded "><a href="nur-combined-krebs.html"><strong aria-hidden="true">21.29.</strong> krebs</a></li><li class="chapter-item expanded "><a href="nur-combined-kreisys.html"><strong aria-hidden="true">21.30.</strong> kreisys</a></li><li class="chapter-item expanded "><a href="nur-combined-linyinfeng.html"><strong aria-hidden="true">21.31.</strong> linyinfeng</a></li><li class="chapter-item expanded "><a href="nur-combined-lschuermann.html"><strong aria-hidden="true">21.32.</strong> lschuermann</a></li><li class="chapter-item expanded "><a href="nur-combined-lucasew.html"><strong aria-hidden="true">21.33.</strong> lucasew</a></li><li class="chapter-item expanded "><a href="nur-combined-misterio.html"><strong aria-hidden="true">21.34.</strong> misterio</a></li><li class="chapter-item expanded "><a href="nur-combined-mmilata.html"><strong aria-hidden="true">21.35.</strong> mmilata</a></li><li class="chapter-item expanded "><a href="nur-combined-moredhel.html"><strong aria-hidden="true">21.36.</strong> moredhel</a></li><li class="chapter-item expanded "><a href="nur-combined-moredread.html"><strong aria-hidden="true">21.37.</strong> moredread</a></li><li class="chapter-item expanded "><a href="nur-combined-noneucat.html"><strong aria-hidden="true">21.38.</strong> noneucat</a></li><li class="chapter-item expanded "><a href="nur-combined-onny.html"><strong aria-hidden="true">21.39.</strong> onny</a></li><li class="chapter-item expanded "><a href="nur-combined-pamplemousse.html"><strong aria-hidden="true">21.40.</strong> pamplemousse</a></li><li class="chapter-item expanded "><a href="nur-combined-pborzenkov.html"><strong aria-hidden="true">21.41.</strong> pborzenkov</a></li><li class="chapter-item expanded "><a href="nur-combined-peel.html"><strong aria-hidden="true">21.42.</strong> peel</a></li><li class="chapter-item expanded "><a href="nur-combined-priegger.html"><strong aria-hidden="true">21.43.</strong> priegger</a></li><li class="chapter-item expanded "><a href="nur-combined-qchem.html"><strong aria-hidden="true">21.44.</strong> qchem</a></li><li class="chapter-item expanded "><a href="nur-combined-rycee.html"><strong aria-hidden="true">21.45.</strong> rycee</a></li><li class="chapter-item expanded "><a href="nur-combined-sehqlr.html"><strong aria-hidden="true">21.46.</strong> sehqlr</a></li><li class="chapter-item expanded "><a href="nur-combined-shamilton.html"><strong aria-hidden="true">21.47.</strong> shamilton</a></li><li class="chapter-item expanded "><a href="nur-combined-sikmir.html"><strong aria-hidden="true">21.48.</strong> sikmir</a></li><li class="chapter-item expanded "><a href="nur-combined-splintah.html"><strong aria-hidden="true">21.49.</strong> splintah</a></li><li class="chapter-item expanded "><a href="nur-combined-syberant.html"><strong aria-hidden="true">21.50.</strong> syberant</a></li><li class="chapter-item expanded "><a href="nur-combined-tilpner.html"><strong aria-hidden="true">21.51.</strong> tilpner</a></li><li class="chapter-item expanded "><a href="nur-combined-tukuan.html"><strong aria-hidden="true">21.52.</strong> tukuan</a></li><li class="chapter-item expanded "><a href="nur-combined-tox.html"><strong aria-hidden="true">21.53.</strong> tox</a></li><li class="chapter-item expanded "><a href="nur-combined-vdmeester.html"><strong aria-hidden="true">21.54.</strong> vdmeester</a></li><li class="chapter-item expanded "><a href="nur-combined-vroad.html"><strong aria-hidden="true">21.55.</strong> vroad</a></li><li class="chapter-item expanded "><a href="nur-combined-xeals.html"><strong aria-hidden="true">21.56.</strong> xeals</a></li><li class="chapter-item expanded "><a href="nur-combined-zeratax.html"><strong aria-hidden="true">21.57.</strong> zeratax</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="mydisplaymanagersddmenable"><a class="header" href="#mydisplaymanagersddmenable">my.displayManager.sddm.enable</a></h2>
+<p>Whether to enable SDDM setup.</p>
+<h4 id="type"><a class="header" href="#type">type</a></h4>
+<p>boolean</p>
+<h4 id="example"><a class="header" href="#example">example</a></h4>
+<pre><code class="language-nix">{
+  my.displayManager.sddm.enable = true;
+}
+</code></pre>
+<h4 id="default"><a class="header" href="#default">default</a></h4>
+<pre><code class="language-nix">{
+  my.displayManager.sddm.enable = false;
+}
+</code></pre>
+<h2 id="myhomealacrittyenable"><a class="header" href="#myhomealacrittyenable">my.home.alacritty.enable</a></h2>
+<p>Whether to enable Alacritty terminal.</p>
+<h4 id="type-1"><a class="header" href="#type-1">type</a></h4>
+<p>boolean</p>
+<h4 id="example-1"><a class="header" href="#example-1">example</a></h4>
+<pre><code class="language-nix">{
+  my.home.alacritty.enable = true;
+}
+</code></pre>
+<h4 id="default-1"><a class="header" href="#default-1">default</a></h4>
+<pre><code class="language-nix">{
+  my.home.alacritty.enable = false;
+}
+</code></pre>
+<h2 id="myhomebatenable"><a class="header" href="#myhomebatenable">my.home.bat.enable</a></h2>
+<p>Whether to enable bat code display tool.</p>
+<h4 id="type-2"><a class="header" href="#type-2">type</a></h4>
+<p>boolean</p>
+<h4 id="example-2"><a class="header" href="#example-2">example</a></h4>
+<pre><code class="language-nix">{
+  my.home.bat.enable = true;
+}
+</code></pre>
+<h4 id="default-2"><a class="header" href="#default-2">default</a></h4>
+<pre><code class="language-nix">{
+  my.home.bat.enable = true;
+}
+</code></pre>
+<h2 id="myhomeemacsenable"><a class="header" href="#myhomeemacsenable">my.home.emacs.enable</a></h2>
+<p>Whether to enable Emacs daemon configuration.</p>
+<h4 id="type-3"><a class="header" href="#type-3">type</a></h4>
+<p>boolean</p>
+<h4 id="example-3"><a class="header" href="#example-3">example</a></h4>
+<pre><code class="language-nix">{
+  my.home.emacs.enable = true;
+}
+</code></pre>
+<h4 id="default-3"><a class="header" href="#default-3">default</a></h4>
+<pre><code class="language-nix">{
+  my.home.emacs.enable = false;
+}
+</code></pre>
+<h2 id="myhomefirefoxenable"><a class="header" href="#myhomefirefoxenable">my.home.firefox.enable</a></h2>
+<p>Whether to enable firefox config.</p>
+<h4 id="type-4"><a class="header" href="#type-4">type</a></h4>
+<p>boolean</p>
+<h4 id="example-4"><a class="header" href="#example-4">example</a></h4>
+<pre><code class="language-nix">{
+  my.home.firefox.enable = true;
+}
+</code></pre>
+<h4 id="default-4"><a class="header" href="#default-4">default</a></h4>
+<pre><code class="language-nix">{
+  my.home.firefox.enable = false;
+}
+</code></pre>
+<h2 id="myhomefishenable"><a class="header" href="#myhomefishenable">my.home.fish.enable</a></h2>
+<p>Whether to enable Fish shell.</p>
+<h4 id="type-5"><a class="header" href="#type-5">type</a></h4>
+<p>boolean</p>
+<h4 id="example-5"><a class="header" href="#example-5">example</a></h4>
+<pre><code class="language-nix">{
+  my.home.fish.enable = true;
+}
+</code></pre>
+<h4 id="default-5"><a class="header" href="#default-5">default</a></h4>
+<pre><code class="language-nix">{
+  my.home.fish.enable = true;
+}
+</code></pre>
+<h2 id="myhomeflameshotenable"><a class="header" href="#myhomeflameshotenable">my.home.flameshot.enable</a></h2>
+<p>Whether to enable flameshot autolaunch.</p>
+<h4 id="type-6"><a class="header" href="#type-6">type</a></h4>
+<p>boolean</p>
+<h4 id="example-6"><a class="header" href="#example-6">example</a></h4>
+<pre><code class="language-nix">{
+  my.home.flameshot.enable = true;
+}
+</code></pre>
+<h4 id="default-6"><a class="header" href="#default-6">default</a></h4>
+<pre><code class="language-nix">{
+  my.home.flameshot.enable = false;
+}
+</code></pre>
+<h2 id="myhomegitenable"><a class="header" href="#myhomegitenable">my.home.git.enable</a></h2>
+<p>Whether to enable Git configuration.</p>
+<h4 id="type-7"><a class="header" href="#type-7">type</a></h4>
+<p>boolean</p>
+<h4 id="example-7"><a class="header" href="#example-7">example</a></h4>
+<pre><code class="language-nix">{
+  my.home.git.enable = true;
+}
+</code></pre>
+<h4 id="default-7"><a class="header" href="#default-7">default</a></h4>
+<pre><code class="language-nix">{
+  my.home.git.enable = true;
+}
+</code></pre>
+<h2 id="myhomelaptopenable"><a class="header" href="#myhomelaptopenable">my.home.laptop.enable</a></h2>
+<p>Whether to enable Laptop settings.</p>
+<h4 id="type-8"><a class="header" href="#type-8">type</a></h4>
+<p>boolean</p>
+<h4 id="example-8"><a class="header" href="#example-8">example</a></h4>
+<pre><code class="language-nix">{
+  my.home.laptop.enable = true;
+}
+</code></pre>
+<h4 id="default-8"><a class="header" href="#default-8">default</a></h4>
+<pre><code class="language-nix">{
+  my.home.laptop.enable = false;
+}
+</code></pre>
+<h2 id="myhomelorrienable"><a class="header" href="#myhomelorrienable">my.home.lorri.enable</a></h2>
+<p>Whether to enable lorri daemon setup.</p>
+<h4 id="type-9"><a class="header" href="#type-9">type</a></h4>
+<p>boolean</p>
+<h4 id="example-9"><a class="header" href="#example-9">example</a></h4>
+<pre><code class="language-nix">{
+  my.home.lorri.enable = true;
+}
+</code></pre>
+<h4 id="default-9"><a class="header" href="#default-9">default</a></h4>
+<pre><code class="language-nix">{
+  my.home.lorri.enable = true;
+}
+</code></pre>
+<h2 id="myhomerofienable"><a class="header" href="#myhomerofienable">my.home.rofi.enable</a></h2>
+<p>Whether to enable rofi configuration.</p>
+<h4 id="type-10"><a class="header" href="#type-10">type</a></h4>
+<p>boolean</p>
+<h4 id="example-10"><a class="header" href="#example-10">example</a></h4>
+<pre><code class="language-nix">{
+  my.home.rofi.enable = true;
+}
+</code></pre>
+<h4 id="default-10"><a class="header" href="#default-10">default</a></h4>
+<pre><code class="language-nix">{
+  my.home.rofi.enable = false;
+}
+</code></pre>
+<h2 id="myhomesshenable"><a class="header" href="#myhomesshenable">my.home.ssh.enable</a></h2>
+<p>Whether to enable ssh configuration.</p>
+<h4 id="type-11"><a class="header" href="#type-11">type</a></h4>
+<p>boolean</p>
+<h4 id="example-11"><a class="header" href="#example-11">example</a></h4>
+<pre><code class="language-nix">{
+  my.home.ssh.enable = true;
+}
+</code></pre>
+<h4 id="default-11"><a class="header" href="#default-11">default</a></h4>
+<pre><code class="language-nix">{
+  my.home.ssh.enable = true;
+}
+</code></pre>
+<h2 id="myhometmuxenable"><a class="header" href="#myhometmuxenable">my.home.tmux.enable</a></h2>
+<p>Whether to enable tmux dotfiles.</p>
+<h4 id="type-12"><a class="header" href="#type-12">type</a></h4>
+<p>boolean</p>
+<h4 id="example-12"><a class="header" href="#example-12">example</a></h4>
+<pre><code class="language-nix">{
+  my.home.tmux.enable = true;
+}
+</code></pre>
+<h4 id="default-12"><a class="header" href="#default-12">default</a></h4>
+<pre><code class="language-nix">{
+  my.home.tmux.enable = true;
+}
+</code></pre>
+<h2 id="myhometridactylenable"><a class="header" href="#myhometridactylenable">my.home.tridactyl.enable</a></h2>
+<p>Whether to enable tridactyl code display tool.</p>
+<h4 id="type-13"><a class="header" href="#type-13">type</a></h4>
+<p>boolean</p>
+<h4 id="example-13"><a class="header" href="#example-13">example</a></h4>
+<pre><code class="language-nix">{
+  my.home.tridactyl.enable = true;
+}
+</code></pre>
+<h4 id="default-13"><a class="header" href="#default-13">default</a></h4>
+<pre><code class="language-nix">{
+  my.home.tridactyl.enable = false;
+}
+</code></pre>
+<h2 id="myhomexenable"><a class="header" href="#myhomexenable">my.home.x.enable</a></h2>
+<p>Whether to enable X server configuration.</p>
+<h4 id="type-14"><a class="header" href="#type-14">type</a></h4>
+<p>boolean</p>
+<h4 id="example-14"><a class="header" href="#example-14">example</a></h4>
+<pre><code class="language-nix">{
+  my.home.x.enable = true;
+}
+</code></pre>
+<h4 id="default-14"><a class="header" href="#default-14">default</a></h4>
+<pre><code class="language-nix">{
+  my.home.x.enable = false;
+}
+</code></pre>
+<h2 id="myhomexcursorenable"><a class="header" href="#myhomexcursorenable">my.home.x.cursor.enable</a></h2>
+<p>Whether to enable X cursor.</p>
+<h4 id="type-15"><a class="header" href="#type-15">type</a></h4>
+<p>boolean</p>
+<h4 id="example-15"><a class="header" href="#example-15">example</a></h4>
+<pre><code class="language-nix">{
+  my.home.x.cursor.enable = true;
+}
+</code></pre>
+<h4 id="default-15"><a class="header" href="#default-15">default</a></h4>
+<pre><code class="language-nix">{
+  my.home.x.cursor.enable = false;
+}
+</code></pre>
+<h2 id="myhomexi3barnetworkingthroughput_interfaces"><a class="header" href="#myhomexi3barnetworkingthroughput_interfaces">my.home.x.i3bar.networking.throughput_interfaces</a></h2>
+<h4 id="type-16"><a class="header" href="#type-16">type</a></h4>
+<p>list of string</p>
+<h4 id="example-16"><a class="header" href="#example-16">example</a></h4>
+<pre><code class="language-nix">{
+  my.home.x.i3bar.networking.throughput_interfaces = [
+    &quot;wlp1s0&quot;
+  ];
+}
+</code></pre>
+<h4 id="default-16"><a class="header" href="#default-16">default</a></h4>
+<pre><code class="language-nix">{
+  my.home.x.i3bar.networking.throughput_interfaces = [];
+}
+</code></pre>
+<h2 id="myhomexi3bartemperaturechip"><a class="header" href="#myhomexi3bartemperaturechip">my.home.x.i3bar.temperature.chip</a></h2>
+<h4 id="type-17"><a class="header" href="#type-17">type</a></h4>
+<p>string</p>
+<h4 id="example-17"><a class="header" href="#example-17">example</a></h4>
+<pre><code class="language-nix">{
+  my.home.x.i3bar.temperature.chip = &quot;coretemp-isa-*&quot;;
+}
+</code></pre>
+<h4 id="default-17"><a class="header" href="#default-17">default</a></h4>
+<pre><code class="language-nix">{
+  my.home.x.i3bar.temperature.chip = &quot;&quot;;
+}
+</code></pre>
+<h2 id="myhomexi3bartemperatureinputs"><a class="header" href="#myhomexi3bartemperatureinputs">my.home.x.i3bar.temperature.inputs</a></h2>
+<h4 id="type-18"><a class="header" href="#type-18">type</a></h4>
+<p>list of string</p>
+<h4 id="example-18"><a class="header" href="#example-18">example</a></h4>
+<pre><code class="language-nix">{
+  my.home.x.i3bar.temperature.inputs = [
+    &quot;Core 0&quot;
+    &quot;Core 1&quot;
+    &quot;Core 2&quot;
+    &quot;Core 3&quot;
+  ];
+}
+</code></pre>
+<h4 id="default-18"><a class="header" href="#default-18">default</a></h4>
+<pre><code class="language-nix">{
+  my.home.x.i3bar.temperature.inputs = &quot;&quot;;
+}
+</code></pre>
+<h2 id="mynetworkingexternalinterface"><a class="header" href="#mynetworkingexternalinterface">my.networking.externalInterface</a></h2>
+<p>Name of the network interface that egresses to the internet. Used for
+e.g. NATing internal networks.</p>
+<h4 id="type-19"><a class="header" href="#type-19">type</a></h4>
+<p>null or string</p>
+<h4 id="example-19"><a class="header" href="#example-19">example</a></h4>
+<pre><code class="language-nix">{
+  my.networking.externalInterface = &quot;eth0&quot;;
+}
+</code></pre>
+<h4 id="default-19"><a class="header" href="#default-19">default</a></h4>
+<pre><code class="language-nix">{
+  my.networking.externalInterface = null;
+}
+</code></pre>
+<h2 id="mysecrets"><a class="header" href="#mysecrets">my.secrets</a></h2>
+<h4 id="type-20"><a class="header" href="#type-20">type</a></h4>
+<p>attribute set</p>
+<h2 id="myservicesborg-backupenable"><a class="header" href="#myservicesborg-backupenable">my.services.borg-backup.enable</a></h2>
+<p>Whether to enable Enable Borg backups for this host.</p>
+<h4 id="type-21"><a class="header" href="#type-21">type</a></h4>
+<p>boolean</p>
+<h4 id="example-20"><a class="header" href="#example-20">example</a></h4>
+<pre><code class="language-nix">{
+  my.services.borg-backup.enable = true;
+}
+</code></pre>
+<h4 id="default-20"><a class="header" href="#default-20">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.borg-backup.enable = false;
+}
+</code></pre>
+<h2 id="myservicesborg-backupexclude"><a class="header" href="#myservicesborg-backupexclude">my.services.borg-backup.exclude</a></h2>
+<p>Paths to exclude from backup</p>
+<h4 id="type-22"><a class="header" href="#type-22">type</a></h4>
+<p>list of string</p>
+<h4 id="example-21"><a class="header" href="#example-21">example</a></h4>
+<pre><code class="language-nix">{
+  my.services.borg-backup.exclude = [
+    &quot;/var/lib/docker&quot;
+    &quot;/var/lib/systemd&quot;
+    &quot;/var/lib/libvirt&quot;
+    &quot;**/target&quot;
+    &quot;/home/*/go/bin&quot;
+    &quot;/home/*/go/pkg&quot;
+  ];
+}
+</code></pre>
+<h4 id="default-21"><a class="header" href="#default-21">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.borg-backup.exclude = [];
+}
+</code></pre>
+<h2 id="myservicesborg-backuppaths"><a class="header" href="#myservicesborg-backuppaths">my.services.borg-backup.paths</a></h2>
+<p>Paths to backup</p>
+<h4 id="type-23"><a class="header" href="#type-23">type</a></h4>
+<p>list of string</p>
+<h4 id="example-22"><a class="header" href="#example-22">example</a></h4>
+<pre><code class="language-nix">{
+  my.services.borg-backup.paths = [
+    &quot;/var/lib&quot;
+    &quot;/home&quot;
+  ];
+}
+</code></pre>
+<h4 id="default-22"><a class="header" href="#default-22">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.borg-backup.paths = [];
+}
+</code></pre>
+<h2 id="myservicesborg-backupprune"><a class="header" href="#myservicesborg-backupprune">my.services.borg-backup.prune</a></h2>
+<p>pruning options for borg</p>
+<h4 id="type-24"><a class="header" href="#type-24">type</a></h4>
+<p>attribute set</p>
+<h4 id="default-23"><a class="header" href="#default-23">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.borg-backup.prune = {
+    keep = {
+      daily = 7;
+      monthly = 6;
+      weekly = 4;
+    };
+  };
+}
+</code></pre>
+<h2 id="myservicesborg-backuprepo"><a class="header" href="#myservicesborg-backuprepo">my.services.borg-backup.repo</a></h2>
+<p>Borgbase repo info. Required.</p>
+<h4 id="type-25"><a class="header" href="#type-25">type</a></h4>
+<p>string</p>
+<h4 id="example-23"><a class="header" href="#example-23">example</a></h4>
+<pre><code class="language-nix">{
+  my.services.borg-backup.repo = &quot;deadbeef@deadbeef.repo.borgbase.com:repo&quot;;
+}
+</code></pre>
+<h4 id="default-24"><a class="header" href="#default-24">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.borg-backup.repo = null;
+}
+</code></pre>
+<h2 id="myservicesfail2banenable"><a class="header" href="#myservicesfail2banenable">my.services.fail2ban.enable</a></h2>
+<p>Whether to enable Enable fail2ban.</p>
+<h4 id="type-26"><a class="header" href="#type-26">type</a></h4>
+<p>boolean</p>
+<h4 id="example-24"><a class="header" href="#example-24">example</a></h4>
+<pre><code class="language-nix">{
+  my.services.fail2ban.enable = true;
+}
+</code></pre>
+<h4 id="default-25"><a class="header" href="#default-25">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.fail2ban.enable = false;
+}
+</code></pre>
+<h2 id="myservicesfavaenable"><a class="header" href="#myservicesfavaenable">my.services.fava.enable</a></h2>
+<p>Whether to enable Fava.</p>
+<h4 id="type-27"><a class="header" href="#type-27">type</a></h4>
+<p>boolean</p>
+<h4 id="example-25"><a class="header" href="#example-25">example</a></h4>
+<pre><code class="language-nix">{
+  my.services.fava.enable = true;
+}
+</code></pre>
+<h4 id="default-26"><a class="header" href="#default-26">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.fava.enable = false;
+}
+</code></pre>
+<h2 id="myservicesfavafilepath"><a class="header" href="#myservicesfavafilepath">my.services.fava.filePath</a></h2>
+<p>File to load in Fava</p>
+<h4 id="type-28"><a class="header" href="#type-28">type</a></h4>
+<p>string</p>
+<h4 id="example-26"><a class="header" href="#example-26">example</a></h4>
+<pre><code class="language-nix">{
+  my.services.fava.filePath = &quot;my_dir/money.beancount&quot;;
+}
+</code></pre>
+<h2 id="myservicesfavahome"><a class="header" href="#myservicesfavahome">my.services.fava.home</a></h2>
+<p>Home for the fava service, where data will be stored</p>
+<h4 id="type-29"><a class="header" href="#type-29">type</a></h4>
+<p>string</p>
+<h4 id="example-27"><a class="header" href="#example-27">example</a></h4>
+<pre><code class="language-nix">{
+  my.services.fava.home = &quot;/var/lib/fava&quot;;
+}
+</code></pre>
+<h4 id="default-27"><a class="header" href="#default-27">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.fava.home = &quot;/var/lib/fava&quot;;
+}
+</code></pre>
+<h2 id="myservicesfavaport"><a class="header" href="#myservicesfavaport">my.services.fava.port</a></h2>
+<p>Internal port for Fava</p>
+<h4 id="type-30"><a class="header" href="#type-30">type</a></h4>
+<p>16 bit unsigned integer; between 0 and 65535 (both inclusive)</p>
+<h4 id="example-28"><a class="header" href="#example-28">example</a></h4>
+<pre><code class="language-nix">{
+  my.services.fava.port = 8080;
+}
+</code></pre>
+<h4 id="default-28"><a class="header" href="#default-28">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.fava.port = 8080;
+}
+</code></pre>
+<h2 id="myservicesgiteaenable"><a class="header" href="#myservicesgiteaenable">my.services.gitea.enable</a></h2>
+<p>Whether to enable Personal Git hosting with Gitea.</p>
+<h4 id="type-31"><a class="header" href="#type-31">type</a></h4>
+<p>boolean</p>
+<h4 id="example-29"><a class="header" href="#example-29">example</a></h4>
+<pre><code class="language-nix">{
+  my.services.gitea.enable = true;
+}
+</code></pre>
+<h4 id="default-29"><a class="header" href="#default-29">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.gitea.enable = false;
+}
+</code></pre>
+<h2 id="myservicesgiteaprivateport"><a class="header" href="#myservicesgiteaprivateport">my.services.gitea.privatePort</a></h2>
+<p>Port to serve the app</p>
+<h4 id="type-32"><a class="header" href="#type-32">type</a></h4>
+<p>16 bit unsigned integer; between 0 and 65535 (both inclusive)</p>
+<h4 id="example-30"><a class="header" href="#example-30">example</a></h4>
+<pre><code class="language-nix">{
+  my.services.gitea.privatePort = 8082;
+}
+</code></pre>
+<h4 id="default-30"><a class="header" href="#default-30">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.gitea.privatePort = 8082;
+}
+</code></pre>
+<h2 id="myservicesjellyfinenable"><a class="header" href="#myservicesjellyfinenable">my.services.jellyfin.enable</a></h2>
+<p>Whether to enable Jellyfin.</p>
+<h4 id="type-33"><a class="header" href="#type-33">type</a></h4>
+<p>boolean</p>
+<h4 id="example-31"><a class="header" href="#example-31">example</a></h4>
+<pre><code class="language-nix">{
+  my.services.jellyfin.enable = true;
+}
+</code></pre>
+<h4 id="default-31"><a class="header" href="#default-31">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.jellyfin.enable = false;
+}
+</code></pre>
+<h2 id="myserviceslohrenable"><a class="header" href="#myserviceslohrenable">my.services.lohr.enable</a></h2>
+<p>Whether to enable Lohr Mirroring Daemon.</p>
+<h4 id="type-34"><a class="header" href="#type-34">type</a></h4>
+<p>boolean</p>
+<h4 id="example-32"><a class="header" href="#example-32">example</a></h4>
+<pre><code class="language-nix">{
+  my.services.lohr.enable = true;
+}
+</code></pre>
+<h4 id="default-32"><a class="header" href="#default-32">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.lohr.enable = false;
+}
+</code></pre>
+<h2 id="myserviceslohrhome"><a class="header" href="#myserviceslohrhome">my.services.lohr.home</a></h2>
+<p>Home for the lohr service, where data will be stored</p>
+<h4 id="type-35"><a class="header" href="#type-35">type</a></h4>
+<p>string</p>
+<h4 id="example-33"><a class="header" href="#example-33">example</a></h4>
+<pre><code class="language-nix">{
+  my.services.lohr.home = &quot;/var/lib/lohr&quot;;
+}
+</code></pre>
+<h4 id="default-33"><a class="header" href="#default-33">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.lohr.home = &quot;/var/lib/lohr&quot;;
+}
+</code></pre>
+<h2 id="myserviceslohrport"><a class="header" href="#myserviceslohrport">my.services.lohr.port</a></h2>
+<p>Internal port for Lohr daemon</p>
+<h4 id="type-36"><a class="header" href="#type-36">type</a></h4>
+<p>16 bit unsigned integer; between 0 and 65535 (both inclusive)</p>
+<h4 id="example-34"><a class="header" href="#example-34">example</a></h4>
+<pre><code class="language-nix">{
+  my.services.lohr.port = 8080;
+}
+</code></pre>
+<h4 id="default-34"><a class="header" href="#default-34">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.lohr.port = 8080;
+}
+</code></pre>
+<h2 id="myservicesmatrixenable"><a class="header" href="#myservicesmatrixenable">my.services.matrix.enable</a></h2>
+<p>Whether to enable Matrix Synapse.</p>
+<h4 id="type-37"><a class="header" href="#type-37">type</a></h4>
+<p>boolean</p>
+<h4 id="example-35"><a class="header" href="#example-35">example</a></h4>
+<pre><code class="language-nix">{
+  my.services.matrix.enable = true;
+}
+</code></pre>
+<h4 id="default-35"><a class="header" href="#default-35">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.matrix.enable = false;
+}
+</code></pre>
+<h2 id="myservicesmatrixemailconfig"><a class="header" href="#myservicesmatrixemailconfig">my.services.matrix.emailConfig</a></h2>
+<h4 id="type-38"><a class="header" href="#type-38">type</a></h4>
+<p>submodule</p>
+<h2 id="myservicesmatrixemailconfignotiffrom"><a class="header" href="#myservicesmatrixemailconfignotiffrom">my.services.matrix.emailConfig.notifFrom</a></h2>
+<h4 id="type-39"><a class="header" href="#type-39">type</a></h4>
+<p>string</p>
+<h4 id="example-36"><a class="header" href="#example-36">example</a></h4>
+<pre><code class="language-nix">{
+  my.services.matrix.emailConfig.notifFrom = &quot;Your Friendly %(app)s homeserver &lt;noreply@example.com&gt;&quot;;
+}
+</code></pre>
+<h2 id="myservicesmatrixemailconfigsmtphost"><a class="header" href="#myservicesmatrixemailconfigsmtphost">my.services.matrix.emailConfig.smtpHost</a></h2>
+<h4 id="type-40"><a class="header" href="#type-40">type</a></h4>
+<p>string</p>
+<h4 id="default-36"><a class="header" href="#default-36">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.matrix.emailConfig.smtpHost = &quot;localhost&quot;;
+}
+</code></pre>
+<h2 id="myservicesmatrixemailconfigsmtppass"><a class="header" href="#myservicesmatrixemailconfigsmtppass">my.services.matrix.emailConfig.smtpPass</a></h2>
+<h4 id="type-41"><a class="header" href="#type-41">type</a></h4>
+<p>string</p>
+<h2 id="myservicesmatrixemailconfigsmtpport"><a class="header" href="#myservicesmatrixemailconfigsmtpport">my.services.matrix.emailConfig.smtpPort</a></h2>
+<p>The port to use to connect to the SMTP host.</p>
+<p>Defaulting to STARTTLS port 587 because TLS port 465 isn't supported by synapse
+See https://github.com/matrix-org/synapse/issues/8046</p>
+<h4 id="type-42"><a class="header" href="#type-42">type</a></h4>
+<p>16 bit unsigned integer; between 0 and 65535 (both inclusive)</p>
+<h4 id="default-37"><a class="header" href="#default-37">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.matrix.emailConfig.smtpPort = 587;
+}
+</code></pre>
+<h2 id="myservicesmatrixemailconfigsmtpuser"><a class="header" href="#myservicesmatrixemailconfigsmtpuser">my.services.matrix.emailConfig.smtpUser</a></h2>
+<h4 id="type-43"><a class="header" href="#type-43">type</a></h4>
+<p>string</p>
+<h2 id="myservicesmatrixregistration_shared_secret"><a class="header" href="#myservicesmatrixregistration_shared_secret">my.services.matrix.registration_shared_secret</a></h2>
+<p>Shared secret to register users</p>
+<h4 id="type-44"><a class="header" href="#type-44">type</a></h4>
+<p>string</p>
+<h4 id="example-37"><a class="header" href="#example-37">example</a></h4>
+<pre><code class="language-nix">{
+  my.services.matrix.registration_shared_secret = &quot;deadbeef&quot;;
+}
+</code></pre>
+<h4 id="default-38"><a class="header" href="#default-38">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.matrix.registration_shared_secret = null;
+}
+</code></pre>
+<h2 id="myservicesminifluxenable"><a class="header" href="#myservicesminifluxenable">my.services.miniflux.enable</a></h2>
+<p>Whether to enable Serve a Miniflux instance.</p>
+<h4 id="type-45"><a class="header" href="#type-45">type</a></h4>
+<p>boolean</p>
+<h4 id="example-38"><a class="header" href="#example-38">example</a></h4>
+<pre><code class="language-nix">{
+  my.services.miniflux.enable = true;
+}
+</code></pre>
+<h4 id="default-39"><a class="header" href="#default-39">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.miniflux.enable = false;
+}
+</code></pre>
+<h2 id="myservicesminifluxadmincredentialsfile"><a class="header" href="#myservicesminifluxadmincredentialsfile">my.services.miniflux.adminCredentialsFile</a></h2>
+<p>File containing ADMIN_USERNAME= and ADMIN_PASSWORD=</p>
+<h4 id="type-46"><a class="header" href="#type-46">type</a></h4>
+<p>string</p>
+<h4 id="example-39"><a class="header" href="#example-39">example</a></h4>
+<pre><code class="language-nix">{
+  my.services.miniflux.adminCredentialsFile = &quot;./secrets/miniflux-admin-credentials&quot;;
+}
+</code></pre>
+<h4 id="default-40"><a class="header" href="#default-40">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.miniflux.adminCredentialsFile = null;
+}
+</code></pre>
+<h2 id="myservicesminifluxprivateport"><a class="header" href="#myservicesminifluxprivateport">my.services.miniflux.privatePort</a></h2>
+<p>Port to serve the app</p>
+<h4 id="type-47"><a class="header" href="#type-47">type</a></h4>
+<p>16 bit unsigned integer; between 0 and 65535 (both inclusive)</p>
+<h4 id="example-40"><a class="header" href="#example-40">example</a></h4>
+<pre><code class="language-nix">{
+  my.services.miniflux.privatePort = 8080;
+}
+</code></pre>
+<h4 id="default-41"><a class="header" href="#default-41">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.miniflux.privatePort = 8080;
+}
+</code></pre>
+<h2 id="myservicesnavidromeenable"><a class="header" href="#myservicesnavidromeenable">my.services.navidrome.enable</a></h2>
+<p>Whether to enable Navidrome.</p>
+<h4 id="type-48"><a class="header" href="#type-48">type</a></h4>
+<p>boolean</p>
+<h4 id="example-41"><a class="header" href="#example-41">example</a></h4>
+<pre><code class="language-nix">{
+  my.services.navidrome.enable = true;
+}
+</code></pre>
+<h4 id="default-42"><a class="header" href="#default-42">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.navidrome.enable = false;
+}
+</code></pre>
+<h2 id="myservicesnavidromemusicfolderbackup"><a class="header" href="#myservicesnavidromemusicfolderbackup">my.services.navidrome.musicFolder.backup</a></h2>
+<p>Whether to enable backup the music folder.</p>
+<h4 id="type-49"><a class="header" href="#type-49">type</a></h4>
+<p>boolean</p>
+<h4 id="example-42"><a class="header" href="#example-42">example</a></h4>
+<pre><code class="language-nix">{
+  my.services.navidrome.musicFolder.backup = true;
+}
+</code></pre>
+<h4 id="default-43"><a class="header" href="#default-43">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.navidrome.musicFolder.backup = false;
+}
+</code></pre>
+<h2 id="myservicesnavidromemusicfolderpath"><a class="header" href="#myservicesnavidromemusicfolderpath">my.services.navidrome.musicFolder.path</a></h2>
+<h4 id="type-50"><a class="header" href="#type-50">type</a></h4>
+<p>string</p>
+<h4 id="default-44"><a class="header" href="#default-44">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.navidrome.musicFolder.path = &quot;./music&quot;;
+}
+</code></pre>
+<h2 id="myservicesnextcloudenable"><a class="header" href="#myservicesnextcloudenable">my.services.nextcloud.enable</a></h2>
+<p>Whether to enable NextCloud.</p>
+<h4 id="type-51"><a class="header" href="#type-51">type</a></h4>
+<p>boolean</p>
+<h4 id="example-43"><a class="header" href="#example-43">example</a></h4>
+<pre><code class="language-nix">{
+  my.services.nextcloud.enable = true;
+}
+</code></pre>
+<h4 id="default-45"><a class="header" href="#default-45">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.nextcloud.enable = false;
+}
+</code></pre>
+<h2 id="myservicesnuageenable"><a class="header" href="#myservicesnuageenable">my.services.nuage.enable</a></h2>
+<p>Whether to enable Nuage redirect.</p>
+<h4 id="type-52"><a class="header" href="#type-52">type</a></h4>
+<p>boolean</p>
+<h4 id="example-44"><a class="header" href="#example-44">example</a></h4>
+<pre><code class="language-nix">{
+  my.services.nuage.enable = true;
+}
+</code></pre>
+<h4 id="default-46"><a class="header" href="#default-46">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.nuage.enable = false;
+}
+</code></pre>
+<h2 id="myservicespaperlessenable"><a class="header" href="#myservicespaperlessenable">my.services.paperless.enable</a></h2>
+<p>Whether to enable Paperless.</p>
+<h4 id="type-53"><a class="header" href="#type-53">type</a></h4>
+<p>boolean</p>
+<h4 id="example-45"><a class="header" href="#example-45">example</a></h4>
+<pre><code class="language-nix">{
+  my.services.paperless.enable = true;
+}
+</code></pre>
+<h4 id="default-47"><a class="header" href="#default-47">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.paperless.enable = false;
+}
+</code></pre>
+<h2 id="myservicespaperlessport"><a class="header" href="#myservicespaperlessport">my.services.paperless.port</a></h2>
+<p>Internal port for Paperless service</p>
+<h4 id="type-54"><a class="header" href="#type-54">type</a></h4>
+<p>16 bit unsigned integer; between 0 and 65535 (both inclusive)</p>
+<h4 id="example-46"><a class="header" href="#example-46">example</a></h4>
+<pre><code class="language-nix">{
+  my.services.paperless.port = 8080;
+}
+</code></pre>
+<h4 id="default-48"><a class="header" href="#default-48">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.paperless.port = 8080;
+}
+</code></pre>
+<h2 id="myservicespipewireenable"><a class="header" href="#myservicespipewireenable">my.services.pipewire.enable</a></h2>
+<p>Whether to enable Pipewire sound backend.</p>
+<h4 id="type-55"><a class="header" href="#type-55">type</a></h4>
+<p>boolean</p>
+<h4 id="example-47"><a class="header" href="#example-47">example</a></h4>
+<pre><code class="language-nix">{
+  my.services.pipewire.enable = true;
+}
+</code></pre>
+<h4 id="default-49"><a class="header" href="#default-49">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.pipewire.enable = false;
+}
+</code></pre>
+<h2 id="myservicespostgresql-backupenable"><a class="header" href="#myservicespostgresql-backupenable">my.services.postgresql-backup.enable</a></h2>
+<p>Whether to enable Backup SQL databases.</p>
+<h4 id="type-56"><a class="header" href="#type-56">type</a></h4>
+<p>boolean</p>
+<h4 id="example-48"><a class="header" href="#example-48">example</a></h4>
+<pre><code class="language-nix">{
+  my.services.postgresql-backup.enable = true;
+}
+</code></pre>
+<h4 id="default-50"><a class="header" href="#default-50">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.postgresql-backup.enable = false;
+}
+</code></pre>
+<h2 id="myservicesrestic-backupenable"><a class="header" href="#myservicesrestic-backupenable">my.services.restic-backup.enable</a></h2>
+<p>Whether to enable Enable Restic backups for this host.</p>
+<h4 id="type-57"><a class="header" href="#type-57">type</a></h4>
+<p>boolean</p>
+<h4 id="example-49"><a class="header" href="#example-49">example</a></h4>
+<pre><code class="language-nix">{
+  my.services.restic-backup.enable = true;
+}
+</code></pre>
+<h4 id="default-51"><a class="header" href="#default-51">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.restic-backup.enable = false;
+}
+</code></pre>
+<h2 id="myservicesrestic-backupexclude"><a class="header" href="#myservicesrestic-backupexclude">my.services.restic-backup.exclude</a></h2>
+<p>Paths to exclude from backup</p>
+<h4 id="type-58"><a class="header" href="#type-58">type</a></h4>
+<p>list of string</p>
+<h4 id="example-50"><a class="header" href="#example-50">example</a></h4>
+<pre><code class="language-nix">{
+  my.services.restic-backup.exclude = [
+    &quot;/var/lib/docker&quot;
+    &quot;/var/lib/systemd&quot;
+    &quot;/var/lib/libvirt&quot;
+    &quot;**/target&quot;
+    &quot;/home/*/go/bin&quot;
+    &quot;/home/*/go/pkg&quot;
+  ];
+}
+</code></pre>
+<h4 id="default-52"><a class="header" href="#default-52">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.restic-backup.exclude = [];
+}
+</code></pre>
+<h2 id="myservicesrestic-backuppaths"><a class="header" href="#myservicesrestic-backuppaths">my.services.restic-backup.paths</a></h2>
+<p>Paths to backup</p>
+<h4 id="type-59"><a class="header" href="#type-59">type</a></h4>
+<p>list of string</p>
+<h4 id="example-51"><a class="header" href="#example-51">example</a></h4>
+<pre><code class="language-nix">{
+  my.services.restic-backup.paths = [
+    &quot;/var/lib&quot;
+    &quot;/home&quot;
+  ];
+}
+</code></pre>
+<h4 id="default-53"><a class="header" href="#default-53">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.restic-backup.paths = [];
+}
+</code></pre>
+<h2 id="myservicesrestic-backupprune"><a class="header" href="#myservicesrestic-backupprune">my.services.restic-backup.prune</a></h2>
+<h4 id="type-60"><a class="header" href="#type-60">type</a></h4>
+<p>attribute set</p>
+<h4 id="default-54"><a class="header" href="#default-54">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.restic-backup.prune = {
+    daily = 7;
+    monthly = 6;
+    weekly = 4;
+  };
+}
+</code></pre>
+<h2 id="myservicesrestic-backuprepo"><a class="header" href="#myservicesrestic-backuprepo">my.services.restic-backup.repo</a></h2>
+<p>Restic backup repo</p>
+<h4 id="type-61"><a class="header" href="#type-61">type</a></h4>
+<p>string</p>
+<h4 id="example-52"><a class="header" href="#example-52">example</a></h4>
+<pre><code class="language-nix">{
+  my.services.restic-backup.repo = &quot;/mnt/hdd&quot;;
+}
+</code></pre>
+<h4 id="default-55"><a class="header" href="#default-55">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.restic-backup.repo = null;
+}
+</code></pre>
+<h2 id="myservicestailscaleenable"><a class="header" href="#myservicestailscaleenable">my.services.tailscale.enable</a></h2>
+<p>Whether to enable Tailscale.</p>
+<h4 id="type-62"><a class="header" href="#type-62">type</a></h4>
+<p>boolean</p>
+<h4 id="example-53"><a class="header" href="#example-53">example</a></h4>
+<pre><code class="language-nix">{
+  my.services.tailscale.enable = true;
+}
+</code></pre>
+<h4 id="default-56"><a class="header" href="#default-56">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.tailscale.enable = false;
+}
+</code></pre>
+<h2 id="myservicestailscaleexitnode"><a class="header" href="#myservicestailscaleexitnode">my.services.tailscale.exitNode</a></h2>
+<p>Whether to enable Use as exit node.</p>
+<h4 id="type-63"><a class="header" href="#type-63">type</a></h4>
+<p>boolean</p>
+<h4 id="example-54"><a class="header" href="#example-54">example</a></h4>
+<pre><code class="language-nix">{
+  my.services.tailscale.exitNode = true;
+}
+</code></pre>
+<h4 id="default-57"><a class="header" href="#default-57">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.tailscale.exitNode = false;
+}
+</code></pre>
+<h2 id="myservicestgvenable"><a class="header" href="#myservicestgvenable">my.services.tgv.enable</a></h2>
+<p>Whether to enable TGV redirect.</p>
+<h4 id="type-64"><a class="header" href="#type-64">type</a></h4>
+<p>boolean</p>
+<h4 id="example-55"><a class="header" href="#example-55">example</a></h4>
+<pre><code class="language-nix">{
+  my.services.tgv.enable = true;
+}
+</code></pre>
+<h4 id="default-58"><a class="header" href="#default-58">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.tgv.enable = false;
+}
+</code></pre>
+<h2 id="myservicestransmissionenable"><a class="header" href="#myservicestransmissionenable">my.services.transmission.enable</a></h2>
+<p>Whether to enable Transmission torrent client.</p>
+<h4 id="type-65"><a class="header" href="#type-65">type</a></h4>
+<p>boolean</p>
+<h4 id="example-56"><a class="header" href="#example-56">example</a></h4>
+<pre><code class="language-nix">{
+  my.services.transmission.enable = true;
+}
+</code></pre>
+<h4 id="default-59"><a class="header" href="#default-59">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.transmission.enable = false;
+}
+</code></pre>
+<h2 id="myservicestransmissionpassword"><a class="header" href="#myservicestransmissionpassword">my.services.transmission.password</a></h2>
+<p>Password of the transmission RPC user</p>
+<h4 id="type-66"><a class="header" href="#type-66">type</a></h4>
+<p>string</p>
+<h4 id="example-57"><a class="header" href="#example-57">example</a></h4>
+<pre><code class="language-nix">{
+  my.services.transmission.password = &quot;password&quot;;
+}
+</code></pre>
+<h2 id="myservicestransmissionusername"><a class="header" href="#myservicestransmissionusername">my.services.transmission.username</a></h2>
+<p>Name of the transmission RPC user</p>
+<h4 id="type-67"><a class="header" href="#type-67">type</a></h4>
+<p>string</p>
+<h4 id="example-58"><a class="header" href="#example-58">example</a></h4>
+<pre><code class="language-nix">{
+  my.services.transmission.username = &quot;username&quot;;
+}
+</code></pre>
+<h4 id="default-60"><a class="header" href="#default-60">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.transmission.username = &quot;alarsyo&quot;;
+}
+</code></pre>
+<h2 id="myservicesvaultwardenenable"><a class="header" href="#myservicesvaultwardenenable">my.services.vaultwarden.enable</a></h2>
+<p>Whether to enable Vaultwarden.</p>
+<h4 id="type-68"><a class="header" href="#type-68">type</a></h4>
+<p>boolean</p>
+<h4 id="example-59"><a class="header" href="#example-59">example</a></h4>
+<pre><code class="language-nix">{
+  my.services.vaultwarden.enable = true;
+}
+</code></pre>
+<h4 id="default-61"><a class="header" href="#default-61">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.vaultwarden.enable = false;
+}
+</code></pre>
+<h2 id="myservicesvaultwardenprivateport"><a class="header" href="#myservicesvaultwardenprivateport">my.services.vaultwarden.privatePort</a></h2>
+<p>Port used internally for rocket server</p>
+<h4 id="type-69"><a class="header" href="#type-69">type</a></h4>
+<p>16 bit unsigned integer; between 0 and 65535 (both inclusive)</p>
+<h4 id="example-60"><a class="header" href="#example-60">example</a></h4>
+<pre><code class="language-nix">{
+  my.services.vaultwarden.privatePort = 8081;
+}
+</code></pre>
+<h4 id="default-62"><a class="header" href="#default-62">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.vaultwarden.privatePort = 8081;
+}
+</code></pre>
+<h2 id="myservicesvaultwardenwebsocketport"><a class="header" href="#myservicesvaultwardenwebsocketport">my.services.vaultwarden.websocketPort</a></h2>
+<p>Port used for websocket connections</p>
+<h4 id="type-70"><a class="header" href="#type-70">type</a></h4>
+<p>16 bit unsigned integer; between 0 and 65535 (both inclusive)</p>
+<h4 id="example-61"><a class="header" href="#example-61">example</a></h4>
+<pre><code class="language-nix">{
+  my.services.vaultwarden.websocketPort = 3012;
+}
+</code></pre>
+<h4 id="default-63"><a class="header" href="#default-63">default</a></h4>
+<pre><code class="language-nix">{
+  my.services.vaultwarden.websocketPort = 3012;
+}
+</code></pre>
+<h2 id="mytheme"><a class="header" href="#mytheme">my.theme</a></h2>
+<h4 id="type-71"><a class="header" href="#type-71">type</a></h4>
+<p>submodule</p>
+<h4 id="default-64"><a class="header" href="#default-64">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme = {};
+}
+</code></pre>
+<h2 id="mythemealacrittytheme"><a class="header" href="#mythemealacrittytheme">my.theme.alacrittyTheme</a></h2>
+<h4 id="type-72"><a class="header" href="#type-72">type</a></h4>
+<p>submodule</p>
+<h4 id="default-65"><a class="header" href="#default-65">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme = {};
+}
+</code></pre>
+<h2 id="mythemealacrittythemebright"><a class="header" href="#mythemealacrittythemebright">my.theme.alacrittyTheme.bright</a></h2>
+<h4 id="type-73"><a class="header" href="#type-73">type</a></h4>
+<p>submodule</p>
+<h4 id="default-66"><a class="header" href="#default-66">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.bright = {
+    black = &quot;#666666&quot;;
+    blue = &quot;#7aa6da&quot;;
+    cyan = &quot;#70c0b1&quot;;
+    green = &quot;#b9ca4a&quot;;
+    magenta = &quot;#c397d8&quot;;
+    red = &quot;#d54e53&quot;;
+    white = &quot;#eaeaea&quot;;
+    yellow = &quot;#e7c547&quot;;
+  };
+}
+</code></pre>
+<h2 id="mythemealacrittythemebrightblack"><a class="header" href="#mythemealacrittythemebrightblack">my.theme.alacrittyTheme.bright.black</a></h2>
+<h4 id="type-74"><a class="header" href="#type-74">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-62"><a class="header" href="#example-62">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.bright.black = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-67"><a class="header" href="#default-67">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.bright.black = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemealacrittythemebrightblue"><a class="header" href="#mythemealacrittythemebrightblue">my.theme.alacrittyTheme.bright.blue</a></h2>
+<h4 id="type-75"><a class="header" href="#type-75">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-63"><a class="header" href="#example-63">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.bright.blue = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-68"><a class="header" href="#default-68">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.bright.blue = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemealacrittythemebrightcyan"><a class="header" href="#mythemealacrittythemebrightcyan">my.theme.alacrittyTheme.bright.cyan</a></h2>
+<h4 id="type-76"><a class="header" href="#type-76">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-64"><a class="header" href="#example-64">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.bright.cyan = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-69"><a class="header" href="#default-69">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.bright.cyan = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemealacrittythemebrightgreen"><a class="header" href="#mythemealacrittythemebrightgreen">my.theme.alacrittyTheme.bright.green</a></h2>
+<h4 id="type-77"><a class="header" href="#type-77">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-65"><a class="header" href="#example-65">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.bright.green = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-70"><a class="header" href="#default-70">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.bright.green = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemealacrittythemebrightmagenta"><a class="header" href="#mythemealacrittythemebrightmagenta">my.theme.alacrittyTheme.bright.magenta</a></h2>
+<h4 id="type-78"><a class="header" href="#type-78">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-66"><a class="header" href="#example-66">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.bright.magenta = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-71"><a class="header" href="#default-71">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.bright.magenta = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemealacrittythemebrightred"><a class="header" href="#mythemealacrittythemebrightred">my.theme.alacrittyTheme.bright.red</a></h2>
+<h4 id="type-79"><a class="header" href="#type-79">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-67"><a class="header" href="#example-67">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.bright.red = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-72"><a class="header" href="#default-72">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.bright.red = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemealacrittythemebrightwhite"><a class="header" href="#mythemealacrittythemebrightwhite">my.theme.alacrittyTheme.bright.white</a></h2>
+<h4 id="type-80"><a class="header" href="#type-80">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-68"><a class="header" href="#example-68">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.bright.white = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-73"><a class="header" href="#default-73">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.bright.white = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemealacrittythemebrightyellow"><a class="header" href="#mythemealacrittythemebrightyellow">my.theme.alacrittyTheme.bright.yellow</a></h2>
+<h4 id="type-81"><a class="header" href="#type-81">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-69"><a class="header" href="#example-69">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.bright.yellow = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-74"><a class="header" href="#default-74">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.bright.yellow = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemealacrittythemecursor"><a class="header" href="#mythemealacrittythemecursor">my.theme.alacrittyTheme.cursor</a></h2>
+<h4 id="type-82"><a class="header" href="#type-82">type</a></h4>
+<p>submodule</p>
+<h4 id="default-75"><a class="header" href="#default-75">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.cursor = {
+    cursor = &quot;#c5c8c6&quot;;
+    text = &quot;#1d1f21&quot;;
+  };
+}
+</code></pre>
+<h2 id="mythemealacrittythemecursorcursor"><a class="header" href="#mythemealacrittythemecursorcursor">my.theme.alacrittyTheme.cursor.cursor</a></h2>
+<h4 id="type-83"><a class="header" href="#type-83">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-70"><a class="header" href="#example-70">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.cursor.cursor = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-76"><a class="header" href="#default-76">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.cursor.cursor = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemealacrittythemecursortext"><a class="header" href="#mythemealacrittythemecursortext">my.theme.alacrittyTheme.cursor.text</a></h2>
+<h4 id="type-84"><a class="header" href="#type-84">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-71"><a class="header" href="#example-71">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.cursor.text = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-77"><a class="header" href="#default-77">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.cursor.text = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemealacrittythemedim"><a class="header" href="#mythemealacrittythemedim">my.theme.alacrittyTheme.dim</a></h2>
+<h4 id="type-85"><a class="header" href="#type-85">type</a></h4>
+<p>submodule</p>
+<h4 id="default-78"><a class="header" href="#default-78">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.dim = {
+    black = &quot;#131415&quot;;
+    blue = &quot;#556a7d&quot;;
+    cyan = &quot;#5b7d78&quot;;
+    green = &quot;#777c44&quot;;
+    magenta = &quot;#75617b&quot;;
+    red = &quot;#864343&quot;;
+    white = &quot;#828482&quot;;
+    yellow = &quot;#9e824c&quot;;
+  };
+}
+</code></pre>
+<h2 id="mythemealacrittythemedimblack"><a class="header" href="#mythemealacrittythemedimblack">my.theme.alacrittyTheme.dim.black</a></h2>
+<h4 id="type-86"><a class="header" href="#type-86">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-72"><a class="header" href="#example-72">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.dim.black = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-79"><a class="header" href="#default-79">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.dim.black = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemealacrittythemedimblue"><a class="header" href="#mythemealacrittythemedimblue">my.theme.alacrittyTheme.dim.blue</a></h2>
+<h4 id="type-87"><a class="header" href="#type-87">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-73"><a class="header" href="#example-73">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.dim.blue = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-80"><a class="header" href="#default-80">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.dim.blue = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemealacrittythemedimcyan"><a class="header" href="#mythemealacrittythemedimcyan">my.theme.alacrittyTheme.dim.cyan</a></h2>
+<h4 id="type-88"><a class="header" href="#type-88">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-74"><a class="header" href="#example-74">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.dim.cyan = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-81"><a class="header" href="#default-81">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.dim.cyan = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemealacrittythemedimgreen"><a class="header" href="#mythemealacrittythemedimgreen">my.theme.alacrittyTheme.dim.green</a></h2>
+<h4 id="type-89"><a class="header" href="#type-89">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-75"><a class="header" href="#example-75">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.dim.green = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-82"><a class="header" href="#default-82">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.dim.green = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemealacrittythemedimmagenta"><a class="header" href="#mythemealacrittythemedimmagenta">my.theme.alacrittyTheme.dim.magenta</a></h2>
+<h4 id="type-90"><a class="header" href="#type-90">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-76"><a class="header" href="#example-76">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.dim.magenta = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-83"><a class="header" href="#default-83">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.dim.magenta = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemealacrittythemedimred"><a class="header" href="#mythemealacrittythemedimred">my.theme.alacrittyTheme.dim.red</a></h2>
+<h4 id="type-91"><a class="header" href="#type-91">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-77"><a class="header" href="#example-77">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.dim.red = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-84"><a class="header" href="#default-84">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.dim.red = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemealacrittythemedimwhite"><a class="header" href="#mythemealacrittythemedimwhite">my.theme.alacrittyTheme.dim.white</a></h2>
+<h4 id="type-92"><a class="header" href="#type-92">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-78"><a class="header" href="#example-78">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.dim.white = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-85"><a class="header" href="#default-85">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.dim.white = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemealacrittythemedimyellow"><a class="header" href="#mythemealacrittythemedimyellow">my.theme.alacrittyTheme.dim.yellow</a></h2>
+<h4 id="type-93"><a class="header" href="#type-93">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-79"><a class="header" href="#example-79">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.dim.yellow = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-86"><a class="header" href="#default-86">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.dim.yellow = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemealacrittythemenormal"><a class="header" href="#mythemealacrittythemenormal">my.theme.alacrittyTheme.normal</a></h2>
+<h4 id="type-94"><a class="header" href="#type-94">type</a></h4>
+<p>submodule</p>
+<h4 id="default-87"><a class="header" href="#default-87">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.normal = {
+    black = &quot;#1d1f21&quot;;
+    blue = &quot;#81a2be&quot;;
+    cyan = &quot;#8abeb7&quot;;
+    green = &quot;#b5bd68&quot;;
+    magenta = &quot;#b294bb&quot;;
+    red = &quot;#cc6666&quot;;
+    white = &quot;#c5c8c6&quot;;
+    yellow = &quot;#f0c674&quot;;
+  };
+}
+</code></pre>
+<h2 id="mythemealacrittythemenormalblack"><a class="header" href="#mythemealacrittythemenormalblack">my.theme.alacrittyTheme.normal.black</a></h2>
+<h4 id="type-95"><a class="header" href="#type-95">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-80"><a class="header" href="#example-80">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.normal.black = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-88"><a class="header" href="#default-88">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.normal.black = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemealacrittythemenormalblue"><a class="header" href="#mythemealacrittythemenormalblue">my.theme.alacrittyTheme.normal.blue</a></h2>
+<h4 id="type-96"><a class="header" href="#type-96">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-81"><a class="header" href="#example-81">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.normal.blue = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-89"><a class="header" href="#default-89">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.normal.blue = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemealacrittythemenormalcyan"><a class="header" href="#mythemealacrittythemenormalcyan">my.theme.alacrittyTheme.normal.cyan</a></h2>
+<h4 id="type-97"><a class="header" href="#type-97">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-82"><a class="header" href="#example-82">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.normal.cyan = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-90"><a class="header" href="#default-90">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.normal.cyan = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemealacrittythemenormalgreen"><a class="header" href="#mythemealacrittythemenormalgreen">my.theme.alacrittyTheme.normal.green</a></h2>
+<h4 id="type-98"><a class="header" href="#type-98">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-83"><a class="header" href="#example-83">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.normal.green = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-91"><a class="header" href="#default-91">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.normal.green = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemealacrittythemenormalmagenta"><a class="header" href="#mythemealacrittythemenormalmagenta">my.theme.alacrittyTheme.normal.magenta</a></h2>
+<h4 id="type-99"><a class="header" href="#type-99">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-84"><a class="header" href="#example-84">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.normal.magenta = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-92"><a class="header" href="#default-92">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.normal.magenta = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemealacrittythemenormalred"><a class="header" href="#mythemealacrittythemenormalred">my.theme.alacrittyTheme.normal.red</a></h2>
+<h4 id="type-100"><a class="header" href="#type-100">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-85"><a class="header" href="#example-85">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.normal.red = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-93"><a class="header" href="#default-93">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.normal.red = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemealacrittythemenormalwhite"><a class="header" href="#mythemealacrittythemenormalwhite">my.theme.alacrittyTheme.normal.white</a></h2>
+<h4 id="type-101"><a class="header" href="#type-101">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-86"><a class="header" href="#example-86">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.normal.white = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-94"><a class="header" href="#default-94">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.normal.white = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemealacrittythemenormalyellow"><a class="header" href="#mythemealacrittythemenormalyellow">my.theme.alacrittyTheme.normal.yellow</a></h2>
+<h4 id="type-102"><a class="header" href="#type-102">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-87"><a class="header" href="#example-87">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.normal.yellow = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-95"><a class="header" href="#default-95">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.normal.yellow = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemealacrittythemeprimary"><a class="header" href="#mythemealacrittythemeprimary">my.theme.alacrittyTheme.primary</a></h2>
+<h4 id="type-103"><a class="header" href="#type-103">type</a></h4>
+<p>submodule</p>
+<h4 id="default-96"><a class="header" href="#default-96">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.primary = {
+    background = &quot;#1d1f21&quot;;
+    foreground = &quot;#c5c8c6&quot;;
+  };
+}
+</code></pre>
+<h2 id="mythemealacrittythemeprimarybackground"><a class="header" href="#mythemealacrittythemeprimarybackground">my.theme.alacrittyTheme.primary.background</a></h2>
+<h4 id="type-104"><a class="header" href="#type-104">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-88"><a class="header" href="#example-88">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.primary.background = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-97"><a class="header" href="#default-97">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.primary.background = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemealacrittythemeprimaryforeground"><a class="header" href="#mythemealacrittythemeprimaryforeground">my.theme.alacrittyTheme.primary.foreground</a></h2>
+<h4 id="type-105"><a class="header" href="#type-105">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-89"><a class="header" href="#example-89">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.primary.foreground = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-98"><a class="header" href="#default-98">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.alacrittyTheme.primary.foreground = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemebattheme"><a class="header" href="#mythemebattheme">my.theme.batTheme</a></h2>
+<h4 id="type-106"><a class="header" href="#type-106">type</a></h4>
+<p>submodule</p>
+<h4 id="default-99"><a class="header" href="#default-99">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.batTheme = {};
+}
+</code></pre>
+<h2 id="mythemebatthemename"><a class="header" href="#mythemebatthemename">my.theme.batTheme.name</a></h2>
+<h4 id="type-107"><a class="header" href="#type-107">type</a></h4>
+<p>string</p>
+<h4 id="default-100"><a class="header" href="#default-100">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.batTheme.name = &quot;&quot;;
+}
+</code></pre>
+<h2 id="mythemei3bartheme"><a class="header" href="#mythemei3bartheme">my.theme.i3BarTheme</a></h2>
+<h4 id="type-108"><a class="header" href="#type-108">type</a></h4>
+<p>submodule</p>
+<h4 id="default-101"><a class="header" href="#default-101">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3BarTheme = {};
+}
+</code></pre>
+<h2 id="mythemei3barthemetheme"><a class="header" href="#mythemei3barthemetheme">my.theme.i3BarTheme.theme</a></h2>
+<h4 id="type-109"><a class="header" href="#type-109">type</a></h4>
+<p>submodule</p>
+<h4 id="default-102"><a class="header" href="#default-102">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3BarTheme.theme = {};
+}
+</code></pre>
+<h2 id="mythemei3barthemethemename"><a class="header" href="#mythemei3barthemethemename">my.theme.i3BarTheme.theme.name</a></h2>
+<h4 id="type-110"><a class="header" href="#type-110">type</a></h4>
+<p>string</p>
+<h4 id="default-103"><a class="header" href="#default-103">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3BarTheme.theme.name = &quot;plain&quot;;
+}
+</code></pre>
+<h2 id="mythemei3barthemethemeoverrides"><a class="header" href="#mythemei3barthemethemeoverrides">my.theme.i3BarTheme.theme.overrides</a></h2>
+<h4 id="type-111"><a class="header" href="#type-111">type</a></h4>
+<p>attribute set of string</p>
+<h4 id="default-104"><a class="header" href="#default-104">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3BarTheme.theme.overrides = {};
+}
+</code></pre>
+<h2 id="mythemei3theme"><a class="header" href="#mythemei3theme">my.theme.i3Theme</a></h2>
+<h4 id="type-112"><a class="header" href="#type-112">type</a></h4>
+<p>submodule</p>
+<h4 id="default-105"><a class="header" href="#default-105">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme = {};
+}
+</code></pre>
+<h2 id="mythemei3themebackground"><a class="header" href="#mythemei3themebackground">my.theme.i3Theme.background</a></h2>
+<p>Background color of the window. Only applications which do not cover
+the whole area expose the color.</p>
+<h4 id="type-113"><a class="header" href="#type-113">type</a></h4>
+<p>string</p>
+<h4 id="default-106"><a class="header" href="#default-106">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.background = &quot;#ffffff&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themebar"><a class="header" href="#mythemei3themebar">my.theme.i3Theme.bar</a></h2>
+<h4 id="type-114"><a class="header" href="#type-114">type</a></h4>
+<p>submodule</p>
+<h4 id="default-107"><a class="header" href="#default-107">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.bar = {};
+}
+</code></pre>
+<h2 id="mythemei3themebaractiveworkspace"><a class="header" href="#mythemei3themebaractiveworkspace">my.theme.i3Theme.bar.activeWorkspace</a></h2>
+<p>Border, background and text color for a workspace button when the workspace is active.</p>
+<h4 id="type-115"><a class="header" href="#type-115">type</a></h4>
+<p>submodule</p>
+<h4 id="default-108"><a class="header" href="#default-108">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.bar.activeWorkspace = {
+    background = &quot;#5f676a&quot;;
+    border = &quot;#333333&quot;;
+    text = &quot;#ffffff&quot;;
+  };
+}
+</code></pre>
+<h2 id="mythemei3themebaractiveworkspacebackground"><a class="header" href="#mythemei3themebaractiveworkspacebackground">my.theme.i3Theme.bar.activeWorkspace.background</a></h2>
+<h4 id="type-116"><a class="header" href="#type-116">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-90"><a class="header" href="#example-90">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.bar.activeWorkspace.background = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-109"><a class="header" href="#default-109">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.bar.activeWorkspace.background = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themebaractiveworkspaceborder"><a class="header" href="#mythemei3themebaractiveworkspaceborder">my.theme.i3Theme.bar.activeWorkspace.border</a></h2>
+<h4 id="type-117"><a class="header" href="#type-117">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-91"><a class="header" href="#example-91">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.bar.activeWorkspace.border = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-110"><a class="header" href="#default-110">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.bar.activeWorkspace.border = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themebaractiveworkspacetext"><a class="header" href="#mythemei3themebaractiveworkspacetext">my.theme.i3Theme.bar.activeWorkspace.text</a></h2>
+<h4 id="type-118"><a class="header" href="#type-118">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-92"><a class="header" href="#example-92">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.bar.activeWorkspace.text = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-111"><a class="header" href="#default-111">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.bar.activeWorkspace.text = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themebarbackground"><a class="header" href="#mythemei3themebarbackground">my.theme.i3Theme.bar.background</a></h2>
+<p>Background color of the bar.</p>
+<h4 id="type-119"><a class="header" href="#type-119">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-93"><a class="header" href="#example-93">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.bar.background = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-112"><a class="header" href="#default-112">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.bar.background = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themebarbindingmode"><a class="header" href="#mythemei3themebarbindingmode">my.theme.i3Theme.bar.bindingMode</a></h2>
+<p>Border, background and text color for the binding mode indicator</p>
+<h4 id="type-120"><a class="header" href="#type-120">type</a></h4>
+<p>submodule</p>
+<h4 id="default-113"><a class="header" href="#default-113">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.bar.bindingMode = {
+    background = &quot;#900000&quot;;
+    border = &quot;#2f343a&quot;;
+    text = &quot;#ffffff&quot;;
+  };
+}
+</code></pre>
+<h2 id="mythemei3themebarbindingmodebackground"><a class="header" href="#mythemei3themebarbindingmodebackground">my.theme.i3Theme.bar.bindingMode.background</a></h2>
+<h4 id="type-121"><a class="header" href="#type-121">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-94"><a class="header" href="#example-94">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.bar.bindingMode.background = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-114"><a class="header" href="#default-114">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.bar.bindingMode.background = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themebarbindingmodeborder"><a class="header" href="#mythemei3themebarbindingmodeborder">my.theme.i3Theme.bar.bindingMode.border</a></h2>
+<h4 id="type-122"><a class="header" href="#type-122">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-95"><a class="header" href="#example-95">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.bar.bindingMode.border = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-115"><a class="header" href="#default-115">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.bar.bindingMode.border = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themebarbindingmodetext"><a class="header" href="#mythemei3themebarbindingmodetext">my.theme.i3Theme.bar.bindingMode.text</a></h2>
+<h4 id="type-123"><a class="header" href="#type-123">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-96"><a class="header" href="#example-96">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.bar.bindingMode.text = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-116"><a class="header" href="#default-116">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.bar.bindingMode.text = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themebarfocusedworkspace"><a class="header" href="#mythemei3themebarfocusedworkspace">my.theme.i3Theme.bar.focusedWorkspace</a></h2>
+<p>Border, background and text color for a workspace button when the workspace has focus.</p>
+<h4 id="type-124"><a class="header" href="#type-124">type</a></h4>
+<p>submodule</p>
+<h4 id="default-117"><a class="header" href="#default-117">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.bar.focusedWorkspace = {
+    background = &quot;#285577&quot;;
+    border = &quot;#4c7899&quot;;
+    text = &quot;#ffffff&quot;;
+  };
+}
+</code></pre>
+<h2 id="mythemei3themebarfocusedworkspacebackground"><a class="header" href="#mythemei3themebarfocusedworkspacebackground">my.theme.i3Theme.bar.focusedWorkspace.background</a></h2>
+<h4 id="type-125"><a class="header" href="#type-125">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-97"><a class="header" href="#example-97">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.bar.focusedWorkspace.background = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-118"><a class="header" href="#default-118">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.bar.focusedWorkspace.background = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themebarfocusedworkspaceborder"><a class="header" href="#mythemei3themebarfocusedworkspaceborder">my.theme.i3Theme.bar.focusedWorkspace.border</a></h2>
+<h4 id="type-126"><a class="header" href="#type-126">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-98"><a class="header" href="#example-98">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.bar.focusedWorkspace.border = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-119"><a class="header" href="#default-119">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.bar.focusedWorkspace.border = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themebarfocusedworkspacetext"><a class="header" href="#mythemei3themebarfocusedworkspacetext">my.theme.i3Theme.bar.focusedWorkspace.text</a></h2>
+<h4 id="type-127"><a class="header" href="#type-127">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-99"><a class="header" href="#example-99">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.bar.focusedWorkspace.text = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-120"><a class="header" href="#default-120">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.bar.focusedWorkspace.text = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themebarinactiveworkspace"><a class="header" href="#mythemei3themebarinactiveworkspace">my.theme.i3Theme.bar.inactiveWorkspace</a></h2>
+<p>Border, background and text color for a workspace button when the workspace does not
+have focus and is not active.</p>
+<h4 id="type-128"><a class="header" href="#type-128">type</a></h4>
+<p>submodule</p>
+<h4 id="default-121"><a class="header" href="#default-121">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.bar.inactiveWorkspace = {
+    background = &quot;#222222&quot;;
+    border = &quot;#333333&quot;;
+    text = &quot;#888888&quot;;
+  };
+}
+</code></pre>
+<h2 id="mythemei3themebarinactiveworkspacebackground"><a class="header" href="#mythemei3themebarinactiveworkspacebackground">my.theme.i3Theme.bar.inactiveWorkspace.background</a></h2>
+<h4 id="type-129"><a class="header" href="#type-129">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-100"><a class="header" href="#example-100">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.bar.inactiveWorkspace.background = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-122"><a class="header" href="#default-122">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.bar.inactiveWorkspace.background = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themebarinactiveworkspaceborder"><a class="header" href="#mythemei3themebarinactiveworkspaceborder">my.theme.i3Theme.bar.inactiveWorkspace.border</a></h2>
+<h4 id="type-130"><a class="header" href="#type-130">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-101"><a class="header" href="#example-101">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.bar.inactiveWorkspace.border = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-123"><a class="header" href="#default-123">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.bar.inactiveWorkspace.border = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themebarinactiveworkspacetext"><a class="header" href="#mythemei3themebarinactiveworkspacetext">my.theme.i3Theme.bar.inactiveWorkspace.text</a></h2>
+<h4 id="type-131"><a class="header" href="#type-131">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-102"><a class="header" href="#example-102">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.bar.inactiveWorkspace.text = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-124"><a class="header" href="#default-124">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.bar.inactiveWorkspace.text = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themebarseparator"><a class="header" href="#mythemei3themebarseparator">my.theme.i3Theme.bar.separator</a></h2>
+<p>Text color to be used for the separator.</p>
+<h4 id="type-132"><a class="header" href="#type-132">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-103"><a class="header" href="#example-103">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.bar.separator = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-125"><a class="header" href="#default-125">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.bar.separator = &quot;#666666&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themebarstatusline"><a class="header" href="#mythemei3themebarstatusline">my.theme.i3Theme.bar.statusline</a></h2>
+<p>Text color to be used for the statusline.</p>
+<h4 id="type-133"><a class="header" href="#type-133">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-104"><a class="header" href="#example-104">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.bar.statusline = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-126"><a class="header" href="#default-126">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.bar.statusline = &quot;#ffffff&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themebarurgentworkspace"><a class="header" href="#mythemei3themebarurgentworkspace">my.theme.i3Theme.bar.urgentWorkspace</a></h2>
+<p>Border, background and text color for a workspace button when the workspace contains
+a window with the urgency hint set.</p>
+<h4 id="type-134"><a class="header" href="#type-134">type</a></h4>
+<p>submodule</p>
+<h4 id="default-127"><a class="header" href="#default-127">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.bar.urgentWorkspace = {
+    background = &quot;#900000&quot;;
+    border = &quot;#2f343a&quot;;
+    text = &quot;#ffffff&quot;;
+  };
+}
+</code></pre>
+<h2 id="mythemei3themebarurgentworkspacebackground"><a class="header" href="#mythemei3themebarurgentworkspacebackground">my.theme.i3Theme.bar.urgentWorkspace.background</a></h2>
+<h4 id="type-135"><a class="header" href="#type-135">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-105"><a class="header" href="#example-105">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.bar.urgentWorkspace.background = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-128"><a class="header" href="#default-128">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.bar.urgentWorkspace.background = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themebarurgentworkspaceborder"><a class="header" href="#mythemei3themebarurgentworkspaceborder">my.theme.i3Theme.bar.urgentWorkspace.border</a></h2>
+<h4 id="type-136"><a class="header" href="#type-136">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-106"><a class="header" href="#example-106">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.bar.urgentWorkspace.border = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-129"><a class="header" href="#default-129">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.bar.urgentWorkspace.border = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themebarurgentworkspacetext"><a class="header" href="#mythemei3themebarurgentworkspacetext">my.theme.i3Theme.bar.urgentWorkspace.text</a></h2>
+<h4 id="type-137"><a class="header" href="#type-137">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-107"><a class="header" href="#example-107">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.bar.urgentWorkspace.text = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-130"><a class="header" href="#default-130">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.bar.urgentWorkspace.text = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themefocused"><a class="header" href="#mythemei3themefocused">my.theme.i3Theme.focused</a></h2>
+<p>A window which currently has the focus.</p>
+<h4 id="type-138"><a class="header" href="#type-138">type</a></h4>
+<p>submodule</p>
+<h4 id="default-131"><a class="header" href="#default-131">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.focused = {
+    background = &quot;#285577&quot;;
+    border = &quot;#4c7899&quot;;
+    childBorder = &quot;#285577&quot;;
+    indicator = &quot;#2e9ef4&quot;;
+    text = &quot;#ffffff&quot;;
+  };
+}
+</code></pre>
+<h2 id="mythemei3themefocusedbackground"><a class="header" href="#mythemei3themefocusedbackground">my.theme.i3Theme.focused.background</a></h2>
+<h4 id="type-139"><a class="header" href="#type-139">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-108"><a class="header" href="#example-108">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.focused.background = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-132"><a class="header" href="#default-132">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.focused.background = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themefocusedborder"><a class="header" href="#mythemei3themefocusedborder">my.theme.i3Theme.focused.border</a></h2>
+<h4 id="type-140"><a class="header" href="#type-140">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-109"><a class="header" href="#example-109">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.focused.border = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-133"><a class="header" href="#default-133">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.focused.border = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themefocusedchildborder"><a class="header" href="#mythemei3themefocusedchildborder">my.theme.i3Theme.focused.childBorder</a></h2>
+<h4 id="type-141"><a class="header" href="#type-141">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-110"><a class="header" href="#example-110">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.focused.childBorder = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-134"><a class="header" href="#default-134">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.focused.childBorder = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themefocusedindicator"><a class="header" href="#mythemei3themefocusedindicator">my.theme.i3Theme.focused.indicator</a></h2>
+<h4 id="type-142"><a class="header" href="#type-142">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-111"><a class="header" href="#example-111">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.focused.indicator = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-135"><a class="header" href="#default-135">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.focused.indicator = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themefocusedtext"><a class="header" href="#mythemei3themefocusedtext">my.theme.i3Theme.focused.text</a></h2>
+<h4 id="type-143"><a class="header" href="#type-143">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-112"><a class="header" href="#example-112">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.focused.text = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-136"><a class="header" href="#default-136">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.focused.text = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themefocusedinactive"><a class="header" href="#mythemei3themefocusedinactive">my.theme.i3Theme.focusedInactive</a></h2>
+<p>A window which is the focused one of its container,
+but it does not have the focus at the moment.</p>
+<h4 id="type-144"><a class="header" href="#type-144">type</a></h4>
+<p>submodule</p>
+<h4 id="default-137"><a class="header" href="#default-137">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.focusedInactive = {
+    background = &quot;#5f676a&quot;;
+    border = &quot;#333333&quot;;
+    childBorder = &quot;#5f676a&quot;;
+    indicator = &quot;#484e50&quot;;
+    text = &quot;#ffffff&quot;;
+  };
+}
+</code></pre>
+<h2 id="mythemei3themefocusedinactivebackground"><a class="header" href="#mythemei3themefocusedinactivebackground">my.theme.i3Theme.focusedInactive.background</a></h2>
+<h4 id="type-145"><a class="header" href="#type-145">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-113"><a class="header" href="#example-113">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.focusedInactive.background = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-138"><a class="header" href="#default-138">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.focusedInactive.background = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themefocusedinactiveborder"><a class="header" href="#mythemei3themefocusedinactiveborder">my.theme.i3Theme.focusedInactive.border</a></h2>
+<h4 id="type-146"><a class="header" href="#type-146">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-114"><a class="header" href="#example-114">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.focusedInactive.border = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-139"><a class="header" href="#default-139">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.focusedInactive.border = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themefocusedinactivechildborder"><a class="header" href="#mythemei3themefocusedinactivechildborder">my.theme.i3Theme.focusedInactive.childBorder</a></h2>
+<h4 id="type-147"><a class="header" href="#type-147">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-115"><a class="header" href="#example-115">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.focusedInactive.childBorder = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-140"><a class="header" href="#default-140">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.focusedInactive.childBorder = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themefocusedinactiveindicator"><a class="header" href="#mythemei3themefocusedinactiveindicator">my.theme.i3Theme.focusedInactive.indicator</a></h2>
+<h4 id="type-148"><a class="header" href="#type-148">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-116"><a class="header" href="#example-116">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.focusedInactive.indicator = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-141"><a class="header" href="#default-141">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.focusedInactive.indicator = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themefocusedinactivetext"><a class="header" href="#mythemei3themefocusedinactivetext">my.theme.i3Theme.focusedInactive.text</a></h2>
+<h4 id="type-149"><a class="header" href="#type-149">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-117"><a class="header" href="#example-117">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.focusedInactive.text = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-142"><a class="header" href="#default-142">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.focusedInactive.text = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themeplaceholder"><a class="header" href="#mythemei3themeplaceholder">my.theme.i3Theme.placeholder</a></h2>
+<p>Background and text color are used to draw placeholder window
+contents (when restoring layouts). Border and indicator are ignored.</p>
+<h4 id="type-150"><a class="header" href="#type-150">type</a></h4>
+<p>submodule</p>
+<h4 id="default-143"><a class="header" href="#default-143">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.placeholder = {
+    background = &quot;#0c0c0c&quot;;
+    border = &quot;#000000&quot;;
+    childBorder = &quot;#0c0c0c&quot;;
+    indicator = &quot;#000000&quot;;
+    text = &quot;#ffffff&quot;;
+  };
+}
+</code></pre>
+<h2 id="mythemei3themeplaceholderbackground"><a class="header" href="#mythemei3themeplaceholderbackground">my.theme.i3Theme.placeholder.background</a></h2>
+<h4 id="type-151"><a class="header" href="#type-151">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-118"><a class="header" href="#example-118">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.placeholder.background = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-144"><a class="header" href="#default-144">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.placeholder.background = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themeplaceholderborder"><a class="header" href="#mythemei3themeplaceholderborder">my.theme.i3Theme.placeholder.border</a></h2>
+<h4 id="type-152"><a class="header" href="#type-152">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-119"><a class="header" href="#example-119">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.placeholder.border = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-145"><a class="header" href="#default-145">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.placeholder.border = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themeplaceholderchildborder"><a class="header" href="#mythemei3themeplaceholderchildborder">my.theme.i3Theme.placeholder.childBorder</a></h2>
+<h4 id="type-153"><a class="header" href="#type-153">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-120"><a class="header" href="#example-120">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.placeholder.childBorder = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-146"><a class="header" href="#default-146">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.placeholder.childBorder = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themeplaceholderindicator"><a class="header" href="#mythemei3themeplaceholderindicator">my.theme.i3Theme.placeholder.indicator</a></h2>
+<h4 id="type-154"><a class="header" href="#type-154">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-121"><a class="header" href="#example-121">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.placeholder.indicator = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-147"><a class="header" href="#default-147">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.placeholder.indicator = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themeplaceholdertext"><a class="header" href="#mythemei3themeplaceholdertext">my.theme.i3Theme.placeholder.text</a></h2>
+<h4 id="type-155"><a class="header" href="#type-155">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-122"><a class="header" href="#example-122">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.placeholder.text = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-148"><a class="header" href="#default-148">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.placeholder.text = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themeunfocused"><a class="header" href="#mythemei3themeunfocused">my.theme.i3Theme.unfocused</a></h2>
+<p>A window which is not focused.</p>
+<h4 id="type-156"><a class="header" href="#type-156">type</a></h4>
+<p>submodule</p>
+<h4 id="default-149"><a class="header" href="#default-149">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.unfocused = {
+    background = &quot;#222222&quot;;
+    border = &quot;#333333&quot;;
+    childBorder = &quot;#222222&quot;;
+    indicator = &quot;#292d2e&quot;;
+    text = &quot;#888888&quot;;
+  };
+}
+</code></pre>
+<h2 id="mythemei3themeunfocusedbackground"><a class="header" href="#mythemei3themeunfocusedbackground">my.theme.i3Theme.unfocused.background</a></h2>
+<h4 id="type-157"><a class="header" href="#type-157">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-123"><a class="header" href="#example-123">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.unfocused.background = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-150"><a class="header" href="#default-150">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.unfocused.background = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themeunfocusedborder"><a class="header" href="#mythemei3themeunfocusedborder">my.theme.i3Theme.unfocused.border</a></h2>
+<h4 id="type-158"><a class="header" href="#type-158">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-124"><a class="header" href="#example-124">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.unfocused.border = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-151"><a class="header" href="#default-151">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.unfocused.border = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themeunfocusedchildborder"><a class="header" href="#mythemei3themeunfocusedchildborder">my.theme.i3Theme.unfocused.childBorder</a></h2>
+<h4 id="type-159"><a class="header" href="#type-159">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-125"><a class="header" href="#example-125">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.unfocused.childBorder = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-152"><a class="header" href="#default-152">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.unfocused.childBorder = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themeunfocusedindicator"><a class="header" href="#mythemei3themeunfocusedindicator">my.theme.i3Theme.unfocused.indicator</a></h2>
+<h4 id="type-160"><a class="header" href="#type-160">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-126"><a class="header" href="#example-126">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.unfocused.indicator = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-153"><a class="header" href="#default-153">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.unfocused.indicator = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themeunfocusedtext"><a class="header" href="#mythemei3themeunfocusedtext">my.theme.i3Theme.unfocused.text</a></h2>
+<h4 id="type-161"><a class="header" href="#type-161">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-127"><a class="header" href="#example-127">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.unfocused.text = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-154"><a class="header" href="#default-154">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.unfocused.text = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themeurgent"><a class="header" href="#mythemei3themeurgent">my.theme.i3Theme.urgent</a></h2>
+<p>A window which has its urgency hint activated.</p>
+<h4 id="type-162"><a class="header" href="#type-162">type</a></h4>
+<p>submodule</p>
+<h4 id="default-155"><a class="header" href="#default-155">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.urgent = {
+    background = &quot;#900000&quot;;
+    border = &quot;#2f343a&quot;;
+    childBorder = &quot;#900000&quot;;
+    indicator = &quot;#900000&quot;;
+    text = &quot;#ffffff&quot;;
+  };
+}
+</code></pre>
+<h2 id="mythemei3themeurgentbackground"><a class="header" href="#mythemei3themeurgentbackground">my.theme.i3Theme.urgent.background</a></h2>
+<h4 id="type-163"><a class="header" href="#type-163">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-128"><a class="header" href="#example-128">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.urgent.background = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-156"><a class="header" href="#default-156">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.urgent.background = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themeurgentborder"><a class="header" href="#mythemei3themeurgentborder">my.theme.i3Theme.urgent.border</a></h2>
+<h4 id="type-164"><a class="header" href="#type-164">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-129"><a class="header" href="#example-129">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.urgent.border = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-157"><a class="header" href="#default-157">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.urgent.border = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themeurgentchildborder"><a class="header" href="#mythemei3themeurgentchildborder">my.theme.i3Theme.urgent.childBorder</a></h2>
+<h4 id="type-165"><a class="header" href="#type-165">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-130"><a class="header" href="#example-130">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.urgent.childBorder = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-158"><a class="header" href="#default-158">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.urgent.childBorder = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themeurgentindicator"><a class="header" href="#mythemei3themeurgentindicator">my.theme.i3Theme.urgent.indicator</a></h2>
+<h4 id="type-166"><a class="header" href="#type-166">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-131"><a class="header" href="#example-131">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.urgent.indicator = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-159"><a class="header" href="#default-159">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.urgent.indicator = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemei3themeurgenttext"><a class="header" href="#mythemei3themeurgenttext">my.theme.i3Theme.urgent.text</a></h2>
+<h4 id="type-167"><a class="header" href="#type-167">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-132"><a class="header" href="#example-132">example</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.urgent.text = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-160"><a class="header" href="#default-160">default</a></h4>
+<pre><code class="language-nix">{
+  my.theme.i3Theme.urgent.text = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemes"><a class="header" href="#mythemes">my.themes</a></h2>
+<h4 id="type-168"><a class="header" href="#type-168">type</a></h4>
+<p>attribute set of submodule</p>
+<h2 id="mythemesnamealacrittytheme"><a class="header" href="#mythemesnamealacrittytheme">my.themes.&lt;name&gt;.alacrittyTheme</a></h2>
+<h4 id="type-169"><a class="header" href="#type-169">type</a></h4>
+<p>submodule</p>
+<h4 id="default-161"><a class="header" href="#default-161">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme = {};
+}
+</code></pre>
+<h2 id="mythemesnamealacrittythemebright"><a class="header" href="#mythemesnamealacrittythemebright">my.themes.&lt;name&gt;.alacrittyTheme.bright</a></h2>
+<h4 id="type-170"><a class="header" href="#type-170">type</a></h4>
+<p>submodule</p>
+<h4 id="default-162"><a class="header" href="#default-162">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.bright = {
+    black = &quot;#666666&quot;;
+    blue = &quot;#7aa6da&quot;;
+    cyan = &quot;#70c0b1&quot;;
+    green = &quot;#b9ca4a&quot;;
+    magenta = &quot;#c397d8&quot;;
+    red = &quot;#d54e53&quot;;
+    white = &quot;#eaeaea&quot;;
+    yellow = &quot;#e7c547&quot;;
+  };
+}
+</code></pre>
+<h2 id="mythemesnamealacrittythemebrightblack"><a class="header" href="#mythemesnamealacrittythemebrightblack">my.themes.&lt;name&gt;.alacrittyTheme.bright.black</a></h2>
+<h4 id="type-171"><a class="header" href="#type-171">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-133"><a class="header" href="#example-133">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.bright.black = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-163"><a class="header" href="#default-163">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.bright.black = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamealacrittythemebrightblue"><a class="header" href="#mythemesnamealacrittythemebrightblue">my.themes.&lt;name&gt;.alacrittyTheme.bright.blue</a></h2>
+<h4 id="type-172"><a class="header" href="#type-172">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-134"><a class="header" href="#example-134">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.bright.blue = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-164"><a class="header" href="#default-164">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.bright.blue = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamealacrittythemebrightcyan"><a class="header" href="#mythemesnamealacrittythemebrightcyan">my.themes.&lt;name&gt;.alacrittyTheme.bright.cyan</a></h2>
+<h4 id="type-173"><a class="header" href="#type-173">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-135"><a class="header" href="#example-135">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.bright.cyan = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-165"><a class="header" href="#default-165">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.bright.cyan = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamealacrittythemebrightgreen"><a class="header" href="#mythemesnamealacrittythemebrightgreen">my.themes.&lt;name&gt;.alacrittyTheme.bright.green</a></h2>
+<h4 id="type-174"><a class="header" href="#type-174">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-136"><a class="header" href="#example-136">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.bright.green = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-166"><a class="header" href="#default-166">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.bright.green = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamealacrittythemebrightmagenta"><a class="header" href="#mythemesnamealacrittythemebrightmagenta">my.themes.&lt;name&gt;.alacrittyTheme.bright.magenta</a></h2>
+<h4 id="type-175"><a class="header" href="#type-175">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-137"><a class="header" href="#example-137">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.bright.magenta = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-167"><a class="header" href="#default-167">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.bright.magenta = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamealacrittythemebrightred"><a class="header" href="#mythemesnamealacrittythemebrightred">my.themes.&lt;name&gt;.alacrittyTheme.bright.red</a></h2>
+<h4 id="type-176"><a class="header" href="#type-176">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-138"><a class="header" href="#example-138">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.bright.red = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-168"><a class="header" href="#default-168">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.bright.red = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamealacrittythemebrightwhite"><a class="header" href="#mythemesnamealacrittythemebrightwhite">my.themes.&lt;name&gt;.alacrittyTheme.bright.white</a></h2>
+<h4 id="type-177"><a class="header" href="#type-177">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-139"><a class="header" href="#example-139">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.bright.white = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-169"><a class="header" href="#default-169">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.bright.white = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamealacrittythemebrightyellow"><a class="header" href="#mythemesnamealacrittythemebrightyellow">my.themes.&lt;name&gt;.alacrittyTheme.bright.yellow</a></h2>
+<h4 id="type-178"><a class="header" href="#type-178">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-140"><a class="header" href="#example-140">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.bright.yellow = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-170"><a class="header" href="#default-170">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.bright.yellow = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamealacrittythemecursor"><a class="header" href="#mythemesnamealacrittythemecursor">my.themes.&lt;name&gt;.alacrittyTheme.cursor</a></h2>
+<h4 id="type-179"><a class="header" href="#type-179">type</a></h4>
+<p>submodule</p>
+<h4 id="default-171"><a class="header" href="#default-171">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.cursor = {
+    cursor = &quot;#c5c8c6&quot;;
+    text = &quot;#1d1f21&quot;;
+  };
+}
+</code></pre>
+<h2 id="mythemesnamealacrittythemecursorcursor"><a class="header" href="#mythemesnamealacrittythemecursorcursor">my.themes.&lt;name&gt;.alacrittyTheme.cursor.cursor</a></h2>
+<h4 id="type-180"><a class="header" href="#type-180">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-141"><a class="header" href="#example-141">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.cursor.cursor = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-172"><a class="header" href="#default-172">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.cursor.cursor = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamealacrittythemecursortext"><a class="header" href="#mythemesnamealacrittythemecursortext">my.themes.&lt;name&gt;.alacrittyTheme.cursor.text</a></h2>
+<h4 id="type-181"><a class="header" href="#type-181">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-142"><a class="header" href="#example-142">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.cursor.text = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-173"><a class="header" href="#default-173">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.cursor.text = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamealacrittythemedim"><a class="header" href="#mythemesnamealacrittythemedim">my.themes.&lt;name&gt;.alacrittyTheme.dim</a></h2>
+<h4 id="type-182"><a class="header" href="#type-182">type</a></h4>
+<p>submodule</p>
+<h4 id="default-174"><a class="header" href="#default-174">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.dim = {
+    black = &quot;#131415&quot;;
+    blue = &quot;#556a7d&quot;;
+    cyan = &quot;#5b7d78&quot;;
+    green = &quot;#777c44&quot;;
+    magenta = &quot;#75617b&quot;;
+    red = &quot;#864343&quot;;
+    white = &quot;#828482&quot;;
+    yellow = &quot;#9e824c&quot;;
+  };
+}
+</code></pre>
+<h2 id="mythemesnamealacrittythemedimblack"><a class="header" href="#mythemesnamealacrittythemedimblack">my.themes.&lt;name&gt;.alacrittyTheme.dim.black</a></h2>
+<h4 id="type-183"><a class="header" href="#type-183">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-143"><a class="header" href="#example-143">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.dim.black = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-175"><a class="header" href="#default-175">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.dim.black = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamealacrittythemedimblue"><a class="header" href="#mythemesnamealacrittythemedimblue">my.themes.&lt;name&gt;.alacrittyTheme.dim.blue</a></h2>
+<h4 id="type-184"><a class="header" href="#type-184">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-144"><a class="header" href="#example-144">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.dim.blue = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-176"><a class="header" href="#default-176">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.dim.blue = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamealacrittythemedimcyan"><a class="header" href="#mythemesnamealacrittythemedimcyan">my.themes.&lt;name&gt;.alacrittyTheme.dim.cyan</a></h2>
+<h4 id="type-185"><a class="header" href="#type-185">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-145"><a class="header" href="#example-145">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.dim.cyan = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-177"><a class="header" href="#default-177">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.dim.cyan = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamealacrittythemedimgreen"><a class="header" href="#mythemesnamealacrittythemedimgreen">my.themes.&lt;name&gt;.alacrittyTheme.dim.green</a></h2>
+<h4 id="type-186"><a class="header" href="#type-186">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-146"><a class="header" href="#example-146">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.dim.green = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-178"><a class="header" href="#default-178">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.dim.green = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamealacrittythemedimmagenta"><a class="header" href="#mythemesnamealacrittythemedimmagenta">my.themes.&lt;name&gt;.alacrittyTheme.dim.magenta</a></h2>
+<h4 id="type-187"><a class="header" href="#type-187">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-147"><a class="header" href="#example-147">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.dim.magenta = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-179"><a class="header" href="#default-179">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.dim.magenta = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamealacrittythemedimred"><a class="header" href="#mythemesnamealacrittythemedimred">my.themes.&lt;name&gt;.alacrittyTheme.dim.red</a></h2>
+<h4 id="type-188"><a class="header" href="#type-188">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-148"><a class="header" href="#example-148">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.dim.red = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-180"><a class="header" href="#default-180">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.dim.red = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamealacrittythemedimwhite"><a class="header" href="#mythemesnamealacrittythemedimwhite">my.themes.&lt;name&gt;.alacrittyTheme.dim.white</a></h2>
+<h4 id="type-189"><a class="header" href="#type-189">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-149"><a class="header" href="#example-149">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.dim.white = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-181"><a class="header" href="#default-181">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.dim.white = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamealacrittythemedimyellow"><a class="header" href="#mythemesnamealacrittythemedimyellow">my.themes.&lt;name&gt;.alacrittyTheme.dim.yellow</a></h2>
+<h4 id="type-190"><a class="header" href="#type-190">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-150"><a class="header" href="#example-150">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.dim.yellow = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-182"><a class="header" href="#default-182">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.dim.yellow = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamealacrittythemenormal"><a class="header" href="#mythemesnamealacrittythemenormal">my.themes.&lt;name&gt;.alacrittyTheme.normal</a></h2>
+<h4 id="type-191"><a class="header" href="#type-191">type</a></h4>
+<p>submodule</p>
+<h4 id="default-183"><a class="header" href="#default-183">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.normal = {
+    black = &quot;#1d1f21&quot;;
+    blue = &quot;#81a2be&quot;;
+    cyan = &quot;#8abeb7&quot;;
+    green = &quot;#b5bd68&quot;;
+    magenta = &quot;#b294bb&quot;;
+    red = &quot;#cc6666&quot;;
+    white = &quot;#c5c8c6&quot;;
+    yellow = &quot;#f0c674&quot;;
+  };
+}
+</code></pre>
+<h2 id="mythemesnamealacrittythemenormalblack"><a class="header" href="#mythemesnamealacrittythemenormalblack">my.themes.&lt;name&gt;.alacrittyTheme.normal.black</a></h2>
+<h4 id="type-192"><a class="header" href="#type-192">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-151"><a class="header" href="#example-151">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.normal.black = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-184"><a class="header" href="#default-184">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.normal.black = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamealacrittythemenormalblue"><a class="header" href="#mythemesnamealacrittythemenormalblue">my.themes.&lt;name&gt;.alacrittyTheme.normal.blue</a></h2>
+<h4 id="type-193"><a class="header" href="#type-193">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-152"><a class="header" href="#example-152">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.normal.blue = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-185"><a class="header" href="#default-185">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.normal.blue = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamealacrittythemenormalcyan"><a class="header" href="#mythemesnamealacrittythemenormalcyan">my.themes.&lt;name&gt;.alacrittyTheme.normal.cyan</a></h2>
+<h4 id="type-194"><a class="header" href="#type-194">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-153"><a class="header" href="#example-153">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.normal.cyan = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-186"><a class="header" href="#default-186">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.normal.cyan = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamealacrittythemenormalgreen"><a class="header" href="#mythemesnamealacrittythemenormalgreen">my.themes.&lt;name&gt;.alacrittyTheme.normal.green</a></h2>
+<h4 id="type-195"><a class="header" href="#type-195">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-154"><a class="header" href="#example-154">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.normal.green = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-187"><a class="header" href="#default-187">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.normal.green = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamealacrittythemenormalmagenta"><a class="header" href="#mythemesnamealacrittythemenormalmagenta">my.themes.&lt;name&gt;.alacrittyTheme.normal.magenta</a></h2>
+<h4 id="type-196"><a class="header" href="#type-196">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-155"><a class="header" href="#example-155">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.normal.magenta = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-188"><a class="header" href="#default-188">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.normal.magenta = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamealacrittythemenormalred"><a class="header" href="#mythemesnamealacrittythemenormalred">my.themes.&lt;name&gt;.alacrittyTheme.normal.red</a></h2>
+<h4 id="type-197"><a class="header" href="#type-197">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-156"><a class="header" href="#example-156">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.normal.red = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-189"><a class="header" href="#default-189">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.normal.red = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamealacrittythemenormalwhite"><a class="header" href="#mythemesnamealacrittythemenormalwhite">my.themes.&lt;name&gt;.alacrittyTheme.normal.white</a></h2>
+<h4 id="type-198"><a class="header" href="#type-198">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-157"><a class="header" href="#example-157">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.normal.white = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-190"><a class="header" href="#default-190">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.normal.white = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamealacrittythemenormalyellow"><a class="header" href="#mythemesnamealacrittythemenormalyellow">my.themes.&lt;name&gt;.alacrittyTheme.normal.yellow</a></h2>
+<h4 id="type-199"><a class="header" href="#type-199">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-158"><a class="header" href="#example-158">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.normal.yellow = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-191"><a class="header" href="#default-191">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.normal.yellow = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamealacrittythemeprimary"><a class="header" href="#mythemesnamealacrittythemeprimary">my.themes.&lt;name&gt;.alacrittyTheme.primary</a></h2>
+<h4 id="type-200"><a class="header" href="#type-200">type</a></h4>
+<p>submodule</p>
+<h4 id="default-192"><a class="header" href="#default-192">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.primary = {
+    background = &quot;#1d1f21&quot;;
+    foreground = &quot;#c5c8c6&quot;;
+  };
+}
+</code></pre>
+<h2 id="mythemesnamealacrittythemeprimarybackground"><a class="header" href="#mythemesnamealacrittythemeprimarybackground">my.themes.&lt;name&gt;.alacrittyTheme.primary.background</a></h2>
+<h4 id="type-201"><a class="header" href="#type-201">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-159"><a class="header" href="#example-159">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.primary.background = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-193"><a class="header" href="#default-193">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.primary.background = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamealacrittythemeprimaryforeground"><a class="header" href="#mythemesnamealacrittythemeprimaryforeground">my.themes.&lt;name&gt;.alacrittyTheme.primary.foreground</a></h2>
+<h4 id="type-202"><a class="header" href="#type-202">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-160"><a class="header" href="#example-160">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.primary.foreground = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-194"><a class="header" href="#default-194">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.alacrittyTheme.primary.foreground = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamebattheme"><a class="header" href="#mythemesnamebattheme">my.themes.&lt;name&gt;.batTheme</a></h2>
+<h4 id="type-203"><a class="header" href="#type-203">type</a></h4>
+<p>submodule</p>
+<h4 id="default-195"><a class="header" href="#default-195">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.batTheme = {};
+}
+</code></pre>
+<h2 id="mythemesnamebatthemename"><a class="header" href="#mythemesnamebatthemename">my.themes.&lt;name&gt;.batTheme.name</a></h2>
+<h4 id="type-204"><a class="header" href="#type-204">type</a></h4>
+<p>string</p>
+<h4 id="default-196"><a class="header" href="#default-196">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.batTheme.name = &quot;&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3bartheme"><a class="header" href="#mythemesnamei3bartheme">my.themes.&lt;name&gt;.i3BarTheme</a></h2>
+<h4 id="type-205"><a class="header" href="#type-205">type</a></h4>
+<p>submodule</p>
+<h4 id="default-197"><a class="header" href="#default-197">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3BarTheme = {};
+}
+</code></pre>
+<h2 id="mythemesnamei3barthemetheme"><a class="header" href="#mythemesnamei3barthemetheme">my.themes.&lt;name&gt;.i3BarTheme.theme</a></h2>
+<h4 id="type-206"><a class="header" href="#type-206">type</a></h4>
+<p>submodule</p>
+<h4 id="default-198"><a class="header" href="#default-198">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3BarTheme.theme = {};
+}
+</code></pre>
+<h2 id="mythemesnamei3barthemethemename"><a class="header" href="#mythemesnamei3barthemethemename">my.themes.&lt;name&gt;.i3BarTheme.theme.name</a></h2>
+<h4 id="type-207"><a class="header" href="#type-207">type</a></h4>
+<p>string</p>
+<h4 id="default-199"><a class="header" href="#default-199">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3BarTheme.theme.name = &quot;plain&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3barthemethemeoverrides"><a class="header" href="#mythemesnamei3barthemethemeoverrides">my.themes.&lt;name&gt;.i3BarTheme.theme.overrides</a></h2>
+<h4 id="type-208"><a class="header" href="#type-208">type</a></h4>
+<p>attribute set of string</p>
+<h4 id="default-200"><a class="header" href="#default-200">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3BarTheme.theme.overrides = {};
+}
+</code></pre>
+<h2 id="mythemesnamei3theme"><a class="header" href="#mythemesnamei3theme">my.themes.&lt;name&gt;.i3Theme</a></h2>
+<h4 id="type-209"><a class="header" href="#type-209">type</a></h4>
+<p>submodule</p>
+<h4 id="default-201"><a class="header" href="#default-201">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme = {};
+}
+</code></pre>
+<h2 id="mythemesnamei3themebackground"><a class="header" href="#mythemesnamei3themebackground">my.themes.&lt;name&gt;.i3Theme.background</a></h2>
+<p>Background color of the window. Only applications which do not cover
+the whole area expose the color.</p>
+<h4 id="type-210"><a class="header" href="#type-210">type</a></h4>
+<p>string</p>
+<h4 id="default-202"><a class="header" href="#default-202">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.background = &quot;#ffffff&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themebar"><a class="header" href="#mythemesnamei3themebar">my.themes.&lt;name&gt;.i3Theme.bar</a></h2>
+<h4 id="type-211"><a class="header" href="#type-211">type</a></h4>
+<p>submodule</p>
+<h4 id="default-203"><a class="header" href="#default-203">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.bar = {};
+}
+</code></pre>
+<h2 id="mythemesnamei3themebaractiveworkspace"><a class="header" href="#mythemesnamei3themebaractiveworkspace">my.themes.&lt;name&gt;.i3Theme.bar.activeWorkspace</a></h2>
+<p>Border, background and text color for a workspace button when the workspace is active.</p>
+<h4 id="type-212"><a class="header" href="#type-212">type</a></h4>
+<p>submodule</p>
+<h4 id="default-204"><a class="header" href="#default-204">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.bar.activeWorkspace = {
+    background = &quot;#5f676a&quot;;
+    border = &quot;#333333&quot;;
+    text = &quot;#ffffff&quot;;
+  };
+}
+</code></pre>
+<h2 id="mythemesnamei3themebaractiveworkspacebackground"><a class="header" href="#mythemesnamei3themebaractiveworkspacebackground">my.themes.&lt;name&gt;.i3Theme.bar.activeWorkspace.background</a></h2>
+<h4 id="type-213"><a class="header" href="#type-213">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-161"><a class="header" href="#example-161">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.bar.activeWorkspace.background = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-205"><a class="header" href="#default-205">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.bar.activeWorkspace.background = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themebaractiveworkspaceborder"><a class="header" href="#mythemesnamei3themebaractiveworkspaceborder">my.themes.&lt;name&gt;.i3Theme.bar.activeWorkspace.border</a></h2>
+<h4 id="type-214"><a class="header" href="#type-214">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-162"><a class="header" href="#example-162">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.bar.activeWorkspace.border = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-206"><a class="header" href="#default-206">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.bar.activeWorkspace.border = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themebaractiveworkspacetext"><a class="header" href="#mythemesnamei3themebaractiveworkspacetext">my.themes.&lt;name&gt;.i3Theme.bar.activeWorkspace.text</a></h2>
+<h4 id="type-215"><a class="header" href="#type-215">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-163"><a class="header" href="#example-163">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.bar.activeWorkspace.text = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-207"><a class="header" href="#default-207">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.bar.activeWorkspace.text = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themebarbackground"><a class="header" href="#mythemesnamei3themebarbackground">my.themes.&lt;name&gt;.i3Theme.bar.background</a></h2>
+<p>Background color of the bar.</p>
+<h4 id="type-216"><a class="header" href="#type-216">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-164"><a class="header" href="#example-164">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.bar.background = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-208"><a class="header" href="#default-208">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.bar.background = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themebarbindingmode"><a class="header" href="#mythemesnamei3themebarbindingmode">my.themes.&lt;name&gt;.i3Theme.bar.bindingMode</a></h2>
+<p>Border, background and text color for the binding mode indicator</p>
+<h4 id="type-217"><a class="header" href="#type-217">type</a></h4>
+<p>submodule</p>
+<h4 id="default-209"><a class="header" href="#default-209">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.bar.bindingMode = {
+    background = &quot;#900000&quot;;
+    border = &quot;#2f343a&quot;;
+    text = &quot;#ffffff&quot;;
+  };
+}
+</code></pre>
+<h2 id="mythemesnamei3themebarbindingmodebackground"><a class="header" href="#mythemesnamei3themebarbindingmodebackground">my.themes.&lt;name&gt;.i3Theme.bar.bindingMode.background</a></h2>
+<h4 id="type-218"><a class="header" href="#type-218">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-165"><a class="header" href="#example-165">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.bar.bindingMode.background = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-210"><a class="header" href="#default-210">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.bar.bindingMode.background = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themebarbindingmodeborder"><a class="header" href="#mythemesnamei3themebarbindingmodeborder">my.themes.&lt;name&gt;.i3Theme.bar.bindingMode.border</a></h2>
+<h4 id="type-219"><a class="header" href="#type-219">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-166"><a class="header" href="#example-166">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.bar.bindingMode.border = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-211"><a class="header" href="#default-211">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.bar.bindingMode.border = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themebarbindingmodetext"><a class="header" href="#mythemesnamei3themebarbindingmodetext">my.themes.&lt;name&gt;.i3Theme.bar.bindingMode.text</a></h2>
+<h4 id="type-220"><a class="header" href="#type-220">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-167"><a class="header" href="#example-167">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.bar.bindingMode.text = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-212"><a class="header" href="#default-212">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.bar.bindingMode.text = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themebarfocusedworkspace"><a class="header" href="#mythemesnamei3themebarfocusedworkspace">my.themes.&lt;name&gt;.i3Theme.bar.focusedWorkspace</a></h2>
+<p>Border, background and text color for a workspace button when the workspace has focus.</p>
+<h4 id="type-221"><a class="header" href="#type-221">type</a></h4>
+<p>submodule</p>
+<h4 id="default-213"><a class="header" href="#default-213">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.bar.focusedWorkspace = {
+    background = &quot;#285577&quot;;
+    border = &quot;#4c7899&quot;;
+    text = &quot;#ffffff&quot;;
+  };
+}
+</code></pre>
+<h2 id="mythemesnamei3themebarfocusedworkspacebackground"><a class="header" href="#mythemesnamei3themebarfocusedworkspacebackground">my.themes.&lt;name&gt;.i3Theme.bar.focusedWorkspace.background</a></h2>
+<h4 id="type-222"><a class="header" href="#type-222">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-168"><a class="header" href="#example-168">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.bar.focusedWorkspace.background = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-214"><a class="header" href="#default-214">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.bar.focusedWorkspace.background = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themebarfocusedworkspaceborder"><a class="header" href="#mythemesnamei3themebarfocusedworkspaceborder">my.themes.&lt;name&gt;.i3Theme.bar.focusedWorkspace.border</a></h2>
+<h4 id="type-223"><a class="header" href="#type-223">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-169"><a class="header" href="#example-169">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.bar.focusedWorkspace.border = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-215"><a class="header" href="#default-215">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.bar.focusedWorkspace.border = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themebarfocusedworkspacetext"><a class="header" href="#mythemesnamei3themebarfocusedworkspacetext">my.themes.&lt;name&gt;.i3Theme.bar.focusedWorkspace.text</a></h2>
+<h4 id="type-224"><a class="header" href="#type-224">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-170"><a class="header" href="#example-170">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.bar.focusedWorkspace.text = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-216"><a class="header" href="#default-216">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.bar.focusedWorkspace.text = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themebarinactiveworkspace"><a class="header" href="#mythemesnamei3themebarinactiveworkspace">my.themes.&lt;name&gt;.i3Theme.bar.inactiveWorkspace</a></h2>
+<p>Border, background and text color for a workspace button when the workspace does not
+have focus and is not active.</p>
+<h4 id="type-225"><a class="header" href="#type-225">type</a></h4>
+<p>submodule</p>
+<h4 id="default-217"><a class="header" href="#default-217">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.bar.inactiveWorkspace = {
+    background = &quot;#222222&quot;;
+    border = &quot;#333333&quot;;
+    text = &quot;#888888&quot;;
+  };
+}
+</code></pre>
+<h2 id="mythemesnamei3themebarinactiveworkspacebackground"><a class="header" href="#mythemesnamei3themebarinactiveworkspacebackground">my.themes.&lt;name&gt;.i3Theme.bar.inactiveWorkspace.background</a></h2>
+<h4 id="type-226"><a class="header" href="#type-226">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-171"><a class="header" href="#example-171">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.bar.inactiveWorkspace.background = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-218"><a class="header" href="#default-218">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.bar.inactiveWorkspace.background = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themebarinactiveworkspaceborder"><a class="header" href="#mythemesnamei3themebarinactiveworkspaceborder">my.themes.&lt;name&gt;.i3Theme.bar.inactiveWorkspace.border</a></h2>
+<h4 id="type-227"><a class="header" href="#type-227">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-172"><a class="header" href="#example-172">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.bar.inactiveWorkspace.border = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-219"><a class="header" href="#default-219">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.bar.inactiveWorkspace.border = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themebarinactiveworkspacetext"><a class="header" href="#mythemesnamei3themebarinactiveworkspacetext">my.themes.&lt;name&gt;.i3Theme.bar.inactiveWorkspace.text</a></h2>
+<h4 id="type-228"><a class="header" href="#type-228">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-173"><a class="header" href="#example-173">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.bar.inactiveWorkspace.text = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-220"><a class="header" href="#default-220">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.bar.inactiveWorkspace.text = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themebarseparator"><a class="header" href="#mythemesnamei3themebarseparator">my.themes.&lt;name&gt;.i3Theme.bar.separator</a></h2>
+<p>Text color to be used for the separator.</p>
+<h4 id="type-229"><a class="header" href="#type-229">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-174"><a class="header" href="#example-174">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.bar.separator = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-221"><a class="header" href="#default-221">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.bar.separator = &quot;#666666&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themebarstatusline"><a class="header" href="#mythemesnamei3themebarstatusline">my.themes.&lt;name&gt;.i3Theme.bar.statusline</a></h2>
+<p>Text color to be used for the statusline.</p>
+<h4 id="type-230"><a class="header" href="#type-230">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-175"><a class="header" href="#example-175">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.bar.statusline = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-222"><a class="header" href="#default-222">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.bar.statusline = &quot;#ffffff&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themebarurgentworkspace"><a class="header" href="#mythemesnamei3themebarurgentworkspace">my.themes.&lt;name&gt;.i3Theme.bar.urgentWorkspace</a></h2>
+<p>Border, background and text color for a workspace button when the workspace contains
+a window with the urgency hint set.</p>
+<h4 id="type-231"><a class="header" href="#type-231">type</a></h4>
+<p>submodule</p>
+<h4 id="default-223"><a class="header" href="#default-223">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.bar.urgentWorkspace = {
+    background = &quot;#900000&quot;;
+    border = &quot;#2f343a&quot;;
+    text = &quot;#ffffff&quot;;
+  };
+}
+</code></pre>
+<h2 id="mythemesnamei3themebarurgentworkspacebackground"><a class="header" href="#mythemesnamei3themebarurgentworkspacebackground">my.themes.&lt;name&gt;.i3Theme.bar.urgentWorkspace.background</a></h2>
+<h4 id="type-232"><a class="header" href="#type-232">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-176"><a class="header" href="#example-176">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.bar.urgentWorkspace.background = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-224"><a class="header" href="#default-224">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.bar.urgentWorkspace.background = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themebarurgentworkspaceborder"><a class="header" href="#mythemesnamei3themebarurgentworkspaceborder">my.themes.&lt;name&gt;.i3Theme.bar.urgentWorkspace.border</a></h2>
+<h4 id="type-233"><a class="header" href="#type-233">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-177"><a class="header" href="#example-177">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.bar.urgentWorkspace.border = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-225"><a class="header" href="#default-225">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.bar.urgentWorkspace.border = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themebarurgentworkspacetext"><a class="header" href="#mythemesnamei3themebarurgentworkspacetext">my.themes.&lt;name&gt;.i3Theme.bar.urgentWorkspace.text</a></h2>
+<h4 id="type-234"><a class="header" href="#type-234">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-178"><a class="header" href="#example-178">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.bar.urgentWorkspace.text = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-226"><a class="header" href="#default-226">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.bar.urgentWorkspace.text = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themefocused"><a class="header" href="#mythemesnamei3themefocused">my.themes.&lt;name&gt;.i3Theme.focused</a></h2>
+<p>A window which currently has the focus.</p>
+<h4 id="type-235"><a class="header" href="#type-235">type</a></h4>
+<p>submodule</p>
+<h4 id="default-227"><a class="header" href="#default-227">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.focused = {
+    background = &quot;#285577&quot;;
+    border = &quot;#4c7899&quot;;
+    childBorder = &quot;#285577&quot;;
+    indicator = &quot;#2e9ef4&quot;;
+    text = &quot;#ffffff&quot;;
+  };
+}
+</code></pre>
+<h2 id="mythemesnamei3themefocusedbackground"><a class="header" href="#mythemesnamei3themefocusedbackground">my.themes.&lt;name&gt;.i3Theme.focused.background</a></h2>
+<h4 id="type-236"><a class="header" href="#type-236">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-179"><a class="header" href="#example-179">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.focused.background = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-228"><a class="header" href="#default-228">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.focused.background = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themefocusedborder"><a class="header" href="#mythemesnamei3themefocusedborder">my.themes.&lt;name&gt;.i3Theme.focused.border</a></h2>
+<h4 id="type-237"><a class="header" href="#type-237">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-180"><a class="header" href="#example-180">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.focused.border = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-229"><a class="header" href="#default-229">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.focused.border = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themefocusedchildborder"><a class="header" href="#mythemesnamei3themefocusedchildborder">my.themes.&lt;name&gt;.i3Theme.focused.childBorder</a></h2>
+<h4 id="type-238"><a class="header" href="#type-238">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-181"><a class="header" href="#example-181">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.focused.childBorder = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-230"><a class="header" href="#default-230">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.focused.childBorder = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themefocusedindicator"><a class="header" href="#mythemesnamei3themefocusedindicator">my.themes.&lt;name&gt;.i3Theme.focused.indicator</a></h2>
+<h4 id="type-239"><a class="header" href="#type-239">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-182"><a class="header" href="#example-182">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.focused.indicator = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-231"><a class="header" href="#default-231">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.focused.indicator = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themefocusedtext"><a class="header" href="#mythemesnamei3themefocusedtext">my.themes.&lt;name&gt;.i3Theme.focused.text</a></h2>
+<h4 id="type-240"><a class="header" href="#type-240">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-183"><a class="header" href="#example-183">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.focused.text = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-232"><a class="header" href="#default-232">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.focused.text = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themefocusedinactive"><a class="header" href="#mythemesnamei3themefocusedinactive">my.themes.&lt;name&gt;.i3Theme.focusedInactive</a></h2>
+<p>A window which is the focused one of its container,
+but it does not have the focus at the moment.</p>
+<h4 id="type-241"><a class="header" href="#type-241">type</a></h4>
+<p>submodule</p>
+<h4 id="default-233"><a class="header" href="#default-233">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.focusedInactive = {
+    background = &quot;#5f676a&quot;;
+    border = &quot;#333333&quot;;
+    childBorder = &quot;#5f676a&quot;;
+    indicator = &quot;#484e50&quot;;
+    text = &quot;#ffffff&quot;;
+  };
+}
+</code></pre>
+<h2 id="mythemesnamei3themefocusedinactivebackground"><a class="header" href="#mythemesnamei3themefocusedinactivebackground">my.themes.&lt;name&gt;.i3Theme.focusedInactive.background</a></h2>
+<h4 id="type-242"><a class="header" href="#type-242">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-184"><a class="header" href="#example-184">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.focusedInactive.background = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-234"><a class="header" href="#default-234">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.focusedInactive.background = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themefocusedinactiveborder"><a class="header" href="#mythemesnamei3themefocusedinactiveborder">my.themes.&lt;name&gt;.i3Theme.focusedInactive.border</a></h2>
+<h4 id="type-243"><a class="header" href="#type-243">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-185"><a class="header" href="#example-185">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.focusedInactive.border = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-235"><a class="header" href="#default-235">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.focusedInactive.border = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themefocusedinactivechildborder"><a class="header" href="#mythemesnamei3themefocusedinactivechildborder">my.themes.&lt;name&gt;.i3Theme.focusedInactive.childBorder</a></h2>
+<h4 id="type-244"><a class="header" href="#type-244">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-186"><a class="header" href="#example-186">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.focusedInactive.childBorder = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-236"><a class="header" href="#default-236">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.focusedInactive.childBorder = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themefocusedinactiveindicator"><a class="header" href="#mythemesnamei3themefocusedinactiveindicator">my.themes.&lt;name&gt;.i3Theme.focusedInactive.indicator</a></h2>
+<h4 id="type-245"><a class="header" href="#type-245">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-187"><a class="header" href="#example-187">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.focusedInactive.indicator = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-237"><a class="header" href="#default-237">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.focusedInactive.indicator = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themefocusedinactivetext"><a class="header" href="#mythemesnamei3themefocusedinactivetext">my.themes.&lt;name&gt;.i3Theme.focusedInactive.text</a></h2>
+<h4 id="type-246"><a class="header" href="#type-246">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-188"><a class="header" href="#example-188">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.focusedInactive.text = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-238"><a class="header" href="#default-238">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.focusedInactive.text = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themeplaceholder"><a class="header" href="#mythemesnamei3themeplaceholder">my.themes.&lt;name&gt;.i3Theme.placeholder</a></h2>
+<p>Background and text color are used to draw placeholder window
+contents (when restoring layouts). Border and indicator are ignored.</p>
+<h4 id="type-247"><a class="header" href="#type-247">type</a></h4>
+<p>submodule</p>
+<h4 id="default-239"><a class="header" href="#default-239">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.placeholder = {
+    background = &quot;#0c0c0c&quot;;
+    border = &quot;#000000&quot;;
+    childBorder = &quot;#0c0c0c&quot;;
+    indicator = &quot;#000000&quot;;
+    text = &quot;#ffffff&quot;;
+  };
+}
+</code></pre>
+<h2 id="mythemesnamei3themeplaceholderbackground"><a class="header" href="#mythemesnamei3themeplaceholderbackground">my.themes.&lt;name&gt;.i3Theme.placeholder.background</a></h2>
+<h4 id="type-248"><a class="header" href="#type-248">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-189"><a class="header" href="#example-189">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.placeholder.background = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-240"><a class="header" href="#default-240">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.placeholder.background = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themeplaceholderborder"><a class="header" href="#mythemesnamei3themeplaceholderborder">my.themes.&lt;name&gt;.i3Theme.placeholder.border</a></h2>
+<h4 id="type-249"><a class="header" href="#type-249">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-190"><a class="header" href="#example-190">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.placeholder.border = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-241"><a class="header" href="#default-241">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.placeholder.border = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themeplaceholderchildborder"><a class="header" href="#mythemesnamei3themeplaceholderchildborder">my.themes.&lt;name&gt;.i3Theme.placeholder.childBorder</a></h2>
+<h4 id="type-250"><a class="header" href="#type-250">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-191"><a class="header" href="#example-191">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.placeholder.childBorder = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-242"><a class="header" href="#default-242">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.placeholder.childBorder = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themeplaceholderindicator"><a class="header" href="#mythemesnamei3themeplaceholderindicator">my.themes.&lt;name&gt;.i3Theme.placeholder.indicator</a></h2>
+<h4 id="type-251"><a class="header" href="#type-251">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-192"><a class="header" href="#example-192">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.placeholder.indicator = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-243"><a class="header" href="#default-243">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.placeholder.indicator = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themeplaceholdertext"><a class="header" href="#mythemesnamei3themeplaceholdertext">my.themes.&lt;name&gt;.i3Theme.placeholder.text</a></h2>
+<h4 id="type-252"><a class="header" href="#type-252">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-193"><a class="header" href="#example-193">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.placeholder.text = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-244"><a class="header" href="#default-244">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.placeholder.text = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themeunfocused"><a class="header" href="#mythemesnamei3themeunfocused">my.themes.&lt;name&gt;.i3Theme.unfocused</a></h2>
+<p>A window which is not focused.</p>
+<h4 id="type-253"><a class="header" href="#type-253">type</a></h4>
+<p>submodule</p>
+<h4 id="default-245"><a class="header" href="#default-245">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.unfocused = {
+    background = &quot;#222222&quot;;
+    border = &quot;#333333&quot;;
+    childBorder = &quot;#222222&quot;;
+    indicator = &quot;#292d2e&quot;;
+    text = &quot;#888888&quot;;
+  };
+}
+</code></pre>
+<h2 id="mythemesnamei3themeunfocusedbackground"><a class="header" href="#mythemesnamei3themeunfocusedbackground">my.themes.&lt;name&gt;.i3Theme.unfocused.background</a></h2>
+<h4 id="type-254"><a class="header" href="#type-254">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-194"><a class="header" href="#example-194">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.unfocused.background = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-246"><a class="header" href="#default-246">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.unfocused.background = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themeunfocusedborder"><a class="header" href="#mythemesnamei3themeunfocusedborder">my.themes.&lt;name&gt;.i3Theme.unfocused.border</a></h2>
+<h4 id="type-255"><a class="header" href="#type-255">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-195"><a class="header" href="#example-195">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.unfocused.border = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-247"><a class="header" href="#default-247">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.unfocused.border = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themeunfocusedchildborder"><a class="header" href="#mythemesnamei3themeunfocusedchildborder">my.themes.&lt;name&gt;.i3Theme.unfocused.childBorder</a></h2>
+<h4 id="type-256"><a class="header" href="#type-256">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-196"><a class="header" href="#example-196">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.unfocused.childBorder = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-248"><a class="header" href="#default-248">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.unfocused.childBorder = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themeunfocusedindicator"><a class="header" href="#mythemesnamei3themeunfocusedindicator">my.themes.&lt;name&gt;.i3Theme.unfocused.indicator</a></h2>
+<h4 id="type-257"><a class="header" href="#type-257">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-197"><a class="header" href="#example-197">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.unfocused.indicator = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-249"><a class="header" href="#default-249">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.unfocused.indicator = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themeunfocusedtext"><a class="header" href="#mythemesnamei3themeunfocusedtext">my.themes.&lt;name&gt;.i3Theme.unfocused.text</a></h2>
+<h4 id="type-258"><a class="header" href="#type-258">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-198"><a class="header" href="#example-198">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.unfocused.text = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-250"><a class="header" href="#default-250">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.unfocused.text = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themeurgent"><a class="header" href="#mythemesnamei3themeurgent">my.themes.&lt;name&gt;.i3Theme.urgent</a></h2>
+<p>A window which has its urgency hint activated.</p>
+<h4 id="type-259"><a class="header" href="#type-259">type</a></h4>
+<p>submodule</p>
+<h4 id="default-251"><a class="header" href="#default-251">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.urgent = {
+    background = &quot;#900000&quot;;
+    border = &quot;#2f343a&quot;;
+    childBorder = &quot;#900000&quot;;
+    indicator = &quot;#900000&quot;;
+    text = &quot;#ffffff&quot;;
+  };
+}
+</code></pre>
+<h2 id="mythemesnamei3themeurgentbackground"><a class="header" href="#mythemesnamei3themeurgentbackground">my.themes.&lt;name&gt;.i3Theme.urgent.background</a></h2>
+<h4 id="type-260"><a class="header" href="#type-260">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-199"><a class="header" href="#example-199">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.urgent.background = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-252"><a class="header" href="#default-252">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.urgent.background = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themeurgentborder"><a class="header" href="#mythemesnamei3themeurgentborder">my.themes.&lt;name&gt;.i3Theme.urgent.border</a></h2>
+<h4 id="type-261"><a class="header" href="#type-261">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-200"><a class="header" href="#example-200">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.urgent.border = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-253"><a class="header" href="#default-253">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.urgent.border = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themeurgentchildborder"><a class="header" href="#mythemesnamei3themeurgentchildborder">my.themes.&lt;name&gt;.i3Theme.urgent.childBorder</a></h2>
+<h4 id="type-262"><a class="header" href="#type-262">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-201"><a class="header" href="#example-201">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.urgent.childBorder = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-254"><a class="header" href="#default-254">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.urgent.childBorder = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themeurgentindicator"><a class="header" href="#mythemesnamei3themeurgentindicator">my.themes.&lt;name&gt;.i3Theme.urgent.indicator</a></h2>
+<h4 id="type-263"><a class="header" href="#type-263">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-202"><a class="header" href="#example-202">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.urgent.indicator = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-255"><a class="header" href="#default-255">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.urgent.indicator = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mythemesnamei3themeurgenttext"><a class="header" href="#mythemesnamei3themeurgenttext">my.themes.&lt;name&gt;.i3Theme.urgent.text</a></h2>
+<h4 id="type-264"><a class="header" href="#type-264">type</a></h4>
+<p>string matching the pattern #[0-9a-f]{6}</p>
+<h4 id="example-203"><a class="header" href="#example-203">example</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.urgent.text = &quot;#abcdef&quot;;
+}
+</code></pre>
+<h4 id="default-256"><a class="header" href="#default-256">default</a></h4>
+<pre><code class="language-nix">{
+  my.themes.&lt;name&gt;.i3Theme.urgent.text = &quot;#000000&quot;;
+}
+</code></pre>
+<h2 id="mywakeonwlaninterfaces"><a class="header" href="#mywakeonwlaninterfaces">my.wakeonwlan.interfaces</a></h2>
+<p>Wireless interfaces where you want to enable WoWLAN</p>
+<h4 id="type-265"><a class="header" href="#type-265">type</a></h4>
+<p>attribute set of submodule</p>
+<h4 id="example-204"><a class="header" href="#example-204">example</a></h4>
+<pre><code class="language-nix">{
+  my.wakeonwlan.interfaces = {
+    _type = &quot;literalExpression&quot;;
+    text = ''
+      {
+        phy0.methods = [
+          &quot;magic-packet&quot;
+          &quot;disconnect&quot;
+          &quot;gtk-rekey-failure&quot;
+          &quot;eap-identity-request&quot;
+          &quot;rfkill-release&quot;
+        ];
+        phy2.methods = [ &quot;any&quot; ];
+      }
+      
+    '';
+  };
+}
+</code></pre>
+<h4 id="default-257"><a class="header" href="#default-257">default</a></h4>
+<pre><code class="language-nix">{
+  my.wakeonwlan.interfaces = {};
+}
+</code></pre>
+<h2 id="mywakeonwlaninterfacesnamemethods"><a class="header" href="#mywakeonwlaninterfacesnamemethods">my.wakeonwlan.interfaces.&lt;name&gt;.methods</a></h2>
+<p>Wake-On-WiFiLan methods for this interface.</p>
+<h4 id="type-266"><a class="header" href="#type-266">type</a></h4>
+<p>list of one of &quot;4way-handshake&quot;, &quot;any&quot;, &quot;disconnect&quot;, &quot;eap-identity-request&quot;, &quot;gtk-rekey-failure&quot;, &quot;magic-packet&quot;, &quot;rfkill-release&quot;</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="nur-combined-afreakk.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="nur-combined-ambroisie.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="nur-combined-afreakk.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="nur-combined-ambroisie.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

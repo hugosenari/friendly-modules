@@ -1,0 +1,1225 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>NixOps AWS</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="hugosenari.html"><strong aria-hidden="true">2.</strong> Hugosenari</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="hlissner.html"><strong aria-hidden="true">3.</strong> hlissner</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="cocada-boa.html"><strong aria-hidden="true">4.</strong> Thiago</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="climod.html"><strong aria-hidden="true">5.</strong> Climod</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="ew.html"><strong aria-hidden="true">6.</strong> Lucas</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="marcosrdac.html"><strong aria-hidden="true">7.</strong> Marcos</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="flake-gemini.html"><strong aria-hidden="true">8.</strong> Flake Gemini</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="impermanence.html"><strong aria-hidden="true">9.</strong> Impermanence</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="impermanence-hm.html"><strong aria-hidden="true">9.1.</strong> Impermanence HM</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="kubenix.html"><strong aria-hidden="true">10.</strong> KubeNix</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops.html"><strong aria-hidden="true">11.</strong> NixOps</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops-aws.html" class="active"><strong aria-hidden="true">12.</strong> NixOps AWS</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="nixops-aws-data.html"><strong aria-hidden="true">12.1.</strong> data</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpn-connection.html"><strong aria-hidden="true">12.2.</strong> vpn-connection</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpn-connection-route.html"><strong aria-hidden="true">12.3.</strong> vpn-connection-route</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpn-gateway.html"><strong aria-hidden="true">12.4.</strong> vpn-gateway</a></li><li class="chapter-item expanded "><a href="nixops-aws-cloudwatch-log-group.html"><strong aria-hidden="true">12.5.</strong> cloudwatch-log-group</a></li><li class="chapter-item expanded "><a href="nixops-aws-cloudwatch-log-stream.html"><strong aria-hidden="true">12.6.</strong> cloudwatch-log-stream</a></li><li class="chapter-item expanded "><a href="nixops-aws-ec2-keypair.html"><strong aria-hidden="true">12.7.</strong> ec2-keypair</a></li><li class="chapter-item expanded "><a href="nixops-aws-ec2-placement.html"><strong aria-hidden="true">12.8.</strong> ec2-placement</a></li><li class="chapter-item expanded "><a href="nixops-aws-ec2-rds-dbinstance.html"><strong aria-hidden="true">12.9.</strong> ec2-rds-dbinstance</a></li><li class="chapter-item expanded "><a href="nixops-aws-ec2-rds-dbsecurity.html"><strong aria-hidden="true">12.10.</strong> ec2-rds-dbsecurity</a></li><li class="chapter-item expanded "><a href="nixops-aws-ec2-security.html"><strong aria-hidden="true">12.11.</strong> ec2-security</a></li><li class="chapter-item expanded "><a href="nixops-aws-eslatic-file-system.html"><strong aria-hidden="true">12.12.</strong> eslatic-file-system</a></li><li class="chapter-item expanded "><a href="nixops-aws-eslatic-file-sistem-mount.html"><strong aria-hidden="true">12.13.</strong> eslatic-file-sistem-mount</a></li><li class="chapter-item expanded "><a href="nixops-aws-eslatic-ip.html"><strong aria-hidden="true">12.14.</strong> eslatic-ip</a></li><li class="chapter-item expanded "><a href="nixops-aws-iam.html"><strong aria-hidden="true">12.15.</strong> iam</a></li><li class="chapter-item expanded "><a href="nixops-aws-rds.html"><strong aria-hidden="true">12.16.</strong> rds</a></li><li class="chapter-item expanded "><a href="nixops-aws-route53.html"><strong aria-hidden="true">12.17.</strong> route53</a></li><li class="chapter-item expanded "><a href="nixops-aws-s3.html"><strong aria-hidden="true">12.18.</strong> s3</a></li><li class="chapter-item expanded "><a href="nixops-aws-sqs.html"><strong aria-hidden="true">12.19.</strong> sqs</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc.html"><strong aria-hidden="true">12.20.</strong> vpc</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-customer.html"><strong aria-hidden="true">12.21.</strong> vpc-customer</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-dhcp.html"><strong aria-hidden="true">12.22.</strong> vpc-dhcp</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-egress.html"><strong aria-hidden="true">12.23.</strong> vpc-egress</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-endpoint.html"><strong aria-hidden="true">12.24.</strong> vpc-endpoint</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-internet.html"><strong aria-hidden="true">12.25.</strong> vpc-internet</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-nat.html"><strong aria-hidden="true">12.26.</strong> vpc-nat</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-network-interface.html"><strong aria-hidden="true">12.27.</strong> vpc-network-interface</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-network-interface-attachment.html"><strong aria-hidden="true">12.28.</strong> vpc-network-interface-attachment</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-route.html"><strong aria-hidden="true">12.29.</strong> vpc-route</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-route-table.html"><strong aria-hidden="true">12.30.</strong> vpc-route-table</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-route-table-association.html"><strong aria-hidden="true">12.31.</strong> vpc-route-table-association</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-subnet.html"><strong aria-hidden="true">12.32.</strong> vpc-subnet</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="nixops-datadog-monitor.html"><strong aria-hidden="true">13.</strong> NixOps Datadog</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops-digitalocean.html"><strong aria-hidden="true">14.</strong> NixOps DigitalOcean</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops-gce.html"><strong aria-hidden="true">15.</strong> NixOps GCE</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops-hcloud.html"><strong aria-hidden="true">16.</strong> NixOps HCloud</a></li><li class="chapter-item expanded "><a href="nixops-hcloud-volume.html"><strong aria-hidden="true">17.</strong> NixOps HCloud Volume</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops-libvirtd.html"><strong aria-hidden="true">18.</strong> NixOps LibVirtd</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixos-firehol.html"><strong aria-hidden="true">19.</strong> NixOS-FireHOL</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixos-hardware.html"><strong aria-hidden="true">20.</strong> NixOS Hardware</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="nixos-hardware-asus.html"><strong aria-hidden="true">20.1.</strong> asus</a></li><li class="chapter-item expanded "><a href="nixos-hardware-surface.html"><strong aria-hidden="true">20.2.</strong> surface</a></li><li class="chapter-item expanded "><a href="nixos-hardware-raspberry.html"><strong aria-hidden="true">20.3.</strong> raspberry</a></li><li class="chapter-item expanded "><a href="nixos-hardware-system76.html"><strong aria-hidden="true">20.4.</strong> system76</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="nur-combined.html"><strong aria-hidden="true">21.</strong> NUR Combined</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="nur-combined-aasg.html"><strong aria-hidden="true">21.1.</strong> aasg</a></li><li class="chapter-item expanded "><a href="nur-combined-afreakk.html"><strong aria-hidden="true">21.2.</strong> afreakk</a></li><li class="chapter-item expanded "><a href="nur-combined-alarsyo.html"><strong aria-hidden="true">21.3.</strong> alarsyo</a></li><li class="chapter-item expanded "><a href="nur-combined-ambroisie.html"><strong aria-hidden="true">21.4.</strong> ambroisie</a></li><li class="chapter-item expanded "><a href="nur-combined-arc.html"><strong aria-hidden="true">21.5.</strong> arc</a></li><li class="chapter-item expanded "><a href="nur-combined-bb010g.html"><strong aria-hidden="true">21.6.</strong> bb010g</a></li><li class="chapter-item expanded "><a href="nur-combined-bendlas.html"><strong aria-hidden="true">21.7.</strong> bendlas</a></li><li class="chapter-item expanded "><a href="nur-combined-berbiche.html"><strong aria-hidden="true">21.8.</strong> berbiche</a></li><li class="chapter-item expanded "><a href="nur-combined-c0deaddict.html"><strong aria-hidden="true">21.9.</strong> c0deaddict</a></li><li class="chapter-item expanded "><a href="nur-combined-crazazy.html"><strong aria-hidden="true">21.10.</strong> crazazy</a></li><li class="chapter-item expanded "><a href="nur-combined-crtified.html"><strong aria-hidden="true">21.11.</strong> crtified</a></li><li class="chapter-item expanded "><a href="nur-combined-cwyc.html"><strong aria-hidden="true">21.12.</strong> cwyc</a></li><li class="chapter-item expanded "><a href="nur-combined-dawidsowa.html"><strong aria-hidden="true">21.13.</strong> dawidsowa</a></li><li class="chapter-item expanded "><a href="nur-combined-dguibert.html"><strong aria-hidden="true">21.14.</strong> dguibert</a></li><li class="chapter-item expanded "><a href="nur-combined-dtz.html"><strong aria-hidden="true">21.15.</strong> dtz</a></li><li class="chapter-item expanded "><a href="nur-combined-dukzcry.html"><strong aria-hidden="true">21.16.</strong> dukzcry</a></li><li class="chapter-item expanded "><a href="nur-combined-emmanuelrosa.html"><strong aria-hidden="true">21.17.</strong> emmanuelrosa</a></li><li class="chapter-item expanded "><a href="nur-combined-heph2.html"><strong aria-hidden="true">21.18.</strong> heph2</a></li><li class="chapter-item expanded "><a href="nur-combined-ilya-fedin.html"><strong aria-hidden="true">21.19.</strong> ilya-fedin</a></li><li class="chapter-item expanded "><a href="nur-combined-immae.html"><strong aria-hidden="true">21.20.</strong> immae</a></li><li class="chapter-item expanded "><a href="nur-combined-instantos.html"><strong aria-hidden="true">21.21.</strong> instantos</a></li><li class="chapter-item expanded "><a href="nur-combined-jbarthelmes.html"><strong aria-hidden="true">21.22.</strong> jbarthelmes</a></li><li class="chapter-item expanded "><a href="nur-combined-johnazoidberg.html"><strong aria-hidden="true">21.23.</strong> johnazoidberg</a></li><li class="chapter-item expanded "><a href="nur-combined-jomik.html"><strong aria-hidden="true">21.24.</strong> jomik</a></li><li class="chapter-item expanded "><a href="nur-combined-kampka.html"><strong aria-hidden="true">21.25.</strong> kampka</a></li><li class="chapter-item expanded "><a href="nur-combined-kapack.html"><strong aria-hidden="true">21.26.</strong> kapack</a></li><li class="chapter-item expanded "><a href="nur-combined-kira-bruneau.html"><strong aria-hidden="true">21.27.</strong> kira-bruneau</a></li><li class="chapter-item expanded "><a href="nur-combined-kolloch.html"><strong aria-hidden="true">21.28.</strong> kolloch</a></li><li class="chapter-item expanded "><a href="nur-combined-krebs.html"><strong aria-hidden="true">21.29.</strong> krebs</a></li><li class="chapter-item expanded "><a href="nur-combined-kreisys.html"><strong aria-hidden="true">21.30.</strong> kreisys</a></li><li class="chapter-item expanded "><a href="nur-combined-linyinfeng.html"><strong aria-hidden="true">21.31.</strong> linyinfeng</a></li><li class="chapter-item expanded "><a href="nur-combined-lschuermann.html"><strong aria-hidden="true">21.32.</strong> lschuermann</a></li><li class="chapter-item expanded "><a href="nur-combined-lucasew.html"><strong aria-hidden="true">21.33.</strong> lucasew</a></li><li class="chapter-item expanded "><a href="nur-combined-misterio.html"><strong aria-hidden="true">21.34.</strong> misterio</a></li><li class="chapter-item expanded "><a href="nur-combined-mmilata.html"><strong aria-hidden="true">21.35.</strong> mmilata</a></li><li class="chapter-item expanded "><a href="nur-combined-moredhel.html"><strong aria-hidden="true">21.36.</strong> moredhel</a></li><li class="chapter-item expanded "><a href="nur-combined-moredread.html"><strong aria-hidden="true">21.37.</strong> moredread</a></li><li class="chapter-item expanded "><a href="nur-combined-noneucat.html"><strong aria-hidden="true">21.38.</strong> noneucat</a></li><li class="chapter-item expanded "><a href="nur-combined-onny.html"><strong aria-hidden="true">21.39.</strong> onny</a></li><li class="chapter-item expanded "><a href="nur-combined-pamplemousse.html"><strong aria-hidden="true">21.40.</strong> pamplemousse</a></li><li class="chapter-item expanded "><a href="nur-combined-pborzenkov.html"><strong aria-hidden="true">21.41.</strong> pborzenkov</a></li><li class="chapter-item expanded "><a href="nur-combined-peel.html"><strong aria-hidden="true">21.42.</strong> peel</a></li><li class="chapter-item expanded "><a href="nur-combined-priegger.html"><strong aria-hidden="true">21.43.</strong> priegger</a></li><li class="chapter-item expanded "><a href="nur-combined-qchem.html"><strong aria-hidden="true">21.44.</strong> qchem</a></li><li class="chapter-item expanded "><a href="nur-combined-rycee.html"><strong aria-hidden="true">21.45.</strong> rycee</a></li><li class="chapter-item expanded "><a href="nur-combined-sehqlr.html"><strong aria-hidden="true">21.46.</strong> sehqlr</a></li><li class="chapter-item expanded "><a href="nur-combined-shamilton.html"><strong aria-hidden="true">21.47.</strong> shamilton</a></li><li class="chapter-item expanded "><a href="nur-combined-sikmir.html"><strong aria-hidden="true">21.48.</strong> sikmir</a></li><li class="chapter-item expanded "><a href="nur-combined-splintah.html"><strong aria-hidden="true">21.49.</strong> splintah</a></li><li class="chapter-item expanded "><a href="nur-combined-syberant.html"><strong aria-hidden="true">21.50.</strong> syberant</a></li><li class="chapter-item expanded "><a href="nur-combined-tilpner.html"><strong aria-hidden="true">21.51.</strong> tilpner</a></li><li class="chapter-item expanded "><a href="nur-combined-tukuan.html"><strong aria-hidden="true">21.52.</strong> tukuan</a></li><li class="chapter-item expanded "><a href="nur-combined-tox.html"><strong aria-hidden="true">21.53.</strong> tox</a></li><li class="chapter-item expanded "><a href="nur-combined-vdmeester.html"><strong aria-hidden="true">21.54.</strong> vdmeester</a></li><li class="chapter-item expanded "><a href="nur-combined-vroad.html"><strong aria-hidden="true">21.55.</strong> vroad</a></li><li class="chapter-item expanded "><a href="nur-combined-xeals.html"><strong aria-hidden="true">21.56.</strong> xeals</a></li><li class="chapter-item expanded "><a href="nur-combined-zeratax.html"><strong aria-hidden="true">21.57.</strong> zeratax</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="deploymentalwaysactivate"><a class="header" href="#deploymentalwaysactivate">deployment.alwaysActivate</a></h2>
+<p>Always run the activation script, no matter whether the configuration
+has changed (the default). This behaviour can be enforced even if it's
+set to <code>false</code> using the command line option
+<code>--always-activate</code> on deployment.</p>
+<p>If this is set to <code>false</code>, activation is done only if
+the new system profile doesn't match the previous one.</p>
+<h4 id="type"><a class="header" href="#type">type</a></h4>
+<p>boolean</p>
+<h4 id="default"><a class="header" href="#default">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.alwaysActivate = true;
+}
+</code></pre>
+<h2 id="deploymentec2accesskeyid"><a class="header" href="#deploymentec2accesskeyid">deployment.ec2.accessKeyId</a></h2>
+<p>The AWS Access Key ID.  If left empty, it defaults to the
+contents of the environment variables
+<envar>EC2_ACCESS_KEY</envar> or
+<envar>AWS_ACCESS_KEY_ID</envar> (in that order).  The
+corresponding Secret Access Key is not specified in the
+deployment model, but looked up in the file
+<filename>~/.ec2-keys</filename>, which should specify, on
+each line, an Access Key ID followed by the corresponding
+Secret Access Key. If the lookup was unsuccessful it is continued
+in the standard AWS tools <filename>~/.aws/credentials</filename> file.
+If it does not appear in these files, the
+environment variables
+<envar>EC2_SECRET_KEY</envar> or
+<envar>AWS_SECRET_ACCESS_KEY</envar> are used.</p>
+<h4 id="type-1"><a class="header" href="#type-1">type</a></h4>
+<p>string</p>
+<h4 id="example"><a class="header" href="#example">example</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.accessKeyId = &quot;AKIABOGUSACCESSKEY&quot;;
+}
+</code></pre>
+<h4 id="default-1"><a class="header" href="#default-1">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.accessKeyId = &quot;&quot;;
+}
+</code></pre>
+<h2 id="deploymentec2ami"><a class="header" href="#deploymentec2ami">deployment.ec2.ami</a></h2>
+<p>EC2 identifier of the AMI disk image used in the virtual
+machine.  This must be a NixOS image providing SSH access.</p>
+<h4 id="type-2"><a class="header" href="#type-2">type</a></h4>
+<p>string</p>
+<h4 id="example-1"><a class="header" href="#example-1">example</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.ami = &quot;ami-00000000&quot;;
+}
+</code></pre>
+<h2 id="deploymentec2associatepublicipaddress"><a class="header" href="#deploymentec2associatepublicipaddress">deployment.ec2.associatePublicIpAddress</a></h2>
+<p>If instance in a subnet/VPC, whether to associate a public
+IP address with the instance.</p>
+<h4 id="type-3"><a class="header" href="#type-3">type</a></h4>
+<p>boolean</p>
+<h4 id="default-2"><a class="header" href="#default-2">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.associatePublicIpAddress = false;
+}
+</code></pre>
+<h2 id="deploymentec2blockdevicemapping"><a class="header" href="#deploymentec2blockdevicemapping">deployment.ec2.blockDeviceMapping</a></h2>
+<p>Block device mapping.</p>
+<p><filename>/dev/sd[a-e]</filename> or <filename>/dev/xvd[a-e]</filename> must be ephemeral devices.</p>
+<p>With the following instances, EBS volumes are exposed as NVMe block devices: C5, C5d, i3.metal, M5, and M5d (https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html). For these instances volumes should be attached as <filename>/dev/nvme[1-26]n1</filename>, there should be no hole in numbering.</p>
+<example>
+{
+  machine = {
+    deployment.ec2.blockDeviceMapping."/dev/nvme1n1".size = 1;
+    deployment.ec2.blockDeviceMapping."/dev/nvme3n1".size = 1; # this device will be attached as /dev/nvme2n1, you should use /dev/nvme2n1
+  };
+}
+</example>
+<h4 id="type-4"><a class="header" href="#type-4">type</a></h4>
+<p>attribute set of submodule</p>
+<h4 id="example-2"><a class="header" href="#example-2">example</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.blockDeviceMapping = {
+    &quot;/dev/xvdb&quot; = {
+      disk = &quot;ephemeral0&quot;;
+    };
+    &quot;/dev/xvdg&quot; = {
+      disk = &quot;vol-00000000&quot;;
+    };
+  };
+}
+</code></pre>
+<h4 id="default-3"><a class="header" href="#default-3">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.blockDeviceMapping = {};
+}
+</code></pre>
+<h2 id="deploymentec2blockdevicemappingnamecipher"><a class="header" href="#deploymentec2blockdevicemappingnamecipher">deployment.ec2.blockDeviceMapping.&lt;name&gt;.cipher</a></h2>
+<p>The cipher used to encrypt the disk.</p>
+<h4 id="type-5"><a class="header" href="#type-5">type</a></h4>
+<p>string</p>
+<h4 id="default-4"><a class="header" href="#default-4">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.blockDeviceMapping.&lt;name&gt;.cipher = &quot;aes-cbc-essiv:sha256&quot;;
+}
+</code></pre>
+<h2 id="deploymentec2blockdevicemappingnamedeleteontermination"><a class="header" href="#deploymentec2blockdevicemappingnamedeleteontermination">deployment.ec2.blockDeviceMapping.&lt;name&gt;.deleteOnTermination</a></h2>
+<p>For automatically created EBS volumes, determines whether the
+volume should be deleted on instance termination.</p>
+<h4 id="type-6"><a class="header" href="#type-6">type</a></h4>
+<p>boolean</p>
+<h2 id="deploymentec2blockdevicemappingnamedisk"><a class="header" href="#deploymentec2blockdevicemappingnamedisk">deployment.ec2.blockDeviceMapping.&lt;name&gt;.disk</a></h2>
+<p>EC2 identifier of the disk to be mounted.  This can be an
+ephemeral disk (e.g. <literal>ephemeral0</literal>), a
+snapshot ID (e.g. <literal>snap-00000000</literal>) or a
+volume ID (e.g. <literal>vol-00000000</literal>).  Leave
+empty to create an EBS volume automatically.  It can also be
+an EBS resource (e.g. <literal>resources.ebsVolumes.big-disk</literal>).</p>
+<h4 id="type-7"><a class="header" href="#type-7">type</a></h4>
+<p>string or resource of type ‘ebs-volume’</p>
+<h4 id="example-3"><a class="header" href="#example-3">example</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.blockDeviceMapping.&lt;name&gt;.disk = &quot;vol-00000000&quot;;
+}
+</code></pre>
+<h4 id="default-5"><a class="header" href="#default-5">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.blockDeviceMapping.&lt;name&gt;.disk = &quot;&quot;;
+}
+</code></pre>
+<h2 id="deploymentec2blockdevicemappingnameencrypt"><a class="header" href="#deploymentec2blockdevicemappingnameencrypt">deployment.ec2.blockDeviceMapping.&lt;name&gt;.encrypt</a></h2>
+<p>Whether the EBS volume should be encrypted using LUKS.</p>
+<h4 id="type-8"><a class="header" href="#type-8">type</a></h4>
+<p>boolean</p>
+<h4 id="default-6"><a class="header" href="#default-6">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.blockDeviceMapping.&lt;name&gt;.encrypt = false;
+}
+</code></pre>
+<h2 id="deploymentec2blockdevicemappingnameencryptiontype"><a class="header" href="#deploymentec2blockdevicemappingnameencryptiontype">deployment.ec2.blockDeviceMapping.&lt;name&gt;.encryptionType</a></h2>
+<p>Whether the EBS volume should be encrypted using LUKS or on the
+underlying EBS volume (Amazon EBS feature). Possible values are
+&quot;luks&quot; (default) and &quot;ebs&quot;.</p>
+<h4 id="type-9"><a class="header" href="#type-9">type</a></h4>
+<p>one of &quot;luks&quot;, &quot;ebs&quot;</p>
+<h4 id="default-7"><a class="header" href="#default-7">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.blockDeviceMapping.&lt;name&gt;.encryptionType = &quot;luks&quot;;
+}
+</code></pre>
+<h2 id="deploymentec2blockdevicemappingnamefstype"><a class="header" href="#deploymentec2blockdevicemappingnamefstype">deployment.ec2.blockDeviceMapping.&lt;name&gt;.fsType</a></h2>
+<p>Filesystem type for automatically created EBS volumes.</p>
+<h4 id="type-10"><a class="header" href="#type-10">type</a></h4>
+<p>string</p>
+<h4 id="default-8"><a class="header" href="#default-8">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.blockDeviceMapping.&lt;name&gt;.fsType = &quot;ext4&quot;;
+}
+</code></pre>
+<h2 id="deploymentec2blockdevicemappingnameiops"><a class="header" href="#deploymentec2blockdevicemappingnameiops">deployment.ec2.blockDeviceMapping.&lt;name&gt;.iops</a></h2>
+<p>The provisioned IOPS you want to associate with this EBS volume.</p>
+<h4 id="type-11"><a class="header" href="#type-11">type</a></h4>
+<p>null or signed integer</p>
+<h4 id="default-9"><a class="header" href="#default-9">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.blockDeviceMapping.&lt;name&gt;.iops = null;
+}
+</code></pre>
+<h2 id="deploymentec2blockdevicemappingnamekeysize"><a class="header" href="#deploymentec2blockdevicemappingnamekeysize">deployment.ec2.blockDeviceMapping.&lt;name&gt;.keySize</a></h2>
+<p>The size of the encryption key.</p>
+<h4 id="type-12"><a class="header" href="#type-12">type</a></h4>
+<p>signed integer</p>
+<h4 id="default-10"><a class="header" href="#default-10">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.blockDeviceMapping.&lt;name&gt;.keySize = 128;
+}
+</code></pre>
+<h2 id="deploymentec2blockdevicemappingnamepassphrase"><a class="header" href="#deploymentec2blockdevicemappingnamepassphrase">deployment.ec2.blockDeviceMapping.&lt;name&gt;.passphrase</a></h2>
+<p>The passphrase (key file) used to decrypt the key to access
+the device.  If left empty, a passphrase is generated
+automatically; this passphrase is lost when you destroy the
+machine or remove the volume, unless you copy it from
+NixOps's state file.  Note that the passphrase is stored in
+the Nix store of the instance, so an attacker who gains
+access to the EBS volume or instance store that contains the
+Nix store can subsequently decrypt the encrypted volume.</p>
+<h4 id="type-13"><a class="header" href="#type-13">type</a></h4>
+<p>string</p>
+<h4 id="default-11"><a class="header" href="#default-11">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.blockDeviceMapping.&lt;name&gt;.passphrase = &quot;&quot;;
+}
+</code></pre>
+<h2 id="deploymentec2blockdevicemappingnamesize"><a class="header" href="#deploymentec2blockdevicemappingnamesize">deployment.ec2.blockDeviceMapping.&lt;name&gt;.size</a></h2>
+<p>Volume size (in gigabytes).  This may be left unset if you are
+creating the volume from a snapshot, in which case the size of
+the volume will be equal to the size of the snapshot.
+However, you can set a size larger than the snapshot, allowing
+the volume to be larger than the snapshot from which it is
+created.</p>
+<h4 id="type-14"><a class="header" href="#type-14">type</a></h4>
+<p>signed integer</p>
+<h4 id="example-4"><a class="header" href="#example-4">example</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.blockDeviceMapping.&lt;name&gt;.size = 100;
+}
+</code></pre>
+<h2 id="deploymentec2blockdevicemappingnamevolumetype"><a class="header" href="#deploymentec2blockdevicemappingnamevolumetype">deployment.ec2.blockDeviceMapping.&lt;name&gt;.volumeType</a></h2>
+<p>The volume type for the EBS volume, which must be one of
+<literal>&quot;standard&quot;</literal> (a magnetic volume),
+<literal>&quot;io1&quot;</literal> (a provisioned IOPS SSD volume),
+<literal>&quot;io2&quot;</literal> (an improved provisioned IOPS SSD volume) or
+<literal>&quot;gp2&quot;</literal> (a general purpose SSD volume).
+<literal>&quot;gp3&quot;</literal> (a general purpose SSD volume).
+<literal>&quot;st1&quot;</literal> (a throughput optimized HDD volume).
+<literal>&quot;sc1&quot;</literal> (a cold HDD volume).</p>
+<h4 id="type-15"><a class="header" href="#type-15">type</a></h4>
+<p>one of &quot;standard&quot;, &quot;io1&quot;, &quot;io2&quot;, &quot;gp2&quot;, &quot;gp3&quot;, &quot;st1&quot;, &quot;sc1&quot;</p>
+<h4 id="default-12"><a class="header" href="#default-12">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.blockDeviceMapping.&lt;name&gt;.volumeType = &quot;standard&quot;;
+}
+</code></pre>
+<h2 id="deploymentec2ebsboot"><a class="header" href="#deploymentec2ebsboot">deployment.ec2.ebsBoot</a></h2>
+<p>Whether you want to boot from an EBS-backed AMI.  Only
+EBS-backed instances can be stopped and restarted, and attach
+other EBS volumes at boot time.  This option determines the
+selection of the default AMI; if you explicitly specify</p>
+<option>deployment.ec2.ami</option>, it has no effect.
+<h4 id="type-16"><a class="header" href="#type-16">type</a></h4>
+<p>boolean</p>
+<h4 id="default-13"><a class="header" href="#default-13">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.ebsBoot = true;
+}
+</code></pre>
+<h2 id="deploymentec2ebsinitialrootdisksize"><a class="header" href="#deploymentec2ebsinitialrootdisksize">deployment.ec2.ebsInitialRootDiskSize</a></h2>
+<p>Preferred size (G) of the root disk of the EBS-backed instance. By
+default, EBS-backed images have a size determined by the
+AMI. Only supported on creation of the instance.</p>
+<h4 id="type-17"><a class="header" href="#type-17">type</a></h4>
+<p>signed integer</p>
+<h4 id="default-14"><a class="header" href="#default-14">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.ebsInitialRootDiskSize = 0;
+}
+</code></pre>
+<h2 id="deploymentec2ebsoptimized"><a class="header" href="#deploymentec2ebsoptimized">deployment.ec2.ebsOptimized</a></h2>
+<p>Whether the EC2 instance should be created as an EBS Optimized instance.</p>
+<h4 id="type-18"><a class="header" href="#type-18">type</a></h4>
+<p>boolean</p>
+<h4 id="default-15"><a class="header" href="#default-15">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.ebsOptimized = false;
+}
+</code></pre>
+<h2 id="deploymentec2elasticipv4"><a class="header" href="#deploymentec2elasticipv4">deployment.ec2.elasticIPv4</a></h2>
+<p>Elastic IPv4 address to be associated with this machine.</p>
+<h4 id="type-19"><a class="header" href="#type-19">type</a></h4>
+<p>string or resource of type ‘elastic-ip’</p>
+<h4 id="example-5"><a class="header" href="#example-5">example</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.elasticIPv4 = &quot;123.1.123.123&quot;;
+}
+</code></pre>
+<h4 id="default-16"><a class="header" href="#default-16">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.elasticIPv4 = &quot;&quot;;
+}
+</code></pre>
+<h2 id="deploymentec2instanceid"><a class="header" href="#deploymentec2instanceid">deployment.ec2.instanceId</a></h2>
+<p>EC2 instance ID (set by NixOps).</p>
+<h4 id="type-20"><a class="header" href="#type-20">type</a></h4>
+<p>string</p>
+<h4 id="default-17"><a class="header" href="#default-17">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.instanceId = &quot;&quot;;
+}
+</code></pre>
+<h2 id="deploymentec2instanceprofile"><a class="header" href="#deploymentec2instanceprofile">deployment.ec2.instanceProfile</a></h2>
+<p>The name of the IAM Instance Profile (IIP) to associate with
+the instances.</p>
+<h4 id="type-21"><a class="header" href="#type-21">type</a></h4>
+<p>string</p>
+<h4 id="example-6"><a class="header" href="#example-6">example</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.instanceProfile = &quot;rolename&quot;;
+}
+</code></pre>
+<h4 id="default-18"><a class="header" href="#default-18">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.instanceProfile = &quot;&quot;;
+}
+</code></pre>
+<h2 id="deploymentec2instancetype"><a class="header" href="#deploymentec2instancetype">deployment.ec2.instanceType</a></h2>
+<p>EC2 instance type.  See <link
+xlink:href='http://aws.amazon.com/ec2/instance-types/'/> for a
+list of valid Amazon EC2 instance types.</p>
+<h4 id="type-22"><a class="header" href="#type-22">type</a></h4>
+<p>string</p>
+<h4 id="example-7"><a class="header" href="#example-7">example</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.instanceType = &quot;m1.large&quot;;
+}
+</code></pre>
+<h4 id="default-19"><a class="header" href="#default-19">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.instanceType = &quot;m1.small&quot;;
+}
+</code></pre>
+<h2 id="deploymentec2keypair"><a class="header" href="#deploymentec2keypair">deployment.ec2.keyPair</a></h2>
+<p>Name of the SSH key pair to be used to communicate securely
+with the instance.  Key pairs can be created using the
+<command>ec2-add-keypair</command> command.</p>
+<h4 id="type-23"><a class="header" href="#type-23">type</a></h4>
+<p>string or resource of type ‘ec2-keypair’</p>
+<h4 id="example-8"><a class="header" href="#example-8">example</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.keyPair = &quot;my-keypair&quot;;
+}
+</code></pre>
+<h2 id="deploymentec2physicalproperties"><a class="header" href="#deploymentec2physicalproperties">deployment.ec2.physicalProperties</a></h2>
+<p>Attribute set containing number of CPUs and memory available to
+the machine.</p>
+<h4 id="type-24"><a class="header" href="#type-24">type</a></h4>
+<p>attribute set of signed integer or string or boolean</p>
+<h4 id="example-9"><a class="header" href="#example-9">example</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.physicalProperties = {
+    cores = 4;
+    memory = 14985;
+  };
+}
+</code></pre>
+<h4 id="default-20"><a class="header" href="#default-20">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.physicalProperties = {};
+}
+</code></pre>
+<h2 id="deploymentec2placementgroup"><a class="header" href="#deploymentec2placementgroup">deployment.ec2.placementGroup</a></h2>
+<p>Placement group for the instance.</p>
+<h4 id="type-25"><a class="header" href="#type-25">type</a></h4>
+<p>string or resource of type ‘ec2-placement-group’</p>
+<h4 id="example-10"><a class="header" href="#example-10">example</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.placementGroup = &quot;my-cluster&quot;;
+}
+</code></pre>
+<h4 id="default-21"><a class="header" href="#default-21">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.placementGroup = &quot;&quot;;
+}
+</code></pre>
+<h2 id="deploymentec2privatekey"><a class="header" href="#deploymentec2privatekey">deployment.ec2.privateKey</a></h2>
+<p>Path of the SSH private key file corresponding with</p>
+<option>deployment.ec2.keyPair</option>.  NixOps will use this
+private key if set; otherwise, the key must be findable by SSH
+through its normal mechanisms (e.g. it should be listed in
+<filename>~/.ssh/config</filename> or added to the
+<command>ssh-agent</command>).
+<h4 id="type-26"><a class="header" href="#type-26">type</a></h4>
+<p>string</p>
+<h4 id="example-11"><a class="header" href="#example-11">example</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.privateKey = &quot;/home/alice/.ssh/id_rsa-my-keypair&quot;;
+}
+</code></pre>
+<h4 id="default-22"><a class="header" href="#default-22">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.privateKey = &quot;&quot;;
+}
+</code></pre>
+<h2 id="deploymentec2region"><a class="header" href="#deploymentec2region">deployment.ec2.region</a></h2>
+<p>AWS region in which the instance is to be deployed.
+This option only applies when using EC2.  It implicitly sets</p>
+<option>deployment.ec2.ami</option>.
+<h4 id="type-27"><a class="header" href="#type-27">type</a></h4>
+<p>string</p>
+<h4 id="example-12"><a class="header" href="#example-12">example</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.region = &quot;us-east-1&quot;;
+}
+</code></pre>
+<h4 id="default-23"><a class="header" href="#default-23">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.region = &quot;&quot;;
+}
+</code></pre>
+<h2 id="deploymentec2securitygroupids"><a class="header" href="#deploymentec2securitygroupids">deployment.ec2.securityGroupIds</a></h2>
+<p>Security Group IDs for the instance. Necessary if starting
+an instance inside a VPC/subnet. In the non-default VPC, security
+groups needs to be specified by ID and not name.</p>
+<h4 id="type-28"><a class="header" href="#type-28">type</a></h4>
+<p>list of string</p>
+<h4 id="default-24"><a class="header" href="#default-24">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.securityGroupIds = [
+    &quot;default&quot;
+  ];
+}
+</code></pre>
+<h2 id="deploymentec2securitygroups"><a class="header" href="#deploymentec2securitygroups">deployment.ec2.securityGroups</a></h2>
+<p>Security groups for the instance.  These determine the
+firewall rules applied to the instance.</p>
+<h4 id="type-29"><a class="header" href="#type-29">type</a></h4>
+<p>list of string or resource of type ‘ec2-security-group’</p>
+<h4 id="example-13"><a class="header" href="#example-13">example</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.securityGroups = [
+    &quot;my-group&quot;
+    &quot;my-other-group&quot;
+  ];
+}
+</code></pre>
+<h4 id="default-25"><a class="header" href="#default-25">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.securityGroups = [
+    &quot;default&quot;
+  ];
+}
+</code></pre>
+<h2 id="deploymentec2sourcedestcheck"><a class="header" href="#deploymentec2sourcedestcheck">deployment.ec2.sourceDestCheck</a></h2>
+<p>If instance in a subnet/VPC, whether to enable or disable
+source-destination-check.</p>
+<h4 id="type-30"><a class="header" href="#type-30">type</a></h4>
+<p>boolean</p>
+<h4 id="default-26"><a class="header" href="#default-26">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.sourceDestCheck = true;
+}
+</code></pre>
+<h2 id="deploymentec2spotinstanceinterruptionbehavior"><a class="header" href="#deploymentec2spotinstanceinterruptionbehavior">deployment.ec2.spotInstanceInterruptionBehavior</a></h2>
+<p>Whether to terminate, stop or hibernate the instance when it gets interrupted.
+For stop, spotInstanceRequestType must be set to &quot;persistent&quot;.</p>
+<h4 id="type-31"><a class="header" href="#type-31">type</a></h4>
+<p>one of &quot;terminate&quot;, &quot;stop&quot;, &quot;hibernate&quot;</p>
+<h4 id="default-27"><a class="header" href="#default-27">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.spotInstanceInterruptionBehavior = &quot;terminate&quot;;
+}
+</code></pre>
+<h2 id="deploymentec2spotinstanceprice"><a class="header" href="#deploymentec2spotinstanceprice">deployment.ec2.spotInstancePrice</a></h2>
+<p>Price (in dollar cents per hour) to use for spot instances request for the machine.
+If the value is equal to 0 (default), then spot instances are not used.</p>
+<h4 id="type-32"><a class="header" href="#type-32">type</a></h4>
+<p>signed integer</p>
+<h4 id="default-28"><a class="header" href="#default-28">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.spotInstancePrice = 0;
+}
+</code></pre>
+<h2 id="deploymentec2spotinstancerequesttype"><a class="header" href="#deploymentec2spotinstancerequesttype">deployment.ec2.spotInstanceRequestType</a></h2>
+<p>The type of the spot instance request. It can be either &quot;one-time&quot; or &quot;persistent&quot;.</p>
+<h4 id="type-33"><a class="header" href="#type-33">type</a></h4>
+<p>one of &quot;one-time&quot;, &quot;persistent&quot;</p>
+<h4 id="default-29"><a class="header" href="#default-29">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.spotInstanceRequestType = &quot;one-time&quot;;
+}
+</code></pre>
+<h2 id="deploymentec2spotinstancetimeout"><a class="header" href="#deploymentec2spotinstancetimeout">deployment.ec2.spotInstanceTimeout</a></h2>
+<p>The duration (in seconds) that the spot instance request is
+valid. If the request cannot be satisfied in this amount of
+time, the request will be cancelled automatically, and NixOps
+will fail with an error message. The default (0) is no timeout.</p>
+<h4 id="type-34"><a class="header" href="#type-34">type</a></h4>
+<p>signed integer</p>
+<h4 id="default-30"><a class="header" href="#default-30">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.spotInstanceTimeout = 0;
+}
+</code></pre>
+<h2 id="deploymentec2subnetid"><a class="header" href="#deploymentec2subnetid">deployment.ec2.subnetId</a></h2>
+<p>The subnet inside a VPC to launch the instance in.</p>
+<h4 id="type-35"><a class="header" href="#type-35">type</a></h4>
+<p>string or resource of type ‘vpc-subnet’</p>
+<h4 id="example-14"><a class="header" href="#example-14">example</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.subnetId = &quot;subnet-00000000&quot;;
+}
+</code></pre>
+<h4 id="default-31"><a class="header" href="#default-31">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.subnetId = &quot;&quot;;
+}
+</code></pre>
+<h2 id="deploymentec2tags"><a class="header" href="#deploymentec2tags">deployment.ec2.tags</a></h2>
+<p>Tags assigned to the instance.  Each tag name can be at most
+128 characters, and each tag value can be at most 256
+characters.  There can be at most 10 tags.</p>
+<h4 id="type-36"><a class="header" href="#type-36">type</a></h4>
+<p>attribute set of string</p>
+<h4 id="example-15"><a class="header" href="#example-15">example</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.tags = {
+    foo = &quot;bar&quot;;
+    xyzzy = &quot;bla&quot;;
+  };
+}
+</code></pre>
+<h4 id="default-32"><a class="header" href="#default-32">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.tags = {};
+}
+</code></pre>
+<h2 id="deploymentec2tenancy"><a class="header" href="#deploymentec2tenancy">deployment.ec2.tenancy</a></h2>
+<p>The tenancy of the instance (if the instance is running in a VPC).
+An instance with a tenancy of dedicated runs on single-tenant hardware.
+An instance with host tenancy runs on a Dedicated Host, which is an
+isolated server with configurations that you can control.</p>
+<h4 id="type-37"><a class="header" href="#type-37">type</a></h4>
+<p>one of &quot;default&quot;, &quot;dedicated&quot;, &quot;host&quot;</p>
+<h4 id="default-33"><a class="header" href="#default-33">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.tenancy = &quot;default&quot;;
+}
+</code></pre>
+<h2 id="deploymentec2useprivateipaddress"><a class="header" href="#deploymentec2useprivateipaddress">deployment.ec2.usePrivateIpAddress</a></h2>
+<p>If instance is in a subnet/VPC whether to use the private
+IP address for ssh connections to this host. Defaults to
+true in the case that you are deploying into a subnet but
+not associating a public ip address.</p>
+<h4 id="type-38"><a class="header" href="#type-38">type</a></h4>
+<p>boolean</p>
+<h4 id="default-34"><a class="header" href="#default-34">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.usePrivateIpAddress = false;
+}
+</code></pre>
+<h2 id="deploymentec2zone"><a class="header" href="#deploymentec2zone">deployment.ec2.zone</a></h2>
+<p>The EC2 availability zone in which the instance should be
+created.  If not specified, a zone is selected automatically.</p>
+<h4 id="type-39"><a class="header" href="#type-39">type</a></h4>
+<p>string</p>
+<h4 id="example-16"><a class="header" href="#example-16">example</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.zone = &quot;us-east-1c&quot;;
+}
+</code></pre>
+<h4 id="default-35"><a class="header" href="#default-35">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.ec2.zone = &quot;&quot;;
+}
+</code></pre>
+<h2 id="deploymenthasfastconnection"><a class="header" href="#deploymenthasfastconnection">deployment.hasFastConnection</a></h2>
+<p>If set to <code>true</code>, whole closure will be copied using just <code>nix-copy-closure</code>.</p>
+<p>If set to <code>false</code>, closure will be copied first using binary substitution.
+Additionally, any missing derivations copied with <code>nix-copy-closure</code> will be done
+using <code>--gzip</code> flag.</p>
+<p>Some backends set this value to <code>true</code>.</p>
+<h4 id="type-40"><a class="header" href="#type-40">type</a></h4>
+<p>boolean</p>
+<h4 id="default-36"><a class="header" href="#default-36">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.hasFastConnection = false;
+}
+</code></pre>
+<h2 id="deploymentkeys"><a class="header" href="#deploymentkeys">deployment.keys</a></h2>
+<p>The set of keys to be deployed to the machine.  Each attribute maps
+a key name to a file that can be accessed as
+<code>destDir</code>/<code>name</code>,
+where <code>destDir</code> defaults to
+<code>/run/keys</code>.  Thus, <code>{ password.text = &quot;foobar&quot;; }</code> causes a file
+<code>destDir</code>/password<code>to be created with contents</code>foobar<code>.  The directory </code>destDir<code>is only accessible to root and the</code>keys`` group, so keep in mind
+to add any users that need to have access to a particular key to this
+group.</p>
+<p>Each key also gets a systemd service <code>&lt;name&gt;-key.service</code>
+which is active while the key is present and inactive while the key
+is absent.  Thus, <code>{ password.text = &quot;foobar&quot;; }</code> gets
+a <code>password-key.service</code>.</p>
+<h4 id="type-41"><a class="header" href="#type-41">type</a></h4>
+<p>attribute set of string or key options</p>
+<h4 id="example-17"><a class="header" href="#example-17">example</a></h4>
+<pre><code class="language-nix">{
+  deployment.keys = {
+    password = {
+      text = &quot;foobar&quot;;
+    };
+  };
+}
+</code></pre>
+<h4 id="default-37"><a class="header" href="#default-37">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.keys = {};
+}
+</code></pre>
+<h2 id="deploymentkeysnamedestdir"><a class="header" href="#deploymentkeysnamedestdir">deployment.keys.&lt;name&gt;.destDir</a></h2>
+<p>When specified, this allows changing the destDir directory of the key
+file from its default value of <code>/run/keys</code>.</p>
+<p>This directory will be created, its permissions changed to
+<code>0750</code> and ownership to <code>root:keys</code>.</p>
+<h4 id="type-42"><a class="header" href="#type-42">type</a></h4>
+<p>path</p>
+<h4 id="default-38"><a class="header" href="#default-38">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.keys.&lt;name&gt;.destDir = &quot;/run/keys&quot;;
+}
+</code></pre>
+<h2 id="deploymentkeysnamegroup"><a class="header" href="#deploymentkeysnamegroup">deployment.keys.&lt;name&gt;.group</a></h2>
+<p>The group that will be set for the key file.</p>
+<h4 id="type-43"><a class="header" href="#type-43">type</a></h4>
+<p>string</p>
+<h4 id="default-39"><a class="header" href="#default-39">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.keys.&lt;name&gt;.group = &quot;root&quot;;
+}
+</code></pre>
+<h2 id="deploymentkeysnamekeycommand"><a class="header" href="#deploymentkeysnamekeycommand">deployment.keys.&lt;name&gt;.keyCommand</a></h2>
+<p>When non-null, output of this command run on local machine will be
+deployed to the specified key on the target machine.  If the key name
+is
+<code>password</code> and <code>echo secrettoken</code>
+is set here, the contents of the file
+<code>destDir</code>/<code>password</code>
+deployed will equal the output of the command <code>echo secrettoken</code>.</p>
+<p>This option is especially useful when you don't want to store the secrets
+inside of your NixOps deployment but rather in a well-guarded place such as an
+encrypted file. Consider using nixpkgs.password-store as storage for
+such sensitive secrets.</p>
+<p>NOTE: Either <code>text</code>, <code>keyCommand</code> or
+<code>keyFile</code> have to be set.</p>
+<h4 id="type-44"><a class="header" href="#type-44">type</a></h4>
+<p>null or list of string</p>
+<h4 id="example-18"><a class="header" href="#example-18">example</a></h4>
+<pre><code class="language-nix">{
+  deployment.keys.&lt;name&gt;.keyCommand = [
+    &quot;pass&quot;
+    &quot;show&quot;
+    &quot;secrettoken&quot;
+  ];
+}
+</code></pre>
+<h4 id="default-40"><a class="header" href="#default-40">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.keys.&lt;name&gt;.keyCommand = null;
+}
+</code></pre>
+<h2 id="deploymentkeysnamekeyfile"><a class="header" href="#deploymentkeysnamekeyfile">deployment.keys.&lt;name&gt;.keyFile</a></h2>
+<p>When non-null, contents of the specified file will be deployed to the
+specified key on the target machine.  If the key name is
+<code>password</code> and <code>/foo/bar</code> is set
+here, the contents of the file
+<code>destDir</code>/<code>password</code>
+deployed will be the same as local file <code>/foo/bar</code>.</p>
+<p>Since no serialization/deserialization of key contents is involved, there
+are no limits on that content: null bytes, invalid Unicode,
+<code>/dev/random</code> output -- anything goes.</p>
+<p>NOTE: Either <code>text</code>, <code>keyCommand</code> or
+<code>keyFile</code> have to be set.</p>
+<h4 id="type-45"><a class="header" href="#type-45">type</a></h4>
+<p>null or path</p>
+<h4 id="default-41"><a class="header" href="#default-41">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.keys.&lt;name&gt;.keyFile = null;
+}
+</code></pre>
+<h2 id="deploymentkeysnamename"><a class="header" href="#deploymentkeysnamename">deployment.keys.&lt;name&gt;.name</a></h2>
+<p>The name of the key file.</p>
+<h4 id="type-46"><a class="header" href="#type-46">type</a></h4>
+<p>string</p>
+<h4 id="example-19"><a class="header" href="#example-19">example</a></h4>
+<pre><code class="language-nix">{
+  deployment.keys.&lt;name&gt;.name = &quot;secret.txt&quot;;
+}
+</code></pre>
+<h4 id="default-42"><a class="header" href="#default-42">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.keys.&lt;name&gt;.name = &quot;‹name›&quot;;
+}
+</code></pre>
+<h2 id="deploymentkeysnamepermissions"><a class="header" href="#deploymentkeysnamepermissions">deployment.keys.&lt;name&gt;.permissions</a></h2>
+<p>The default permissions to set for the key file, needs to be in the
+format accepted by <code>chmod(1)</code>.</p>
+<h4 id="type-47"><a class="header" href="#type-47">type</a></h4>
+<p>string</p>
+<h4 id="example-20"><a class="header" href="#example-20">example</a></h4>
+<pre><code class="language-nix">{
+  deployment.keys.&lt;name&gt;.permissions = &quot;0640&quot;;
+}
+</code></pre>
+<h4 id="default-43"><a class="header" href="#default-43">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.keys.&lt;name&gt;.permissions = &quot;0600&quot;;
+}
+</code></pre>
+<h2 id="deploymentkeysnametext"><a class="header" href="#deploymentkeysnametext">deployment.keys.&lt;name&gt;.text</a></h2>
+<p>When non-null, this designates the text that the key should contain. So if
+the key name is <code>password</code> and
+<code>foobar</code> is set here, the contents of the file
+<code>destDir</code>/<code>password</code>
+will be <code>foobar</code>.</p>
+<p>NOTE: Either <code>text</code>, <code>keyCommand</code> or
+<code>keyFile</code> have to be set.</p>
+<h4 id="type-48"><a class="header" href="#type-48">type</a></h4>
+<p>null or string</p>
+<h4 id="example-21"><a class="header" href="#example-21">example</a></h4>
+<pre><code class="language-nix">{
+  deployment.keys.&lt;name&gt;.text = &quot;super secret stuff&quot;;
+}
+</code></pre>
+<h4 id="default-44"><a class="header" href="#default-44">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.keys.&lt;name&gt;.text = null;
+}
+</code></pre>
+<h2 id="deploymentkeysnameuser"><a class="header" href="#deploymentkeysnameuser">deployment.keys.&lt;name&gt;.user</a></h2>
+<p>The user which will be the owner of the key file.</p>
+<h4 id="type-49"><a class="header" href="#type-49">type</a></h4>
+<p>string</p>
+<h4 id="default-45"><a class="header" href="#default-45">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.keys.&lt;name&gt;.user = &quot;root&quot;;
+}
+</code></pre>
+<h2 id="deploymentowners"><a class="header" href="#deploymentowners">deployment.owners</a></h2>
+<p>List of email addresses of the owners of the machines. Used
+to send email on performing certain actions.</p>
+<h4 id="type-50"><a class="header" href="#type-50">type</a></h4>
+<p>list of string</p>
+<h4 id="default-46"><a class="header" href="#default-46">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.owners = [];
+}
+</code></pre>
+<h2 id="deploymentprivilegeescalationcommand"><a class="header" href="#deploymentprivilegeescalationcommand">deployment.privilegeEscalationCommand</a></h2>
+<p>A command to escalate to root privileges when using SSH as a non-root user.
+This option is ignored if the <code>targetUser</code> option is set to <code>root</code>.</p>
+<p>The program and its options are executed verbatim without shell.</p>
+<p>It's good practice to end with &quot;--&quot; to indicate that the privilege escalation command
+should stop processing command line arguments.</p>
+<h4 id="type-51"><a class="header" href="#type-51">type</a></h4>
+<p>list of string</p>
+<h4 id="default-47"><a class="header" href="#default-47">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.privilegeEscalationCommand = [
+    &quot;sudo&quot;
+    &quot;-H&quot;
+    &quot;--&quot;
+  ];
+}
+</code></pre>
+<h2 id="deploymentprovisionsshkey"><a class="header" href="#deploymentprovisionsshkey">deployment.provisionSSHKey</a></h2>
+<p>This option specifies whether to let NixOps provision SSH deployment keys.</p>
+<p>NixOps will by default generate an SSH key, store the private key in its state file,
+and add the public key to the remote host.</p>
+<p>Setting this option to <code>false</code> will disable this behaviour
+and rely on you to manage your own SSH keys by yourself and to ensure
+that <code>ssh</code> has access to any keys it requires.</p>
+<h4 id="type-52"><a class="header" href="#type-52">type</a></h4>
+<p>boolean</p>
+<h4 id="default-48"><a class="header" href="#default-48">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.provisionSSHKey = true;
+}
+</code></pre>
+<h2 id="deploymentroute53accesskeyid"><a class="header" href="#deploymentroute53accesskeyid">deployment.route53.accessKeyId</a></h2>
+<p>The AWS Access Key ID.  If left empty, it defaults to the
+contents of the environment variables
+<envar>EC2_ACCESS_KEY</envar> or
+<envar>AWS_ACCESS_KEY_ID</envar> (in that order).  The
+corresponding Secret Access Key is not specified in the
+deployment model, but looked up in the file
+<filename>~/.ec2-keys</filename>, which should specify, on
+each line, an Access Key ID followed by the corresponding
+Secret Access Key. If the lookup was unsuccessful it is continued
+in the standard AWS tools <filename>~/.aws/credentials</filename> file.
+If it does not appear in these files, the
+environment variables
+<envar>EC2_SECRET_KEY</envar> or
+<envar>AWS_SECRET_ACCESS_KEY</envar> are used.</p>
+<h4 id="type-53"><a class="header" href="#type-53">type</a></h4>
+<p>string</p>
+<h4 id="example-22"><a class="header" href="#example-22">example</a></h4>
+<pre><code class="language-nix">{
+  deployment.route53.accessKeyId = &quot;AKIABOGUSACCESSKEY&quot;;
+}
+</code></pre>
+<h4 id="default-49"><a class="header" href="#default-49">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.route53.accessKeyId = &quot;&quot;;
+}
+</code></pre>
+<h2 id="deploymentroute53hostname"><a class="header" href="#deploymentroute53hostname">deployment.route53.hostName</a></h2>
+<p>The DNS hostname to bind the public IP address to.</p>
+<h4 id="type-54"><a class="header" href="#type-54">type</a></h4>
+<p>string</p>
+<h4 id="example-23"><a class="header" href="#example-23">example</a></h4>
+<pre><code class="language-nix">{
+  deployment.route53.hostName = &quot;test.x.logicblox.com&quot;;
+}
+</code></pre>
+<h4 id="default-50"><a class="header" href="#default-50">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.route53.hostName = &quot;&quot;;
+}
+</code></pre>
+<h2 id="deploymentroute53private"><a class="header" href="#deploymentroute53private">deployment.route53.private</a></h2>
+<p>Whether to create an A record with the instance's private address.</p>
+<p>Make sure to use this on a Private Hosted DNS zones only, because it will
+appear as if the host is down at best, but may cause erroneous requests to
+be routed to hosts on your clients' local networks.</p>
+<h4 id="type-55"><a class="header" href="#type-55">type</a></h4>
+<p>boolean</p>
+<h4 id="default-51"><a class="header" href="#default-51">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.route53.private = false;
+}
+</code></pre>
+<h2 id="deploymentroute53ttl"><a class="header" href="#deploymentroute53ttl">deployment.route53.ttl</a></h2>
+<p>The time to live (TTL) for the A record created for the
+specified DNS hostname.</p>
+<h4 id="type-56"><a class="header" href="#type-56">type</a></h4>
+<p>signed integer</p>
+<h4 id="example-24"><a class="header" href="#example-24">example</a></h4>
+<pre><code class="language-nix">{
+  deployment.route53.ttl = 300;
+}
+</code></pre>
+<h4 id="default-52"><a class="header" href="#default-52">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.route53.ttl = 300;
+}
+</code></pre>
+<h2 id="deploymentroute53usepublicdnsname"><a class="header" href="#deploymentroute53usepublicdnsname">deployment.route53.usePublicDNSName</a></h2>
+<p>Whether to create a CNAME record with the instance's public DNS name.
+This will resolve inside AWS to a private IP and outside AWS to
+the public IP.</p>
+<h4 id="type-57"><a class="header" href="#type-57">type</a></h4>
+<p>boolean</p>
+<h4 id="default-53"><a class="header" href="#default-53">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.route53.usePublicDNSName = false;
+}
+</code></pre>
+<h2 id="deploymentsshoptions"><a class="header" href="#deploymentsshoptions">deployment.sshOptions</a></h2>
+<p>Extra options passed to the OpenSSH client verbatim, and are not executed by a shell.</p>
+<h4 id="type-58"><a class="header" href="#type-58">type</a></h4>
+<p>list of string</p>
+<h4 id="default-54"><a class="header" href="#default-54">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.sshOptions = [];
+}
+</code></pre>
+<h2 id="deploymenttargetenv"><a class="header" href="#deploymenttargetenv">deployment.targetEnv</a></h2>
+<p>This option specifies the type of the environment in which the
+machine is to be deployed by NixOps.</p>
+<h4 id="type-59"><a class="header" href="#type-59">type</a></h4>
+<p>string</p>
+<h4 id="example-25"><a class="header" href="#example-25">example</a></h4>
+<pre><code class="language-nix">{
+  deployment.targetEnv = &quot;ec2&quot;;
+}
+</code></pre>
+<h4 id="default-55"><a class="header" href="#default-55">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.targetEnv = &quot;none&quot;;
+}
+</code></pre>
+<h2 id="deploymenttargethost"><a class="header" href="#deploymenttargethost">deployment.targetHost</a></h2>
+<p>This option specifies the hostname or IP address to be used by
+NixOps to execute remote deployment operations.</p>
+<h4 id="type-60"><a class="header" href="#type-60">type</a></h4>
+<p>string</p>
+<h2 id="deploymenttargetport"><a class="header" href="#deploymenttargetport">deployment.targetPort</a></h2>
+<p>This option specifies the SSH port to be used by
+NixOps to execute remote deployment operations.</p>
+<h4 id="type-61"><a class="header" href="#type-61">type</a></h4>
+<p>signed integer</p>
+<h2 id="deploymenttargetuser"><a class="header" href="#deploymenttargetuser">deployment.targetUser</a></h2>
+<p>The username to be used by NixOps by SSH when connecting to the
+remote system.</p>
+<h4 id="type-62"><a class="header" href="#type-62">type</a></h4>
+<p>string</p>
+<h4 id="default-56"><a class="header" href="#default-56">default</a></h4>
+<pre><code class="language-nix">{
+  deployment.targetUser = &quot;root&quot;;
+}
+</code></pre>
+<h2 id="filesystems"><a class="header" href="#filesystems">fileSystems</a></h2>
+<h4 id="type-63"><a class="header" href="#type-63">type</a></h4>
+<p>attribute set of submodule</p>
+<h2 id="filesystemsnameec2"><a class="header" href="#filesystemsnameec2">fileSystems.&lt;name&gt;.ec2</a></h2>
+<p>EC2 disk to be attached to this mount point.  This is
+shorthand for defining a separate</p>
+<option>deployment.ec2.blockDeviceMapping</option>
+attribute.
+<h4 id="type-64"><a class="header" href="#type-64">type</a></h4>
+<p>null or submodule</p>
+<h4 id="default-57"><a class="header" href="#default-57">default</a></h4>
+<pre><code class="language-nix">{
+  fileSystems.&lt;name&gt;.ec2 = null;
+}
+</code></pre>
+<h2 id="filesystemsnameec2cipher"><a class="header" href="#filesystemsnameec2cipher">fileSystems.&lt;name&gt;.ec2.cipher</a></h2>
+<p>The cipher used to encrypt the disk.</p>
+<h4 id="type-65"><a class="header" href="#type-65">type</a></h4>
+<p>string</p>
+<h4 id="default-58"><a class="header" href="#default-58">default</a></h4>
+<pre><code class="language-nix">{
+  fileSystems.&lt;name&gt;.ec2.cipher = &quot;aes-cbc-essiv:sha256&quot;;
+}
+</code></pre>
+<h2 id="filesystemsnameec2deleteontermination"><a class="header" href="#filesystemsnameec2deleteontermination">fileSystems.&lt;name&gt;.ec2.deleteOnTermination</a></h2>
+<p>For automatically created EBS volumes, determines whether the
+volume should be deleted on instance termination.</p>
+<h4 id="type-66"><a class="header" href="#type-66">type</a></h4>
+<p>boolean</p>
+<h2 id="filesystemsnameec2disk"><a class="header" href="#filesystemsnameec2disk">fileSystems.&lt;name&gt;.ec2.disk</a></h2>
+<p>EC2 identifier of the disk to be mounted.  This can be an
+ephemeral disk (e.g. <literal>ephemeral0</literal>), a
+snapshot ID (e.g. <literal>snap-00000000</literal>) or a
+volume ID (e.g. <literal>vol-00000000</literal>).  Leave
+empty to create an EBS volume automatically.  It can also be
+an EBS resource (e.g. <literal>resources.ebsVolumes.big-disk</literal>).</p>
+<h4 id="type-67"><a class="header" href="#type-67">type</a></h4>
+<p>string or resource of type ‘ebs-volume’</p>
+<h4 id="example-26"><a class="header" href="#example-26">example</a></h4>
+<pre><code class="language-nix">{
+  fileSystems.&lt;name&gt;.ec2.disk = &quot;vol-00000000&quot;;
+}
+</code></pre>
+<h4 id="default-59"><a class="header" href="#default-59">default</a></h4>
+<pre><code class="language-nix">{
+  fileSystems.&lt;name&gt;.ec2.disk = &quot;&quot;;
+}
+</code></pre>
+<h2 id="filesystemsnameec2encrypt"><a class="header" href="#filesystemsnameec2encrypt">fileSystems.&lt;name&gt;.ec2.encrypt</a></h2>
+<p>Whether the EBS volume should be encrypted using LUKS.</p>
+<h4 id="type-68"><a class="header" href="#type-68">type</a></h4>
+<p>boolean</p>
+<h4 id="default-60"><a class="header" href="#default-60">default</a></h4>
+<pre><code class="language-nix">{
+  fileSystems.&lt;name&gt;.ec2.encrypt = false;
+}
+</code></pre>
+<h2 id="filesystemsnameec2encryptiontype"><a class="header" href="#filesystemsnameec2encryptiontype">fileSystems.&lt;name&gt;.ec2.encryptionType</a></h2>
+<p>Whether the EBS volume should be encrypted using LUKS or on the
+underlying EBS volume (Amazon EBS feature). Possible values are
+&quot;luks&quot; (default) and &quot;ebs&quot;.</p>
+<h4 id="type-69"><a class="header" href="#type-69">type</a></h4>
+<p>one of &quot;luks&quot;, &quot;ebs&quot;</p>
+<h4 id="default-61"><a class="header" href="#default-61">default</a></h4>
+<pre><code class="language-nix">{
+  fileSystems.&lt;name&gt;.ec2.encryptionType = &quot;luks&quot;;
+}
+</code></pre>
+<h2 id="filesystemsnameec2fstype"><a class="header" href="#filesystemsnameec2fstype">fileSystems.&lt;name&gt;.ec2.fsType</a></h2>
+<p>Filesystem type for automatically created EBS volumes.</p>
+<h4 id="type-70"><a class="header" href="#type-70">type</a></h4>
+<p>string</p>
+<h4 id="default-62"><a class="header" href="#default-62">default</a></h4>
+<pre><code class="language-nix">{
+  fileSystems.&lt;name&gt;.ec2.fsType = &quot;ext4&quot;;
+}
+</code></pre>
+<h2 id="filesystemsnameec2iops"><a class="header" href="#filesystemsnameec2iops">fileSystems.&lt;name&gt;.ec2.iops</a></h2>
+<p>The provisioned IOPS you want to associate with this EBS volume.</p>
+<h4 id="type-71"><a class="header" href="#type-71">type</a></h4>
+<p>null or signed integer</p>
+<h4 id="default-63"><a class="header" href="#default-63">default</a></h4>
+<pre><code class="language-nix">{
+  fileSystems.&lt;name&gt;.ec2.iops = null;
+}
+</code></pre>
+<h2 id="filesystemsnameec2keysize"><a class="header" href="#filesystemsnameec2keysize">fileSystems.&lt;name&gt;.ec2.keySize</a></h2>
+<p>The size of the encryption key.</p>
+<h4 id="type-72"><a class="header" href="#type-72">type</a></h4>
+<p>signed integer</p>
+<h4 id="default-64"><a class="header" href="#default-64">default</a></h4>
+<pre><code class="language-nix">{
+  fileSystems.&lt;name&gt;.ec2.keySize = 128;
+}
+</code></pre>
+<h2 id="filesystemsnameec2passphrase"><a class="header" href="#filesystemsnameec2passphrase">fileSystems.&lt;name&gt;.ec2.passphrase</a></h2>
+<p>The passphrase (key file) used to decrypt the key to access
+the device.  If left empty, a passphrase is generated
+automatically; this passphrase is lost when you destroy the
+machine or remove the volume, unless you copy it from
+NixOps's state file.  Note that the passphrase is stored in
+the Nix store of the instance, so an attacker who gains
+access to the EBS volume or instance store that contains the
+Nix store can subsequently decrypt the encrypted volume.</p>
+<h4 id="type-73"><a class="header" href="#type-73">type</a></h4>
+<p>string</p>
+<h4 id="default-65"><a class="header" href="#default-65">default</a></h4>
+<pre><code class="language-nix">{
+  fileSystems.&lt;name&gt;.ec2.passphrase = &quot;&quot;;
+}
+</code></pre>
+<h2 id="filesystemsnameec2size"><a class="header" href="#filesystemsnameec2size">fileSystems.&lt;name&gt;.ec2.size</a></h2>
+<p>Volume size (in gigabytes).  This may be left unset if you are
+creating the volume from a snapshot, in which case the size of
+the volume will be equal to the size of the snapshot.
+However, you can set a size larger than the snapshot, allowing
+the volume to be larger than the snapshot from which it is
+created.</p>
+<h4 id="type-74"><a class="header" href="#type-74">type</a></h4>
+<p>signed integer</p>
+<h4 id="example-27"><a class="header" href="#example-27">example</a></h4>
+<pre><code class="language-nix">{
+  fileSystems.&lt;name&gt;.ec2.size = 100;
+}
+</code></pre>
+<h2 id="filesystemsnameec2volumetype"><a class="header" href="#filesystemsnameec2volumetype">fileSystems.&lt;name&gt;.ec2.volumeType</a></h2>
+<p>The volume type for the EBS volume, which must be one of
+<literal>&quot;standard&quot;</literal> (a magnetic volume),
+<literal>&quot;io1&quot;</literal> (a provisioned IOPS SSD volume),
+<literal>&quot;io2&quot;</literal> (an improved provisioned IOPS SSD volume) or
+<literal>&quot;gp2&quot;</literal> (a general purpose SSD volume).
+<literal>&quot;gp3&quot;</literal> (a general purpose SSD volume).
+<literal>&quot;st1&quot;</literal> (a throughput optimized HDD volume).
+<literal>&quot;sc1&quot;</literal> (a cold HDD volume).</p>
+<h4 id="type-75"><a class="header" href="#type-75">type</a></h4>
+<p>one of &quot;standard&quot;, &quot;io1&quot;, &quot;io2&quot;, &quot;gp2&quot;, &quot;gp3&quot;, &quot;st1&quot;, &quot;sc1&quot;</p>
+<h4 id="default-66"><a class="header" href="#default-66">default</a></h4>
+<pre><code class="language-nix">{
+  fileSystems.&lt;name&gt;.ec2.volumeType = &quot;standard&quot;;
+}
+</code></pre>
+<h2 id="networkingprivateipv4"><a class="header" href="#networkingprivateipv4">networking.privateIPv4</a></h2>
+<p>IPv4 address of this machine within in the logical network.
+This address can be used by other machines in the logical
+network to reach this machine.  However, it need not be
+visible to the outside (i.e., publicly routable).</p>
+<h4 id="type-76"><a class="header" href="#type-76">type</a></h4>
+<p>string</p>
+<h4 id="example-28"><a class="header" href="#example-28">example</a></h4>
+<pre><code class="language-nix">{
+  networking.privateIPv4 = &quot;10.1.2.3&quot;;
+}
+</code></pre>
+<h2 id="networkingpublicipv4"><a class="header" href="#networkingpublicipv4">networking.publicIPv4</a></h2>
+<p>Publicly routable IPv4 address of this machine.</p>
+<h4 id="type-77"><a class="header" href="#type-77">type</a></h4>
+<p>null or string</p>
+<h4 id="example-29"><a class="header" href="#example-29">example</a></h4>
+<pre><code class="language-nix">{
+  networking.publicIPv4 = &quot;198.51.100.123&quot;;
+}
+</code></pre>
+<h4 id="default-67"><a class="header" href="#default-67">default</a></h4>
+<pre><code class="language-nix">{
+  networking.publicIPv4 = null;
+}
+</code></pre>
+<h2 id="networkingvpnpublickey"><a class="header" href="#networkingvpnpublickey">networking.vpnPublicKey</a></h2>
+<p>Public key of the machine's VPN key (set by nixops)</p>
+<h4 id="type-78"><a class="header" href="#type-78">type</a></h4>
+<p>null or string</p>
+<h4 id="default-68"><a class="header" href="#default-68">default</a></h4>
+<pre><code class="language-nix">{
+  networking.vpnPublicKey = null;
+}
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="nixops.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="nixops-aws-data.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="nixops.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="nixops-aws-data.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

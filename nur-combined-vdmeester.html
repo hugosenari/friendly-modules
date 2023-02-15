@@ -1,0 +1,1092 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>vdmeester</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="hugosenari.html"><strong aria-hidden="true">2.</strong> Hugosenari</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="hlissner.html"><strong aria-hidden="true">3.</strong> hlissner</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="cocada-boa.html"><strong aria-hidden="true">4.</strong> Thiago</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="climod.html"><strong aria-hidden="true">5.</strong> Climod</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="ew.html"><strong aria-hidden="true">6.</strong> Lucas</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="marcosrdac.html"><strong aria-hidden="true">7.</strong> Marcos</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="flake-gemini.html"><strong aria-hidden="true">8.</strong> Flake Gemini</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="impermanence.html"><strong aria-hidden="true">9.</strong> Impermanence</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="impermanence-hm.html"><strong aria-hidden="true">9.1.</strong> Impermanence HM</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="kubenix.html"><strong aria-hidden="true">10.</strong> KubeNix</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops.html"><strong aria-hidden="true">11.</strong> NixOps</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops-aws.html"><strong aria-hidden="true">12.</strong> NixOps AWS</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="nixops-aws-data.html"><strong aria-hidden="true">12.1.</strong> data</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpn-connection.html"><strong aria-hidden="true">12.2.</strong> vpn-connection</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpn-connection-route.html"><strong aria-hidden="true">12.3.</strong> vpn-connection-route</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpn-gateway.html"><strong aria-hidden="true">12.4.</strong> vpn-gateway</a></li><li class="chapter-item expanded "><a href="nixops-aws-cloudwatch-log-group.html"><strong aria-hidden="true">12.5.</strong> cloudwatch-log-group</a></li><li class="chapter-item expanded "><a href="nixops-aws-cloudwatch-log-stream.html"><strong aria-hidden="true">12.6.</strong> cloudwatch-log-stream</a></li><li class="chapter-item expanded "><a href="nixops-aws-ec2-keypair.html"><strong aria-hidden="true">12.7.</strong> ec2-keypair</a></li><li class="chapter-item expanded "><a href="nixops-aws-ec2-placement.html"><strong aria-hidden="true">12.8.</strong> ec2-placement</a></li><li class="chapter-item expanded "><a href="nixops-aws-ec2-rds-dbinstance.html"><strong aria-hidden="true">12.9.</strong> ec2-rds-dbinstance</a></li><li class="chapter-item expanded "><a href="nixops-aws-ec2-rds-dbsecurity.html"><strong aria-hidden="true">12.10.</strong> ec2-rds-dbsecurity</a></li><li class="chapter-item expanded "><a href="nixops-aws-ec2-security.html"><strong aria-hidden="true">12.11.</strong> ec2-security</a></li><li class="chapter-item expanded "><a href="nixops-aws-eslatic-file-system.html"><strong aria-hidden="true">12.12.</strong> eslatic-file-system</a></li><li class="chapter-item expanded "><a href="nixops-aws-eslatic-file-sistem-mount.html"><strong aria-hidden="true">12.13.</strong> eslatic-file-sistem-mount</a></li><li class="chapter-item expanded "><a href="nixops-aws-eslatic-ip.html"><strong aria-hidden="true">12.14.</strong> eslatic-ip</a></li><li class="chapter-item expanded "><a href="nixops-aws-iam.html"><strong aria-hidden="true">12.15.</strong> iam</a></li><li class="chapter-item expanded "><a href="nixops-aws-rds.html"><strong aria-hidden="true">12.16.</strong> rds</a></li><li class="chapter-item expanded "><a href="nixops-aws-route53.html"><strong aria-hidden="true">12.17.</strong> route53</a></li><li class="chapter-item expanded "><a href="nixops-aws-s3.html"><strong aria-hidden="true">12.18.</strong> s3</a></li><li class="chapter-item expanded "><a href="nixops-aws-sqs.html"><strong aria-hidden="true">12.19.</strong> sqs</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc.html"><strong aria-hidden="true">12.20.</strong> vpc</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-customer.html"><strong aria-hidden="true">12.21.</strong> vpc-customer</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-dhcp.html"><strong aria-hidden="true">12.22.</strong> vpc-dhcp</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-egress.html"><strong aria-hidden="true">12.23.</strong> vpc-egress</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-endpoint.html"><strong aria-hidden="true">12.24.</strong> vpc-endpoint</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-internet.html"><strong aria-hidden="true">12.25.</strong> vpc-internet</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-nat.html"><strong aria-hidden="true">12.26.</strong> vpc-nat</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-network-interface.html"><strong aria-hidden="true">12.27.</strong> vpc-network-interface</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-network-interface-attachment.html"><strong aria-hidden="true">12.28.</strong> vpc-network-interface-attachment</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-route.html"><strong aria-hidden="true">12.29.</strong> vpc-route</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-route-table.html"><strong aria-hidden="true">12.30.</strong> vpc-route-table</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-route-table-association.html"><strong aria-hidden="true">12.31.</strong> vpc-route-table-association</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-subnet.html"><strong aria-hidden="true">12.32.</strong> vpc-subnet</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="nixops-datadog-monitor.html"><strong aria-hidden="true">13.</strong> NixOps Datadog</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops-digitalocean.html"><strong aria-hidden="true">14.</strong> NixOps DigitalOcean</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops-gce.html"><strong aria-hidden="true">15.</strong> NixOps GCE</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops-hcloud.html"><strong aria-hidden="true">16.</strong> NixOps HCloud</a></li><li class="chapter-item expanded "><a href="nixops-hcloud-volume.html"><strong aria-hidden="true">17.</strong> NixOps HCloud Volume</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops-libvirtd.html"><strong aria-hidden="true">18.</strong> NixOps LibVirtd</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixos-firehol.html"><strong aria-hidden="true">19.</strong> NixOS-FireHOL</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixos-hardware.html"><strong aria-hidden="true">20.</strong> NixOS Hardware</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="nixos-hardware-asus.html"><strong aria-hidden="true">20.1.</strong> asus</a></li><li class="chapter-item expanded "><a href="nixos-hardware-surface.html"><strong aria-hidden="true">20.2.</strong> surface</a></li><li class="chapter-item expanded "><a href="nixos-hardware-raspberry.html"><strong aria-hidden="true">20.3.</strong> raspberry</a></li><li class="chapter-item expanded "><a href="nixos-hardware-system76.html"><strong aria-hidden="true">20.4.</strong> system76</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="nur-combined.html"><strong aria-hidden="true">21.</strong> NUR Combined</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="nur-combined-aasg.html"><strong aria-hidden="true">21.1.</strong> aasg</a></li><li class="chapter-item expanded "><a href="nur-combined-afreakk.html"><strong aria-hidden="true">21.2.</strong> afreakk</a></li><li class="chapter-item expanded "><a href="nur-combined-alarsyo.html"><strong aria-hidden="true">21.3.</strong> alarsyo</a></li><li class="chapter-item expanded "><a href="nur-combined-ambroisie.html"><strong aria-hidden="true">21.4.</strong> ambroisie</a></li><li class="chapter-item expanded "><a href="nur-combined-arc.html"><strong aria-hidden="true">21.5.</strong> arc</a></li><li class="chapter-item expanded "><a href="nur-combined-bb010g.html"><strong aria-hidden="true">21.6.</strong> bb010g</a></li><li class="chapter-item expanded "><a href="nur-combined-bendlas.html"><strong aria-hidden="true">21.7.</strong> bendlas</a></li><li class="chapter-item expanded "><a href="nur-combined-berbiche.html"><strong aria-hidden="true">21.8.</strong> berbiche</a></li><li class="chapter-item expanded "><a href="nur-combined-c0deaddict.html"><strong aria-hidden="true">21.9.</strong> c0deaddict</a></li><li class="chapter-item expanded "><a href="nur-combined-crazazy.html"><strong aria-hidden="true">21.10.</strong> crazazy</a></li><li class="chapter-item expanded "><a href="nur-combined-crtified.html"><strong aria-hidden="true">21.11.</strong> crtified</a></li><li class="chapter-item expanded "><a href="nur-combined-cwyc.html"><strong aria-hidden="true">21.12.</strong> cwyc</a></li><li class="chapter-item expanded "><a href="nur-combined-dawidsowa.html"><strong aria-hidden="true">21.13.</strong> dawidsowa</a></li><li class="chapter-item expanded "><a href="nur-combined-dguibert.html"><strong aria-hidden="true">21.14.</strong> dguibert</a></li><li class="chapter-item expanded "><a href="nur-combined-dtz.html"><strong aria-hidden="true">21.15.</strong> dtz</a></li><li class="chapter-item expanded "><a href="nur-combined-dukzcry.html"><strong aria-hidden="true">21.16.</strong> dukzcry</a></li><li class="chapter-item expanded "><a href="nur-combined-emmanuelrosa.html"><strong aria-hidden="true">21.17.</strong> emmanuelrosa</a></li><li class="chapter-item expanded "><a href="nur-combined-heph2.html"><strong aria-hidden="true">21.18.</strong> heph2</a></li><li class="chapter-item expanded "><a href="nur-combined-ilya-fedin.html"><strong aria-hidden="true">21.19.</strong> ilya-fedin</a></li><li class="chapter-item expanded "><a href="nur-combined-immae.html"><strong aria-hidden="true">21.20.</strong> immae</a></li><li class="chapter-item expanded "><a href="nur-combined-instantos.html"><strong aria-hidden="true">21.21.</strong> instantos</a></li><li class="chapter-item expanded "><a href="nur-combined-jbarthelmes.html"><strong aria-hidden="true">21.22.</strong> jbarthelmes</a></li><li class="chapter-item expanded "><a href="nur-combined-johnazoidberg.html"><strong aria-hidden="true">21.23.</strong> johnazoidberg</a></li><li class="chapter-item expanded "><a href="nur-combined-jomik.html"><strong aria-hidden="true">21.24.</strong> jomik</a></li><li class="chapter-item expanded "><a href="nur-combined-kampka.html"><strong aria-hidden="true">21.25.</strong> kampka</a></li><li class="chapter-item expanded "><a href="nur-combined-kapack.html"><strong aria-hidden="true">21.26.</strong> kapack</a></li><li class="chapter-item expanded "><a href="nur-combined-kira-bruneau.html"><strong aria-hidden="true">21.27.</strong> kira-bruneau</a></li><li class="chapter-item expanded "><a href="nur-combined-kolloch.html"><strong aria-hidden="true">21.28.</strong> kolloch</a></li><li class="chapter-item expanded "><a href="nur-combined-krebs.html"><strong aria-hidden="true">21.29.</strong> krebs</a></li><li class="chapter-item expanded "><a href="nur-combined-kreisys.html"><strong aria-hidden="true">21.30.</strong> kreisys</a></li><li class="chapter-item expanded "><a href="nur-combined-linyinfeng.html"><strong aria-hidden="true">21.31.</strong> linyinfeng</a></li><li class="chapter-item expanded "><a href="nur-combined-lschuermann.html"><strong aria-hidden="true">21.32.</strong> lschuermann</a></li><li class="chapter-item expanded "><a href="nur-combined-lucasew.html"><strong aria-hidden="true">21.33.</strong> lucasew</a></li><li class="chapter-item expanded "><a href="nur-combined-misterio.html"><strong aria-hidden="true">21.34.</strong> misterio</a></li><li class="chapter-item expanded "><a href="nur-combined-mmilata.html"><strong aria-hidden="true">21.35.</strong> mmilata</a></li><li class="chapter-item expanded "><a href="nur-combined-moredhel.html"><strong aria-hidden="true">21.36.</strong> moredhel</a></li><li class="chapter-item expanded "><a href="nur-combined-moredread.html"><strong aria-hidden="true">21.37.</strong> moredread</a></li><li class="chapter-item expanded "><a href="nur-combined-noneucat.html"><strong aria-hidden="true">21.38.</strong> noneucat</a></li><li class="chapter-item expanded "><a href="nur-combined-onny.html"><strong aria-hidden="true">21.39.</strong> onny</a></li><li class="chapter-item expanded "><a href="nur-combined-pamplemousse.html"><strong aria-hidden="true">21.40.</strong> pamplemousse</a></li><li class="chapter-item expanded "><a href="nur-combined-pborzenkov.html"><strong aria-hidden="true">21.41.</strong> pborzenkov</a></li><li class="chapter-item expanded "><a href="nur-combined-peel.html"><strong aria-hidden="true">21.42.</strong> peel</a></li><li class="chapter-item expanded "><a href="nur-combined-priegger.html"><strong aria-hidden="true">21.43.</strong> priegger</a></li><li class="chapter-item expanded "><a href="nur-combined-qchem.html"><strong aria-hidden="true">21.44.</strong> qchem</a></li><li class="chapter-item expanded "><a href="nur-combined-rycee.html"><strong aria-hidden="true">21.45.</strong> rycee</a></li><li class="chapter-item expanded "><a href="nur-combined-sehqlr.html"><strong aria-hidden="true">21.46.</strong> sehqlr</a></li><li class="chapter-item expanded "><a href="nur-combined-shamilton.html"><strong aria-hidden="true">21.47.</strong> shamilton</a></li><li class="chapter-item expanded "><a href="nur-combined-sikmir.html"><strong aria-hidden="true">21.48.</strong> sikmir</a></li><li class="chapter-item expanded "><a href="nur-combined-splintah.html"><strong aria-hidden="true">21.49.</strong> splintah</a></li><li class="chapter-item expanded "><a href="nur-combined-syberant.html"><strong aria-hidden="true">21.50.</strong> syberant</a></li><li class="chapter-item expanded "><a href="nur-combined-tilpner.html"><strong aria-hidden="true">21.51.</strong> tilpner</a></li><li class="chapter-item expanded "><a href="nur-combined-tukuan.html"><strong aria-hidden="true">21.52.</strong> tukuan</a></li><li class="chapter-item expanded "><a href="nur-combined-tox.html"><strong aria-hidden="true">21.53.</strong> tox</a></li><li class="chapter-item expanded "><a href="nur-combined-vdmeester.html" class="active"><strong aria-hidden="true">21.54.</strong> vdmeester</a></li><li class="chapter-item expanded "><a href="nur-combined-vroad.html"><strong aria-hidden="true">21.55.</strong> vroad</a></li><li class="chapter-item expanded "><a href="nur-combined-xeals.html"><strong aria-hidden="true">21.56.</strong> xeals</a></li><li class="chapter-item expanded "><a href="nur-combined-zeratax.html"><strong aria-hidden="true">21.57.</strong> zeratax</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="corehome-managerenable"><a class="header" href="#corehome-managerenable">core.home-manager.enable</a></h2>
+<p>Enable core.home-manager</p>
+<h4 id="type"><a class="header" href="#type">type</a></h4>
+<p>boolean</p>
+<h4 id="default"><a class="header" href="#default">default</a></h4>
+<pre><code class="language-nix">{
+  core.home-manager.enable = true;
+}
+</code></pre>
+<h2 id="corenixenable"><a class="header" href="#corenixenable">core.nix.enable</a></h2>
+<p>Enable core.nix</p>
+<h4 id="type-1"><a class="header" href="#type-1">type</a></h4>
+<p>boolean</p>
+<h4 id="default-1"><a class="header" href="#default-1">default</a></h4>
+<pre><code class="language-nix">{
+  core.nix.enable = true;
+}
+</code></pre>
+<h2 id="corenixbuildcores"><a class="header" href="#corenixbuildcores">core.nix.buildCores</a></h2>
+<p>Maximum number of concurrent tasks during one build.</p>
+<h4 id="type-2"><a class="header" href="#type-2">type</a></h4>
+<p>signed integer</p>
+<h4 id="example"><a class="header" href="#example">example</a></h4>
+<pre><code class="language-nix">{
+  core.nix.buildCores = 4;
+}
+</code></pre>
+<h4 id="default-2"><a class="header" href="#default-2">default</a></h4>
+<pre><code class="language-nix">{
+  core.nix.buildCores = 2;
+}
+</code></pre>
+<h2 id="corenixgcdates"><a class="header" href="#corenixgcdates">core.nix.gcDates</a></h2>
+<p>Specification (in the format described by systemd.time(7)) of the time at which the garbage collector will run. </p>
+<h4 id="type-3"><a class="header" href="#type-3">type</a></h4>
+<p>string</p>
+<h4 id="default-3"><a class="header" href="#default-3">default</a></h4>
+<pre><code class="language-nix">{
+  core.nix.gcDates = &quot;daily&quot;;
+}
+</code></pre>
+<h2 id="corenixlocalcaches"><a class="header" href="#corenixlocalcaches">core.nix.localCaches</a></h2>
+<p>List of local nix caches</p>
+<h4 id="type-4"><a class="header" href="#type-4">type</a></h4>
+<p>list of string</p>
+<h4 id="default-4"><a class="header" href="#default-4">default</a></h4>
+<pre><code class="language-nix">{
+  core.nix.localCaches = [
+    &quot;http://nix.cache.home&quot;
+  ];
+}
+</code></pre>
+<h2 id="corenixolderthan"><a class="header" href="#corenixolderthan">core.nix.olderThan</a></h2>
+<p>Number of day to keep when garbage collect</p>
+<h4 id="type-5"><a class="header" href="#type-5">type</a></h4>
+<p>string</p>
+<h4 id="default-5"><a class="header" href="#default-5">default</a></h4>
+<pre><code class="language-nix">{
+  core.nix.olderThan = &quot;15d&quot;;
+}
+</code></pre>
+<h2 id="corenurenable"><a class="header" href="#corenurenable">core.nur.enable</a></h2>
+<p>Enable core.nur</p>
+<h4 id="type-6"><a class="header" href="#type-6">type</a></h4>
+<p>boolean</p>
+<h4 id="default-6"><a class="header" href="#default-6">default</a></h4>
+<pre><code class="language-nix">{
+  core.nur.enable = true;
+}
+</code></pre>
+<h2 id="hardwaresaneextraconfig"><a class="header" href="#hardwaresaneextraconfig">hardware.sane.extraConfig</a></h2>
+<h4 id="type-7"><a class="header" href="#type-7">type</a></h4>
+<p>attribute set of strings concatenated with &quot;\n&quot;</p>
+<h4 id="example-1"><a class="header" href="#example-1">example</a></h4>
+<pre><code class="language-nix">{
+  hardware.sane.extraConfig = {
+    some-backend = &quot;# some lines to add to its .conf&quot;;
+  };
+}
+</code></pre>
+<h4 id="default-7"><a class="header" href="#default-7">default</a></h4>
+<pre><code class="language-nix">{
+  hardware.sane.extraConfig = {};
+}
+</code></pre>
+<h2 id="nixsupportedplatforms"><a class="header" href="#nixsupportedplatforms">nix.supportedPlatforms</a></h2>
+<p>extra platforms that nix will run binaries for</p>
+<h4 id="type-8"><a class="header" href="#type-8">type</a></h4>
+<p>list of string</p>
+<h4 id="default-8"><a class="header" href="#default-8">default</a></h4>
+<pre><code class="language-nix">{
+  nix.supportedPlatforms = [];
+}
+</code></pre>
+<h2 id="profilesavahienable"><a class="header" href="#profilesavahienable">profiles.avahi.enable</a></h2>
+<p>Enable avahi profile</p>
+<h4 id="type-9"><a class="header" href="#type-9">type</a></h4>
+<p>boolean</p>
+<h4 id="default-9"><a class="header" href="#default-9">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.avahi.enable = false;
+}
+</code></pre>
+<h2 id="profilesbaseenable"><a class="header" href="#profilesbaseenable">profiles.base.enable</a></h2>
+<p>Enable base profile</p>
+<h4 id="type-10"><a class="header" href="#type-10">type</a></h4>
+<p>boolean</p>
+<h4 id="default-10"><a class="header" href="#default-10">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.base.enable = true;
+}
+</code></pre>
+<h2 id="profilesdesktopenable"><a class="header" href="#profilesdesktopenable">profiles.desktop.enable</a></h2>
+<p>Enable desktop profile</p>
+<h4 id="type-11"><a class="header" href="#type-11">type</a></h4>
+<p>boolean</p>
+<h4 id="default-11"><a class="header" href="#default-11">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.desktop.enable = false;
+}
+</code></pre>
+<h2 id="profilesdesktopautologin"><a class="header" href="#profilesdesktopautologin">profiles.desktop.autoLogin</a></h2>
+<p>Enable auto login</p>
+<h4 id="type-12"><a class="header" href="#type-12">type</a></h4>
+<p>boolean</p>
+<h4 id="default-12"><a class="header" href="#default-12">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.desktop.autoLogin = false;
+}
+</code></pre>
+<h2 id="profilesdesktopavahi"><a class="header" href="#profilesdesktopavahi">profiles.desktop.avahi</a></h2>
+<p>Enable avahi  with the desktop profile</p>
+<h4 id="type-13"><a class="header" href="#type-13">type</a></h4>
+<p>boolean</p>
+<h4 id="default-13"><a class="header" href="#default-13">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.desktop.avahi = true;
+}
+</code></pre>
+<h2 id="profilesdesktopflatpak"><a class="header" href="#profilesdesktopflatpak">profiles.desktop.flatpak</a></h2>
+<p>Enable flatpak with the desktop profile</p>
+<h4 id="type-14"><a class="header" href="#type-14">type</a></h4>
+<p>boolean</p>
+<h4 id="default-14"><a class="header" href="#default-14">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.desktop.flatpak = true;
+}
+</code></pre>
+<h2 id="profilesdesktopnetworkmanager"><a class="header" href="#profilesdesktopnetworkmanager">profiles.desktop.networkmanager</a></h2>
+<p>Enable networkmanager with the desktop profile</p>
+<h4 id="type-15"><a class="header" href="#type-15">type</a></h4>
+<p>boolean</p>
+<h4 id="default-15"><a class="header" href="#default-15">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.desktop.networkmanager = true;
+}
+</code></pre>
+<h2 id="profilesdesktopprinting"><a class="header" href="#profilesdesktopprinting">profiles.desktop.printing</a></h2>
+<p>Enable printing with the desktop profile</p>
+<h4 id="type-16"><a class="header" href="#type-16">type</a></h4>
+<p>boolean</p>
+<h4 id="default-16"><a class="header" href="#default-16">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.desktop.printing = true;
+}
+</code></pre>
+<h2 id="profilesdesktoppulseaudio"><a class="header" href="#profilesdesktoppulseaudio">profiles.desktop.pulseaudio</a></h2>
+<p>Enable pulseaudio with the desktop profile</p>
+<h4 id="type-17"><a class="header" href="#type-17">type</a></h4>
+<p>boolean</p>
+<h4 id="default-17"><a class="header" href="#default-17">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.desktop.pulseaudio = true;
+}
+</code></pre>
+<h2 id="profilesdesktopscanning"><a class="header" href="#profilesdesktopscanning">profiles.desktop.scanning</a></h2>
+<p>Enable scanning with the desktop profile</p>
+<h4 id="type-18"><a class="header" href="#type-18">type</a></h4>
+<p>boolean</p>
+<h4 id="default-18"><a class="header" href="#default-18">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.desktop.scanning = true;
+}
+</code></pre>
+<h2 id="profilesdesktopsyncthing"><a class="header" href="#profilesdesktopsyncthing">profiles.desktop.syncthing</a></h2>
+<p>Enable syncthing with the desktop profile</p>
+<h4 id="type-19"><a class="header" href="#type-19">type</a></h4>
+<p>boolean</p>
+<h4 id="default-19"><a class="header" href="#default-19">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.desktop.syncthing = true;
+}
+</code></pre>
+<h2 id="profilesdevenable"><a class="header" href="#profilesdevenable">profiles.dev.enable</a></h2>
+<p>Enable dev profile</p>
+<h4 id="type-20"><a class="header" href="#type-20">type</a></h4>
+<p>boolean</p>
+<h4 id="default-20"><a class="header" href="#default-20">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.dev.enable = false;
+}
+</code></pre>
+<h2 id="profilesdevvscodeenable"><a class="header" href="#profilesdevvscodeenable">profiles.dev.vscode.enable</a></h2>
+<p>Whether to enable Enable VS Code profile.</p>
+<h4 id="type-21"><a class="header" href="#type-21">type</a></h4>
+<p>boolean</p>
+<h4 id="example-2"><a class="header" href="#example-2">example</a></h4>
+<pre><code class="language-nix">{
+  profiles.dev.vscode.enable = true;
+}
+</code></pre>
+<h4 id="default-21"><a class="header" href="#default-21">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.dev.vscode.enable = false;
+}
+</code></pre>
+<h2 id="profilesdockerenable"><a class="header" href="#profilesdockerenable">profiles.docker.enable</a></h2>
+<p>Enable docker profile</p>
+<h4 id="type-22"><a class="header" href="#type-22">type</a></h4>
+<p>boolean</p>
+<h4 id="default-22"><a class="header" href="#default-22">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.docker.enable = false;
+}
+</code></pre>
+<h2 id="profilesdockerpackage"><a class="header" href="#profilesdockerpackage">profiles.docker.package</a></h2>
+<p>docker package to be used</p>
+<h4 id="type-23"><a class="header" href="#type-23">type</a></h4>
+<p>package</p>
+<h4 id="default-23"><a class="header" href="#default-23">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.docker.package = {
+    drvPath = &quot;docker-20.10.16&quot;;
+    name = &quot;docker-20.10.16&quot;;
+    outPath = &quot;docker-20.10.16&quot;;
+    type = &quot;derivation&quot;;
+  };
+}
+</code></pre>
+<h2 id="profilesdockerruncpackage"><a class="header" href="#profilesdockerruncpackage">profiles.docker.runcPackage</a></h2>
+<p>runc package to be used</p>
+<h4 id="type-24"><a class="header" href="#type-24">type</a></h4>
+<p>package</p>
+<h4 id="default-24"><a class="header" href="#default-24">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.docker.runcPackage = {
+    drvPath = &quot;runc-1.1.2&quot;;
+    name = &quot;runc-1.1.2&quot;;
+    outPath = &quot;runc-1.1.2&quot;;
+    type = &quot;derivation&quot;;
+  };
+}
+</code></pre>
+<h2 id="profilesgamingenable"><a class="header" href="#profilesgamingenable">profiles.gaming.enable</a></h2>
+<p>Enable gaming profile</p>
+<h4 id="type-25"><a class="header" href="#type-25">type</a></h4>
+<p>boolean</p>
+<h4 id="default-25"><a class="header" href="#default-25">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.gaming.enable = false;
+}
+</code></pre>
+<h2 id="profilesgitenable"><a class="header" href="#profilesgitenable">profiles.git.enable</a></h2>
+<p>Enable git profile</p>
+<h4 id="type-26"><a class="header" href="#type-26">type</a></h4>
+<p>boolean</p>
+<h4 id="default-26"><a class="header" href="#default-26">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.git.enable = false;
+}
+</code></pre>
+<h2 id="profileshome"><a class="header" href="#profileshome">profiles.home</a></h2>
+<p>Whether to enable Enable home profile.</p>
+<h4 id="type-27"><a class="header" href="#type-27">type</a></h4>
+<p>boolean</p>
+<h4 id="example-3"><a class="header" href="#example-3">example</a></h4>
+<pre><code class="language-nix">{
+  profiles.home = true;
+}
+</code></pre>
+<h4 id="default-27"><a class="header" href="#default-27">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.home = false;
+}
+</code></pre>
+<h2 id="profilesi18nenable"><a class="header" href="#profilesi18nenable">profiles.i18n.enable</a></h2>
+<p>Enable i18n profile</p>
+<h4 id="type-28"><a class="header" href="#type-28">type</a></h4>
+<p>boolean</p>
+<h4 id="default-28"><a class="header" href="#default-28">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.i18n.enable = true;
+}
+</code></pre>
+<h2 id="profilesipfsenable"><a class="header" href="#profilesipfsenable">profiles.ipfs.enable</a></h2>
+<p>Enable ipfs profile</p>
+<h4 id="type-29"><a class="header" href="#type-29">type</a></h4>
+<p>boolean</p>
+<h4 id="default-29"><a class="header" href="#default-29">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.ipfs.enable = false;
+}
+</code></pre>
+<h2 id="profilesipfsautomount"><a class="header" href="#profilesipfsautomount">profiles.ipfs.autoMount</a></h2>
+<p>Automount /ipfs and /ipns</p>
+<h4 id="type-30"><a class="header" href="#type-30">type</a></h4>
+<p>boolean</p>
+<h4 id="default-30"><a class="header" href="#default-30">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.ipfs.autoMount = true;
+}
+</code></pre>
+<h2 id="profilesipfsextraconfig"><a class="header" href="#profilesipfsextraconfig">profiles.ipfs.extraConfig</a></h2>
+<p>Extra ipfs daemon configuration</p>
+<h4 id="type-31"><a class="header" href="#type-31">type</a></h4>
+<p>attribute set</p>
+<h4 id="default-31"><a class="header" href="#default-31">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.ipfs.extraConfig = {
+    Datastore = {
+      StorageMax = &quot;40GB&quot;;
+    };
+  };
+}
+</code></pre>
+<h2 id="profilesipfslocaldiscovery"><a class="header" href="#profilesipfslocaldiscovery">profiles.ipfs.localDiscovery</a></h2>
+<p>Enable local discovery, switch profile to server if disable</p>
+<h4 id="type-32"><a class="header" href="#type-32">type</a></h4>
+<p>boolean</p>
+<h4 id="default-32"><a class="header" href="#default-32">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.ipfs.localDiscovery = true;
+}
+</code></pre>
+<h2 id="profileslaptopenable"><a class="header" href="#profileslaptopenable">profiles.laptop.enable</a></h2>
+<p>Enable laptop profile</p>
+<h4 id="type-33"><a class="header" href="#type-33">type</a></h4>
+<p>boolean</p>
+<h4 id="default-33"><a class="header" href="#default-33">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.laptop.enable = false;
+}
+</code></pre>
+<h2 id="profilesmailenable"><a class="header" href="#profilesmailenable">profiles.mail.enable</a></h2>
+<p>Enable mail profile</p>
+<h4 id="type-34"><a class="header" href="#type-34">type</a></h4>
+<p>boolean</p>
+<h4 id="default-34"><a class="header" href="#default-34">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.mail.enable = true;
+}
+</code></pre>
+<h2 id="profilesmailsenable"><a class="header" href="#profilesmailsenable">profiles.mails.enable</a></h2>
+<p>Whether to enable Enable mails configuration.</p>
+<h4 id="type-35"><a class="header" href="#type-35">type</a></h4>
+<p>boolean</p>
+<h4 id="example-4"><a class="header" href="#example-4">example</a></h4>
+<pre><code class="language-nix">{
+  profiles.mails.enable = true;
+}
+</code></pre>
+<h4 id="default-35"><a class="header" href="#default-35">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.mails.enable = false;
+}
+</code></pre>
+<h2 id="profilesmailsfrequency"><a class="header" href="#profilesmailsfrequency">profiles.mails.frequency</a></h2>
+<p>Frequency at which the mail should be checked</p>
+<h4 id="type-36"><a class="header" href="#type-36">type</a></h4>
+<p>string</p>
+<h4 id="default-36"><a class="header" href="#default-36">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.mails.frequency = &quot;*:0/30&quot;;
+}
+</code></pre>
+<h2 id="profilesmailssync"><a class="header" href="#profilesmailssync">profiles.mails.sync</a></h2>
+<p>Whether to enable Enable sync mail service.</p>
+<h4 id="type-37"><a class="header" href="#type-37">type</a></h4>
+<p>boolean</p>
+<h4 id="example-5"><a class="header" href="#example-5">example</a></h4>
+<pre><code class="language-nix">{
+  profiles.mails.sync = true;
+}
+</code></pre>
+<h4 id="default-37"><a class="header" href="#default-37">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.mails.sync = false;
+}
+</code></pre>
+<h2 id="profilesnix-auto-updateenable"><a class="header" href="#profilesnix-auto-updateenable">profiles.nix-auto-update.enable</a></h2>
+<p>Enable nix-auto-update profile</p>
+<h4 id="type-38"><a class="header" href="#type-38">type</a></h4>
+<p>boolean</p>
+<h4 id="default-38"><a class="header" href="#default-38">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.nix-auto-update.enable = true;
+}
+</code></pre>
+<h2 id="profilesnix-auto-updateautoupgrade"><a class="header" href="#profilesnix-auto-updateautoupgrade">profiles.nix-auto-update.autoUpgrade</a></h2>
+<p>Automatically try to upgrade the system</p>
+<h4 id="type-39"><a class="header" href="#type-39">type</a></h4>
+<p>boolean</p>
+<h4 id="default-39"><a class="header" href="#default-39">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.nix-auto-update.autoUpgrade = true;
+}
+</code></pre>
+<h2 id="profilesnix-auto-updatedates"><a class="header" href="#profilesnix-auto-updatedates">profiles.nix-auto-update.dates</a></h2>
+<p>Specification (in the format described by systemd.time(7)) of the time at which the auto-update will run. </p>
+<h4 id="type-40"><a class="header" href="#type-40">type</a></h4>
+<p>string</p>
+<h4 id="default-40"><a class="header" href="#default-40">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.nix-auto-update.dates = &quot;weekly&quot;;
+}
+</code></pre>
+<h2 id="profilesnix-auto-updateversion"><a class="header" href="#profilesnix-auto-updateversion">profiles.nix-auto-update.version</a></h2>
+<p>System version (NixOS)</p>
+<h4 id="type-41"><a class="header" href="#type-41">type</a></h4>
+<p>string</p>
+<h4 id="default-41"><a class="header" href="#default-41">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.nix-auto-update.version = &quot;20.03&quot;;
+}
+</code></pre>
+<h2 id="profilesprintingenable"><a class="header" href="#profilesprintingenable">profiles.printing.enable</a></h2>
+<p>Enable printing profile</p>
+<h4 id="type-42"><a class="header" href="#type-42">type</a></h4>
+<p>boolean</p>
+<h4 id="default-42"><a class="header" href="#default-42">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.printing.enable = false;
+}
+</code></pre>
+<h2 id="profilespulseaudioenable"><a class="header" href="#profilespulseaudioenable">profiles.pulseaudio.enable</a></h2>
+<p>Enable pulseaudio profile</p>
+<h4 id="type-43"><a class="header" href="#type-43">type</a></h4>
+<p>boolean</p>
+<h4 id="default-43"><a class="header" href="#default-43">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.pulseaudio.enable = false;
+}
+</code></pre>
+<h2 id="profilespulseaudiotcp"><a class="header" href="#profilespulseaudiotcp">profiles.pulseaudio.tcp</a></h2>
+<p>Enable pulseaudio tcp</p>
+<h4 id="type-44"><a class="header" href="#type-44">type</a></h4>
+<p>boolean</p>
+<h4 id="default-44"><a class="header" href="#default-44">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.pulseaudio.tcp = false;
+}
+</code></pre>
+<h2 id="profilesqemu-useraarch64"><a class="header" href="#profilesqemu-useraarch64">profiles.qemu-user.aarch64</a></h2>
+<p>Whether to enable enable 64bit arm emulation.</p>
+<h4 id="type-45"><a class="header" href="#type-45">type</a></h4>
+<p>boolean</p>
+<h4 id="example-6"><a class="header" href="#example-6">example</a></h4>
+<pre><code class="language-nix">{
+  profiles.qemu-user.aarch64 = true;
+}
+</code></pre>
+<h4 id="default-45"><a class="header" href="#default-45">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.qemu-user.aarch64 = false;
+}
+</code></pre>
+<h2 id="profilesqemu-userarm"><a class="header" href="#profilesqemu-userarm">profiles.qemu-user.arm</a></h2>
+<p>Whether to enable enable 32bit arm emulation.</p>
+<h4 id="type-46"><a class="header" href="#type-46">type</a></h4>
+<p>boolean</p>
+<h4 id="example-7"><a class="header" href="#example-7">example</a></h4>
+<pre><code class="language-nix">{
+  profiles.qemu-user.arm = true;
+}
+</code></pre>
+<h4 id="default-46"><a class="header" href="#default-46">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.qemu-user.arm = false;
+}
+</code></pre>
+<h2 id="profilesqemu-userriscv64"><a class="header" href="#profilesqemu-userriscv64">profiles.qemu-user.riscv64</a></h2>
+<p>Whether to enable enable 64bit riscv emulation.</p>
+<h4 id="type-47"><a class="header" href="#type-47">type</a></h4>
+<p>boolean</p>
+<h4 id="example-8"><a class="header" href="#example-8">example</a></h4>
+<pre><code class="language-nix">{
+  profiles.qemu-user.riscv64 = true;
+}
+</code></pre>
+<h4 id="default-47"><a class="header" href="#default-47">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.qemu-user.riscv64 = false;
+}
+</code></pre>
+<h2 id="profilesscanningenable"><a class="header" href="#profilesscanningenable">profiles.scanning.enable</a></h2>
+<p>Enable scanning profile</p>
+<h4 id="type-48"><a class="header" href="#type-48">type</a></h4>
+<p>boolean</p>
+<h4 id="default-48"><a class="header" href="#default-48">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.scanning.enable = false;
+}
+</code></pre>
+<h2 id="profilessshenable"><a class="header" href="#profilessshenable">profiles.ssh.enable</a></h2>
+<p>Enable ssh profile</p>
+<h4 id="type-49"><a class="header" href="#type-49">type</a></h4>
+<p>boolean</p>
+<h4 id="default-49"><a class="header" href="#default-49">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.ssh.enable = false;
+}
+</code></pre>
+<h2 id="profilessshforwardx11"><a class="header" href="#profilessshforwardx11">profiles.ssh.forwardX11</a></h2>
+<p>Whether to allow X11 connections to be forwarded.</p>
+<h4 id="type-50"><a class="header" href="#type-50">type</a></h4>
+<p>boolean</p>
+<h4 id="default-50"><a class="header" href="#default-50">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.ssh.forwardX11 = false;
+}
+</code></pre>
+<h2 id="profilessyncthingenable"><a class="header" href="#profilessyncthingenable">profiles.syncthing.enable</a></h2>
+<p>Enable syncthing profile</p>
+<h4 id="type-51"><a class="header" href="#type-51">type</a></h4>
+<p>boolean</p>
+<h4 id="default-51"><a class="header" href="#default-51">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.syncthing.enable = false;
+}
+</code></pre>
+<h2 id="profilesvirtualizationenable"><a class="header" href="#profilesvirtualizationenable">profiles.virtualization.enable</a></h2>
+<p>Enable virtualization profile</p>
+<h4 id="type-52"><a class="header" href="#type-52">type</a></h4>
+<p>boolean</p>
+<h4 id="default-52"><a class="header" href="#default-52">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.virtualization.enable = false;
+}
+</code></pre>
+<h2 id="profilesvirtualizationlistentcp"><a class="header" href="#profilesvirtualizationlistentcp">profiles.virtualization.listenTCP</a></h2>
+<p>Make libvirt listen to TCP</p>
+<h4 id="type-53"><a class="header" href="#type-53">type</a></h4>
+<p>boolean</p>
+<h4 id="default-53"><a class="header" href="#default-53">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.virtualization.listenTCP = false;
+}
+</code></pre>
+<h2 id="profilesvirtualizationnested"><a class="header" href="#profilesvirtualizationnested">profiles.virtualization.nested</a></h2>
+<p>Enable nested virtualization</p>
+<h4 id="type-54"><a class="header" href="#type-54">type</a></h4>
+<p>boolean</p>
+<h4 id="default-54"><a class="header" href="#default-54">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.virtualization.nested = false;
+}
+</code></pre>
+<h2 id="profileswireguardserverenable"><a class="header" href="#profileswireguardserverenable">profiles.wireguard.server.enable</a></h2>
+<p>Enable wireguard.server profile</p>
+<h4 id="type-55"><a class="header" href="#type-55">type</a></h4>
+<p>boolean</p>
+<h4 id="default-55"><a class="header" href="#default-55">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.wireguard.server.enable = false;
+}
+</code></pre>
+<h2 id="profilesyubikeyenable"><a class="header" href="#profilesyubikeyenable">profiles.yubikey.enable</a></h2>
+<p>Enable yubikey profile</p>
+<h4 id="type-56"><a class="header" href="#type-56">type</a></h4>
+<p>boolean</p>
+<h4 id="default-56"><a class="header" href="#default-56">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.yubikey.enable = false;
+}
+</code></pre>
+<h2 id="profileszshenable"><a class="header" href="#profileszshenable">profiles.zsh.enable</a></h2>
+<p>Enable zsh profile</p>
+<h4 id="type-57"><a class="header" href="#type-57">type</a></h4>
+<p>boolean</p>
+<h4 id="default-57"><a class="header" href="#default-57">default</a></h4>
+<pre><code class="language-nix">{
+  profiles.zsh.enable = true;
+}
+</code></pre>
+<h2 id="programspodmanenable"><a class="header" href="#programspodmanenable">programs.podman.enable</a></h2>
+<p>Whether to configure podman</p>
+<h4 id="type-58"><a class="header" href="#type-58">type</a></h4>
+<p>boolean</p>
+<h4 id="default-58"><a class="header" href="#default-58">default</a></h4>
+<pre><code class="language-nix">{
+  programs.podman.enable = false;
+}
+</code></pre>
+<h2 id="programspodmanpackage"><a class="header" href="#programspodmanpackage">programs.podman.package</a></h2>
+<p>podman package to be used</p>
+<h4 id="type-59"><a class="header" href="#type-59">type</a></h4>
+<p>package</p>
+<h4 id="default-59"><a class="header" href="#default-59">default</a></h4>
+<pre><code class="language-nix">{
+  programs.podman.package = {
+    drvPath = &quot;podman-wrapper-4.1.0&quot;;
+    name = &quot;podman-wrapper-4.1.0&quot;;
+    outPath = &quot;podman-wrapper-4.1.0&quot;;
+    type = &quot;derivation&quot;;
+  };
+}
+</code></pre>
+<h2 id="programspodmancnipackage"><a class="header" href="#programspodmancnipackage">programs.podman.cniPackage</a></h2>
+<p>cni package to be used</p>
+<h4 id="type-60"><a class="header" href="#type-60">type</a></h4>
+<p>package</p>
+<h4 id="default-60"><a class="header" href="#default-60">default</a></h4>
+<pre><code class="language-nix">{
+  programs.podman.cniPackage = {
+    drvPath = &quot;cni-0.8.1&quot;;
+    name = &quot;cni-0.8.1&quot;;
+    outPath = &quot;cni-0.8.1&quot;;
+    type = &quot;derivation&quot;;
+  };
+}
+</code></pre>
+<h2 id="programspodmancnipluginspackage"><a class="header" href="#programspodmancnipluginspackage">programs.podman.cniPluginsPackage</a></h2>
+<p>cni-plugins package to be used</p>
+<h4 id="type-61"><a class="header" href="#type-61">type</a></h4>
+<p>package</p>
+<h4 id="default-61"><a class="header" href="#default-61">default</a></h4>
+<pre><code class="language-nix">{
+  programs.podman.cniPluginsPackage = {
+    drvPath = &quot;cni-plugins-1.1.1&quot;;
+    name = &quot;cni-plugins-1.1.1&quot;;
+    outPath = &quot;cni-plugins-1.1.1&quot;;
+    type = &quot;derivation&quot;;
+  };
+}
+</code></pre>
+<h2 id="programspodmanconmonpackage"><a class="header" href="#programspodmanconmonpackage">programs.podman.conmonPackage</a></h2>
+<p>conmon package to be used</p>
+<h4 id="type-62"><a class="header" href="#type-62">type</a></h4>
+<p>package</p>
+<h4 id="default-62"><a class="header" href="#default-62">default</a></h4>
+<pre><code class="language-nix">{
+  programs.podman.conmonPackage = {
+    drvPath = &quot;conmon-2.1.0&quot;;
+    name = &quot;conmon-2.1.0&quot;;
+    outPath = &quot;conmon-2.1.0&quot;;
+    type = &quot;derivation&quot;;
+  };
+}
+</code></pre>
+<h2 id="programspodmanruncpackage"><a class="header" href="#programspodmanruncpackage">programs.podman.runcPackage</a></h2>
+<p>runc package to be used</p>
+<h4 id="type-63"><a class="header" href="#type-63">type</a></h4>
+<p>package</p>
+<h4 id="default-63"><a class="header" href="#default-63">default</a></h4>
+<pre><code class="language-nix">{
+  programs.podman.runcPackage = {
+    drvPath = &quot;runc-1.1.2&quot;;
+    name = &quot;runc-1.1.2&quot;;
+    outPath = &quot;runc-1.1.2&quot;;
+    type = &quot;derivation&quot;;
+  };
+}
+</code></pre>
+<h2 id="servicesemacs-serverenable"><a class="header" href="#servicesemacs-serverenable">services.emacs-server.enable</a></h2>
+<p>Whether to enable the Emacs daemon.</p>
+<h4 id="type-64"><a class="header" href="#type-64">type</a></h4>
+<p>boolean</p>
+<h4 id="example-9"><a class="header" href="#example-9">example</a></h4>
+<pre><code class="language-nix">{
+  services.emacs-server.enable = true;
+}
+</code></pre>
+<h4 id="default-64"><a class="header" href="#default-64">default</a></h4>
+<pre><code class="language-nix">{
+  services.emacs-server.enable = false;
+}
+</code></pre>
+<h2 id="servicesemacs-serverpackage"><a class="header" href="#servicesemacs-serverpackage">services.emacs-server.package</a></h2>
+<p>The Emacs package to use for running the daemon.</p>
+<h4 id="type-65"><a class="header" href="#type-65">type</a></h4>
+<p>package</p>
+<h2 id="servicesemacs-serverextraoptions"><a class="header" href="#servicesemacs-serverextraoptions">services.emacs-server.extraOptions</a></h2>
+<p>The extra command-line options to pass to
+<command>emacs</command> daemon.</p>
+<h4 id="type-66"><a class="header" href="#type-66">type</a></h4>
+<p>strings concatenated with &quot; &quot;</p>
+<h4 id="default-65"><a class="header" href="#default-65">default</a></h4>
+<pre><code class="language-nix">{
+  services.emacs-server.extraOptions = &quot;&quot;;
+}
+</code></pre>
+<h2 id="servicesemacs-servername"><a class="header" href="#servicesemacs-servername">services.emacs-server.name</a></h2>
+<p>Name of the emacs server</p>
+<h4 id="type-67"><a class="header" href="#type-67">type</a></h4>
+<p>string</p>
+<h4 id="default-66"><a class="header" href="#default-66">default</a></h4>
+<pre><code class="language-nix">{
+  services.emacs-server.name = &quot;default&quot;;
+}
+</code></pre>
+<h2 id="servicesemacs-servershell"><a class="header" href="#servicesemacs-servershell">services.emacs-server.shell</a></h2>
+<p>The shell used for starting Emacs.</p>
+<h4 id="type-68"><a class="header" href="#type-68">type</a></h4>
+<p>string</p>
+<h2 id="servicesnix-binary-cacheenable"><a class="header" href="#servicesnix-binary-cacheenable">services.nix-binary-cache.enable</a></h2>
+<p>Enable nix-binary-cache</p>
+<h4 id="type-69"><a class="header" href="#type-69">type</a></h4>
+<p>boolean</p>
+<h4 id="default-67"><a class="header" href="#default-67">default</a></h4>
+<pre><code class="language-nix">{
+  services.nix-binary-cache.enable = false;
+}
+</code></pre>
+<h2 id="servicesnix-binary-cachealiases"><a class="header" href="#servicesnix-binary-cachealiases">services.nix-binary-cache.aliases</a></h2>
+<p>server aliases to serve</p>
+<h4 id="type-70"><a class="header" href="#type-70">type</a></h4>
+<p>list of string</p>
+<h4 id="default-68"><a class="header" href="#default-68">default</a></h4>
+<pre><code class="language-nix">{
+  services.nix-binary-cache.aliases = [];
+}
+</code></pre>
+<h2 id="servicesnix-binary-cachedomain"><a class="header" href="#servicesnix-binary-cachedomain">services.nix-binary-cache.domain</a></h2>
+<p>domain to serve</p>
+<h4 id="type-71"><a class="header" href="#type-71">type</a></h4>
+<p>string</p>
+<h2 id="serviceswireguardenable"><a class="header" href="#serviceswireguardenable">services.wireguard.enable</a></h2>
+<p>Whether to enable a reverse SSH proxy.</p>
+<h4 id="type-72"><a class="header" href="#type-72">type</a></h4>
+<p>boolean</p>
+<h4 id="default-69"><a class="header" href="#default-69">default</a></h4>
+<pre><code class="language-nix">{
+  services.wireguard.enable = false;
+}
+</code></pre>
+<h2 id="serviceswireguardallowedips"><a class="header" href="#serviceswireguardallowedips">services.wireguard.allowedIPs</a></h2>
+<p>The peer (server) allowedIPs</p>
+<h4 id="type-73"><a class="header" href="#type-73">type</a></h4>
+<p>list of string</p>
+<h4 id="default-70"><a class="header" href="#default-70">default</a></h4>
+<pre><code class="language-nix">{
+  services.wireguard.allowedIPs = [
+    &quot;10.100.0.0/24&quot;
+  ];
+}
+</code></pre>
+<h2 id="serviceswireguardendpoint"><a class="header" href="#serviceswireguardendpoint">services.wireguard.endpoint</a></h2>
+<p>The endpoint IP to target</p>
+<h4 id="type-74"><a class="header" href="#type-74">type</a></h4>
+<p>string</p>
+<h2 id="serviceswireguardendpointport"><a class="header" href="#serviceswireguardendpointport">services.wireguard.endpointPort</a></h2>
+<p>The endpoint Port to target</p>
+<h4 id="type-75"><a class="header" href="#type-75">type</a></h4>
+<p>signed integer</p>
+<h4 id="default-71"><a class="header" href="#default-71">default</a></h4>
+<pre><code class="language-nix">{
+  services.wireguard.endpointPort = 51820;
+}
+</code></pre>
+<h2 id="serviceswireguardendpointpublickey"><a class="header" href="#serviceswireguardendpointpublickey">services.wireguard.endpointPublicKey</a></h2>
+<p>The peer (server) public key</p>
+<h4 id="type-76"><a class="header" href="#type-76">type</a></h4>
+<p>string</p>
+<h2 id="serviceswireguardips"><a class="header" href="#serviceswireguardips">services.wireguard.ips</a></h2>
+<p>The client IPs</p>
+<h4 id="type-77"><a class="header" href="#type-77">type</a></h4>
+<p>list of string</p>
+<h2 id="virtualisationbuildkitdenable"><a class="header" href="#virtualisationbuildkitdenable">virtualisation.buildkitd.enable</a></h2>
+<p>This option enables buildkitd</p>
+<h4 id="type-78"><a class="header" href="#type-78">type</a></h4>
+<p>boolean</p>
+<h4 id="default-72"><a class="header" href="#default-72">default</a></h4>
+<pre><code class="language-nix">{
+  virtualisation.buildkitd.enable = false;
+}
+</code></pre>
+<h2 id="virtualisationbuildkitdpackage"><a class="header" href="#virtualisationbuildkitdpackage">virtualisation.buildkitd.package</a></h2>
+<p>Buildkitd package to be used in the module</p>
+<h4 id="type-79"><a class="header" href="#type-79">type</a></h4>
+<p>package</p>
+<h4 id="example-10"><a class="header" href="#example-10">example</a></h4>
+<pre><code class="language-nix">{
+  virtualisation.buildkitd.package = {
+    drvPath = &quot;buildkit-0.10.3&quot;;
+    name = &quot;buildkit-0.10.3&quot;;
+    outPath = &quot;buildkit-0.10.3&quot;;
+    type = &quot;derivation&quot;;
+  };
+}
+</code></pre>
+<h4 id="default-73"><a class="header" href="#default-73">default</a></h4>
+<pre><code class="language-nix">{
+  virtualisation.buildkitd.package = {
+    drvPath = &quot;buildkit-0.10.3&quot;;
+    name = &quot;buildkit-0.10.3&quot;;
+    outPath = &quot;buildkit-0.10.3&quot;;
+    type = &quot;derivation&quot;;
+  };
+}
+</code></pre>
+<h2 id="virtualisationbuildkitdpackages"><a class="header" href="#virtualisationbuildkitdpackages">virtualisation.buildkitd.packages</a></h2>
+<p>List of packages to be added to buildkitd service path</p>
+<h4 id="type-80"><a class="header" href="#type-80">type</a></h4>
+<p>list of package</p>
+<h4 id="default-74"><a class="header" href="#default-74">default</a></h4>
+<pre><code class="language-nix">{
+  virtualisation.buildkitd.packages = [
+    {
+      drvPath = &quot;runc-1.1.2&quot;;
+      name = &quot;runc-1.1.2&quot;;
+      outPath = &quot;runc-1.1.2&quot;;
+      type = &quot;derivation&quot;;
+    }
+    {
+      drvPath = &quot;git-2.36.0&quot;;
+      name = &quot;git-2.36.0&quot;;
+      outPath = &quot;git-2.36.0&quot;;
+      type = &quot;derivation&quot;;
+    }
+  ];
+}
+</code></pre>
+<h2 id="virtualisationbuildkitdextraoptions"><a class="header" href="#virtualisationbuildkitdextraoptions">virtualisation.buildkitd.extraOptions</a></h2>
+<p>The extra command-line options to pass to
+<command>buildkitd</command> daemon.</p>
+<h4 id="type-81"><a class="header" href="#type-81">type</a></h4>
+<p>strings concatenated with &quot; &quot;</p>
+<h4 id="default-75"><a class="header" href="#default-75">default</a></h4>
+<pre><code class="language-nix">{
+  virtualisation.buildkitd.extraOptions = &quot;&quot;;
+}
+</code></pre>
+<h2 id="virtualisationbuildkitdlistenoptions"><a class="header" href="#virtualisationbuildkitdlistenoptions">virtualisation.buildkitd.listenOptions</a></h2>
+<p>A list of unix and tcp buildkitd should listen to. The format follows
+ListenStream as described in systemd.socket(5).</p>
+<h4 id="type-82"><a class="header" href="#type-82">type</a></h4>
+<p>list of string</p>
+<h4 id="default-76"><a class="header" href="#default-76">default</a></h4>
+<pre><code class="language-nix">{
+  virtualisation.buildkitd.listenOptions = [
+    &quot;/run/buildkitd/buildkitd.sock&quot;
+  ];
+}
+</code></pre>
+<h2 id="virtualisationcontainerdenable"><a class="header" href="#virtualisationcontainerdenable">virtualisation.containerd.enable</a></h2>
+<p>This option enables containerd, a daemon that manages
+linux containers.</p>
+<h4 id="type-83"><a class="header" href="#type-83">type</a></h4>
+<p>boolean</p>
+<h4 id="default-77"><a class="header" href="#default-77">default</a></h4>
+<pre><code class="language-nix">{
+  virtualisation.containerd.enable = false;
+}
+</code></pre>
+<h2 id="virtualisationcontainerdpackage"><a class="header" href="#virtualisationcontainerdpackage">virtualisation.containerd.package</a></h2>
+<p>Containerd package to be used in the module</p>
+<h4 id="type-84"><a class="header" href="#type-84">type</a></h4>
+<p>package</p>
+<h4 id="example-11"><a class="header" href="#example-11">example</a></h4>
+<pre><code class="language-nix">{
+  virtualisation.containerd.package = {
+    drvPath = &quot;containerd-1.6.4&quot;;
+    name = &quot;containerd-1.6.4&quot;;
+    outPath = &quot;containerd-1.6.4&quot;;
+    type = &quot;derivation&quot;;
+  };
+}
+</code></pre>
+<h4 id="default-78"><a class="header" href="#default-78">default</a></h4>
+<pre><code class="language-nix">{
+  virtualisation.containerd.package = {
+    drvPath = &quot;containerd-1.6.4&quot;;
+    name = &quot;containerd-1.6.4&quot;;
+    outPath = &quot;containerd-1.6.4&quot;;
+    type = &quot;derivation&quot;;
+  };
+}
+</code></pre>
+<h2 id="virtualisationcontainerdpackages"><a class="header" href="#virtualisationcontainerdpackages">virtualisation.containerd.packages</a></h2>
+<p>List of packages to be added to containerd service path</p>
+<h4 id="type-85"><a class="header" href="#type-85">type</a></h4>
+<p>list of package</p>
+<h4 id="default-79"><a class="header" href="#default-79">default</a></h4>
+<pre><code class="language-nix">{
+  virtualisation.containerd.packages = [
+    {
+      drvPath = &quot;runc-1.1.2&quot;;
+      name = &quot;runc-1.1.2&quot;;
+      outPath = &quot;runc-1.1.2&quot;;
+      type = &quot;derivation&quot;;
+    }
+  ];
+}
+</code></pre>
+<h2 id="virtualisationcontainerdextraoptions"><a class="header" href="#virtualisationcontainerdextraoptions">virtualisation.containerd.extraOptions</a></h2>
+<p>The extra command-line options to pass to
+<command>containerd</command> daemon.</p>
+<h4 id="type-86"><a class="header" href="#type-86">type</a></h4>
+<p>strings concatenated with &quot; &quot;</p>
+<h4 id="default-80"><a class="header" href="#default-80">default</a></h4>
+<pre><code class="language-nix">{
+  virtualisation.containerd.extraOptions = &quot;&quot;;
+}
+</code></pre>
+<h2 id="virtualisationcontainerdlistenoptions"><a class="header" href="#virtualisationcontainerdlistenoptions">virtualisation.containerd.listenOptions</a></h2>
+<p>A list of unix and tcp containerd should listen to. The format follows
+ListenStream as described in systemd.socket(5).</p>
+<h4 id="type-87"><a class="header" href="#type-87">type</a></h4>
+<p>list of string</p>
+<h4 id="default-81"><a class="header" href="#default-81">default</a></h4>
+<pre><code class="language-nix">{
+  virtualisation.containerd.listenOptions = [
+    &quot;/run/containerd/containerd.sock&quot;
+  ];
+}
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="nur-combined-tox.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="nur-combined-vroad.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="nur-combined-tox.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="nur-combined-vroad.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

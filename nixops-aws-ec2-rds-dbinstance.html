@@ -1,0 +1,287 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>ec2-rds-dbinstance</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="hugosenari.html"><strong aria-hidden="true">2.</strong> Hugosenari</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="hlissner.html"><strong aria-hidden="true">3.</strong> hlissner</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="cocada-boa.html"><strong aria-hidden="true">4.</strong> Thiago</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="climod.html"><strong aria-hidden="true">5.</strong> Climod</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="ew.html"><strong aria-hidden="true">6.</strong> Lucas</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="marcosrdac.html"><strong aria-hidden="true">7.</strong> Marcos</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="flake-gemini.html"><strong aria-hidden="true">8.</strong> Flake Gemini</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="impermanence.html"><strong aria-hidden="true">9.</strong> Impermanence</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="impermanence-hm.html"><strong aria-hidden="true">9.1.</strong> Impermanence HM</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="kubenix.html"><strong aria-hidden="true">10.</strong> KubeNix</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops.html"><strong aria-hidden="true">11.</strong> NixOps</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops-aws.html"><strong aria-hidden="true">12.</strong> NixOps AWS</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="nixops-aws-data.html"><strong aria-hidden="true">12.1.</strong> data</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpn-connection.html"><strong aria-hidden="true">12.2.</strong> vpn-connection</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpn-connection-route.html"><strong aria-hidden="true">12.3.</strong> vpn-connection-route</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpn-gateway.html"><strong aria-hidden="true">12.4.</strong> vpn-gateway</a></li><li class="chapter-item expanded "><a href="nixops-aws-cloudwatch-log-group.html"><strong aria-hidden="true">12.5.</strong> cloudwatch-log-group</a></li><li class="chapter-item expanded "><a href="nixops-aws-cloudwatch-log-stream.html"><strong aria-hidden="true">12.6.</strong> cloudwatch-log-stream</a></li><li class="chapter-item expanded "><a href="nixops-aws-ec2-keypair.html"><strong aria-hidden="true">12.7.</strong> ec2-keypair</a></li><li class="chapter-item expanded "><a href="nixops-aws-ec2-placement.html"><strong aria-hidden="true">12.8.</strong> ec2-placement</a></li><li class="chapter-item expanded "><a href="nixops-aws-ec2-rds-dbinstance.html" class="active"><strong aria-hidden="true">12.9.</strong> ec2-rds-dbinstance</a></li><li class="chapter-item expanded "><a href="nixops-aws-ec2-rds-dbsecurity.html"><strong aria-hidden="true">12.10.</strong> ec2-rds-dbsecurity</a></li><li class="chapter-item expanded "><a href="nixops-aws-ec2-security.html"><strong aria-hidden="true">12.11.</strong> ec2-security</a></li><li class="chapter-item expanded "><a href="nixops-aws-eslatic-file-system.html"><strong aria-hidden="true">12.12.</strong> eslatic-file-system</a></li><li class="chapter-item expanded "><a href="nixops-aws-eslatic-file-sistem-mount.html"><strong aria-hidden="true">12.13.</strong> eslatic-file-sistem-mount</a></li><li class="chapter-item expanded "><a href="nixops-aws-eslatic-ip.html"><strong aria-hidden="true">12.14.</strong> eslatic-ip</a></li><li class="chapter-item expanded "><a href="nixops-aws-iam.html"><strong aria-hidden="true">12.15.</strong> iam</a></li><li class="chapter-item expanded "><a href="nixops-aws-rds.html"><strong aria-hidden="true">12.16.</strong> rds</a></li><li class="chapter-item expanded "><a href="nixops-aws-route53.html"><strong aria-hidden="true">12.17.</strong> route53</a></li><li class="chapter-item expanded "><a href="nixops-aws-s3.html"><strong aria-hidden="true">12.18.</strong> s3</a></li><li class="chapter-item expanded "><a href="nixops-aws-sqs.html"><strong aria-hidden="true">12.19.</strong> sqs</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc.html"><strong aria-hidden="true">12.20.</strong> vpc</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-customer.html"><strong aria-hidden="true">12.21.</strong> vpc-customer</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-dhcp.html"><strong aria-hidden="true">12.22.</strong> vpc-dhcp</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-egress.html"><strong aria-hidden="true">12.23.</strong> vpc-egress</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-endpoint.html"><strong aria-hidden="true">12.24.</strong> vpc-endpoint</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-internet.html"><strong aria-hidden="true">12.25.</strong> vpc-internet</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-nat.html"><strong aria-hidden="true">12.26.</strong> vpc-nat</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-network-interface.html"><strong aria-hidden="true">12.27.</strong> vpc-network-interface</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-network-interface-attachment.html"><strong aria-hidden="true">12.28.</strong> vpc-network-interface-attachment</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-route.html"><strong aria-hidden="true">12.29.</strong> vpc-route</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-route-table.html"><strong aria-hidden="true">12.30.</strong> vpc-route-table</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-route-table-association.html"><strong aria-hidden="true">12.31.</strong> vpc-route-table-association</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-subnet.html"><strong aria-hidden="true">12.32.</strong> vpc-subnet</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="nixops-datadog-monitor.html"><strong aria-hidden="true">13.</strong> NixOps Datadog</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops-digitalocean.html"><strong aria-hidden="true">14.</strong> NixOps DigitalOcean</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops-gce.html"><strong aria-hidden="true">15.</strong> NixOps GCE</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops-hcloud.html"><strong aria-hidden="true">16.</strong> NixOps HCloud</a></li><li class="chapter-item expanded "><a href="nixops-hcloud-volume.html"><strong aria-hidden="true">17.</strong> NixOps HCloud Volume</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops-libvirtd.html"><strong aria-hidden="true">18.</strong> NixOps LibVirtd</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixos-firehol.html"><strong aria-hidden="true">19.</strong> NixOS-FireHOL</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixos-hardware.html"><strong aria-hidden="true">20.</strong> NixOS Hardware</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="nixos-hardware-asus.html"><strong aria-hidden="true">20.1.</strong> asus</a></li><li class="chapter-item expanded "><a href="nixos-hardware-surface.html"><strong aria-hidden="true">20.2.</strong> surface</a></li><li class="chapter-item expanded "><a href="nixos-hardware-raspberry.html"><strong aria-hidden="true">20.3.</strong> raspberry</a></li><li class="chapter-item expanded "><a href="nixos-hardware-system76.html"><strong aria-hidden="true">20.4.</strong> system76</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="nur-combined.html"><strong aria-hidden="true">21.</strong> NUR Combined</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="nur-combined-aasg.html"><strong aria-hidden="true">21.1.</strong> aasg</a></li><li class="chapter-item expanded "><a href="nur-combined-afreakk.html"><strong aria-hidden="true">21.2.</strong> afreakk</a></li><li class="chapter-item expanded "><a href="nur-combined-alarsyo.html"><strong aria-hidden="true">21.3.</strong> alarsyo</a></li><li class="chapter-item expanded "><a href="nur-combined-ambroisie.html"><strong aria-hidden="true">21.4.</strong> ambroisie</a></li><li class="chapter-item expanded "><a href="nur-combined-arc.html"><strong aria-hidden="true">21.5.</strong> arc</a></li><li class="chapter-item expanded "><a href="nur-combined-bb010g.html"><strong aria-hidden="true">21.6.</strong> bb010g</a></li><li class="chapter-item expanded "><a href="nur-combined-bendlas.html"><strong aria-hidden="true">21.7.</strong> bendlas</a></li><li class="chapter-item expanded "><a href="nur-combined-berbiche.html"><strong aria-hidden="true">21.8.</strong> berbiche</a></li><li class="chapter-item expanded "><a href="nur-combined-c0deaddict.html"><strong aria-hidden="true">21.9.</strong> c0deaddict</a></li><li class="chapter-item expanded "><a href="nur-combined-crazazy.html"><strong aria-hidden="true">21.10.</strong> crazazy</a></li><li class="chapter-item expanded "><a href="nur-combined-crtified.html"><strong aria-hidden="true">21.11.</strong> crtified</a></li><li class="chapter-item expanded "><a href="nur-combined-cwyc.html"><strong aria-hidden="true">21.12.</strong> cwyc</a></li><li class="chapter-item expanded "><a href="nur-combined-dawidsowa.html"><strong aria-hidden="true">21.13.</strong> dawidsowa</a></li><li class="chapter-item expanded "><a href="nur-combined-dguibert.html"><strong aria-hidden="true">21.14.</strong> dguibert</a></li><li class="chapter-item expanded "><a href="nur-combined-dtz.html"><strong aria-hidden="true">21.15.</strong> dtz</a></li><li class="chapter-item expanded "><a href="nur-combined-dukzcry.html"><strong aria-hidden="true">21.16.</strong> dukzcry</a></li><li class="chapter-item expanded "><a href="nur-combined-emmanuelrosa.html"><strong aria-hidden="true">21.17.</strong> emmanuelrosa</a></li><li class="chapter-item expanded "><a href="nur-combined-heph2.html"><strong aria-hidden="true">21.18.</strong> heph2</a></li><li class="chapter-item expanded "><a href="nur-combined-ilya-fedin.html"><strong aria-hidden="true">21.19.</strong> ilya-fedin</a></li><li class="chapter-item expanded "><a href="nur-combined-immae.html"><strong aria-hidden="true">21.20.</strong> immae</a></li><li class="chapter-item expanded "><a href="nur-combined-instantos.html"><strong aria-hidden="true">21.21.</strong> instantos</a></li><li class="chapter-item expanded "><a href="nur-combined-jbarthelmes.html"><strong aria-hidden="true">21.22.</strong> jbarthelmes</a></li><li class="chapter-item expanded "><a href="nur-combined-johnazoidberg.html"><strong aria-hidden="true">21.23.</strong> johnazoidberg</a></li><li class="chapter-item expanded "><a href="nur-combined-jomik.html"><strong aria-hidden="true">21.24.</strong> jomik</a></li><li class="chapter-item expanded "><a href="nur-combined-kampka.html"><strong aria-hidden="true">21.25.</strong> kampka</a></li><li class="chapter-item expanded "><a href="nur-combined-kapack.html"><strong aria-hidden="true">21.26.</strong> kapack</a></li><li class="chapter-item expanded "><a href="nur-combined-kira-bruneau.html"><strong aria-hidden="true">21.27.</strong> kira-bruneau</a></li><li class="chapter-item expanded "><a href="nur-combined-kolloch.html"><strong aria-hidden="true">21.28.</strong> kolloch</a></li><li class="chapter-item expanded "><a href="nur-combined-krebs.html"><strong aria-hidden="true">21.29.</strong> krebs</a></li><li class="chapter-item expanded "><a href="nur-combined-kreisys.html"><strong aria-hidden="true">21.30.</strong> kreisys</a></li><li class="chapter-item expanded "><a href="nur-combined-linyinfeng.html"><strong aria-hidden="true">21.31.</strong> linyinfeng</a></li><li class="chapter-item expanded "><a href="nur-combined-lschuermann.html"><strong aria-hidden="true">21.32.</strong> lschuermann</a></li><li class="chapter-item expanded "><a href="nur-combined-lucasew.html"><strong aria-hidden="true">21.33.</strong> lucasew</a></li><li class="chapter-item expanded "><a href="nur-combined-misterio.html"><strong aria-hidden="true">21.34.</strong> misterio</a></li><li class="chapter-item expanded "><a href="nur-combined-mmilata.html"><strong aria-hidden="true">21.35.</strong> mmilata</a></li><li class="chapter-item expanded "><a href="nur-combined-moredhel.html"><strong aria-hidden="true">21.36.</strong> moredhel</a></li><li class="chapter-item expanded "><a href="nur-combined-moredread.html"><strong aria-hidden="true">21.37.</strong> moredread</a></li><li class="chapter-item expanded "><a href="nur-combined-noneucat.html"><strong aria-hidden="true">21.38.</strong> noneucat</a></li><li class="chapter-item expanded "><a href="nur-combined-onny.html"><strong aria-hidden="true">21.39.</strong> onny</a></li><li class="chapter-item expanded "><a href="nur-combined-pamplemousse.html"><strong aria-hidden="true">21.40.</strong> pamplemousse</a></li><li class="chapter-item expanded "><a href="nur-combined-pborzenkov.html"><strong aria-hidden="true">21.41.</strong> pborzenkov</a></li><li class="chapter-item expanded "><a href="nur-combined-peel.html"><strong aria-hidden="true">21.42.</strong> peel</a></li><li class="chapter-item expanded "><a href="nur-combined-priegger.html"><strong aria-hidden="true">21.43.</strong> priegger</a></li><li class="chapter-item expanded "><a href="nur-combined-qchem.html"><strong aria-hidden="true">21.44.</strong> qchem</a></li><li class="chapter-item expanded "><a href="nur-combined-rycee.html"><strong aria-hidden="true">21.45.</strong> rycee</a></li><li class="chapter-item expanded "><a href="nur-combined-sehqlr.html"><strong aria-hidden="true">21.46.</strong> sehqlr</a></li><li class="chapter-item expanded "><a href="nur-combined-shamilton.html"><strong aria-hidden="true">21.47.</strong> shamilton</a></li><li class="chapter-item expanded "><a href="nur-combined-sikmir.html"><strong aria-hidden="true">21.48.</strong> sikmir</a></li><li class="chapter-item expanded "><a href="nur-combined-splintah.html"><strong aria-hidden="true">21.49.</strong> splintah</a></li><li class="chapter-item expanded "><a href="nur-combined-syberant.html"><strong aria-hidden="true">21.50.</strong> syberant</a></li><li class="chapter-item expanded "><a href="nur-combined-tilpner.html"><strong aria-hidden="true">21.51.</strong> tilpner</a></li><li class="chapter-item expanded "><a href="nur-combined-tukuan.html"><strong aria-hidden="true">21.52.</strong> tukuan</a></li><li class="chapter-item expanded "><a href="nur-combined-tox.html"><strong aria-hidden="true">21.53.</strong> tox</a></li><li class="chapter-item expanded "><a href="nur-combined-vdmeester.html"><strong aria-hidden="true">21.54.</strong> vdmeester</a></li><li class="chapter-item expanded "><a href="nur-combined-vroad.html"><strong aria-hidden="true">21.55.</strong> vroad</a></li><li class="chapter-item expanded "><a href="nur-combined-xeals.html"><strong aria-hidden="true">21.56.</strong> xeals</a></li><li class="chapter-item expanded "><a href="nur-combined-zeratax.html"><strong aria-hidden="true">21.57.</strong> zeratax</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="accesskeyid"><a class="header" href="#accesskeyid">accessKeyId</a></h2>
+<p>The AWS Access Key ID.</p>
+<h4 id="type"><a class="header" href="#type">type</a></h4>
+<p>string</p>
+<h4 id="default"><a class="header" href="#default">default</a></h4>
+<pre><code class="language-nix">{
+  accessKeyId = &quot;&quot;;
+}
+</code></pre>
+<h2 id="allocatedstorage"><a class="header" href="#allocatedstorage">allocatedStorage</a></h2>
+<p>Allocated storage in GB</p>
+<h4 id="type-1"><a class="header" href="#type-1">type</a></h4>
+<p>signed integer</p>
+<h2 id="dbname"><a class="header" href="#dbname">dbName</a></h2>
+<p>Optional database name to be created when instance is first created.</p>
+<h4 id="type-2"><a class="header" href="#type-2">type</a></h4>
+<p>string</p>
+<h2 id="endpoint"><a class="header" href="#endpoint">endpoint</a></h2>
+<p>The endpoint address of the database instance.  This is set by NixOps.</p>
+<h4 id="type-3"><a class="header" href="#type-3">type</a></h4>
+<p>string</p>
+<h4 id="default-1"><a class="header" href="#default-1">default</a></h4>
+<pre><code class="language-nix">{
+  endpoint = &quot;&quot;;
+}
+</code></pre>
+<h2 id="engine"><a class="header" href="#engine">engine</a></h2>
+<p>Database engine. See &lt;link
+xlink:href='http://boto.readthedocs.org/en/latest/ref/rds.html#boto.rds.RDSConnection.create_dbinstance'
+for valid engines.</p>
+<h4 id="type-4"><a class="header" href="#type-4">type</a></h4>
+<p>string</p>
+<h2 id="id"><a class="header" href="#id">id</a></h2>
+<p>Identifier for RDS database instance</p>
+<h4 id="type-5"><a class="header" href="#type-5">type</a></h4>
+<p>string</p>
+<h4 id="default-2"><a class="header" href="#default-2">default</a></h4>
+<pre><code class="language-nix">{
+  id = &quot;nixops-{uuid}-{name}&quot;;
+}
+</code></pre>
+<h2 id="instanceclass"><a class="header" href="#instanceclass">instanceClass</a></h2>
+<p>RDS instance class. See <link
+xlink:href='http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html' />
+for more information.</p>
+<h4 id="type-6"><a class="header" href="#type-6">type</a></h4>
+<p>string</p>
+<h4 id="example"><a class="header" href="#example">example</a></h4>
+<pre><code class="language-nix">{
+  instanceClass = &quot;db.m3.xlarge&quot;;
+}
+</code></pre>
+<h2 id="masterpassword"><a class="header" href="#masterpassword">masterPassword</a></h2>
+<p>Password for master user.</p>
+<h4 id="type-7"><a class="header" href="#type-7">type</a></h4>
+<p>string</p>
+<h2 id="masterusername"><a class="header" href="#masterusername">masterUsername</a></h2>
+<p>Master username for authentication to database instance.</p>
+<h4 id="type-8"><a class="header" href="#type-8">type</a></h4>
+<p>string</p>
+<h4 id="example-1"><a class="header" href="#example-1">example</a></h4>
+<pre><code class="language-nix">{
+  masterUsername = &quot;sa&quot;;
+}
+</code></pre>
+<h2 id="multiaz"><a class="header" href="#multiaz">multiAZ</a></h2>
+<p>If True, specifies the DB Instance will be deployed in multiple availability zones.</p>
+<h4 id="type-9"><a class="header" href="#type-9">type</a></h4>
+<p>boolean</p>
+<h4 id="default-3"><a class="header" href="#default-3">default</a></h4>
+<pre><code class="language-nix">{
+  multiAZ = false;
+}
+</code></pre>
+<h2 id="port"><a class="header" href="#port">port</a></h2>
+<p>Port for database instance connections.</p>
+<h4 id="type-10"><a class="header" href="#type-10">type</a></h4>
+<p>signed integer</p>
+<h2 id="region"><a class="header" href="#region">region</a></h2>
+<p>Amazon RDS region.</p>
+<h4 id="type-11"><a class="header" href="#type-11">type</a></h4>
+<p>string</p>
+<h2 id="securitygroups"><a class="header" href="#securitygroups">securityGroups</a></h2>
+<p>List of names of DBSecurityGroup to authorize on this DBInstance.</p>
+<h4 id="type-12"><a class="header" href="#type-12">type</a></h4>
+<p>list of string or resource of type ‘ec2-rds-security-group’</p>
+<h4 id="default-4"><a class="header" href="#default-4">default</a></h4>
+<pre><code class="language-nix">{
+  securityGroups = [
+    &quot;default&quot;
+  ];
+}
+</code></pre>
+<h2 id="subnetgroup"><a class="header" href="#subnetgroup">subnetGroup</a></h2>
+<p>RDS Subnet Group to place this database in.</p>
+<h4 id="type-13"><a class="header" href="#type-13">type</a></h4>
+<p>null or string or resource of type ‘rds-subnet-group’</p>
+<h4 id="default-5"><a class="header" href="#default-5">default</a></h4>
+<pre><code class="language-nix">{
+  subnetGroup = null;
+}
+</code></pre>
+<h2 id="vpcsecuritygroups"><a class="header" href="#vpcsecuritygroups">vpcSecurityGroups</a></h2>
+<p>List of VPC security groups to authorize on this DBInstance.</p>
+<h4 id="type-14"><a class="header" href="#type-14">type</a></h4>
+<p>null or list of string or resource of type ‘ec2-security-group’</p>
+<h4 id="default-6"><a class="header" href="#default-6">default</a></h4>
+<pre><code class="language-nix">{
+  vpcSecurityGroups = null;
+}
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="nixops-aws-ec2-placement.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="nixops-aws-ec2-rds-dbsecurity.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="nixops-aws-ec2-placement.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="nixops-aws-ec2-rds-dbsecurity.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

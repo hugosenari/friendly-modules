@@ -1,0 +1,1613 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>hlissner</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="hugosenari.html"><strong aria-hidden="true">2.</strong> Hugosenari</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="hlissner.html" class="active"><strong aria-hidden="true">3.</strong> hlissner</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="cocada-boa.html"><strong aria-hidden="true">4.</strong> Thiago</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="climod.html"><strong aria-hidden="true">5.</strong> Climod</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="ew.html"><strong aria-hidden="true">6.</strong> Lucas</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="marcosrdac.html"><strong aria-hidden="true">7.</strong> Marcos</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="flake-gemini.html"><strong aria-hidden="true">8.</strong> Flake Gemini</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="impermanence.html"><strong aria-hidden="true">9.</strong> Impermanence</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="impermanence-hm.html"><strong aria-hidden="true">9.1.</strong> Impermanence HM</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="kubenix.html"><strong aria-hidden="true">10.</strong> KubeNix</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops.html"><strong aria-hidden="true">11.</strong> NixOps</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops-aws.html"><strong aria-hidden="true">12.</strong> NixOps AWS</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="nixops-aws-data.html"><strong aria-hidden="true">12.1.</strong> data</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpn-connection.html"><strong aria-hidden="true">12.2.</strong> vpn-connection</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpn-connection-route.html"><strong aria-hidden="true">12.3.</strong> vpn-connection-route</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpn-gateway.html"><strong aria-hidden="true">12.4.</strong> vpn-gateway</a></li><li class="chapter-item expanded "><a href="nixops-aws-cloudwatch-log-group.html"><strong aria-hidden="true">12.5.</strong> cloudwatch-log-group</a></li><li class="chapter-item expanded "><a href="nixops-aws-cloudwatch-log-stream.html"><strong aria-hidden="true">12.6.</strong> cloudwatch-log-stream</a></li><li class="chapter-item expanded "><a href="nixops-aws-ec2-keypair.html"><strong aria-hidden="true">12.7.</strong> ec2-keypair</a></li><li class="chapter-item expanded "><a href="nixops-aws-ec2-placement.html"><strong aria-hidden="true">12.8.</strong> ec2-placement</a></li><li class="chapter-item expanded "><a href="nixops-aws-ec2-rds-dbinstance.html"><strong aria-hidden="true">12.9.</strong> ec2-rds-dbinstance</a></li><li class="chapter-item expanded "><a href="nixops-aws-ec2-rds-dbsecurity.html"><strong aria-hidden="true">12.10.</strong> ec2-rds-dbsecurity</a></li><li class="chapter-item expanded "><a href="nixops-aws-ec2-security.html"><strong aria-hidden="true">12.11.</strong> ec2-security</a></li><li class="chapter-item expanded "><a href="nixops-aws-eslatic-file-system.html"><strong aria-hidden="true">12.12.</strong> eslatic-file-system</a></li><li class="chapter-item expanded "><a href="nixops-aws-eslatic-file-sistem-mount.html"><strong aria-hidden="true">12.13.</strong> eslatic-file-sistem-mount</a></li><li class="chapter-item expanded "><a href="nixops-aws-eslatic-ip.html"><strong aria-hidden="true">12.14.</strong> eslatic-ip</a></li><li class="chapter-item expanded "><a href="nixops-aws-iam.html"><strong aria-hidden="true">12.15.</strong> iam</a></li><li class="chapter-item expanded "><a href="nixops-aws-rds.html"><strong aria-hidden="true">12.16.</strong> rds</a></li><li class="chapter-item expanded "><a href="nixops-aws-route53.html"><strong aria-hidden="true">12.17.</strong> route53</a></li><li class="chapter-item expanded "><a href="nixops-aws-s3.html"><strong aria-hidden="true">12.18.</strong> s3</a></li><li class="chapter-item expanded "><a href="nixops-aws-sqs.html"><strong aria-hidden="true">12.19.</strong> sqs</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc.html"><strong aria-hidden="true">12.20.</strong> vpc</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-customer.html"><strong aria-hidden="true">12.21.</strong> vpc-customer</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-dhcp.html"><strong aria-hidden="true">12.22.</strong> vpc-dhcp</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-egress.html"><strong aria-hidden="true">12.23.</strong> vpc-egress</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-endpoint.html"><strong aria-hidden="true">12.24.</strong> vpc-endpoint</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-internet.html"><strong aria-hidden="true">12.25.</strong> vpc-internet</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-nat.html"><strong aria-hidden="true">12.26.</strong> vpc-nat</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-network-interface.html"><strong aria-hidden="true">12.27.</strong> vpc-network-interface</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-network-interface-attachment.html"><strong aria-hidden="true">12.28.</strong> vpc-network-interface-attachment</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-route.html"><strong aria-hidden="true">12.29.</strong> vpc-route</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-route-table.html"><strong aria-hidden="true">12.30.</strong> vpc-route-table</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-route-table-association.html"><strong aria-hidden="true">12.31.</strong> vpc-route-table-association</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-subnet.html"><strong aria-hidden="true">12.32.</strong> vpc-subnet</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="nixops-datadog-monitor.html"><strong aria-hidden="true">13.</strong> NixOps Datadog</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops-digitalocean.html"><strong aria-hidden="true">14.</strong> NixOps DigitalOcean</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops-gce.html"><strong aria-hidden="true">15.</strong> NixOps GCE</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops-hcloud.html"><strong aria-hidden="true">16.</strong> NixOps HCloud</a></li><li class="chapter-item expanded "><a href="nixops-hcloud-volume.html"><strong aria-hidden="true">17.</strong> NixOps HCloud Volume</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops-libvirtd.html"><strong aria-hidden="true">18.</strong> NixOps LibVirtd</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixos-firehol.html"><strong aria-hidden="true">19.</strong> NixOS-FireHOL</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixos-hardware.html"><strong aria-hidden="true">20.</strong> NixOS Hardware</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="nixos-hardware-asus.html"><strong aria-hidden="true">20.1.</strong> asus</a></li><li class="chapter-item expanded "><a href="nixos-hardware-surface.html"><strong aria-hidden="true">20.2.</strong> surface</a></li><li class="chapter-item expanded "><a href="nixos-hardware-raspberry.html"><strong aria-hidden="true">20.3.</strong> raspberry</a></li><li class="chapter-item expanded "><a href="nixos-hardware-system76.html"><strong aria-hidden="true">20.4.</strong> system76</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="nur-combined.html"><strong aria-hidden="true">21.</strong> NUR Combined</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="nur-combined-aasg.html"><strong aria-hidden="true">21.1.</strong> aasg</a></li><li class="chapter-item expanded "><a href="nur-combined-afreakk.html"><strong aria-hidden="true">21.2.</strong> afreakk</a></li><li class="chapter-item expanded "><a href="nur-combined-alarsyo.html"><strong aria-hidden="true">21.3.</strong> alarsyo</a></li><li class="chapter-item expanded "><a href="nur-combined-ambroisie.html"><strong aria-hidden="true">21.4.</strong> ambroisie</a></li><li class="chapter-item expanded "><a href="nur-combined-arc.html"><strong aria-hidden="true">21.5.</strong> arc</a></li><li class="chapter-item expanded "><a href="nur-combined-bb010g.html"><strong aria-hidden="true">21.6.</strong> bb010g</a></li><li class="chapter-item expanded "><a href="nur-combined-bendlas.html"><strong aria-hidden="true">21.7.</strong> bendlas</a></li><li class="chapter-item expanded "><a href="nur-combined-berbiche.html"><strong aria-hidden="true">21.8.</strong> berbiche</a></li><li class="chapter-item expanded "><a href="nur-combined-c0deaddict.html"><strong aria-hidden="true">21.9.</strong> c0deaddict</a></li><li class="chapter-item expanded "><a href="nur-combined-crazazy.html"><strong aria-hidden="true">21.10.</strong> crazazy</a></li><li class="chapter-item expanded "><a href="nur-combined-crtified.html"><strong aria-hidden="true">21.11.</strong> crtified</a></li><li class="chapter-item expanded "><a href="nur-combined-cwyc.html"><strong aria-hidden="true">21.12.</strong> cwyc</a></li><li class="chapter-item expanded "><a href="nur-combined-dawidsowa.html"><strong aria-hidden="true">21.13.</strong> dawidsowa</a></li><li class="chapter-item expanded "><a href="nur-combined-dguibert.html"><strong aria-hidden="true">21.14.</strong> dguibert</a></li><li class="chapter-item expanded "><a href="nur-combined-dtz.html"><strong aria-hidden="true">21.15.</strong> dtz</a></li><li class="chapter-item expanded "><a href="nur-combined-dukzcry.html"><strong aria-hidden="true">21.16.</strong> dukzcry</a></li><li class="chapter-item expanded "><a href="nur-combined-emmanuelrosa.html"><strong aria-hidden="true">21.17.</strong> emmanuelrosa</a></li><li class="chapter-item expanded "><a href="nur-combined-heph2.html"><strong aria-hidden="true">21.18.</strong> heph2</a></li><li class="chapter-item expanded "><a href="nur-combined-ilya-fedin.html"><strong aria-hidden="true">21.19.</strong> ilya-fedin</a></li><li class="chapter-item expanded "><a href="nur-combined-immae.html"><strong aria-hidden="true">21.20.</strong> immae</a></li><li class="chapter-item expanded "><a href="nur-combined-instantos.html"><strong aria-hidden="true">21.21.</strong> instantos</a></li><li class="chapter-item expanded "><a href="nur-combined-jbarthelmes.html"><strong aria-hidden="true">21.22.</strong> jbarthelmes</a></li><li class="chapter-item expanded "><a href="nur-combined-johnazoidberg.html"><strong aria-hidden="true">21.23.</strong> johnazoidberg</a></li><li class="chapter-item expanded "><a href="nur-combined-jomik.html"><strong aria-hidden="true">21.24.</strong> jomik</a></li><li class="chapter-item expanded "><a href="nur-combined-kampka.html"><strong aria-hidden="true">21.25.</strong> kampka</a></li><li class="chapter-item expanded "><a href="nur-combined-kapack.html"><strong aria-hidden="true">21.26.</strong> kapack</a></li><li class="chapter-item expanded "><a href="nur-combined-kira-bruneau.html"><strong aria-hidden="true">21.27.</strong> kira-bruneau</a></li><li class="chapter-item expanded "><a href="nur-combined-kolloch.html"><strong aria-hidden="true">21.28.</strong> kolloch</a></li><li class="chapter-item expanded "><a href="nur-combined-krebs.html"><strong aria-hidden="true">21.29.</strong> krebs</a></li><li class="chapter-item expanded "><a href="nur-combined-kreisys.html"><strong aria-hidden="true">21.30.</strong> kreisys</a></li><li class="chapter-item expanded "><a href="nur-combined-linyinfeng.html"><strong aria-hidden="true">21.31.</strong> linyinfeng</a></li><li class="chapter-item expanded "><a href="nur-combined-lschuermann.html"><strong aria-hidden="true">21.32.</strong> lschuermann</a></li><li class="chapter-item expanded "><a href="nur-combined-lucasew.html"><strong aria-hidden="true">21.33.</strong> lucasew</a></li><li class="chapter-item expanded "><a href="nur-combined-misterio.html"><strong aria-hidden="true">21.34.</strong> misterio</a></li><li class="chapter-item expanded "><a href="nur-combined-mmilata.html"><strong aria-hidden="true">21.35.</strong> mmilata</a></li><li class="chapter-item expanded "><a href="nur-combined-moredhel.html"><strong aria-hidden="true">21.36.</strong> moredhel</a></li><li class="chapter-item expanded "><a href="nur-combined-moredread.html"><strong aria-hidden="true">21.37.</strong> moredread</a></li><li class="chapter-item expanded "><a href="nur-combined-noneucat.html"><strong aria-hidden="true">21.38.</strong> noneucat</a></li><li class="chapter-item expanded "><a href="nur-combined-onny.html"><strong aria-hidden="true">21.39.</strong> onny</a></li><li class="chapter-item expanded "><a href="nur-combined-pamplemousse.html"><strong aria-hidden="true">21.40.</strong> pamplemousse</a></li><li class="chapter-item expanded "><a href="nur-combined-pborzenkov.html"><strong aria-hidden="true">21.41.</strong> pborzenkov</a></li><li class="chapter-item expanded "><a href="nur-combined-peel.html"><strong aria-hidden="true">21.42.</strong> peel</a></li><li class="chapter-item expanded "><a href="nur-combined-priegger.html"><strong aria-hidden="true">21.43.</strong> priegger</a></li><li class="chapter-item expanded "><a href="nur-combined-qchem.html"><strong aria-hidden="true">21.44.</strong> qchem</a></li><li class="chapter-item expanded "><a href="nur-combined-rycee.html"><strong aria-hidden="true">21.45.</strong> rycee</a></li><li class="chapter-item expanded "><a href="nur-combined-sehqlr.html"><strong aria-hidden="true">21.46.</strong> sehqlr</a></li><li class="chapter-item expanded "><a href="nur-combined-shamilton.html"><strong aria-hidden="true">21.47.</strong> shamilton</a></li><li class="chapter-item expanded "><a href="nur-combined-sikmir.html"><strong aria-hidden="true">21.48.</strong> sikmir</a></li><li class="chapter-item expanded "><a href="nur-combined-splintah.html"><strong aria-hidden="true">21.49.</strong> splintah</a></li><li class="chapter-item expanded "><a href="nur-combined-syberant.html"><strong aria-hidden="true">21.50.</strong> syberant</a></li><li class="chapter-item expanded "><a href="nur-combined-tilpner.html"><strong aria-hidden="true">21.51.</strong> tilpner</a></li><li class="chapter-item expanded "><a href="nur-combined-tukuan.html"><strong aria-hidden="true">21.52.</strong> tukuan</a></li><li class="chapter-item expanded "><a href="nur-combined-tox.html"><strong aria-hidden="true">21.53.</strong> tox</a></li><li class="chapter-item expanded "><a href="nur-combined-vdmeester.html"><strong aria-hidden="true">21.54.</strong> vdmeester</a></li><li class="chapter-item expanded "><a href="nur-combined-vroad.html"><strong aria-hidden="true">21.55.</strong> vroad</a></li><li class="chapter-item expanded "><a href="nur-combined-xeals.html"><strong aria-hidden="true">21.56.</strong> xeals</a></li><li class="chapter-item expanded "><a href="nur-combined-zeratax.html"><strong aria-hidden="true">21.57.</strong> zeratax</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="dotfilesbindir"><a class="header" href="#dotfilesbindir">dotfiles.binDir</a></h2>
+<h4 id="type"><a class="header" href="#type">type</a></h4>
+<p>path</p>
+<h4 id="default"><a class="header" href="#default">default</a></h4>
+<pre><code class="language-nix">{
+  dotfiles.binDir = &quot;/nix/store/hfgvlj61grkxmhlg4ff9sc5fi6k0bfs0-source/bin&quot;;
+}
+</code></pre>
+<h2 id="dotfilesconfigdir"><a class="header" href="#dotfilesconfigdir">dotfiles.configDir</a></h2>
+<h4 id="type-1"><a class="header" href="#type-1">type</a></h4>
+<p>path</p>
+<h4 id="default-1"><a class="header" href="#default-1">default</a></h4>
+<pre><code class="language-nix">{
+  dotfiles.configDir = &quot;/nix/store/hfgvlj61grkxmhlg4ff9sc5fi6k0bfs0-source/config&quot;;
+}
+</code></pre>
+<h2 id="dotfilesdir"><a class="header" href="#dotfilesdir">dotfiles.dir</a></h2>
+<h4 id="type-2"><a class="header" href="#type-2">type</a></h4>
+<p>path</p>
+<h4 id="default-2"><a class="header" href="#default-2">default</a></h4>
+<pre><code class="language-nix">{
+  dotfiles.dir = &quot;/nix/store/hfgvlj61grkxmhlg4ff9sc5fi6k0bfs0-source&quot;;
+}
+</code></pre>
+<h2 id="dotfilesmodulesdir"><a class="header" href="#dotfilesmodulesdir">dotfiles.modulesDir</a></h2>
+<h4 id="type-3"><a class="header" href="#type-3">type</a></h4>
+<p>path</p>
+<h4 id="default-3"><a class="header" href="#default-3">default</a></h4>
+<pre><code class="language-nix">{
+  dotfiles.modulesDir = &quot;/nix/store/hfgvlj61grkxmhlg4ff9sc5fi6k0bfs0-source/modules&quot;;
+}
+</code></pre>
+<h2 id="dotfilesthemesdir"><a class="header" href="#dotfilesthemesdir">dotfiles.themesDir</a></h2>
+<h4 id="type-4"><a class="header" href="#type-4">type</a></h4>
+<p>path</p>
+<h4 id="default-4"><a class="header" href="#default-4">default</a></h4>
+<pre><code class="language-nix">{
+  dotfiles.themesDir = &quot;/nix/store/hfgvlj61grkxmhlg4ff9sc5fi6k0bfs0-source/modules/themes&quot;;
+}
+</code></pre>
+<h2 id="env"><a class="header" href="#env">env</a></h2>
+<p>TODO</p>
+<h4 id="type-5"><a class="header" href="#type-5">type</a></h4>
+<p>attribute set of string or path or list of string or path</p>
+<h4 id="default-5"><a class="header" href="#default-5">default</a></h4>
+<pre><code class="language-nix">{
+  env = {};
+}
+</code></pre>
+<h2 id="homeconfigfile"><a class="header" href="#homeconfigfile">home.configFile</a></h2>
+<p>Files to place in $XDG_CONFIG_HOME</p>
+<h4 id="type-6"><a class="header" href="#type-6">type</a></h4>
+<p>attribute set</p>
+<h4 id="default-6"><a class="header" href="#default-6">default</a></h4>
+<pre><code class="language-nix">{
+  home.configFile = {};
+}
+</code></pre>
+<h2 id="homedatafile"><a class="header" href="#homedatafile">home.dataFile</a></h2>
+<p>Files to place in $XDG_DATA_HOME</p>
+<h4 id="type-7"><a class="header" href="#type-7">type</a></h4>
+<p>attribute set</p>
+<h4 id="default-7"><a class="header" href="#default-7">default</a></h4>
+<pre><code class="language-nix">{
+  home.dataFile = {};
+}
+</code></pre>
+<h2 id="homefile"><a class="header" href="#homefile">home.file</a></h2>
+<p>Files to place directly in $HOME</p>
+<h4 id="type-8"><a class="header" href="#type-8">type</a></h4>
+<p>attribute set</p>
+<h4 id="default-8"><a class="header" href="#default-8">default</a></h4>
+<pre><code class="language-nix">{
+  home.file = {};
+}
+</code></pre>
+<h2 id="modulesdesktopappsgodotenable"><a class="header" href="#modulesdesktopappsgodotenable">modules.desktop.apps.godot.enable</a></h2>
+<h4 id="type-9"><a class="header" href="#type-9">type</a></h4>
+<p>boolean</p>
+<h4 id="example"><a class="header" href="#example">example</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.apps.godot.enable = true;
+}
+</code></pre>
+<h4 id="default-9"><a class="header" href="#default-9">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.apps.godot.enable = false;
+}
+</code></pre>
+<h2 id="modulesdesktopappsrofienable"><a class="header" href="#modulesdesktopappsrofienable">modules.desktop.apps.rofi.enable</a></h2>
+<h4 id="type-10"><a class="header" href="#type-10">type</a></h4>
+<p>boolean</p>
+<h4 id="example-1"><a class="header" href="#example-1">example</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.apps.rofi.enable = true;
+}
+</code></pre>
+<h4 id="default-10"><a class="header" href="#default-10">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.apps.rofi.enable = false;
+}
+</code></pre>
+<h2 id="modulesdesktopappsunity3denable"><a class="header" href="#modulesdesktopappsunity3denable">modules.desktop.apps.unity3d.enable</a></h2>
+<h4 id="type-11"><a class="header" href="#type-11">type</a></h4>
+<p>boolean</p>
+<h4 id="example-2"><a class="header" href="#example-2">example</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.apps.unity3d.enable = true;
+}
+</code></pre>
+<h4 id="default-11"><a class="header" href="#default-11">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.apps.unity3d.enable = false;
+}
+</code></pre>
+<h2 id="modulesdesktopawesomewmenable"><a class="header" href="#modulesdesktopawesomewmenable">modules.desktop.awesomewm.enable</a></h2>
+<h4 id="type-12"><a class="header" href="#type-12">type</a></h4>
+<p>boolean</p>
+<h4 id="example-3"><a class="header" href="#example-3">example</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.awesomewm.enable = true;
+}
+</code></pre>
+<h4 id="default-12"><a class="header" href="#default-12">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.awesomewm.enable = false;
+}
+</code></pre>
+<h2 id="modulesdesktopbrowsersbraveenable"><a class="header" href="#modulesdesktopbrowsersbraveenable">modules.desktop.browsers.brave.enable</a></h2>
+<h4 id="type-13"><a class="header" href="#type-13">type</a></h4>
+<p>boolean</p>
+<h4 id="example-4"><a class="header" href="#example-4">example</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.browsers.brave.enable = true;
+}
+</code></pre>
+<h4 id="default-13"><a class="header" href="#default-13">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.browsers.brave.enable = false;
+}
+</code></pre>
+<h2 id="modulesdesktopbrowsersdefault"><a class="header" href="#modulesdesktopbrowsersdefault">modules.desktop.browsers.default</a></h2>
+<h4 id="type-14"><a class="header" href="#type-14">type</a></h4>
+<p>null or string</p>
+<h4 id="default-14"><a class="header" href="#default-14">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.browsers.default = null;
+}
+</code></pre>
+<h2 id="modulesdesktopbrowsersfirefoxenable"><a class="header" href="#modulesdesktopbrowsersfirefoxenable">modules.desktop.browsers.firefox.enable</a></h2>
+<h4 id="type-15"><a class="header" href="#type-15">type</a></h4>
+<p>boolean</p>
+<h4 id="example-5"><a class="header" href="#example-5">example</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.browsers.firefox.enable = true;
+}
+</code></pre>
+<h4 id="default-15"><a class="header" href="#default-15">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.browsers.firefox.enable = false;
+}
+</code></pre>
+<h2 id="modulesdesktopbrowsersfirefoxextraconfig"><a class="header" href="#modulesdesktopbrowsersfirefoxextraconfig">modules.desktop.browsers.firefox.extraConfig</a></h2>
+<p>Extra lines to add to <filename>user.js</filename></p>
+<h4 id="type-16"><a class="header" href="#type-16">type</a></h4>
+<p>strings concatenated with &quot;\n&quot;</p>
+<h4 id="default-16"><a class="header" href="#default-16">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.browsers.firefox.extraConfig = &quot;&quot;;
+}
+</code></pre>
+<h2 id="modulesdesktopbrowsersfirefoxprofilename"><a class="header" href="#modulesdesktopbrowsersfirefoxprofilename">modules.desktop.browsers.firefox.profileName</a></h2>
+<h4 id="type-17"><a class="header" href="#type-17">type</a></h4>
+<p>string</p>
+<h4 id="default-17"><a class="header" href="#default-17">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.browsers.firefox.profileName = &quot;username&quot;;
+}
+</code></pre>
+<h2 id="modulesdesktopbrowsersfirefoxsettings"><a class="header" href="#modulesdesktopbrowsersfirefoxsettings">modules.desktop.browsers.firefox.settings</a></h2>
+<p>Firefox preferences to set in <filename>user.js</filename></p>
+<h4 id="type-18"><a class="header" href="#type-18">type</a></h4>
+<p>attribute set of boolean or signed integer or string</p>
+<h4 id="default-18"><a class="header" href="#default-18">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.browsers.firefox.settings = {};
+}
+</code></pre>
+<h2 id="modulesdesktopbrowsersfirefoxuserchrome"><a class="header" href="#modulesdesktopbrowsersfirefoxuserchrome">modules.desktop.browsers.firefox.userChrome</a></h2>
+<p>CSS Styles for Firefox's interface</p>
+<h4 id="type-19"><a class="header" href="#type-19">type</a></h4>
+<p>strings concatenated with &quot;\n&quot;</p>
+<h4 id="default-19"><a class="header" href="#default-19">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.browsers.firefox.userChrome = &quot;&quot;;
+}
+</code></pre>
+<h2 id="modulesdesktopbrowsersfirefoxusercontent"><a class="header" href="#modulesdesktopbrowsersfirefoxusercontent">modules.desktop.browsers.firefox.userContent</a></h2>
+<p>Global CSS Styles for websites</p>
+<h4 id="type-20"><a class="header" href="#type-20">type</a></h4>
+<p>strings concatenated with &quot;\n&quot;</p>
+<h4 id="default-20"><a class="header" href="#default-20">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.browsers.firefox.userContent = &quot;&quot;;
+}
+</code></pre>
+<h2 id="modulesdesktopbrowsersqutebrowserenable"><a class="header" href="#modulesdesktopbrowsersqutebrowserenable">modules.desktop.browsers.qutebrowser.enable</a></h2>
+<h4 id="type-21"><a class="header" href="#type-21">type</a></h4>
+<p>boolean</p>
+<h4 id="example-6"><a class="header" href="#example-6">example</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.browsers.qutebrowser.enable = true;
+}
+</code></pre>
+<h4 id="default-21"><a class="header" href="#default-21">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.browsers.qutebrowser.enable = false;
+}
+</code></pre>
+<h2 id="modulesdesktopbrowsersqutebrowserdicts"><a class="header" href="#modulesdesktopbrowsersqutebrowserdicts">modules.desktop.browsers.qutebrowser.dicts</a></h2>
+<h4 id="type-22"><a class="header" href="#type-22">type</a></h4>
+<p>list of string</p>
+<h4 id="default-22"><a class="header" href="#default-22">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.browsers.qutebrowser.dicts = [
+    &quot;en-US&quot;
+  ];
+}
+</code></pre>
+<h2 id="modulesdesktopbrowsersqutebrowserextraconfig"><a class="header" href="#modulesdesktopbrowsersqutebrowserextraconfig">modules.desktop.browsers.qutebrowser.extraConfig</a></h2>
+<h4 id="type-23"><a class="header" href="#type-23">type</a></h4>
+<p>strings concatenated with &quot;\n&quot;</p>
+<h4 id="default-23"><a class="header" href="#default-23">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.browsers.qutebrowser.extraConfig = &quot;&quot;;
+}
+</code></pre>
+<h2 id="modulesdesktopbrowsersqutebrowseruserstyles"><a class="header" href="#modulesdesktopbrowsersqutebrowseruserstyles">modules.desktop.browsers.qutebrowser.userStyles</a></h2>
+<h4 id="type-24"><a class="header" href="#type-24">type</a></h4>
+<p>strings concatenated with &quot;\n&quot;</p>
+<h4 id="default-24"><a class="header" href="#default-24">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.browsers.qutebrowser.userStyles = &quot;&quot;;
+}
+</code></pre>
+<h2 id="modulesdesktopbspwmenable"><a class="header" href="#modulesdesktopbspwmenable">modules.desktop.bspwm.enable</a></h2>
+<h4 id="type-25"><a class="header" href="#type-25">type</a></h4>
+<p>boolean</p>
+<h4 id="example-7"><a class="header" href="#example-7">example</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.bspwm.enable = true;
+}
+</code></pre>
+<h4 id="default-25"><a class="header" href="#default-25">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.bspwm.enable = false;
+}
+</code></pre>
+<h2 id="modulesdesktopgamingemulatorsdsenable"><a class="header" href="#modulesdesktopgamingemulatorsdsenable">modules.desktop.gaming.emulators.ds.enable</a></h2>
+<h4 id="type-26"><a class="header" href="#type-26">type</a></h4>
+<p>boolean</p>
+<h4 id="example-8"><a class="header" href="#example-8">example</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.gaming.emulators.ds.enable = true;
+}
+</code></pre>
+<h4 id="default-26"><a class="header" href="#default-26">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.gaming.emulators.ds.enable = false;
+}
+</code></pre>
+<h2 id="modulesdesktopgamingemulatorsgbenable"><a class="header" href="#modulesdesktopgamingemulatorsgbenable">modules.desktop.gaming.emulators.gb.enable</a></h2>
+<h4 id="type-27"><a class="header" href="#type-27">type</a></h4>
+<p>boolean</p>
+<h4 id="example-9"><a class="header" href="#example-9">example</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.gaming.emulators.gb.enable = true;
+}
+</code></pre>
+<h4 id="default-27"><a class="header" href="#default-27">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.gaming.emulators.gb.enable = false;
+}
+</code></pre>
+<h2 id="modulesdesktopgamingemulatorsgbaenable"><a class="header" href="#modulesdesktopgamingemulatorsgbaenable">modules.desktop.gaming.emulators.gba.enable</a></h2>
+<h4 id="type-28"><a class="header" href="#type-28">type</a></h4>
+<p>boolean</p>
+<h4 id="example-10"><a class="header" href="#example-10">example</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.gaming.emulators.gba.enable = true;
+}
+</code></pre>
+<h4 id="default-28"><a class="header" href="#default-28">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.gaming.emulators.gba.enable = false;
+}
+</code></pre>
+<h2 id="modulesdesktopgamingemulatorspsxenable"><a class="header" href="#modulesdesktopgamingemulatorspsxenable">modules.desktop.gaming.emulators.psx.enable</a></h2>
+<h4 id="type-29"><a class="header" href="#type-29">type</a></h4>
+<p>boolean</p>
+<h4 id="example-11"><a class="header" href="#example-11">example</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.gaming.emulators.psx.enable = true;
+}
+</code></pre>
+<h4 id="default-29"><a class="header" href="#default-29">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.gaming.emulators.psx.enable = false;
+}
+</code></pre>
+<h2 id="modulesdesktopgamingemulatorssnesenable"><a class="header" href="#modulesdesktopgamingemulatorssnesenable">modules.desktop.gaming.emulators.snes.enable</a></h2>
+<h4 id="type-30"><a class="header" href="#type-30">type</a></h4>
+<p>boolean</p>
+<h4 id="example-12"><a class="header" href="#example-12">example</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.gaming.emulators.snes.enable = true;
+}
+</code></pre>
+<h4 id="default-30"><a class="header" href="#default-30">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.gaming.emulators.snes.enable = false;
+}
+</code></pre>
+<h2 id="modulesdesktopgamingsteamenable"><a class="header" href="#modulesdesktopgamingsteamenable">modules.desktop.gaming.steam.enable</a></h2>
+<h4 id="type-31"><a class="header" href="#type-31">type</a></h4>
+<p>boolean</p>
+<h4 id="example-13"><a class="header" href="#example-13">example</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.gaming.steam.enable = true;
+}
+</code></pre>
+<h4 id="default-31"><a class="header" href="#default-31">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.gaming.steam.enable = false;
+}
+</code></pre>
+<h2 id="modulesdesktopmediadawenable"><a class="header" href="#modulesdesktopmediadawenable">modules.desktop.media.daw.enable</a></h2>
+<h4 id="type-32"><a class="header" href="#type-32">type</a></h4>
+<p>boolean</p>
+<h4 id="example-14"><a class="header" href="#example-14">example</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.media.daw.enable = true;
+}
+</code></pre>
+<h4 id="default-32"><a class="header" href="#default-32">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.media.daw.enable = false;
+}
+</code></pre>
+<h2 id="modulesdesktopmediadocumentsenable"><a class="header" href="#modulesdesktopmediadocumentsenable">modules.desktop.media.documents.enable</a></h2>
+<h4 id="type-33"><a class="header" href="#type-33">type</a></h4>
+<p>boolean</p>
+<h4 id="example-15"><a class="header" href="#example-15">example</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.media.documents.enable = true;
+}
+</code></pre>
+<h4 id="default-33"><a class="header" href="#default-33">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.media.documents.enable = false;
+}
+</code></pre>
+<h2 id="modulesdesktopmediadocumentsebookenable"><a class="header" href="#modulesdesktopmediadocumentsebookenable">modules.desktop.media.documents.ebook.enable</a></h2>
+<h4 id="type-34"><a class="header" href="#type-34">type</a></h4>
+<p>boolean</p>
+<h4 id="example-16"><a class="header" href="#example-16">example</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.media.documents.ebook.enable = true;
+}
+</code></pre>
+<h4 id="default-34"><a class="header" href="#default-34">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.media.documents.ebook.enable = false;
+}
+</code></pre>
+<h2 id="modulesdesktopmediadocumentspdfenable"><a class="header" href="#modulesdesktopmediadocumentspdfenable">modules.desktop.media.documents.pdf.enable</a></h2>
+<h4 id="type-35"><a class="header" href="#type-35">type</a></h4>
+<p>boolean</p>
+<h4 id="example-17"><a class="header" href="#example-17">example</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.media.documents.pdf.enable = true;
+}
+</code></pre>
+<h4 id="default-35"><a class="header" href="#default-35">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.media.documents.pdf.enable = false;
+}
+</code></pre>
+<h2 id="modulesdesktopmediagraphicsenable"><a class="header" href="#modulesdesktopmediagraphicsenable">modules.desktop.media.graphics.enable</a></h2>
+<h4 id="type-36"><a class="header" href="#type-36">type</a></h4>
+<p>boolean</p>
+<h4 id="example-18"><a class="header" href="#example-18">example</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.media.graphics.enable = true;
+}
+</code></pre>
+<h4 id="default-36"><a class="header" href="#default-36">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.media.graphics.enable = false;
+}
+</code></pre>
+<h2 id="modulesdesktopmediagraphicsmodelsenable"><a class="header" href="#modulesdesktopmediagraphicsmodelsenable">modules.desktop.media.graphics.models.enable</a></h2>
+<h4 id="type-37"><a class="header" href="#type-37">type</a></h4>
+<p>boolean</p>
+<h4 id="example-19"><a class="header" href="#example-19">example</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.media.graphics.models.enable = true;
+}
+</code></pre>
+<h4 id="default-37"><a class="header" href="#default-37">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.media.graphics.models.enable = false;
+}
+</code></pre>
+<h2 id="modulesdesktopmediagraphicsrasterenable"><a class="header" href="#modulesdesktopmediagraphicsrasterenable">modules.desktop.media.graphics.raster.enable</a></h2>
+<h4 id="type-38"><a class="header" href="#type-38">type</a></h4>
+<p>boolean</p>
+<h4 id="example-20"><a class="header" href="#example-20">example</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.media.graphics.raster.enable = true;
+}
+</code></pre>
+<h4 id="default-38"><a class="header" href="#default-38">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.media.graphics.raster.enable = true;
+}
+</code></pre>
+<h2 id="modulesdesktopmediagraphicsspritesenable"><a class="header" href="#modulesdesktopmediagraphicsspritesenable">modules.desktop.media.graphics.sprites.enable</a></h2>
+<h4 id="type-39"><a class="header" href="#type-39">type</a></h4>
+<p>boolean</p>
+<h4 id="example-21"><a class="header" href="#example-21">example</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.media.graphics.sprites.enable = true;
+}
+</code></pre>
+<h4 id="default-39"><a class="header" href="#default-39">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.media.graphics.sprites.enable = true;
+}
+</code></pre>
+<h2 id="modulesdesktopmediagraphicstoolsenable"><a class="header" href="#modulesdesktopmediagraphicstoolsenable">modules.desktop.media.graphics.tools.enable</a></h2>
+<h4 id="type-40"><a class="header" href="#type-40">type</a></h4>
+<p>boolean</p>
+<h4 id="example-22"><a class="header" href="#example-22">example</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.media.graphics.tools.enable = true;
+}
+</code></pre>
+<h4 id="default-40"><a class="header" href="#default-40">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.media.graphics.tools.enable = true;
+}
+</code></pre>
+<h2 id="modulesdesktopmediagraphicsvectorenable"><a class="header" href="#modulesdesktopmediagraphicsvectorenable">modules.desktop.media.graphics.vector.enable</a></h2>
+<h4 id="type-41"><a class="header" href="#type-41">type</a></h4>
+<p>boolean</p>
+<h4 id="example-23"><a class="header" href="#example-23">example</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.media.graphics.vector.enable = true;
+}
+</code></pre>
+<h4 id="default-41"><a class="header" href="#default-41">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.media.graphics.vector.enable = true;
+}
+</code></pre>
+<h2 id="modulesdesktopmediampvenable"><a class="header" href="#modulesdesktopmediampvenable">modules.desktop.media.mpv.enable</a></h2>
+<h4 id="type-42"><a class="header" href="#type-42">type</a></h4>
+<p>boolean</p>
+<h4 id="example-24"><a class="header" href="#example-24">example</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.media.mpv.enable = true;
+}
+</code></pre>
+<h4 id="default-42"><a class="header" href="#default-42">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.media.mpv.enable = false;
+}
+</code></pre>
+<h2 id="modulesdesktopmediancmpcppenable"><a class="header" href="#modulesdesktopmediancmpcppenable">modules.desktop.media.ncmpcpp.enable</a></h2>
+<h4 id="type-43"><a class="header" href="#type-43">type</a></h4>
+<p>boolean</p>
+<h4 id="example-25"><a class="header" href="#example-25">example</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.media.ncmpcpp.enable = true;
+}
+</code></pre>
+<h4 id="default-43"><a class="header" href="#default-43">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.media.ncmpcpp.enable = false;
+}
+</code></pre>
+<h2 id="modulesdesktopmediarecordingenable"><a class="header" href="#modulesdesktopmediarecordingenable">modules.desktop.media.recording.enable</a></h2>
+<h4 id="type-44"><a class="header" href="#type-44">type</a></h4>
+<p>boolean</p>
+<h4 id="example-26"><a class="header" href="#example-26">example</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.media.recording.enable = true;
+}
+</code></pre>
+<h4 id="default-44"><a class="header" href="#default-44">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.media.recording.enable = false;
+}
+</code></pre>
+<h2 id="modulesdesktopmediarecordingaudioenable"><a class="header" href="#modulesdesktopmediarecordingaudioenable">modules.desktop.media.recording.audio.enable</a></h2>
+<h4 id="type-45"><a class="header" href="#type-45">type</a></h4>
+<p>boolean</p>
+<h4 id="example-27"><a class="header" href="#example-27">example</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.media.recording.audio.enable = true;
+}
+</code></pre>
+<h4 id="default-45"><a class="header" href="#default-45">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.media.recording.audio.enable = true;
+}
+</code></pre>
+<h2 id="modulesdesktopmediarecordingvideoenable"><a class="header" href="#modulesdesktopmediarecordingvideoenable">modules.desktop.media.recording.video.enable</a></h2>
+<h4 id="type-46"><a class="header" href="#type-46">type</a></h4>
+<p>boolean</p>
+<h4 id="example-28"><a class="header" href="#example-28">example</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.media.recording.video.enable = true;
+}
+</code></pre>
+<h4 id="default-46"><a class="header" href="#default-46">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.media.recording.video.enable = true;
+}
+</code></pre>
+<h2 id="modulesdesktopmediaspotifyenable"><a class="header" href="#modulesdesktopmediaspotifyenable">modules.desktop.media.spotify.enable</a></h2>
+<h4 id="type-47"><a class="header" href="#type-47">type</a></h4>
+<p>boolean</p>
+<h4 id="example-29"><a class="header" href="#example-29">example</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.media.spotify.enable = true;
+}
+</code></pre>
+<h4 id="default-47"><a class="header" href="#default-47">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.media.spotify.enable = false;
+}
+</code></pre>
+<h2 id="modulesdesktopmediaspotifytuienable"><a class="header" href="#modulesdesktopmediaspotifytuienable">modules.desktop.media.spotify.tui.enable</a></h2>
+<h4 id="type-48"><a class="header" href="#type-48">type</a></h4>
+<p>boolean</p>
+<h4 id="example-30"><a class="header" href="#example-30">example</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.media.spotify.tui.enable = true;
+}
+</code></pre>
+<h4 id="default-48"><a class="header" href="#default-48">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.media.spotify.tui.enable = false;
+}
+</code></pre>
+<h2 id="modulesdesktopstumpwmenable"><a class="header" href="#modulesdesktopstumpwmenable">modules.desktop.stumpwm.enable</a></h2>
+<h4 id="type-49"><a class="header" href="#type-49">type</a></h4>
+<p>boolean</p>
+<h4 id="example-31"><a class="header" href="#example-31">example</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.stumpwm.enable = true;
+}
+</code></pre>
+<h4 id="default-49"><a class="header" href="#default-49">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.stumpwm.enable = false;
+}
+</code></pre>
+<h2 id="modulesdesktoptermdefault"><a class="header" href="#modulesdesktoptermdefault">modules.desktop.term.default</a></h2>
+<h4 id="type-50"><a class="header" href="#type-50">type</a></h4>
+<p>string</p>
+<h4 id="default-50"><a class="header" href="#default-50">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.term.default = &quot;xterm&quot;;
+}
+</code></pre>
+<h2 id="modulesdesktoptermstenable"><a class="header" href="#modulesdesktoptermstenable">modules.desktop.term.st.enable</a></h2>
+<h4 id="type-51"><a class="header" href="#type-51">type</a></h4>
+<p>boolean</p>
+<h4 id="example-32"><a class="header" href="#example-32">example</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.term.st.enable = true;
+}
+</code></pre>
+<h4 id="default-51"><a class="header" href="#default-51">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.term.st.enable = false;
+}
+</code></pre>
+<h2 id="modulesdesktopvmlxdenable"><a class="header" href="#modulesdesktopvmlxdenable">modules.desktop.vm.lxd.enable</a></h2>
+<h4 id="type-52"><a class="header" href="#type-52">type</a></h4>
+<p>boolean</p>
+<h4 id="example-33"><a class="header" href="#example-33">example</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.vm.lxd.enable = true;
+}
+</code></pre>
+<h4 id="default-52"><a class="header" href="#default-52">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.vm.lxd.enable = false;
+}
+</code></pre>
+<h2 id="modulesdesktopvmqemuenable"><a class="header" href="#modulesdesktopvmqemuenable">modules.desktop.vm.qemu.enable</a></h2>
+<h4 id="type-53"><a class="header" href="#type-53">type</a></h4>
+<p>boolean</p>
+<h4 id="example-34"><a class="header" href="#example-34">example</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.vm.qemu.enable = true;
+}
+</code></pre>
+<h4 id="default-53"><a class="header" href="#default-53">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.vm.qemu.enable = false;
+}
+</code></pre>
+<h2 id="modulesdesktopvmvirtualboxenable"><a class="header" href="#modulesdesktopvmvirtualboxenable">modules.desktop.vm.virtualbox.enable</a></h2>
+<h4 id="type-54"><a class="header" href="#type-54">type</a></h4>
+<p>boolean</p>
+<h4 id="example-35"><a class="header" href="#example-35">example</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.vm.virtualbox.enable = true;
+}
+</code></pre>
+<h4 id="default-54"><a class="header" href="#default-54">default</a></h4>
+<pre><code class="language-nix">{
+  modules.desktop.vm.virtualbox.enable = false;
+}
+</code></pre>
+<h2 id="modulesdevccenable"><a class="header" href="#modulesdevccenable">modules.dev.cc.enable</a></h2>
+<h4 id="type-55"><a class="header" href="#type-55">type</a></h4>
+<p>boolean</p>
+<h4 id="example-36"><a class="header" href="#example-36">example</a></h4>
+<pre><code class="language-nix">{
+  modules.dev.cc.enable = true;
+}
+</code></pre>
+<h4 id="default-55"><a class="header" href="#default-55">default</a></h4>
+<pre><code class="language-nix">{
+  modules.dev.cc.enable = false;
+}
+</code></pre>
+<h2 id="modulesdevccxdgenable"><a class="header" href="#modulesdevccxdgenable">modules.dev.cc.xdg.enable</a></h2>
+<h4 id="type-56"><a class="header" href="#type-56">type</a></h4>
+<p>boolean</p>
+<h4 id="example-37"><a class="header" href="#example-37">example</a></h4>
+<pre><code class="language-nix">{
+  modules.dev.cc.xdg.enable = true;
+}
+</code></pre>
+<h4 id="default-56"><a class="header" href="#default-56">default</a></h4>
+<pre><code class="language-nix">{
+  modules.dev.cc.xdg.enable = false;
+}
+</code></pre>
+<h2 id="modulesdevclojureenable"><a class="header" href="#modulesdevclojureenable">modules.dev.clojure.enable</a></h2>
+<h4 id="type-57"><a class="header" href="#type-57">type</a></h4>
+<p>boolean</p>
+<h4 id="example-38"><a class="header" href="#example-38">example</a></h4>
+<pre><code class="language-nix">{
+  modules.dev.clojure.enable = true;
+}
+</code></pre>
+<h4 id="default-57"><a class="header" href="#default-57">default</a></h4>
+<pre><code class="language-nix">{
+  modules.dev.clojure.enable = false;
+}
+</code></pre>
+<h2 id="modulesdevclojurexdgenable"><a class="header" href="#modulesdevclojurexdgenable">modules.dev.clojure.xdg.enable</a></h2>
+<h4 id="type-58"><a class="header" href="#type-58">type</a></h4>
+<p>boolean</p>
+<h4 id="example-39"><a class="header" href="#example-39">example</a></h4>
+<pre><code class="language-nix">{
+  modules.dev.clojure.xdg.enable = true;
+}
+</code></pre>
+<h4 id="default-58"><a class="header" href="#default-58">default</a></h4>
+<pre><code class="language-nix">{
+  modules.dev.clojure.xdg.enable = false;
+}
+</code></pre>
+<h2 id="modulesdevcommon-lispenable"><a class="header" href="#modulesdevcommon-lispenable">modules.dev.common-lisp.enable</a></h2>
+<h4 id="type-59"><a class="header" href="#type-59">type</a></h4>
+<p>boolean</p>
+<h4 id="example-40"><a class="header" href="#example-40">example</a></h4>
+<pre><code class="language-nix">{
+  modules.dev.common-lisp.enable = true;
+}
+</code></pre>
+<h4 id="default-59"><a class="header" href="#default-59">default</a></h4>
+<pre><code class="language-nix">{
+  modules.dev.common-lisp.enable = false;
+}
+</code></pre>
+<h2 id="modulesdevcommon-lispxdgenable"><a class="header" href="#modulesdevcommon-lispxdgenable">modules.dev.common-lisp.xdg.enable</a></h2>
+<h4 id="type-60"><a class="header" href="#type-60">type</a></h4>
+<p>boolean</p>
+<h4 id="example-41"><a class="header" href="#example-41">example</a></h4>
+<pre><code class="language-nix">{
+  modules.dev.common-lisp.xdg.enable = true;
+}
+</code></pre>
+<h4 id="default-60"><a class="header" href="#default-60">default</a></h4>
+<pre><code class="language-nix">{
+  modules.dev.common-lisp.xdg.enable = false;
+}
+</code></pre>
+<h2 id="modulesdevluaenable"><a class="header" href="#modulesdevluaenable">modules.dev.lua.enable</a></h2>
+<h4 id="type-61"><a class="header" href="#type-61">type</a></h4>
+<p>boolean</p>
+<h4 id="example-42"><a class="header" href="#example-42">example</a></h4>
+<pre><code class="language-nix">{
+  modules.dev.lua.enable = true;
+}
+</code></pre>
+<h4 id="default-61"><a class="header" href="#default-61">default</a></h4>
+<pre><code class="language-nix">{
+  modules.dev.lua.enable = false;
+}
+</code></pre>
+<h2 id="modulesdevlualove2denable"><a class="header" href="#modulesdevlualove2denable">modules.dev.lua.love2D.enable</a></h2>
+<h4 id="type-62"><a class="header" href="#type-62">type</a></h4>
+<p>boolean</p>
+<h4 id="example-43"><a class="header" href="#example-43">example</a></h4>
+<pre><code class="language-nix">{
+  modules.dev.lua.love2D.enable = true;
+}
+</code></pre>
+<h4 id="default-62"><a class="header" href="#default-62">default</a></h4>
+<pre><code class="language-nix">{
+  modules.dev.lua.love2D.enable = false;
+}
+</code></pre>
+<h2 id="modulesdevluaxdgenable"><a class="header" href="#modulesdevluaxdgenable">modules.dev.lua.xdg.enable</a></h2>
+<h4 id="type-63"><a class="header" href="#type-63">type</a></h4>
+<p>boolean</p>
+<h4 id="example-44"><a class="header" href="#example-44">example</a></h4>
+<pre><code class="language-nix">{
+  modules.dev.lua.xdg.enable = true;
+}
+</code></pre>
+<h4 id="default-63"><a class="header" href="#default-63">default</a></h4>
+<pre><code class="language-nix">{
+  modules.dev.lua.xdg.enable = false;
+}
+</code></pre>
+<h2 id="modulesdevnodeenable"><a class="header" href="#modulesdevnodeenable">modules.dev.node.enable</a></h2>
+<h4 id="type-64"><a class="header" href="#type-64">type</a></h4>
+<p>boolean</p>
+<h4 id="example-45"><a class="header" href="#example-45">example</a></h4>
+<pre><code class="language-nix">{
+  modules.dev.node.enable = true;
+}
+</code></pre>
+<h4 id="default-64"><a class="header" href="#default-64">default</a></h4>
+<pre><code class="language-nix">{
+  modules.dev.node.enable = false;
+}
+</code></pre>
+<h2 id="modulesdevnodexdgenable"><a class="header" href="#modulesdevnodexdgenable">modules.dev.node.xdg.enable</a></h2>
+<h4 id="type-65"><a class="header" href="#type-65">type</a></h4>
+<p>boolean</p>
+<h4 id="example-46"><a class="header" href="#example-46">example</a></h4>
+<pre><code class="language-nix">{
+  modules.dev.node.xdg.enable = true;
+}
+</code></pre>
+<h4 id="default-65"><a class="header" href="#default-65">default</a></h4>
+<pre><code class="language-nix">{
+  modules.dev.node.xdg.enable = false;
+}
+</code></pre>
+<h2 id="modulesdevpythonenable"><a class="header" href="#modulesdevpythonenable">modules.dev.python.enable</a></h2>
+<h4 id="type-66"><a class="header" href="#type-66">type</a></h4>
+<p>boolean</p>
+<h4 id="example-47"><a class="header" href="#example-47">example</a></h4>
+<pre><code class="language-nix">{
+  modules.dev.python.enable = true;
+}
+</code></pre>
+<h4 id="default-66"><a class="header" href="#default-66">default</a></h4>
+<pre><code class="language-nix">{
+  modules.dev.python.enable = false;
+}
+</code></pre>
+<h2 id="modulesdevpythonxdgenable"><a class="header" href="#modulesdevpythonxdgenable">modules.dev.python.xdg.enable</a></h2>
+<h4 id="type-67"><a class="header" href="#type-67">type</a></h4>
+<p>boolean</p>
+<h4 id="example-48"><a class="header" href="#example-48">example</a></h4>
+<pre><code class="language-nix">{
+  modules.dev.python.xdg.enable = true;
+}
+</code></pre>
+<h4 id="default-67"><a class="header" href="#default-67">default</a></h4>
+<pre><code class="language-nix">{
+  modules.dev.python.xdg.enable = false;
+}
+</code></pre>
+<h2 id="modulesdevrustenable"><a class="header" href="#modulesdevrustenable">modules.dev.rust.enable</a></h2>
+<h4 id="type-68"><a class="header" href="#type-68">type</a></h4>
+<p>boolean</p>
+<h4 id="example-49"><a class="header" href="#example-49">example</a></h4>
+<pre><code class="language-nix">{
+  modules.dev.rust.enable = true;
+}
+</code></pre>
+<h4 id="default-68"><a class="header" href="#default-68">default</a></h4>
+<pre><code class="language-nix">{
+  modules.dev.rust.enable = false;
+}
+</code></pre>
+<h2 id="modulesdevrustxdgenable"><a class="header" href="#modulesdevrustxdgenable">modules.dev.rust.xdg.enable</a></h2>
+<h4 id="type-69"><a class="header" href="#type-69">type</a></h4>
+<p>boolean</p>
+<h4 id="example-50"><a class="header" href="#example-50">example</a></h4>
+<pre><code class="language-nix">{
+  modules.dev.rust.xdg.enable = true;
+}
+</code></pre>
+<h4 id="default-69"><a class="header" href="#default-69">default</a></h4>
+<pre><code class="language-nix">{
+  modules.dev.rust.xdg.enable = false;
+}
+</code></pre>
+<h2 id="modulesdevscalaenable"><a class="header" href="#modulesdevscalaenable">modules.dev.scala.enable</a></h2>
+<h4 id="type-70"><a class="header" href="#type-70">type</a></h4>
+<p>boolean</p>
+<h4 id="example-51"><a class="header" href="#example-51">example</a></h4>
+<pre><code class="language-nix">{
+  modules.dev.scala.enable = true;
+}
+</code></pre>
+<h4 id="default-70"><a class="header" href="#default-70">default</a></h4>
+<pre><code class="language-nix">{
+  modules.dev.scala.enable = false;
+}
+</code></pre>
+<h2 id="modulesdevscalaxdgenable"><a class="header" href="#modulesdevscalaxdgenable">modules.dev.scala.xdg.enable</a></h2>
+<h4 id="type-71"><a class="header" href="#type-71">type</a></h4>
+<p>boolean</p>
+<h4 id="example-52"><a class="header" href="#example-52">example</a></h4>
+<pre><code class="language-nix">{
+  modules.dev.scala.xdg.enable = true;
+}
+</code></pre>
+<h4 id="default-71"><a class="header" href="#default-71">default</a></h4>
+<pre><code class="language-nix">{
+  modules.dev.scala.xdg.enable = false;
+}
+</code></pre>
+<h2 id="modulesdevshellenable"><a class="header" href="#modulesdevshellenable">modules.dev.shell.enable</a></h2>
+<h4 id="type-72"><a class="header" href="#type-72">type</a></h4>
+<p>boolean</p>
+<h4 id="example-53"><a class="header" href="#example-53">example</a></h4>
+<pre><code class="language-nix">{
+  modules.dev.shell.enable = true;
+}
+</code></pre>
+<h4 id="default-72"><a class="header" href="#default-72">default</a></h4>
+<pre><code class="language-nix">{
+  modules.dev.shell.enable = false;
+}
+</code></pre>
+<h2 id="modulesdevshellxdgenable"><a class="header" href="#modulesdevshellxdgenable">modules.dev.shell.xdg.enable</a></h2>
+<h4 id="type-73"><a class="header" href="#type-73">type</a></h4>
+<p>boolean</p>
+<h4 id="example-54"><a class="header" href="#example-54">example</a></h4>
+<pre><code class="language-nix">{
+  modules.dev.shell.xdg.enable = true;
+}
+</code></pre>
+<h4 id="default-73"><a class="header" href="#default-73">default</a></h4>
+<pre><code class="language-nix">{
+  modules.dev.shell.xdg.enable = false;
+}
+</code></pre>
+<h2 id="modulesdevxdgenable"><a class="header" href="#modulesdevxdgenable">modules.dev.xdg.enable</a></h2>
+<h4 id="type-74"><a class="header" href="#type-74">type</a></h4>
+<p>boolean</p>
+<h4 id="example-55"><a class="header" href="#example-55">example</a></h4>
+<pre><code class="language-nix">{
+  modules.dev.xdg.enable = true;
+}
+</code></pre>
+<h4 id="default-74"><a class="header" href="#default-74">default</a></h4>
+<pre><code class="language-nix">{
+  modules.dev.xdg.enable = true;
+}
+</code></pre>
+<h2 id="moduleseditorsdefault"><a class="header" href="#moduleseditorsdefault">modules.editors.default</a></h2>
+<h4 id="type-75"><a class="header" href="#type-75">type</a></h4>
+<p>string</p>
+<h4 id="default-75"><a class="header" href="#default-75">default</a></h4>
+<pre><code class="language-nix">{
+  modules.editors.default = &quot;vim&quot;;
+}
+</code></pre>
+<h2 id="moduleseditorsemacsenable"><a class="header" href="#moduleseditorsemacsenable">modules.editors.emacs.enable</a></h2>
+<h4 id="type-76"><a class="header" href="#type-76">type</a></h4>
+<p>boolean</p>
+<h4 id="example-56"><a class="header" href="#example-56">example</a></h4>
+<pre><code class="language-nix">{
+  modules.editors.emacs.enable = true;
+}
+</code></pre>
+<h4 id="default-76"><a class="header" href="#default-76">default</a></h4>
+<pre><code class="language-nix">{
+  modules.editors.emacs.enable = false;
+}
+</code></pre>
+<h2 id="moduleseditorsemacsdoomenable"><a class="header" href="#moduleseditorsemacsdoomenable">modules.editors.emacs.doom.enable</a></h2>
+<h4 id="type-77"><a class="header" href="#type-77">type</a></h4>
+<p>boolean</p>
+<h4 id="example-57"><a class="header" href="#example-57">example</a></h4>
+<pre><code class="language-nix">{
+  modules.editors.emacs.doom.enable = true;
+}
+</code></pre>
+<h4 id="default-77"><a class="header" href="#default-77">default</a></h4>
+<pre><code class="language-nix">{
+  modules.editors.emacs.doom.enable = true;
+}
+</code></pre>
+<h2 id="moduleseditorsemacsdoomfromssh"><a class="header" href="#moduleseditorsemacsdoomfromssh">modules.editors.emacs.doom.fromSSH</a></h2>
+<h4 id="type-78"><a class="header" href="#type-78">type</a></h4>
+<p>boolean</p>
+<h4 id="example-58"><a class="header" href="#example-58">example</a></h4>
+<pre><code class="language-nix">{
+  modules.editors.emacs.doom.fromSSH = true;
+}
+</code></pre>
+<h4 id="default-78"><a class="header" href="#default-78">default</a></h4>
+<pre><code class="language-nix">{
+  modules.editors.emacs.doom.fromSSH = false;
+}
+</code></pre>
+<h2 id="moduleseditorsvimenable"><a class="header" href="#moduleseditorsvimenable">modules.editors.vim.enable</a></h2>
+<h4 id="type-79"><a class="header" href="#type-79">type</a></h4>
+<p>boolean</p>
+<h4 id="example-59"><a class="header" href="#example-59">example</a></h4>
+<pre><code class="language-nix">{
+  modules.editors.vim.enable = true;
+}
+</code></pre>
+<h4 id="default-79"><a class="header" href="#default-79">default</a></h4>
+<pre><code class="language-nix">{
+  modules.editors.vim.enable = false;
+}
+</code></pre>
+<h2 id="moduleshardwareaudioenable"><a class="header" href="#moduleshardwareaudioenable">modules.hardware.audio.enable</a></h2>
+<h4 id="type-80"><a class="header" href="#type-80">type</a></h4>
+<p>boolean</p>
+<h4 id="example-60"><a class="header" href="#example-60">example</a></h4>
+<pre><code class="language-nix">{
+  modules.hardware.audio.enable = true;
+}
+</code></pre>
+<h4 id="default-80"><a class="header" href="#default-80">default</a></h4>
+<pre><code class="language-nix">{
+  modules.hardware.audio.enable = false;
+}
+</code></pre>
+<h2 id="moduleshardwarebluetoothenable"><a class="header" href="#moduleshardwarebluetoothenable">modules.hardware.bluetooth.enable</a></h2>
+<h4 id="type-81"><a class="header" href="#type-81">type</a></h4>
+<p>boolean</p>
+<h4 id="example-61"><a class="header" href="#example-61">example</a></h4>
+<pre><code class="language-nix">{
+  modules.hardware.bluetooth.enable = true;
+}
+</code></pre>
+<h4 id="default-81"><a class="header" href="#default-81">default</a></h4>
+<pre><code class="language-nix">{
+  modules.hardware.bluetooth.enable = false;
+}
+</code></pre>
+<h2 id="moduleshardwareergodoxenable"><a class="header" href="#moduleshardwareergodoxenable">modules.hardware.ergodox.enable</a></h2>
+<h4 id="type-82"><a class="header" href="#type-82">type</a></h4>
+<p>boolean</p>
+<h4 id="example-62"><a class="header" href="#example-62">example</a></h4>
+<pre><code class="language-nix">{
+  modules.hardware.ergodox.enable = true;
+}
+</code></pre>
+<h4 id="default-82"><a class="header" href="#default-82">default</a></h4>
+<pre><code class="language-nix">{
+  modules.hardware.ergodox.enable = false;
+}
+</code></pre>
+<h2 id="moduleshardwarefsenable"><a class="header" href="#moduleshardwarefsenable">modules.hardware.fs.enable</a></h2>
+<h4 id="type-83"><a class="header" href="#type-83">type</a></h4>
+<p>boolean</p>
+<h4 id="example-63"><a class="header" href="#example-63">example</a></h4>
+<pre><code class="language-nix">{
+  modules.hardware.fs.enable = true;
+}
+</code></pre>
+<h4 id="default-83"><a class="header" href="#default-83">default</a></h4>
+<pre><code class="language-nix">{
+  modules.hardware.fs.enable = false;
+}
+</code></pre>
+<h2 id="moduleshardwarefsssdenable"><a class="header" href="#moduleshardwarefsssdenable">modules.hardware.fs.ssd.enable</a></h2>
+<h4 id="type-84"><a class="header" href="#type-84">type</a></h4>
+<p>boolean</p>
+<h4 id="example-64"><a class="header" href="#example-64">example</a></h4>
+<pre><code class="language-nix">{
+  modules.hardware.fs.ssd.enable = true;
+}
+</code></pre>
+<h4 id="default-84"><a class="header" href="#default-84">default</a></h4>
+<pre><code class="language-nix">{
+  modules.hardware.fs.ssd.enable = false;
+}
+</code></pre>
+<h2 id="moduleshardwarefszfsenable"><a class="header" href="#moduleshardwarefszfsenable">modules.hardware.fs.zfs.enable</a></h2>
+<h4 id="type-85"><a class="header" href="#type-85">type</a></h4>
+<p>boolean</p>
+<h4 id="example-65"><a class="header" href="#example-65">example</a></h4>
+<pre><code class="language-nix">{
+  modules.hardware.fs.zfs.enable = true;
+}
+</code></pre>
+<h4 id="default-85"><a class="header" href="#default-85">default</a></h4>
+<pre><code class="language-nix">{
+  modules.hardware.fs.zfs.enable = false;
+}
+</code></pre>
+<h2 id="moduleshardwarenvidiaenable"><a class="header" href="#moduleshardwarenvidiaenable">modules.hardware.nvidia.enable</a></h2>
+<h4 id="type-86"><a class="header" href="#type-86">type</a></h4>
+<p>boolean</p>
+<h4 id="example-66"><a class="header" href="#example-66">example</a></h4>
+<pre><code class="language-nix">{
+  modules.hardware.nvidia.enable = true;
+}
+</code></pre>
+<h4 id="default-86"><a class="header" href="#default-86">default</a></h4>
+<pre><code class="language-nix">{
+  modules.hardware.nvidia.enable = false;
+}
+</code></pre>
+<h2 id="moduleshardwarerazerenable"><a class="header" href="#moduleshardwarerazerenable">modules.hardware.razer.enable</a></h2>
+<h4 id="type-87"><a class="header" href="#type-87">type</a></h4>
+<p>boolean</p>
+<h4 id="example-67"><a class="header" href="#example-67">example</a></h4>
+<pre><code class="language-nix">{
+  modules.hardware.razer.enable = true;
+}
+</code></pre>
+<h4 id="default-87"><a class="header" href="#default-87">default</a></h4>
+<pre><code class="language-nix">{
+  modules.hardware.razer.enable = false;
+}
+</code></pre>
+<h2 id="moduleshardwaresensorsenable"><a class="header" href="#moduleshardwaresensorsenable">modules.hardware.sensors.enable</a></h2>
+<h4 id="type-88"><a class="header" href="#type-88">type</a></h4>
+<p>boolean</p>
+<h4 id="example-68"><a class="header" href="#example-68">example</a></h4>
+<pre><code class="language-nix">{
+  modules.hardware.sensors.enable = true;
+}
+</code></pre>
+<h4 id="default-88"><a class="header" href="#default-88">default</a></h4>
+<pre><code class="language-nix">{
+  modules.hardware.sensors.enable = false;
+}
+</code></pre>
+<h2 id="moduleshardwarewacomenable"><a class="header" href="#moduleshardwarewacomenable">modules.hardware.wacom.enable</a></h2>
+<h4 id="type-89"><a class="header" href="#type-89">type</a></h4>
+<p>boolean</p>
+<h4 id="example-69"><a class="header" href="#example-69">example</a></h4>
+<pre><code class="language-nix">{
+  modules.hardware.wacom.enable = true;
+}
+</code></pre>
+<h4 id="default-89"><a class="header" href="#default-89">default</a></h4>
+<pre><code class="language-nix">{
+  modules.hardware.wacom.enable = false;
+}
+</code></pre>
+<h2 id="modulesservicescalibreenable"><a class="header" href="#modulesservicescalibreenable">modules.services.calibre.enable</a></h2>
+<h4 id="type-90"><a class="header" href="#type-90">type</a></h4>
+<p>boolean</p>
+<h4 id="example-70"><a class="header" href="#example-70">example</a></h4>
+<pre><code class="language-nix">{
+  modules.services.calibre.enable = true;
+}
+</code></pre>
+<h4 id="default-90"><a class="header" href="#default-90">default</a></h4>
+<pre><code class="language-nix">{
+  modules.services.calibre.enable = false;
+}
+</code></pre>
+<h2 id="modulesservicesdiscourseenable"><a class="header" href="#modulesservicesdiscourseenable">modules.services.discourse.enable</a></h2>
+<h4 id="type-91"><a class="header" href="#type-91">type</a></h4>
+<p>boolean</p>
+<h4 id="example-71"><a class="header" href="#example-71">example</a></h4>
+<pre><code class="language-nix">{
+  modules.services.discourse.enable = true;
+}
+</code></pre>
+<h4 id="default-91"><a class="header" href="#default-91">default</a></h4>
+<pre><code class="language-nix">{
+  modules.services.discourse.enable = false;
+}
+</code></pre>
+<h2 id="modulesservicesdockerenable"><a class="header" href="#modulesservicesdockerenable">modules.services.docker.enable</a></h2>
+<h4 id="type-92"><a class="header" href="#type-92">type</a></h4>
+<p>boolean</p>
+<h4 id="example-72"><a class="header" href="#example-72">example</a></h4>
+<pre><code class="language-nix">{
+  modules.services.docker.enable = true;
+}
+</code></pre>
+<h4 id="default-92"><a class="header" href="#default-92">default</a></h4>
+<pre><code class="language-nix">{
+  modules.services.docker.enable = false;
+}
+</code></pre>
+<h2 id="modulesservicesfail2banenable"><a class="header" href="#modulesservicesfail2banenable">modules.services.fail2ban.enable</a></h2>
+<h4 id="type-93"><a class="header" href="#type-93">type</a></h4>
+<p>boolean</p>
+<h4 id="example-73"><a class="header" href="#example-73">example</a></h4>
+<pre><code class="language-nix">{
+  modules.services.fail2ban.enable = true;
+}
+</code></pre>
+<h4 id="default-93"><a class="header" href="#default-93">default</a></h4>
+<pre><code class="language-nix">{
+  modules.services.fail2ban.enable = false;
+}
+</code></pre>
+<h2 id="modulesservicesgiteaenable"><a class="header" href="#modulesservicesgiteaenable">modules.services.gitea.enable</a></h2>
+<h4 id="type-94"><a class="header" href="#type-94">type</a></h4>
+<p>boolean</p>
+<h4 id="example-74"><a class="header" href="#example-74">example</a></h4>
+<pre><code class="language-nix">{
+  modules.services.gitea.enable = true;
+}
+</code></pre>
+<h4 id="default-94"><a class="header" href="#default-94">default</a></h4>
+<pre><code class="language-nix">{
+  modules.services.gitea.enable = false;
+}
+</code></pre>
+<h2 id="modulesservicesjellyfinenable"><a class="header" href="#modulesservicesjellyfinenable">modules.services.jellyfin.enable</a></h2>
+<h4 id="type-95"><a class="header" href="#type-95">type</a></h4>
+<p>boolean</p>
+<h4 id="example-75"><a class="header" href="#example-75">example</a></h4>
+<pre><code class="language-nix">{
+  modules.services.jellyfin.enable = true;
+}
+</code></pre>
+<h4 id="default-95"><a class="header" href="#default-95">default</a></h4>
+<pre><code class="language-nix">{
+  modules.services.jellyfin.enable = false;
+}
+</code></pre>
+<h2 id="modulesservicesnginxenable"><a class="header" href="#modulesservicesnginxenable">modules.services.nginx.enable</a></h2>
+<h4 id="type-96"><a class="header" href="#type-96">type</a></h4>
+<p>boolean</p>
+<h4 id="example-76"><a class="header" href="#example-76">example</a></h4>
+<pre><code class="language-nix">{
+  modules.services.nginx.enable = true;
+}
+</code></pre>
+<h4 id="default-96"><a class="header" href="#default-96">default</a></h4>
+<pre><code class="language-nix">{
+  modules.services.nginx.enable = false;
+}
+</code></pre>
+<h2 id="modulesservicesnginxenablecloudflaresupport"><a class="header" href="#modulesservicesnginxenablecloudflaresupport">modules.services.nginx.enableCloudflareSupport</a></h2>
+<h4 id="type-97"><a class="header" href="#type-97">type</a></h4>
+<p>boolean</p>
+<h4 id="example-77"><a class="header" href="#example-77">example</a></h4>
+<pre><code class="language-nix">{
+  modules.services.nginx.enableCloudflareSupport = true;
+}
+</code></pre>
+<h4 id="default-97"><a class="header" href="#default-97">default</a></h4>
+<pre><code class="language-nix">{
+  modules.services.nginx.enableCloudflareSupport = false;
+}
+</code></pre>
+<h2 id="modulesservicessshenable"><a class="header" href="#modulesservicessshenable">modules.services.ssh.enable</a></h2>
+<h4 id="type-98"><a class="header" href="#type-98">type</a></h4>
+<p>boolean</p>
+<h4 id="example-78"><a class="header" href="#example-78">example</a></h4>
+<pre><code class="language-nix">{
+  modules.services.ssh.enable = true;
+}
+</code></pre>
+<h4 id="default-98"><a class="header" href="#default-98">default</a></h4>
+<pre><code class="language-nix">{
+  modules.services.ssh.enable = false;
+}
+</code></pre>
+<h2 id="modulesservicessyncthingenable"><a class="header" href="#modulesservicessyncthingenable">modules.services.syncthing.enable</a></h2>
+<h4 id="type-99"><a class="header" href="#type-99">type</a></h4>
+<p>boolean</p>
+<h4 id="example-79"><a class="header" href="#example-79">example</a></h4>
+<pre><code class="language-nix">{
+  modules.services.syncthing.enable = true;
+}
+</code></pre>
+<h4 id="default-99"><a class="header" href="#default-99">default</a></h4>
+<pre><code class="language-nix">{
+  modules.services.syncthing.enable = false;
+}
+</code></pre>
+<h2 id="modulesservicesteamviewerenable"><a class="header" href="#modulesservicesteamviewerenable">modules.services.teamviewer.enable</a></h2>
+<h4 id="type-100"><a class="header" href="#type-100">type</a></h4>
+<p>boolean</p>
+<h4 id="example-80"><a class="header" href="#example-80">example</a></h4>
+<pre><code class="language-nix">{
+  modules.services.teamviewer.enable = true;
+}
+</code></pre>
+<h4 id="default-100"><a class="header" href="#default-100">default</a></h4>
+<pre><code class="language-nix">{
+  modules.services.teamviewer.enable = false;
+}
+</code></pre>
+<h2 id="modulesservicestransmissionenable"><a class="header" href="#modulesservicestransmissionenable">modules.services.transmission.enable</a></h2>
+<h4 id="type-101"><a class="header" href="#type-101">type</a></h4>
+<p>boolean</p>
+<h4 id="example-81"><a class="header" href="#example-81">example</a></h4>
+<pre><code class="language-nix">{
+  modules.services.transmission.enable = true;
+}
+</code></pre>
+<h4 id="default-101"><a class="header" href="#default-101">default</a></h4>
+<pre><code class="language-nix">{
+  modules.services.transmission.enable = false;
+}
+</code></pre>
+<h2 id="modulesservicesvaultwardenenable"><a class="header" href="#modulesservicesvaultwardenenable">modules.services.vaultwarden.enable</a></h2>
+<h4 id="type-102"><a class="header" href="#type-102">type</a></h4>
+<p>boolean</p>
+<h4 id="example-82"><a class="header" href="#example-82">example</a></h4>
+<pre><code class="language-nix">{
+  modules.services.vaultwarden.enable = true;
+}
+</code></pre>
+<h4 id="default-102"><a class="header" href="#default-102">default</a></h4>
+<pre><code class="language-nix">{
+  modules.services.vaultwarden.enable = false;
+}
+</code></pre>
+<h2 id="modulesshelladlenable"><a class="header" href="#modulesshelladlenable">modules.shell.adl.enable</a></h2>
+<h4 id="type-103"><a class="header" href="#type-103">type</a></h4>
+<p>boolean</p>
+<h4 id="example-83"><a class="header" href="#example-83">example</a></h4>
+<pre><code class="language-nix">{
+  modules.shell.adl.enable = true;
+}
+</code></pre>
+<h4 id="default-103"><a class="header" href="#default-103">default</a></h4>
+<pre><code class="language-nix">{
+  modules.shell.adl.enable = false;
+}
+</code></pre>
+<h2 id="modulesshelldirenvenable"><a class="header" href="#modulesshelldirenvenable">modules.shell.direnv.enable</a></h2>
+<h4 id="type-104"><a class="header" href="#type-104">type</a></h4>
+<p>boolean</p>
+<h4 id="example-84"><a class="header" href="#example-84">example</a></h4>
+<pre><code class="language-nix">{
+  modules.shell.direnv.enable = true;
+}
+</code></pre>
+<h4 id="default-104"><a class="header" href="#default-104">default</a></h4>
+<pre><code class="language-nix">{
+  modules.shell.direnv.enable = false;
+}
+</code></pre>
+<h2 id="modulesshellgitenable"><a class="header" href="#modulesshellgitenable">modules.shell.git.enable</a></h2>
+<h4 id="type-105"><a class="header" href="#type-105">type</a></h4>
+<p>boolean</p>
+<h4 id="example-85"><a class="header" href="#example-85">example</a></h4>
+<pre><code class="language-nix">{
+  modules.shell.git.enable = true;
+}
+</code></pre>
+<h4 id="default-105"><a class="header" href="#default-105">default</a></h4>
+<pre><code class="language-nix">{
+  modules.shell.git.enable = false;
+}
+</code></pre>
+<h2 id="modulesshellgnupgenable"><a class="header" href="#modulesshellgnupgenable">modules.shell.gnupg.enable</a></h2>
+<h4 id="type-106"><a class="header" href="#type-106">type</a></h4>
+<p>boolean</p>
+<h4 id="example-86"><a class="header" href="#example-86">example</a></h4>
+<pre><code class="language-nix">{
+  modules.shell.gnupg.enable = true;
+}
+</code></pre>
+<h4 id="default-106"><a class="header" href="#default-106">default</a></h4>
+<pre><code class="language-nix">{
+  modules.shell.gnupg.enable = false;
+}
+</code></pre>
+<h2 id="modulesshellgnupgcachettl"><a class="header" href="#modulesshellgnupgcachettl">modules.shell.gnupg.cacheTTL</a></h2>
+<h4 id="type-107"><a class="header" href="#type-107">type</a></h4>
+<p>signed integer</p>
+<h4 id="default-107"><a class="header" href="#default-107">default</a></h4>
+<pre><code class="language-nix">{
+  modules.shell.gnupg.cacheTTL = 3600;
+}
+</code></pre>
+<h2 id="modulesshellpassenable"><a class="header" href="#modulesshellpassenable">modules.shell.pass.enable</a></h2>
+<h4 id="type-108"><a class="header" href="#type-108">type</a></h4>
+<p>boolean</p>
+<h4 id="example-87"><a class="header" href="#example-87">example</a></h4>
+<pre><code class="language-nix">{
+  modules.shell.pass.enable = true;
+}
+</code></pre>
+<h4 id="default-108"><a class="header" href="#default-108">default</a></h4>
+<pre><code class="language-nix">{
+  modules.shell.pass.enable = false;
+}
+</code></pre>
+<h2 id="modulesshellpasspasswordstoredir"><a class="header" href="#modulesshellpasspasswordstoredir">modules.shell.pass.passwordStoreDir</a></h2>
+<h4 id="type-109"><a class="header" href="#type-109">type</a></h4>
+<p>string</p>
+<h4 id="default-109"><a class="header" href="#default-109">default</a></h4>
+<pre><code class="language-nix">{
+  modules.shell.pass.passwordStoreDir = &quot;$HOME/.secrets/password-store&quot;;
+}
+</code></pre>
+<h2 id="modulesshelltmuxenable"><a class="header" href="#modulesshelltmuxenable">modules.shell.tmux.enable</a></h2>
+<h4 id="type-110"><a class="header" href="#type-110">type</a></h4>
+<p>boolean</p>
+<h4 id="example-88"><a class="header" href="#example-88">example</a></h4>
+<pre><code class="language-nix">{
+  modules.shell.tmux.enable = true;
+}
+</code></pre>
+<h4 id="default-110"><a class="header" href="#default-110">default</a></h4>
+<pre><code class="language-nix">{
+  modules.shell.tmux.enable = false;
+}
+</code></pre>
+<h2 id="modulesshelltmuxrcfiles"><a class="header" href="#modulesshelltmuxrcfiles">modules.shell.tmux.rcFiles</a></h2>
+<h4 id="type-111"><a class="header" href="#type-111">type</a></h4>
+<p>list of string or path</p>
+<h4 id="default-111"><a class="header" href="#default-111">default</a></h4>
+<pre><code class="language-nix">{
+  modules.shell.tmux.rcFiles = [];
+}
+</code></pre>
+<h2 id="modulesshellvaultwardenenable"><a class="header" href="#modulesshellvaultwardenenable">modules.shell.vaultwarden.enable</a></h2>
+<h4 id="type-112"><a class="header" href="#type-112">type</a></h4>
+<p>boolean</p>
+<h4 id="example-89"><a class="header" href="#example-89">example</a></h4>
+<pre><code class="language-nix">{
+  modules.shell.vaultwarden.enable = true;
+}
+</code></pre>
+<h4 id="default-112"><a class="header" href="#default-112">default</a></h4>
+<pre><code class="language-nix">{
+  modules.shell.vaultwarden.enable = false;
+}
+</code></pre>
+<h2 id="modulesshellvaultwardenconfig"><a class="header" href="#modulesshellvaultwardenconfig">modules.shell.vaultwarden.config</a></h2>
+<h4 id="type-113"><a class="header" href="#type-113">type</a></h4>
+<p>attribute set</p>
+<h4 id="default-113"><a class="header" href="#default-113">default</a></h4>
+<pre><code class="language-nix">{
+  modules.shell.vaultwarden.config = {};
+}
+</code></pre>
+<h2 id="modulesshellzshenable"><a class="header" href="#modulesshellzshenable">modules.shell.zsh.enable</a></h2>
+<h4 id="type-114"><a class="header" href="#type-114">type</a></h4>
+<p>boolean</p>
+<h4 id="example-90"><a class="header" href="#example-90">example</a></h4>
+<pre><code class="language-nix">{
+  modules.shell.zsh.enable = true;
+}
+</code></pre>
+<h4 id="default-114"><a class="header" href="#default-114">default</a></h4>
+<pre><code class="language-nix">{
+  modules.shell.zsh.enable = false;
+}
+</code></pre>
+<h2 id="modulesshellzshaliases"><a class="header" href="#modulesshellzshaliases">modules.shell.zsh.aliases</a></h2>
+<h4 id="type-115"><a class="header" href="#type-115">type</a></h4>
+<p>attribute set of string or path</p>
+<h4 id="default-115"><a class="header" href="#default-115">default</a></h4>
+<pre><code class="language-nix">{
+  modules.shell.zsh.aliases = {};
+}
+</code></pre>
+<h2 id="modulesshellzshenvfiles"><a class="header" href="#modulesshellzshenvfiles">modules.shell.zsh.envFiles</a></h2>
+<h4 id="type-116"><a class="header" href="#type-116">type</a></h4>
+<p>list of string or path</p>
+<h4 id="default-116"><a class="header" href="#default-116">default</a></h4>
+<pre><code class="language-nix">{
+  modules.shell.zsh.envFiles = [];
+}
+</code></pre>
+<h2 id="modulesshellzshenvinit"><a class="header" href="#modulesshellzshenvinit">modules.shell.zsh.envInit</a></h2>
+<p>Zsh lines to be written to $XDG_CONFIG_HOME/zsh/extra.zshenv and sourced
+by $XDG_CONFIG_HOME/zsh/.zshenv</p>
+<h4 id="type-117"><a class="header" href="#type-117">type</a></h4>
+<p>strings concatenated with &quot;\n&quot;</p>
+<h4 id="default-117"><a class="header" href="#default-117">default</a></h4>
+<pre><code class="language-nix">{
+  modules.shell.zsh.envInit = &quot;&quot;;
+}
+</code></pre>
+<h2 id="modulesshellzshrcfiles"><a class="header" href="#modulesshellzshrcfiles">modules.shell.zsh.rcFiles</a></h2>
+<h4 id="type-118"><a class="header" href="#type-118">type</a></h4>
+<p>list of string or path</p>
+<h4 id="default-118"><a class="header" href="#default-118">default</a></h4>
+<pre><code class="language-nix">{
+  modules.shell.zsh.rcFiles = [];
+}
+</code></pre>
+<h2 id="modulesshellzshrcinit"><a class="header" href="#modulesshellzshrcinit">modules.shell.zsh.rcInit</a></h2>
+<p>Zsh lines to be written to $XDG_CONFIG_HOME/zsh/extra.zshrc and sourced by
+$XDG_CONFIG_HOME/zsh/.zshrc</p>
+<h4 id="type-119"><a class="header" href="#type-119">type</a></h4>
+<p>strings concatenated with &quot;\n&quot;</p>
+<h4 id="default-119"><a class="header" href="#default-119">default</a></h4>
+<pre><code class="language-nix">{
+  modules.shell.zsh.rcInit = &quot;&quot;;
+}
+</code></pre>
+<h2 id="user"><a class="header" href="#user">user</a></h2>
+<h4 id="type-120"><a class="header" href="#type-120">type</a></h4>
+<p>attribute set</p>
+<h4 id="default-120"><a class="header" href="#default-120">default</a></h4>
+<pre><code class="language-nix">{
+  user = {};
+}
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="hugosenari.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="cocada-boa.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="hugosenari.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="cocada-boa.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

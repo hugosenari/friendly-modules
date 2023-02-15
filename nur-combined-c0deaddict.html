@@ -1,0 +1,1998 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>c0deaddict</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="hugosenari.html"><strong aria-hidden="true">2.</strong> Hugosenari</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="hlissner.html"><strong aria-hidden="true">3.</strong> hlissner</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="cocada-boa.html"><strong aria-hidden="true">4.</strong> Thiago</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="climod.html"><strong aria-hidden="true">5.</strong> Climod</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="ew.html"><strong aria-hidden="true">6.</strong> Lucas</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="marcosrdac.html"><strong aria-hidden="true">7.</strong> Marcos</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="flake-gemini.html"><strong aria-hidden="true">8.</strong> Flake Gemini</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="impermanence.html"><strong aria-hidden="true">9.</strong> Impermanence</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="impermanence-hm.html"><strong aria-hidden="true">9.1.</strong> Impermanence HM</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="kubenix.html"><strong aria-hidden="true">10.</strong> KubeNix</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops.html"><strong aria-hidden="true">11.</strong> NixOps</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops-aws.html"><strong aria-hidden="true">12.</strong> NixOps AWS</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="nixops-aws-data.html"><strong aria-hidden="true">12.1.</strong> data</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpn-connection.html"><strong aria-hidden="true">12.2.</strong> vpn-connection</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpn-connection-route.html"><strong aria-hidden="true">12.3.</strong> vpn-connection-route</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpn-gateway.html"><strong aria-hidden="true">12.4.</strong> vpn-gateway</a></li><li class="chapter-item expanded "><a href="nixops-aws-cloudwatch-log-group.html"><strong aria-hidden="true">12.5.</strong> cloudwatch-log-group</a></li><li class="chapter-item expanded "><a href="nixops-aws-cloudwatch-log-stream.html"><strong aria-hidden="true">12.6.</strong> cloudwatch-log-stream</a></li><li class="chapter-item expanded "><a href="nixops-aws-ec2-keypair.html"><strong aria-hidden="true">12.7.</strong> ec2-keypair</a></li><li class="chapter-item expanded "><a href="nixops-aws-ec2-placement.html"><strong aria-hidden="true">12.8.</strong> ec2-placement</a></li><li class="chapter-item expanded "><a href="nixops-aws-ec2-rds-dbinstance.html"><strong aria-hidden="true">12.9.</strong> ec2-rds-dbinstance</a></li><li class="chapter-item expanded "><a href="nixops-aws-ec2-rds-dbsecurity.html"><strong aria-hidden="true">12.10.</strong> ec2-rds-dbsecurity</a></li><li class="chapter-item expanded "><a href="nixops-aws-ec2-security.html"><strong aria-hidden="true">12.11.</strong> ec2-security</a></li><li class="chapter-item expanded "><a href="nixops-aws-eslatic-file-system.html"><strong aria-hidden="true">12.12.</strong> eslatic-file-system</a></li><li class="chapter-item expanded "><a href="nixops-aws-eslatic-file-sistem-mount.html"><strong aria-hidden="true">12.13.</strong> eslatic-file-sistem-mount</a></li><li class="chapter-item expanded "><a href="nixops-aws-eslatic-ip.html"><strong aria-hidden="true">12.14.</strong> eslatic-ip</a></li><li class="chapter-item expanded "><a href="nixops-aws-iam.html"><strong aria-hidden="true">12.15.</strong> iam</a></li><li class="chapter-item expanded "><a href="nixops-aws-rds.html"><strong aria-hidden="true">12.16.</strong> rds</a></li><li class="chapter-item expanded "><a href="nixops-aws-route53.html"><strong aria-hidden="true">12.17.</strong> route53</a></li><li class="chapter-item expanded "><a href="nixops-aws-s3.html"><strong aria-hidden="true">12.18.</strong> s3</a></li><li class="chapter-item expanded "><a href="nixops-aws-sqs.html"><strong aria-hidden="true">12.19.</strong> sqs</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc.html"><strong aria-hidden="true">12.20.</strong> vpc</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-customer.html"><strong aria-hidden="true">12.21.</strong> vpc-customer</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-dhcp.html"><strong aria-hidden="true">12.22.</strong> vpc-dhcp</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-egress.html"><strong aria-hidden="true">12.23.</strong> vpc-egress</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-endpoint.html"><strong aria-hidden="true">12.24.</strong> vpc-endpoint</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-internet.html"><strong aria-hidden="true">12.25.</strong> vpc-internet</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-nat.html"><strong aria-hidden="true">12.26.</strong> vpc-nat</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-network-interface.html"><strong aria-hidden="true">12.27.</strong> vpc-network-interface</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-network-interface-attachment.html"><strong aria-hidden="true">12.28.</strong> vpc-network-interface-attachment</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-route.html"><strong aria-hidden="true">12.29.</strong> vpc-route</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-route-table.html"><strong aria-hidden="true">12.30.</strong> vpc-route-table</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-route-table-association.html"><strong aria-hidden="true">12.31.</strong> vpc-route-table-association</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-subnet.html"><strong aria-hidden="true">12.32.</strong> vpc-subnet</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="nixops-datadog-monitor.html"><strong aria-hidden="true">13.</strong> NixOps Datadog</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops-digitalocean.html"><strong aria-hidden="true">14.</strong> NixOps DigitalOcean</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops-gce.html"><strong aria-hidden="true">15.</strong> NixOps GCE</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops-hcloud.html"><strong aria-hidden="true">16.</strong> NixOps HCloud</a></li><li class="chapter-item expanded "><a href="nixops-hcloud-volume.html"><strong aria-hidden="true">17.</strong> NixOps HCloud Volume</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops-libvirtd.html"><strong aria-hidden="true">18.</strong> NixOps LibVirtd</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixos-firehol.html"><strong aria-hidden="true">19.</strong> NixOS-FireHOL</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixos-hardware.html"><strong aria-hidden="true">20.</strong> NixOS Hardware</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="nixos-hardware-asus.html"><strong aria-hidden="true">20.1.</strong> asus</a></li><li class="chapter-item expanded "><a href="nixos-hardware-surface.html"><strong aria-hidden="true">20.2.</strong> surface</a></li><li class="chapter-item expanded "><a href="nixos-hardware-raspberry.html"><strong aria-hidden="true">20.3.</strong> raspberry</a></li><li class="chapter-item expanded "><a href="nixos-hardware-system76.html"><strong aria-hidden="true">20.4.</strong> system76</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="nur-combined.html"><strong aria-hidden="true">21.</strong> NUR Combined</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="nur-combined-aasg.html"><strong aria-hidden="true">21.1.</strong> aasg</a></li><li class="chapter-item expanded "><a href="nur-combined-afreakk.html"><strong aria-hidden="true">21.2.</strong> afreakk</a></li><li class="chapter-item expanded "><a href="nur-combined-alarsyo.html"><strong aria-hidden="true">21.3.</strong> alarsyo</a></li><li class="chapter-item expanded "><a href="nur-combined-ambroisie.html"><strong aria-hidden="true">21.4.</strong> ambroisie</a></li><li class="chapter-item expanded "><a href="nur-combined-arc.html"><strong aria-hidden="true">21.5.</strong> arc</a></li><li class="chapter-item expanded "><a href="nur-combined-bb010g.html"><strong aria-hidden="true">21.6.</strong> bb010g</a></li><li class="chapter-item expanded "><a href="nur-combined-bendlas.html"><strong aria-hidden="true">21.7.</strong> bendlas</a></li><li class="chapter-item expanded "><a href="nur-combined-berbiche.html"><strong aria-hidden="true">21.8.</strong> berbiche</a></li><li class="chapter-item expanded "><a href="nur-combined-c0deaddict.html" class="active"><strong aria-hidden="true">21.9.</strong> c0deaddict</a></li><li class="chapter-item expanded "><a href="nur-combined-crazazy.html"><strong aria-hidden="true">21.10.</strong> crazazy</a></li><li class="chapter-item expanded "><a href="nur-combined-crtified.html"><strong aria-hidden="true">21.11.</strong> crtified</a></li><li class="chapter-item expanded "><a href="nur-combined-cwyc.html"><strong aria-hidden="true">21.12.</strong> cwyc</a></li><li class="chapter-item expanded "><a href="nur-combined-dawidsowa.html"><strong aria-hidden="true">21.13.</strong> dawidsowa</a></li><li class="chapter-item expanded "><a href="nur-combined-dguibert.html"><strong aria-hidden="true">21.14.</strong> dguibert</a></li><li class="chapter-item expanded "><a href="nur-combined-dtz.html"><strong aria-hidden="true">21.15.</strong> dtz</a></li><li class="chapter-item expanded "><a href="nur-combined-dukzcry.html"><strong aria-hidden="true">21.16.</strong> dukzcry</a></li><li class="chapter-item expanded "><a href="nur-combined-emmanuelrosa.html"><strong aria-hidden="true">21.17.</strong> emmanuelrosa</a></li><li class="chapter-item expanded "><a href="nur-combined-heph2.html"><strong aria-hidden="true">21.18.</strong> heph2</a></li><li class="chapter-item expanded "><a href="nur-combined-ilya-fedin.html"><strong aria-hidden="true">21.19.</strong> ilya-fedin</a></li><li class="chapter-item expanded "><a href="nur-combined-immae.html"><strong aria-hidden="true">21.20.</strong> immae</a></li><li class="chapter-item expanded "><a href="nur-combined-instantos.html"><strong aria-hidden="true">21.21.</strong> instantos</a></li><li class="chapter-item expanded "><a href="nur-combined-jbarthelmes.html"><strong aria-hidden="true">21.22.</strong> jbarthelmes</a></li><li class="chapter-item expanded "><a href="nur-combined-johnazoidberg.html"><strong aria-hidden="true">21.23.</strong> johnazoidberg</a></li><li class="chapter-item expanded "><a href="nur-combined-jomik.html"><strong aria-hidden="true">21.24.</strong> jomik</a></li><li class="chapter-item expanded "><a href="nur-combined-kampka.html"><strong aria-hidden="true">21.25.</strong> kampka</a></li><li class="chapter-item expanded "><a href="nur-combined-kapack.html"><strong aria-hidden="true">21.26.</strong> kapack</a></li><li class="chapter-item expanded "><a href="nur-combined-kira-bruneau.html"><strong aria-hidden="true">21.27.</strong> kira-bruneau</a></li><li class="chapter-item expanded "><a href="nur-combined-kolloch.html"><strong aria-hidden="true">21.28.</strong> kolloch</a></li><li class="chapter-item expanded "><a href="nur-combined-krebs.html"><strong aria-hidden="true">21.29.</strong> krebs</a></li><li class="chapter-item expanded "><a href="nur-combined-kreisys.html"><strong aria-hidden="true">21.30.</strong> kreisys</a></li><li class="chapter-item expanded "><a href="nur-combined-linyinfeng.html"><strong aria-hidden="true">21.31.</strong> linyinfeng</a></li><li class="chapter-item expanded "><a href="nur-combined-lschuermann.html"><strong aria-hidden="true">21.32.</strong> lschuermann</a></li><li class="chapter-item expanded "><a href="nur-combined-lucasew.html"><strong aria-hidden="true">21.33.</strong> lucasew</a></li><li class="chapter-item expanded "><a href="nur-combined-misterio.html"><strong aria-hidden="true">21.34.</strong> misterio</a></li><li class="chapter-item expanded "><a href="nur-combined-mmilata.html"><strong aria-hidden="true">21.35.</strong> mmilata</a></li><li class="chapter-item expanded "><a href="nur-combined-moredhel.html"><strong aria-hidden="true">21.36.</strong> moredhel</a></li><li class="chapter-item expanded "><a href="nur-combined-moredread.html"><strong aria-hidden="true">21.37.</strong> moredread</a></li><li class="chapter-item expanded "><a href="nur-combined-noneucat.html"><strong aria-hidden="true">21.38.</strong> noneucat</a></li><li class="chapter-item expanded "><a href="nur-combined-onny.html"><strong aria-hidden="true">21.39.</strong> onny</a></li><li class="chapter-item expanded "><a href="nur-combined-pamplemousse.html"><strong aria-hidden="true">21.40.</strong> pamplemousse</a></li><li class="chapter-item expanded "><a href="nur-combined-pborzenkov.html"><strong aria-hidden="true">21.41.</strong> pborzenkov</a></li><li class="chapter-item expanded "><a href="nur-combined-peel.html"><strong aria-hidden="true">21.42.</strong> peel</a></li><li class="chapter-item expanded "><a href="nur-combined-priegger.html"><strong aria-hidden="true">21.43.</strong> priegger</a></li><li class="chapter-item expanded "><a href="nur-combined-qchem.html"><strong aria-hidden="true">21.44.</strong> qchem</a></li><li class="chapter-item expanded "><a href="nur-combined-rycee.html"><strong aria-hidden="true">21.45.</strong> rycee</a></li><li class="chapter-item expanded "><a href="nur-combined-sehqlr.html"><strong aria-hidden="true">21.46.</strong> sehqlr</a></li><li class="chapter-item expanded "><a href="nur-combined-shamilton.html"><strong aria-hidden="true">21.47.</strong> shamilton</a></li><li class="chapter-item expanded "><a href="nur-combined-sikmir.html"><strong aria-hidden="true">21.48.</strong> sikmir</a></li><li class="chapter-item expanded "><a href="nur-combined-splintah.html"><strong aria-hidden="true">21.49.</strong> splintah</a></li><li class="chapter-item expanded "><a href="nur-combined-syberant.html"><strong aria-hidden="true">21.50.</strong> syberant</a></li><li class="chapter-item expanded "><a href="nur-combined-tilpner.html"><strong aria-hidden="true">21.51.</strong> tilpner</a></li><li class="chapter-item expanded "><a href="nur-combined-tukuan.html"><strong aria-hidden="true">21.52.</strong> tukuan</a></li><li class="chapter-item expanded "><a href="nur-combined-tox.html"><strong aria-hidden="true">21.53.</strong> tox</a></li><li class="chapter-item expanded "><a href="nur-combined-vdmeester.html"><strong aria-hidden="true">21.54.</strong> vdmeester</a></li><li class="chapter-item expanded "><a href="nur-combined-vroad.html"><strong aria-hidden="true">21.55.</strong> vroad</a></li><li class="chapter-item expanded "><a href="nur-combined-xeals.html"><strong aria-hidden="true">21.56.</strong> xeals</a></li><li class="chapter-item expanded "><a href="nur-combined-zeratax.html"><strong aria-hidden="true">21.57.</strong> zeratax</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="programsworkraveenable"><a class="header" href="#programsworkraveenable">programs.workrave.enable</a></h2>
+<p>Whether to enable Workrave.</p>
+<h4 id="type"><a class="header" href="#type">type</a></h4>
+<p>boolean</p>
+<h4 id="example"><a class="header" href="#example">example</a></h4>
+<pre><code class="language-nix">{
+  programs.workrave.enable = true;
+}
+</code></pre>
+<h4 id="default"><a class="header" href="#default">default</a></h4>
+<pre><code class="language-nix">{
+  programs.workrave.enable = false;
+}
+</code></pre>
+<h2 id="programsworkraveblockmode"><a class="header" href="#programsworkraveblockmode">programs.workrave.blockMode</a></h2>
+<p>0 = No blocking
+1 = Block input
+2 = Block input and screen</p>
+<h4 id="type-1"><a class="header" href="#type-1">type</a></h4>
+<p>signed integer</p>
+<h4 id="default-1"><a class="header" href="#default-1">default</a></h4>
+<pre><code class="language-nix">{
+  programs.workrave.blockMode = 1;
+}
+</code></pre>
+<h2 id="programsworkravedailylimitenable"><a class="header" href="#programsworkravedailylimitenable">programs.workrave.dailyLimit.enable</a></h2>
+<h4 id="type-2"><a class="header" href="#type-2">type</a></h4>
+<p>boolean</p>
+<h4 id="default-2"><a class="header" href="#default-2">default</a></h4>
+<pre><code class="language-nix">{
+  programs.workrave.dailyLimit.enable = true;
+}
+</code></pre>
+<h2 id="programsworkravedailylimitignorable"><a class="header" href="#programsworkravedailylimitignorable">programs.workrave.dailyLimit.ignorable</a></h2>
+<h4 id="type-3"><a class="header" href="#type-3">type</a></h4>
+<p>boolean</p>
+<h4 id="default-3"><a class="header" href="#default-3">default</a></h4>
+<pre><code class="language-nix">{
+  programs.workrave.dailyLimit.ignorable = true;
+}
+</code></pre>
+<h2 id="programsworkravedailylimitlimit"><a class="header" href="#programsworkravedailylimitlimit">programs.workrave.dailyLimit.limit</a></h2>
+<h4 id="type-4"><a class="header" href="#type-4">type</a></h4>
+<p>signed integer</p>
+<h4 id="default-4"><a class="header" href="#default-4">default</a></h4>
+<pre><code class="language-nix">{
+  programs.workrave.dailyLimit.limit = 14400;
+}
+</code></pre>
+<h2 id="programsworkravedailylimitskippable"><a class="header" href="#programsworkravedailylimitskippable">programs.workrave.dailyLimit.skippable</a></h2>
+<h4 id="type-5"><a class="header" href="#type-5">type</a></h4>
+<p>boolean</p>
+<h4 id="default-5"><a class="header" href="#default-5">default</a></h4>
+<pre><code class="language-nix">{
+  programs.workrave.dailyLimit.skippable = true;
+}
+</code></pre>
+<h2 id="programsworkravedailylimitsnooze"><a class="header" href="#programsworkravedailylimitsnooze">programs.workrave.dailyLimit.snooze</a></h2>
+<h4 id="type-6"><a class="header" href="#type-6">type</a></h4>
+<p>signed integer</p>
+<h4 id="default-6"><a class="header" href="#default-6">default</a></h4>
+<pre><code class="language-nix">{
+  programs.workrave.dailyLimit.snooze = 1200;
+}
+</code></pre>
+<h2 id="programsworkraveextraconfig"><a class="header" href="#programsworkraveextraconfig">programs.workrave.extraConfig</a></h2>
+<h4 id="type-7"><a class="header" href="#type-7">type</a></h4>
+<p>attribute set</p>
+<h4 id="default-7"><a class="header" href="#default-7">default</a></h4>
+<pre><code class="language-nix">{
+  programs.workrave.extraConfig = {};
+}
+</code></pre>
+<h2 id="programsworkraveguiapplet"><a class="header" href="#programsworkraveguiapplet">programs.workrave.gui.applet</a></h2>
+<h4 id="type-8"><a class="header" href="#type-8">type</a></h4>
+<p>boolean</p>
+<h4 id="default-8"><a class="header" href="#default-8">default</a></h4>
+<pre><code class="language-nix">{
+  programs.workrave.gui.applet = true;
+}
+</code></pre>
+<h2 id="programsworkraveguimainwindow"><a class="header" href="#programsworkraveguimainwindow">programs.workrave.gui.mainWindow</a></h2>
+<h4 id="type-9"><a class="header" href="#type-9">type</a></h4>
+<p>boolean</p>
+<h4 id="default-9"><a class="header" href="#default-9">default</a></h4>
+<pre><code class="language-nix">{
+  programs.workrave.gui.mainWindow = true;
+}
+</code></pre>
+<h2 id="programsworkraveguitrayicon"><a class="header" href="#programsworkraveguitrayicon">programs.workrave.gui.trayIcon</a></h2>
+<h4 id="type-10"><a class="header" href="#type-10">type</a></h4>
+<p>boolean</p>
+<h4 id="default-10"><a class="header" href="#default-10">default</a></h4>
+<pre><code class="language-nix">{
+  programs.workrave.gui.trayIcon = true;
+}
+</code></pre>
+<h2 id="programsworkravemicropauseenable"><a class="header" href="#programsworkravemicropauseenable">programs.workrave.microPause.enable</a></h2>
+<h4 id="type-11"><a class="header" href="#type-11">type</a></h4>
+<p>boolean</p>
+<h4 id="default-11"><a class="header" href="#default-11">default</a></h4>
+<pre><code class="language-nix">{
+  programs.workrave.microPause.enable = true;
+}
+</code></pre>
+<h2 id="programsworkravemicropauseautoreset"><a class="header" href="#programsworkravemicropauseautoreset">programs.workrave.microPause.autoReset</a></h2>
+<h4 id="type-12"><a class="header" href="#type-12">type</a></h4>
+<p>signed integer</p>
+<h4 id="default-12"><a class="header" href="#default-12">default</a></h4>
+<pre><code class="language-nix">{
+  programs.workrave.microPause.autoReset = 30;
+}
+</code></pre>
+<h2 id="programsworkravemicropauseignorable"><a class="header" href="#programsworkravemicropauseignorable">programs.workrave.microPause.ignorable</a></h2>
+<h4 id="type-13"><a class="header" href="#type-13">type</a></h4>
+<p>boolean</p>
+<h4 id="default-13"><a class="header" href="#default-13">default</a></h4>
+<pre><code class="language-nix">{
+  programs.workrave.microPause.ignorable = true;
+}
+</code></pre>
+<h2 id="programsworkravemicropauselimit"><a class="header" href="#programsworkravemicropauselimit">programs.workrave.microPause.limit</a></h2>
+<h4 id="type-14"><a class="header" href="#type-14">type</a></h4>
+<p>signed integer</p>
+<h4 id="default-14"><a class="header" href="#default-14">default</a></h4>
+<pre><code class="language-nix">{
+  programs.workrave.microPause.limit = 300;
+}
+</code></pre>
+<h2 id="programsworkravemicropauseskippable"><a class="header" href="#programsworkravemicropauseskippable">programs.workrave.microPause.skippable</a></h2>
+<h4 id="type-15"><a class="header" href="#type-15">type</a></h4>
+<p>boolean</p>
+<h4 id="default-15"><a class="header" href="#default-15">default</a></h4>
+<pre><code class="language-nix">{
+  programs.workrave.microPause.skippable = true;
+}
+</code></pre>
+<h2 id="programsworkravemicropausesnooze"><a class="header" href="#programsworkravemicropausesnooze">programs.workrave.microPause.snooze</a></h2>
+<h4 id="type-16"><a class="header" href="#type-16">type</a></h4>
+<p>signed integer</p>
+<h4 id="default-16"><a class="header" href="#default-16">default</a></h4>
+<pre><code class="language-nix">{
+  programs.workrave.microPause.snooze = 150;
+}
+</code></pre>
+<h2 id="programsworkraverestbreakenable"><a class="header" href="#programsworkraverestbreakenable">programs.workrave.restBreak.enable</a></h2>
+<h4 id="type-17"><a class="header" href="#type-17">type</a></h4>
+<p>boolean</p>
+<h4 id="default-17"><a class="header" href="#default-17">default</a></h4>
+<pre><code class="language-nix">{
+  programs.workrave.restBreak.enable = true;
+}
+</code></pre>
+<h2 id="programsworkraverestbreakautoreset"><a class="header" href="#programsworkraverestbreakautoreset">programs.workrave.restBreak.autoReset</a></h2>
+<h4 id="type-18"><a class="header" href="#type-18">type</a></h4>
+<p>signed integer</p>
+<h4 id="default-18"><a class="header" href="#default-18">default</a></h4>
+<pre><code class="language-nix">{
+  programs.workrave.restBreak.autoReset = 60;
+}
+</code></pre>
+<h2 id="programsworkraverestbreakignorable"><a class="header" href="#programsworkraverestbreakignorable">programs.workrave.restBreak.ignorable</a></h2>
+<h4 id="type-19"><a class="header" href="#type-19">type</a></h4>
+<p>boolean</p>
+<h4 id="default-19"><a class="header" href="#default-19">default</a></h4>
+<pre><code class="language-nix">{
+  programs.workrave.restBreak.ignorable = true;
+}
+</code></pre>
+<h2 id="programsworkraverestbreaklimit"><a class="header" href="#programsworkraverestbreaklimit">programs.workrave.restBreak.limit</a></h2>
+<h4 id="type-20"><a class="header" href="#type-20">type</a></h4>
+<p>signed integer</p>
+<h4 id="default-20"><a class="header" href="#default-20">default</a></h4>
+<pre><code class="language-nix">{
+  programs.workrave.restBreak.limit = 2700;
+}
+</code></pre>
+<h2 id="programsworkraverestbreakskippable"><a class="header" href="#programsworkraverestbreakskippable">programs.workrave.restBreak.skippable</a></h2>
+<h4 id="type-21"><a class="header" href="#type-21">type</a></h4>
+<p>boolean</p>
+<h4 id="default-21"><a class="header" href="#default-21">default</a></h4>
+<pre><code class="language-nix">{
+  programs.workrave.restBreak.skippable = true;
+}
+</code></pre>
+<h2 id="programsworkraverestbreaksnooze"><a class="header" href="#programsworkraverestbreaksnooze">programs.workrave.restBreak.snooze</a></h2>
+<h4 id="type-22"><a class="header" href="#type-22">type</a></h4>
+<p>signed integer</p>
+<h4 id="default-22"><a class="header" href="#default-22">default</a></h4>
+<pre><code class="language-nix">{
+  programs.workrave.restBreak.snooze = 180;
+}
+</code></pre>
+<h2 id="programsworkravesoundenable"><a class="header" href="#programsworkravesoundenable">programs.workrave.sound.enable</a></h2>
+<h4 id="type-23"><a class="header" href="#type-23">type</a></h4>
+<p>boolean</p>
+<h4 id="default-23"><a class="header" href="#default-23">default</a></h4>
+<pre><code class="language-nix">{
+  programs.workrave.sound.enable = true;
+}
+</code></pre>
+<h2 id="programsworkravesoundvolume"><a class="header" href="#programsworkravesoundvolume">programs.workrave.sound.volume</a></h2>
+<h4 id="type-24"><a class="header" href="#type-24">type</a></h4>
+<p>signed integer</p>
+<h4 id="default-24"><a class="header" href="#default-24">default</a></h4>
+<pre><code class="language-nix">{
+  programs.workrave.sound.volume = 100;
+}
+</code></pre>
+<h2 id="servicesapt-cacher-ngenable"><a class="header" href="#servicesapt-cacher-ngenable">services.apt-cacher-ng.enable</a></h2>
+<p>Whether to enable apt-cacher-ng.</p>
+<h4 id="type-25"><a class="header" href="#type-25">type</a></h4>
+<p>boolean</p>
+<h4 id="example-1"><a class="header" href="#example-1">example</a></h4>
+<pre><code class="language-nix">{
+  services.apt-cacher-ng.enable = true;
+}
+</code></pre>
+<h4 id="default-25"><a class="header" href="#default-25">default</a></h4>
+<pre><code class="language-nix">{
+  services.apt-cacher-ng.enable = false;
+}
+</code></pre>
+<h2 id="servicesapt-cacher-ngenablenixcache"><a class="header" href="#servicesapt-cacher-ngenablenixcache">services.apt-cacher-ng.enableNixCache</a></h2>
+<p>enable cache.nixos.org caching via PfilePatternEx and VfilePatternEx.</p>
+<p>to use the apt-cacher-ng in your nixos configuration:
+nix.binary-cache = [ http://acng-host:port/nixos ];</p>
+<p>These options cannot be used in extraConfig, use SVfilePattern and
+SPfilePattern or disable this option.</p>
+<h4 id="type-26"><a class="header" href="#type-26">type</a></h4>
+<p>boolean</p>
+<h4 id="default-26"><a class="header" href="#default-26">default</a></h4>
+<pre><code class="language-nix">{
+  services.apt-cacher-ng.enableNixCache = true;
+}
+</code></pre>
+<h2 id="servicesapt-cacher-ngbindaddress"><a class="header" href="#servicesapt-cacher-ngbindaddress">services.apt-cacher-ng.bindAddress</a></h2>
+<p>listen address of apt-cacher-ng. Defaults to every interface.</p>
+<h4 id="type-27"><a class="header" href="#type-27">type</a></h4>
+<p>string</p>
+<h4 id="example-2"><a class="header" href="#example-2">example</a></h4>
+<pre><code class="language-nix">{
+  services.apt-cacher-ng.bindAddress = &quot;localhost 192.168.7.254 publicNameOnMainInterface&quot;;
+}
+</code></pre>
+<h4 id="default-27"><a class="header" href="#default-27">default</a></h4>
+<pre><code class="language-nix">{
+  services.apt-cacher-ng.bindAddress = &quot;&quot;;
+}
+</code></pre>
+<h2 id="servicesapt-cacher-ngcachedir"><a class="header" href="#servicesapt-cacher-ngcachedir">services.apt-cacher-ng.cacheDir</a></h2>
+<p>Path to apt-cacher-ng cache directory.
+Will be created and chowned to acng-user</p>
+<h4 id="type-28"><a class="header" href="#type-28">type</a></h4>
+<p>string</p>
+<h4 id="default-28"><a class="header" href="#default-28">default</a></h4>
+<pre><code class="language-nix">{
+  services.apt-cacher-ng.cacheDir = &quot;/var/cache/acng/cache&quot;;
+}
+</code></pre>
+<h2 id="servicesapt-cacher-ngcacheexpiration"><a class="header" href="#servicesapt-cacher-ngcacheexpiration">services.apt-cacher-ng.cacheExpiration</a></h2>
+<p>number of days before packages expire in the cache without being
+requested.</p>
+<h4 id="type-29"><a class="header" href="#type-29">type</a></h4>
+<p>signed integer</p>
+<h4 id="default-29"><a class="header" href="#default-29">default</a></h4>
+<pre><code class="language-nix">{
+  services.apt-cacher-ng.cacheExpiration = 4;
+}
+</code></pre>
+<h2 id="servicesapt-cacher-ngextraconfig"><a class="header" href="#servicesapt-cacher-ngextraconfig">services.apt-cacher-ng.extraConfig</a></h2>
+<p>extra config appended to the generated acng.conf</p>
+<h4 id="type-30"><a class="header" href="#type-30">type</a></h4>
+<p>strings concatenated with &quot;\n&quot;</p>
+<h4 id="default-30"><a class="header" href="#default-30">default</a></h4>
+<pre><code class="language-nix">{
+  services.apt-cacher-ng.extraConfig = &quot;&quot;;
+}
+</code></pre>
+<h2 id="servicesapt-cacher-nglogdir"><a class="header" href="#servicesapt-cacher-nglogdir">services.apt-cacher-ng.logDir</a></h2>
+<p>Path to apt-cacher-ng log directory.
+Will be created and chowned to acng-user</p>
+<h4 id="type-31"><a class="header" href="#type-31">type</a></h4>
+<p>string</p>
+<h4 id="default-31"><a class="header" href="#default-31">default</a></h4>
+<pre><code class="language-nix">{
+  services.apt-cacher-ng.logDir = &quot;/var/cache/acng/log&quot;;
+}
+</code></pre>
+<h2 id="servicesapt-cacher-ngport"><a class="header" href="#servicesapt-cacher-ngport">services.apt-cacher-ng.port</a></h2>
+<p>port of apt-cacher-ng</p>
+<h4 id="type-32"><a class="header" href="#type-32">type</a></h4>
+<p>signed integer</p>
+<h4 id="default-32"><a class="header" href="#default-32">default</a></h4>
+<pre><code class="language-nix">{
+  services.apt-cacher-ng.port = 3142;
+}
+</code></pre>
+<h2 id="servicescheck-batteryenable"><a class="header" href="#servicescheck-batteryenable">services.check-battery.enable</a></h2>
+<p>Whether to enable Warn when battery is almost empty.</p>
+<h4 id="type-33"><a class="header" href="#type-33">type</a></h4>
+<p>boolean</p>
+<h4 id="example-3"><a class="header" href="#example-3">example</a></h4>
+<pre><code class="language-nix">{
+  services.check-battery.enable = true;
+}
+</code></pre>
+<h4 id="default-33"><a class="header" href="#default-33">default</a></h4>
+<pre><code class="language-nix">{
+  services.check-battery.enable = false;
+}
+</code></pre>
+<h2 id="servicescheck-batteryinterval"><a class="header" href="#servicescheck-batteryinterval">services.check-battery.interval</a></h2>
+<p>Interval in seconds at which battery level is checked.</p>
+<h4 id="type-34"><a class="header" href="#type-34">type</a></h4>
+<p>string</p>
+<h4 id="default-34"><a class="header" href="#default-34">default</a></h4>
+<pre><code class="language-nix">{
+  services.check-battery.interval = &quot;60&quot;;
+}
+</code></pre>
+<h2 id="servicescheck-batterythreshold"><a class="header" href="#servicescheck-batterythreshold">services.check-battery.threshold</a></h2>
+<p>Must be formatted as 00:00:00
+This is string compared to the level shown by <code>acpi -b</code>.</p>
+<h4 id="type-35"><a class="header" href="#type-35">type</a></h4>
+<p>string</p>
+<h4 id="default-35"><a class="header" href="#default-35">default</a></h4>
+<pre><code class="language-nix">{
+  services.check-battery.threshold = &quot;00:45:00&quot;;
+}
+</code></pre>
+<h2 id="servicesetlegacyenable"><a class="header" href="#servicesetlegacyenable">services.etlegacy.enable</a></h2>
+<p>Whether to enable ET: legacy dedicated server.</p>
+<h4 id="type-36"><a class="header" href="#type-36">type</a></h4>
+<p>boolean</p>
+<h4 id="example-4"><a class="header" href="#example-4">example</a></h4>
+<pre><code class="language-nix">{
+  services.etlegacy.enable = true;
+}
+</code></pre>
+<h4 id="default-36"><a class="header" href="#default-36">default</a></h4>
+<pre><code class="language-nix">{
+  services.etlegacy.enable = false;
+}
+</code></pre>
+<h2 id="servicesetlegacypackage"><a class="header" href="#servicesetlegacypackage">services.etlegacy.package</a></h2>
+<p>etlegacy package to run</p>
+<h4 id="type-37"><a class="header" href="#type-37">type</a></h4>
+<p>package</p>
+<h4 id="default-37"><a class="header" href="#default-37">default</a></h4>
+<pre><code class="language-nix">{
+  services.etlegacy.package = &quot;pkgs.legacy&quot;;
+}
+</code></pre>
+<h2 id="servicesetlegacybind"><a class="header" href="#servicesetlegacybind">services.etlegacy.bind</a></h2>
+<p>Bind on this network IP, it not specified will bind on all IP's.</p>
+<h4 id="type-38"><a class="header" href="#type-38">type</a></h4>
+<p>null or string</p>
+<h4 id="default-38"><a class="header" href="#default-38">default</a></h4>
+<pre><code class="language-nix">{
+  services.etlegacy.bind = null;
+}
+</code></pre>
+<h2 id="servicesetlegacyconfigfile"><a class="header" href="#servicesetlegacyconfigfile">services.etlegacy.configFile</a></h2>
+<p>The server's configuration file.</p>
+<h4 id="type-39"><a class="header" href="#type-39">type</a></h4>
+<p>path</p>
+<h2 id="servicesetlegacyopenfirewall"><a class="header" href="#servicesetlegacyopenfirewall">services.etlegacy.openFirewall</a></h2>
+<p>Whether to automatically open the specified UDP port in the firewall.</p>
+<h4 id="type-40"><a class="header" href="#type-40">type</a></h4>
+<p>boolean</p>
+<h4 id="default-39"><a class="header" href="#default-39">default</a></h4>
+<pre><code class="language-nix">{
+  services.etlegacy.openFirewall = true;
+}
+</code></pre>
+<h2 id="servicesetlegacyport"><a class="header" href="#servicesetlegacyport">services.etlegacy.port</a></h2>
+<p>The port to which the service should bind.</p>
+<h4 id="type-41"><a class="header" href="#type-41">type</a></h4>
+<p>signed integer</p>
+<h4 id="default-40"><a class="header" href="#default-40">default</a></h4>
+<pre><code class="language-nix">{
+  services.etlegacy.port = 27960;
+}
+</code></pre>
+<h2 id="servicesetlegacystatedirname"><a class="header" href="#servicesetlegacystatedirname">services.etlegacy.stateDirName</a></h2>
+<p>Name of the directory under /var/lib holding the server's data.</p>
+<h4 id="type-42"><a class="header" href="#type-42">type</a></h4>
+<p>string</p>
+<h4 id="default-41"><a class="header" href="#default-41">default</a></h4>
+<pre><code class="language-nix">{
+  services.etlegacy.stateDirName = &quot;etlegacy&quot;;
+}
+</code></pre>
+<h2 id="servicesgnome-keyring-daemonenable"><a class="header" href="#servicesgnome-keyring-daemonenable">services.gnome-keyring-daemon.enable</a></h2>
+<p>Whether to enable GNOME Keyring.</p>
+<h4 id="type-43"><a class="header" href="#type-43">type</a></h4>
+<p>boolean</p>
+<h4 id="example-5"><a class="header" href="#example-5">example</a></h4>
+<pre><code class="language-nix">{
+  services.gnome-keyring-daemon.enable = true;
+}
+</code></pre>
+<h4 id="default-42"><a class="header" href="#default-42">default</a></h4>
+<pre><code class="language-nix">{
+  services.gnome-keyring-daemon.enable = false;
+}
+</code></pre>
+<h2 id="servicesgnome-keyring-daemoncomponents"><a class="header" href="#servicesgnome-keyring-daemoncomponents">services.gnome-keyring-daemon.components</a></h2>
+<p>The GNOME keyring components to start. If empty then the
+default set of components will be started.</p>
+<h4 id="type-44"><a class="header" href="#type-44">type</a></h4>
+<p>list of one of &quot;pkcs11&quot;, &quot;secrets&quot;, &quot;ssh&quot;</p>
+<h4 id="default-43"><a class="header" href="#default-43">default</a></h4>
+<pre><code class="language-nix">{
+  services.gnome-keyring-daemon.components = [];
+}
+</code></pre>
+<h2 id="servicesgnome-keyring-daemonexecutable"><a class="header" href="#servicesgnome-keyring-daemonexecutable">services.gnome-keyring-daemon.executable</a></h2>
+<p>The gnome-keyring-daemon needs to have the cap_ipc_lock capability, 
+otherwise you get error messages like these:
+https://unix.stackexchange.com/questions/112030/gnome-keyring-daemon-insufficient-process-capabilities-unsecure-memory-might-g</p>
+<p>NixOS can create the wrapper for you by enabling:</p>
+<pre><code>services.gnome3.keyring-daemon.enable = true;
+</code></pre>
+<p>If you're using sway you need to disable the PAM service, since then
+you need DBus to work:</p>
+<pre><code>security.pam.services.login.enableGnomeKeyring = mkForce false;
+</code></pre>
+<h4 id="type-45"><a class="header" href="#type-45">type</a></h4>
+<p>string</p>
+<h4 id="example-6"><a class="header" href="#example-6">example</a></h4>
+<pre><code class="language-nix">{
+  services.gnome-keyring-daemon.executable = &quot;/run/wrappers/bin/gnome-keyring-daemon&quot;;
+}
+</code></pre>
+<h4 id="default-44"><a class="header" href="#default-44">default</a></h4>
+<pre><code class="language-nix">{
+  services.gnome-keyring-daemon.executable = &quot;${pkgs.gnome3.gnome-keyring}/bin/gnome-keyring-daemon&quot;;
+}
+</code></pre>
+<h2 id="servicesimport-garmin-connectenable"><a class="header" href="#servicesimport-garmin-connectenable">services.import-garmin-connect.enable</a></h2>
+<p>Whether to enable Import Garmin Connect.</p>
+<h4 id="type-46"><a class="header" href="#type-46">type</a></h4>
+<p>boolean</p>
+<h4 id="example-7"><a class="header" href="#example-7">example</a></h4>
+<pre><code class="language-nix">{
+  services.import-garmin-connect.enable = true;
+}
+</code></pre>
+<h4 id="default-45"><a class="header" href="#default-45">default</a></h4>
+<pre><code class="language-nix">{
+  services.import-garmin-connect.enable = false;
+}
+</code></pre>
+<h2 id="servicesimport-garmin-connectinfluxdb"><a class="header" href="#servicesimport-garmin-connectinfluxdb">services.import-garmin-connect.influx.db</a></h2>
+<h4 id="type-47"><a class="header" href="#type-47">type</a></h4>
+<p>string</p>
+<h4 id="default-46"><a class="header" href="#default-46">default</a></h4>
+<pre><code class="language-nix">{
+  services.import-garmin-connect.influx.db = &quot;garmin&quot;;
+}
+</code></pre>
+<h2 id="servicesimport-garmin-connectinfluxhost"><a class="header" href="#servicesimport-garmin-connectinfluxhost">services.import-garmin-connect.influx.host</a></h2>
+<h4 id="type-48"><a class="header" href="#type-48">type</a></h4>
+<p>string</p>
+<h4 id="example-8"><a class="header" href="#example-8">example</a></h4>
+<pre><code class="language-nix">{
+  services.import-garmin-connect.influx.host = &quot;127.0.0.1&quot;;
+}
+</code></pre>
+<h4 id="default-47"><a class="header" href="#default-47">default</a></h4>
+<pre><code class="language-nix">{
+  services.import-garmin-connect.influx.host = &quot;localhost&quot;;
+}
+</code></pre>
+<h2 id="servicesimport-garmin-connectinfluxport"><a class="header" href="#servicesimport-garmin-connectinfluxport">services.import-garmin-connect.influx.port</a></h2>
+<h4 id="type-49"><a class="header" href="#type-49">type</a></h4>
+<p>signed integer</p>
+<h4 id="default-48"><a class="header" href="#default-48">default</a></h4>
+<pre><code class="language-nix">{
+  services.import-garmin-connect.influx.port = 8086;
+}
+</code></pre>
+<h2 id="servicesimport-garmin-connectinterval"><a class="header" href="#servicesimport-garmin-connectinterval">services.import-garmin-connect.interval</a></h2>
+<p>OnCalendar specification</p>
+<h4 id="type-50"><a class="header" href="#type-50">type</a></h4>
+<p>string</p>
+<h4 id="default-49"><a class="header" href="#default-49">default</a></h4>
+<pre><code class="language-nix">{
+  services.import-garmin-connect.interval = &quot;hourly&quot;;
+}
+</code></pre>
+<h2 id="servicesimport-garmin-connectprofiles"><a class="header" href="#servicesimport-garmin-connectprofiles">services.import-garmin-connect.profiles</a></h2>
+<p>Profiles</p>
+<h4 id="type-51"><a class="header" href="#type-51">type</a></h4>
+<p>attribute set of submodule</p>
+<h2 id="servicesimport-garmin-connectprofilesnamepasswordfile"><a class="header" href="#servicesimport-garmin-connectprofilesnamepasswordfile">services.import-garmin-connect.profiles.&lt;name&gt;.passwordFile</a></h2>
+<p>Password file</p>
+<h4 id="type-52"><a class="header" href="#type-52">type</a></h4>
+<p>string</p>
+<h2 id="servicesimport-garmin-connectprofilesnameprofile"><a class="header" href="#servicesimport-garmin-connectprofilesnameprofile">services.import-garmin-connect.profiles.&lt;name&gt;.profile</a></h2>
+<p>Profile name</p>
+<h4 id="type-53"><a class="header" href="#type-53">type</a></h4>
+<p>string</p>
+<h2 id="servicesimport-garmin-connectprofilesnameusername"><a class="header" href="#servicesimport-garmin-connectprofilesnameusername">services.import-garmin-connect.profiles.&lt;name&gt;.username</a></h2>
+<p>Username</p>
+<h4 id="type-54"><a class="header" href="#type-54">type</a></h4>
+<p>string</p>
+<h2 id="servicesmakoenable"><a class="header" href="#servicesmakoenable">services.mako.enable</a></h2>
+<p>Whether to enable Mako, lightweight notification daemon for Wayland
+.</p>
+<h4 id="type-55"><a class="header" href="#type-55">type</a></h4>
+<p>boolean</p>
+<h4 id="example-9"><a class="header" href="#example-9">example</a></h4>
+<pre><code class="language-nix">{
+  services.mako.enable = true;
+}
+</code></pre>
+<h4 id="default-50"><a class="header" href="#default-50">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.enable = false;
+}
+</code></pre>
+<h2 id="servicesmakoactions"><a class="header" href="#servicesmakoactions">services.mako.actions</a></h2>
+<p>Applications may request an action to be associated with activating a
+notification. Disabling this will cause mako to ignore these requests.</p>
+<h4 id="type-56"><a class="header" href="#type-56">type</a></h4>
+<p>null or boolean</p>
+<h4 id="default-51"><a class="header" href="#default-51">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.actions = true;
+}
+</code></pre>
+<h2 id="servicesmakoanchor"><a class="header" href="#servicesmakoanchor">services.mako.anchor</a></h2>
+<p>Show notifications at the specified position on the output.
+Supported values are top-right, top-center, top-left, bottom-right,
+bottom-center, bottom-left, and center.</p>
+<h4 id="type-57"><a class="header" href="#type-57">type</a></h4>
+<p>null or one of &quot;top-right&quot;, &quot;top-center&quot;, &quot;top-left&quot;, &quot;bottom-right&quot;, &quot;bottom-center&quot;, &quot;bottom-left&quot;, &quot;center&quot;</p>
+<h4 id="default-52"><a class="header" href="#default-52">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.anchor = &quot;top-right&quot;;
+}
+</code></pre>
+<h2 id="servicesmakobackgroundcolor"><a class="header" href="#servicesmakobackgroundcolor">services.mako.backgroundColor</a></h2>
+<p>Set popup background color to a specific color, represented in hex
+color code.</p>
+<h4 id="type-58"><a class="header" href="#type-58">type</a></h4>
+<p>null or string</p>
+<h4 id="default-53"><a class="header" href="#default-53">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.backgroundColor = &quot;#285577FF&quot;;
+}
+</code></pre>
+<h2 id="servicesmakobordercolor"><a class="header" href="#servicesmakobordercolor">services.mako.borderColor</a></h2>
+<p>Set popup border color to a specific color, represented in hex color
+code.</p>
+<h4 id="type-59"><a class="header" href="#type-59">type</a></h4>
+<p>null or string</p>
+<h4 id="default-54"><a class="header" href="#default-54">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.borderColor = &quot;#4C7899FF&quot;;
+}
+</code></pre>
+<h2 id="servicesmakoborderradius"><a class="header" href="#servicesmakoborderradius">services.mako.borderRadius</a></h2>
+<p>Set popup corner radius to the specified number of pixels.</p>
+<h4 id="type-60"><a class="header" href="#type-60">type</a></h4>
+<p>null or signed integer</p>
+<h4 id="default-55"><a class="header" href="#default-55">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.borderRadius = 0;
+}
+</code></pre>
+<h2 id="servicesmakobordersize"><a class="header" href="#servicesmakobordersize">services.mako.borderSize</a></h2>
+<p>Set popup border size to the specified number of pixels.</p>
+<h4 id="type-61"><a class="header" href="#type-61">type</a></h4>
+<p>null or signed integer</p>
+<h4 id="default-56"><a class="header" href="#default-56">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.borderSize = 1;
+}
+</code></pre>
+<h2 id="servicesmakodefaulttimeout"><a class="header" href="#servicesmakodefaulttimeout">services.mako.defaultTimeout</a></h2>
+<p>Set the default timeout to timeout in milliseconds. To disable the
+timeout, set it to zero.</p>
+<h4 id="type-62"><a class="header" href="#type-62">type</a></h4>
+<p>null or signed integer</p>
+<h4 id="default-57"><a class="header" href="#default-57">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.defaultTimeout = 0;
+}
+</code></pre>
+<h2 id="servicesmakofont"><a class="header" href="#servicesmakofont">services.mako.font</a></h2>
+<p>Font to use, in Pango format.</p>
+<h4 id="type-63"><a class="header" href="#type-63">type</a></h4>
+<p>null or string</p>
+<h4 id="default-58"><a class="header" href="#default-58">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.font = &quot;monospace 10&quot;;
+}
+</code></pre>
+<h2 id="servicesmakoformat"><a class="header" href="#servicesmakoformat">services.mako.format</a></h2>
+<p>Set notification format string to format. See FORMAT SPECIFIERS for
+more information. To change this for grouped notifications, set it
+within a grouped criteria.</p>
+<h4 id="type-64"><a class="header" href="#type-64">type</a></h4>
+<p>null or string</p>
+<h4 id="default-59"><a class="header" href="#default-59">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.format = &quot;&lt;b&gt;%s&lt;/b&gt;\n%b&quot;;
+}
+</code></pre>
+<h2 id="servicesmakogroupby"><a class="header" href="#servicesmakogroupby">services.mako.groupBy</a></h2>
+<p>A comma-separated list of criteria fields that will be compared to
+other visible notifications to determine if this one should form a
+group with them. All listed criteria must be exactly equal for two
+notifications to group.</p>
+<h4 id="type-65"><a class="header" href="#type-65">type</a></h4>
+<p>null or string</p>
+<h4 id="default-60"><a class="header" href="#default-60">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.groupBy = null;
+}
+</code></pre>
+<h2 id="servicesmakoheight"><a class="header" href="#servicesmakoheight">services.mako.height</a></h2>
+<p>Set maximum height of notification popups. Notifications whose text
+takes up less space are shrunk to fit.</p>
+<h4 id="type-66"><a class="header" href="#type-66">type</a></h4>
+<p>null or signed integer</p>
+<h4 id="default-61"><a class="header" href="#default-61">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.height = 100;
+}
+</code></pre>
+<h2 id="servicesmakoiconpath"><a class="header" href="#servicesmakoiconpath">services.mako.iconPath</a></h2>
+<p>Paths to search for icons when a notification specifies a name
+instead of a full path. Colon-delimited. This approximates the search
+algorithm used by the XDG Icon Theme Specification, but does not
+support any of the theme metadata. Therefore, if you want to search
+parent themes, you'll need to add them to the path manually.
+</para><para>
+The <filename>/usr/share/icons/hicolor</filename> and
+<filename>/usr/share/pixmaps</filename> directories are
+always searched.</p>
+<h4 id="type-67"><a class="header" href="#type-67">type</a></h4>
+<p>null or string</p>
+<h4 id="default-62"><a class="header" href="#default-62">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.iconPath = null;
+}
+</code></pre>
+<h2 id="servicesmakoicons"><a class="header" href="#servicesmakoicons">services.mako.icons</a></h2>
+<p>Whether or not to show icons in notifications.</p>
+<h4 id="type-68"><a class="header" href="#type-68">type</a></h4>
+<p>null or boolean</p>
+<h4 id="default-63"><a class="header" href="#default-63">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.icons = true;
+}
+</code></pre>
+<h2 id="servicesmakoignoretimeout"><a class="header" href="#servicesmakoignoretimeout">services.mako.ignoreTimeout</a></h2>
+<p>If set, mako will ignore the expire timeout sent by notifications
+and use the one provided by default-timeout instead.</p>
+<h4 id="type-69"><a class="header" href="#type-69">type</a></h4>
+<p>null or boolean</p>
+<h4 id="default-64"><a class="header" href="#default-64">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.ignoreTimeout = false;
+}
+</code></pre>
+<h2 id="servicesmakolayer"><a class="header" href="#servicesmakolayer">services.mako.layer</a></h2>
+<p>Arrange mako at the specified layer, relative to normal windows.
+Supported values are background, bottom, top, and overlay. Using
+overlay will cause notifications to be displayed above fullscreen
+windows, though this may also occur at top depending on your
+compositor.</p>
+<h4 id="type-70"><a class="header" href="#type-70">type</a></h4>
+<p>null or one of &quot;background&quot;, &quot;bottom&quot;, &quot;top&quot;, &quot;overlay&quot;</p>
+<h4 id="default-65"><a class="header" href="#default-65">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.layer = &quot;top&quot;;
+}
+</code></pre>
+<h2 id="servicesmakomargin"><a class="header" href="#servicesmakomargin">services.mako.margin</a></h2>
+<p>Set margin of each edge specified in pixels. Specify single value to
+apply margin on all sides. Two comma-seperated values will set
+vertical and horizontal edges seperately. Four comma-seperated will
+give each edge a seperate value.
+For example: 10,20,5 will set top margin to 10, left and right to 20
+and bottom to five.</p>
+<h4 id="type-71"><a class="header" href="#type-71">type</a></h4>
+<p>null or string</p>
+<h4 id="default-66"><a class="header" href="#default-66">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.margin = &quot;10&quot;;
+}
+</code></pre>
+<h2 id="servicesmakomarkup"><a class="header" href="#servicesmakomarkup">services.mako.markup</a></h2>
+<p>If 1, enable Pango markup. If 0, disable Pango markup. If enabled,
+Pango markup will be interpreted in your format specifier and in the
+body of notifications.</p>
+<h4 id="type-72"><a class="header" href="#type-72">type</a></h4>
+<p>null or boolean</p>
+<h4 id="default-67"><a class="header" href="#default-67">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.markup = true;
+}
+</code></pre>
+<h2 id="servicesmakomaxiconsize"><a class="header" href="#servicesmakomaxiconsize">services.mako.maxIconSize</a></h2>
+<p>Set maximum icon size to the specified number of pixels.</p>
+<h4 id="type-73"><a class="header" href="#type-73">type</a></h4>
+<p>null or signed integer</p>
+<h4 id="default-68"><a class="header" href="#default-68">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.maxIconSize = 64;
+}
+</code></pre>
+<h2 id="servicesmakomaxvisible"><a class="header" href="#servicesmakomaxvisible">services.mako.maxVisible</a></h2>
+<p>Set maximum number of visible notifications. Set -1 to show all.</p>
+<h4 id="type-74"><a class="header" href="#type-74">type</a></h4>
+<p>null or signed integer</p>
+<h4 id="default-69"><a class="header" href="#default-69">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.maxVisible = 5;
+}
+</code></pre>
+<h2 id="servicesmakooutput"><a class="header" href="#servicesmakooutput">services.mako.output</a></h2>
+<p>Show notifications on the specified output. If empty, notifications
+will appear on the focused output. Requires the compositor to support
+the Wayland protocol xdg-output-unstable-v1 version 2.</p>
+<h4 id="type-75"><a class="header" href="#type-75">type</a></h4>
+<p>null or string</p>
+<h4 id="default-70"><a class="header" href="#default-70">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.output = null;
+}
+</code></pre>
+<h2 id="servicesmakopadding"><a class="header" href="#servicesmakopadding">services.mako.padding</a></h2>
+<p>Set padding of each edge specified in pixels. Specify single value to
+apply margin on all sides. Two comma-seperated values will set
+vertical and horizontal edges seperately. Four comma-seperated will
+give each edge a seperate value.
+For example: 10,20,5 will set top margin to 10, left and right to 20
+and bottom to five.</p>
+<h4 id="type-76"><a class="header" href="#type-76">type</a></h4>
+<p>null or string</p>
+<h4 id="default-71"><a class="header" href="#default-71">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.padding = &quot;5&quot;;
+}
+</code></pre>
+<h2 id="servicesmakoprogresscolor"><a class="header" href="#servicesmakoprogresscolor">services.mako.progressColor</a></h2>
+<p>Set popup progress indicator color to a specific color,
+represented in hex color code. To draw the progress
+indicator on top of the background color, use the
+<literal>over</literal> attribute. To replace the background
+color, use the <literal>source</literal> attribute (this can
+be useful when the notification is semi-transparent).</p>
+<h4 id="type-77"><a class="header" href="#type-77">type</a></h4>
+<p>null or string</p>
+<h4 id="default-72"><a class="header" href="#default-72">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.progressColor = &quot;over #5588AAFF&quot;;
+}
+</code></pre>
+<h2 id="servicesmakosections"><a class="header" href="#servicesmakosections">services.mako.sections</a></h2>
+<h4 id="type-78"><a class="header" href="#type-78">type</a></h4>
+<p>list of submodule</p>
+<h2 id="servicesmakosectionsactions"><a class="header" href="#servicesmakosectionsactions">services.mako.sections.*.actions</a></h2>
+<p>Applications may request an action to be associated with activating a
+notification. Disabling this will cause mako to ignore these requests.</p>
+<h4 id="type-79"><a class="header" href="#type-79">type</a></h4>
+<p>null or boolean</p>
+<h4 id="default-73"><a class="header" href="#default-73">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.sections.*.actions = null;
+}
+</code></pre>
+<h2 id="servicesmakosectionsbackgroundcolor"><a class="header" href="#servicesmakosectionsbackgroundcolor">services.mako.sections.*.backgroundColor</a></h2>
+<p>Set popup background color to a specific color, represented in hex
+color code.</p>
+<h4 id="type-80"><a class="header" href="#type-80">type</a></h4>
+<p>null or string</p>
+<h4 id="default-74"><a class="header" href="#default-74">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.sections.*.backgroundColor = null;
+}
+</code></pre>
+<h2 id="servicesmakosectionsbordercolor"><a class="header" href="#servicesmakosectionsbordercolor">services.mako.sections.*.borderColor</a></h2>
+<p>Set popup border color to a specific color, represented in hex color
+code.</p>
+<h4 id="type-81"><a class="header" href="#type-81">type</a></h4>
+<p>null or string</p>
+<h4 id="default-75"><a class="header" href="#default-75">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.sections.*.borderColor = null;
+}
+</code></pre>
+<h2 id="servicesmakosectionsborderradius"><a class="header" href="#servicesmakosectionsborderradius">services.mako.sections.*.borderRadius</a></h2>
+<p>Set popup corner radius to the specified number of pixels.</p>
+<h4 id="type-82"><a class="header" href="#type-82">type</a></h4>
+<p>null or signed integer</p>
+<h4 id="default-76"><a class="header" href="#default-76">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.sections.*.borderRadius = null;
+}
+</code></pre>
+<h2 id="servicesmakosectionsbordersize"><a class="header" href="#servicesmakosectionsbordersize">services.mako.sections.*.borderSize</a></h2>
+<p>Set popup border size to the specified number of pixels.</p>
+<h4 id="type-83"><a class="header" href="#type-83">type</a></h4>
+<p>null or signed integer</p>
+<h4 id="default-77"><a class="header" href="#default-77">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.sections.*.borderSize = null;
+}
+</code></pre>
+<h2 id="servicesmakosectionscriteria"><a class="header" href="#servicesmakosectionscriteria">services.mako.sections.*.criteria</a></h2>
+<h4 id="type-84"><a class="header" href="#type-84">type</a></h4>
+<p>list of attribute set of string</p>
+<h4 id="example-10"><a class="header" href="#example-10">example</a></h4>
+<pre><code class="language-nix">{
+  services.mako.sections.*.criteria = &quot;[]&quot;;
+}
+</code></pre>
+<h2 id="servicesmakosectionsdefaulttimeout"><a class="header" href="#servicesmakosectionsdefaulttimeout">services.mako.sections.*.defaultTimeout</a></h2>
+<p>Set the default timeout to timeout in milliseconds. To disable the
+timeout, set it to zero.</p>
+<h4 id="type-85"><a class="header" href="#type-85">type</a></h4>
+<p>null or signed integer</p>
+<h4 id="default-78"><a class="header" href="#default-78">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.sections.*.defaultTimeout = null;
+}
+</code></pre>
+<h2 id="servicesmakosectionsfont"><a class="header" href="#servicesmakosectionsfont">services.mako.sections.*.font</a></h2>
+<p>Font to use, in Pango format.</p>
+<h4 id="type-86"><a class="header" href="#type-86">type</a></h4>
+<p>null or string</p>
+<h4 id="default-79"><a class="header" href="#default-79">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.sections.*.font = null;
+}
+</code></pre>
+<h2 id="servicesmakosectionsformat"><a class="header" href="#servicesmakosectionsformat">services.mako.sections.*.format</a></h2>
+<p>Set notification format string to format. See FORMAT SPECIFIERS for
+more information. To change this for grouped notifications, set it
+within a grouped criteria.</p>
+<h4 id="type-87"><a class="header" href="#type-87">type</a></h4>
+<p>null or string</p>
+<h4 id="default-80"><a class="header" href="#default-80">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.sections.*.format = null;
+}
+</code></pre>
+<h2 id="servicesmakosectionsgroupby"><a class="header" href="#servicesmakosectionsgroupby">services.mako.sections.*.groupBy</a></h2>
+<p>A comma-separated list of criteria fields that will be compared to
+other visible notifications to determine if this one should form a
+group with them. All listed criteria must be exactly equal for two
+notifications to group.</p>
+<h4 id="type-88"><a class="header" href="#type-88">type</a></h4>
+<p>null or string</p>
+<h4 id="default-81"><a class="header" href="#default-81">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.sections.*.groupBy = null;
+}
+</code></pre>
+<h2 id="servicesmakosectionsheight"><a class="header" href="#servicesmakosectionsheight">services.mako.sections.*.height</a></h2>
+<p>Set maximum height of notification popups. Notifications whose text
+takes up less space are shrunk to fit.</p>
+<h4 id="type-89"><a class="header" href="#type-89">type</a></h4>
+<p>null or signed integer</p>
+<h4 id="default-82"><a class="header" href="#default-82">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.sections.*.height = null;
+}
+</code></pre>
+<h2 id="servicesmakosectionsiconpath"><a class="header" href="#servicesmakosectionsiconpath">services.mako.sections.*.iconPath</a></h2>
+<p>Paths to search for icons when a notification specifies a name
+instead of a full path. Colon-delimited. This approximates the search
+algorithm used by the XDG Icon Theme Specification, but does not
+support any of the theme metadata. Therefore, if you want to search
+parent themes, you'll need to add them to the path manually.
+</para><para>
+The <filename>/usr/share/icons/hicolor</filename> and
+<filename>/usr/share/pixmaps</filename> directories are
+always searched.</p>
+<h4 id="type-90"><a class="header" href="#type-90">type</a></h4>
+<p>null or string</p>
+<h4 id="default-83"><a class="header" href="#default-83">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.sections.*.iconPath = null;
+}
+</code></pre>
+<h2 id="servicesmakosectionsicons"><a class="header" href="#servicesmakosectionsicons">services.mako.sections.*.icons</a></h2>
+<p>Whether or not to show icons in notifications.</p>
+<h4 id="type-91"><a class="header" href="#type-91">type</a></h4>
+<p>null or boolean</p>
+<h4 id="default-84"><a class="header" href="#default-84">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.sections.*.icons = null;
+}
+</code></pre>
+<h2 id="servicesmakosectionsignoretimeout"><a class="header" href="#servicesmakosectionsignoretimeout">services.mako.sections.*.ignoreTimeout</a></h2>
+<p>If set, mako will ignore the expire timeout sent by notifications
+and use the one provided by default-timeout instead.</p>
+<h4 id="type-92"><a class="header" href="#type-92">type</a></h4>
+<p>null or boolean</p>
+<h4 id="default-85"><a class="header" href="#default-85">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.sections.*.ignoreTimeout = null;
+}
+</code></pre>
+<h2 id="servicesmakosectionsmargin"><a class="header" href="#servicesmakosectionsmargin">services.mako.sections.*.margin</a></h2>
+<p>Set margin of each edge specified in pixels. Specify single value to
+apply margin on all sides. Two comma-seperated values will set
+vertical and horizontal edges seperately. Four comma-seperated will
+give each edge a seperate value.
+For example: 10,20,5 will set top margin to 10, left and right to 20
+and bottom to five.</p>
+<h4 id="type-93"><a class="header" href="#type-93">type</a></h4>
+<p>null or string</p>
+<h4 id="default-86"><a class="header" href="#default-86">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.sections.*.margin = null;
+}
+</code></pre>
+<h2 id="servicesmakosectionsmarkup"><a class="header" href="#servicesmakosectionsmarkup">services.mako.sections.*.markup</a></h2>
+<p>If 1, enable Pango markup. If 0, disable Pango markup. If enabled,
+Pango markup will be interpreted in your format specifier and in the
+body of notifications.</p>
+<h4 id="type-94"><a class="header" href="#type-94">type</a></h4>
+<p>null or boolean</p>
+<h4 id="default-87"><a class="header" href="#default-87">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.sections.*.markup = null;
+}
+</code></pre>
+<h2 id="servicesmakosectionsmaxiconsize"><a class="header" href="#servicesmakosectionsmaxiconsize">services.mako.sections.*.maxIconSize</a></h2>
+<p>Set maximum icon size to the specified number of pixels.</p>
+<h4 id="type-95"><a class="header" href="#type-95">type</a></h4>
+<p>null or signed integer</p>
+<h4 id="default-88"><a class="header" href="#default-88">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.sections.*.maxIconSize = null;
+}
+</code></pre>
+<h2 id="servicesmakosectionspadding"><a class="header" href="#servicesmakosectionspadding">services.mako.sections.*.padding</a></h2>
+<p>Set padding of each edge specified in pixels. Specify single value to
+apply margin on all sides. Two comma-seperated values will set
+vertical and horizontal edges seperately. Four comma-seperated will
+give each edge a seperate value.
+For example: 10,20,5 will set top margin to 10, left and right to 20
+and bottom to five.</p>
+<h4 id="type-96"><a class="header" href="#type-96">type</a></h4>
+<p>null or string</p>
+<h4 id="default-89"><a class="header" href="#default-89">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.sections.*.padding = null;
+}
+</code></pre>
+<h2 id="servicesmakosectionsprogresscolor"><a class="header" href="#servicesmakosectionsprogresscolor">services.mako.sections.*.progressColor</a></h2>
+<p>Set popup progress indicator color to a specific color,
+represented in hex color code. To draw the progress
+indicator on top of the background color, use the
+<literal>over</literal> attribute. To replace the background
+color, use the <literal>source</literal> attribute (this can
+be useful when the notification is semi-transparent).</p>
+<h4 id="type-97"><a class="header" href="#type-97">type</a></h4>
+<p>null or string</p>
+<h4 id="default-90"><a class="header" href="#default-90">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.sections.*.progressColor = null;
+}
+</code></pre>
+<h2 id="servicesmakosectionstextcolor"><a class="header" href="#servicesmakosectionstextcolor">services.mako.sections.*.textColor</a></h2>
+<p>Set popup text color to a specific color, represented in hex color
+code.</p>
+<h4 id="type-98"><a class="header" href="#type-98">type</a></h4>
+<p>null or string</p>
+<h4 id="default-91"><a class="header" href="#default-91">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.sections.*.textColor = null;
+}
+</code></pre>
+<h2 id="servicesmakosectionswidth"><a class="header" href="#servicesmakosectionswidth">services.mako.sections.*.width</a></h2>
+<p>Set width of notification popups in specified number of pixels.</p>
+<h4 id="type-99"><a class="header" href="#type-99">type</a></h4>
+<p>null or signed integer</p>
+<h4 id="default-92"><a class="header" href="#default-92">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.sections.*.width = null;
+}
+</code></pre>
+<h2 id="servicesmakosort"><a class="header" href="#servicesmakosort">services.mako.sort</a></h2>
+<p>Sorts incoming notifications by time and/or priority in ascending(+)
+or descending(-) order.</p>
+<h4 id="type-100"><a class="header" href="#type-100">type</a></h4>
+<p>null or one of &quot;+time&quot;, &quot;-time&quot;, &quot;+priority&quot;, &quot;-priority&quot;</p>
+<h4 id="default-93"><a class="header" href="#default-93">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.sort = &quot;-time&quot;;
+}
+</code></pre>
+<h2 id="servicesmakotextcolor"><a class="header" href="#servicesmakotextcolor">services.mako.textColor</a></h2>
+<p>Set popup text color to a specific color, represented in hex color
+code.</p>
+<h4 id="type-101"><a class="header" href="#type-101">type</a></h4>
+<p>null or string</p>
+<h4 id="default-94"><a class="header" href="#default-94">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.textColor = &quot;#FFFFFFFF&quot;;
+}
+</code></pre>
+<h2 id="servicesmakowidth"><a class="header" href="#servicesmakowidth">services.mako.width</a></h2>
+<p>Set width of notification popups in specified number of pixels.</p>
+<h4 id="type-102"><a class="header" href="#type-102">type</a></h4>
+<p>null or signed integer</p>
+<h4 id="default-95"><a class="header" href="#default-95">default</a></h4>
+<pre><code class="language-nix">{
+  services.mako.width = 300;
+}
+</code></pre>
+<h2 id="servicesnginxssoenable"><a class="header" href="#servicesnginxssoenable">services.nginx.sso.enable</a></h2>
+<p>Whether to enable nginx-sso service.</p>
+<h4 id="type-103"><a class="header" href="#type-103">type</a></h4>
+<p>boolean</p>
+<h4 id="example-11"><a class="header" href="#example-11">example</a></h4>
+<pre><code class="language-nix">{
+  services.nginx.sso.enable = true;
+}
+</code></pre>
+<h4 id="default-96"><a class="header" href="#default-96">default</a></h4>
+<pre><code class="language-nix">{
+  services.nginx.sso.enable = false;
+}
+</code></pre>
+<h2 id="servicesnginxssopackage"><a class="header" href="#servicesnginxssopackage">services.nginx.sso.package</a></h2>
+<p>The nginx-sso package that should be used.</p>
+<h4 id="type-104"><a class="header" href="#type-104">type</a></h4>
+<p>package</p>
+<h4 id="default-97"><a class="header" href="#default-97">default</a></h4>
+<pre><code class="language-nix">{
+  services.nginx.sso.package = &quot;pkgs.nginx-sso&quot;;
+}
+</code></pre>
+<h2 id="servicesnginxssoconfiguration"><a class="header" href="#servicesnginxssoconfiguration">services.nginx.sso.configuration</a></h2>
+<p>nginx-sso configuration
+(<link xlink:href="https://github.com/Luzifer/nginx-sso/wiki/Main-Configuration">documentation</link>)
+as a Nix attribute set.</p>
+<h4 id="type-105"><a class="header" href="#type-105">type</a></h4>
+<p>attribute set of unspecified</p>
+<h4 id="example-12"><a class="header" href="#example-12">example</a></h4>
+<pre><code class="language-nix">{
+  services.nginx.sso.configuration = {
+    _type = &quot;literalExpression&quot;;
+    text = ''
+      {
+        listen = { addr = &quot;127.0.0.1&quot;; port = 8080; };
+      
+        providers.token.tokens = {
+          myuser = &quot;MyToken&quot;;
+        };
+      
+        acl = {
+          rule_sets = [
+            {
+              rules = [ { field = &quot;x-application&quot;; equals = &quot;MyApp&quot;; } ];
+              allow = [ &quot;myuser&quot; ];
+            }
+          ];
+        };
+      }
+      
+    '';
+  };
+}
+</code></pre>
+<h4 id="default-98"><a class="header" href="#default-98">default</a></h4>
+<pre><code class="language-nix">{
+  services.nginx.sso.configuration = {};
+}
+</code></pre>
+<h2 id="servicesnginxssosecrets"><a class="header" href="#servicesnginxssosecrets">services.nginx.sso.secrets</a></h2>
+<p>Inserts values in the configuration yaml with the contents read from the secret file.</p>
+<h4 id="type-106"><a class="header" href="#type-106">type</a></h4>
+<p>attribute set of path</p>
+<h4 id="example-13"><a class="header" href="#example-13">example</a></h4>
+<pre><code class="language-nix">{
+  services.nginx.sso.secrets = {
+    _type = &quot;literalExpression&quot;;
+    text = ''
+      {
+        &quot;.cookie.authentication_key&quot; = &quot;/secrets/nginx-sso/authentication_key&quot;;
+      }
+      
+    '';
+  };
+}
+</code></pre>
+<h4 id="default-99"><a class="header" href="#default-99">default</a></h4>
+<pre><code class="language-nix">{
+  services.nginx.sso.secrets = {};
+}
+</code></pre>
+<h2 id="servicesprometheusnats-exporterenable"><a class="header" href="#servicesprometheusnats-exporterenable">services.prometheus.nats-exporter.enable</a></h2>
+<p>Whether to enable the prometheus nats exporter.</p>
+<h4 id="type-107"><a class="header" href="#type-107">type</a></h4>
+<p>boolean</p>
+<h4 id="example-14"><a class="header" href="#example-14">example</a></h4>
+<pre><code class="language-nix">{
+  services.prometheus.nats-exporter.enable = true;
+}
+</code></pre>
+<h4 id="default-100"><a class="header" href="#default-100">default</a></h4>
+<pre><code class="language-nix">{
+  services.prometheus.nats-exporter.enable = false;
+}
+</code></pre>
+<h2 id="servicesprometheusnats-exporterextraflags"><a class="header" href="#servicesprometheusnats-exporterextraflags">services.prometheus.nats-exporter.extraFlags</a></h2>
+<p>Extra command line flags to pass to the exporter. See:</p>
+<link>https://github.com/nats-io/prometheus-nats-exporter#usage</link>
+<h4 id="type-108"><a class="header" href="#type-108">type</a></h4>
+<p>list of string</p>
+<h4 id="default-101"><a class="header" href="#default-101">default</a></h4>
+<pre><code class="language-nix">{
+  services.prometheus.nats-exporter.extraFlags = [];
+}
+</code></pre>
+<h2 id="servicesprometheusnats-exporterlistenaddress"><a class="header" href="#servicesprometheusnats-exporterlistenaddress">services.prometheus.nats-exporter.listenAddress</a></h2>
+<p>Address to listen on.</p>
+<h4 id="type-109"><a class="header" href="#type-109">type</a></h4>
+<p>string</p>
+<h4 id="default-102"><a class="header" href="#default-102">default</a></h4>
+<pre><code class="language-nix">{
+  services.prometheus.nats-exporter.listenAddress = &quot;0.0.0.0&quot;;
+}
+</code></pre>
+<h2 id="servicesprometheusnats-exporterport"><a class="header" href="#servicesprometheusnats-exporterport">services.prometheus.nats-exporter.port</a></h2>
+<p>Port to listen on.</p>
+<h4 id="type-110"><a class="header" href="#type-110">type</a></h4>
+<p>signed integer</p>
+<h4 id="default-103"><a class="header" href="#default-103">default</a></h4>
+<pre><code class="language-nix">{
+  services.prometheus.nats-exporter.port = 7777;
+}
+</code></pre>
+<h2 id="servicesprometheusnats-exporterurl"><a class="header" href="#servicesprometheusnats-exporterurl">services.prometheus.nats-exporter.url</a></h2>
+<p>NATS monitor endpoint to query.</p>
+<h4 id="type-111"><a class="header" href="#type-111">type</a></h4>
+<p>string</p>
+<h4 id="default-104"><a class="header" href="#default-104">default</a></h4>
+<pre><code class="language-nix">{
+  services.prometheus.nats-exporter.url = &quot;http://127.0.0.1:8222&quot;;
+}
+</code></pre>
+<h2 id="servicesprometheusnvme-collectorenable"><a class="header" href="#servicesprometheusnvme-collectorenable">services.prometheus.nvme-collector.enable</a></h2>
+<p>Whether to enable the prometheus nvme collector.</p>
+<h4 id="type-112"><a class="header" href="#type-112">type</a></h4>
+<p>boolean</p>
+<h4 id="example-15"><a class="header" href="#example-15">example</a></h4>
+<pre><code class="language-nix">{
+  services.prometheus.nvme-collector.enable = true;
+}
+</code></pre>
+<h4 id="default-105"><a class="header" href="#default-105">default</a></h4>
+<pre><code class="language-nix">{
+  services.prometheus.nvme-collector.enable = false;
+}
+</code></pre>
+<h2 id="servicesprometheusnvme-collectorinterval"><a class="header" href="#servicesprometheusnvme-collectorinterval">services.prometheus.nvme-collector.interval</a></h2>
+<p>Interval to collect nvme metrics on.</p>
+<h4 id="type-113"><a class="header" href="#type-113">type</a></h4>
+<p>string</p>
+<h4 id="default-106"><a class="header" href="#default-106">default</a></h4>
+<pre><code class="language-nix">{
+  services.prometheus.nvme-collector.interval = &quot;2m&quot;;
+}
+</code></pre>
+<h2 id="servicesprometheusnvme-collectortextfiledir"><a class="header" href="#servicesprometheusnvme-collectortextfiledir">services.prometheus.nvme-collector.textfileDir</a></h2>
+<p>Textfile directory that node-exporter is watching</p>
+<h4 id="type-114"><a class="header" href="#type-114">type</a></h4>
+<p>string</p>
+<h4 id="default-107"><a class="header" href="#default-107">default</a></h4>
+<pre><code class="language-nix">{
+  services.prometheus.nvme-collector.textfileDir = &quot;/var/lib/prometheus/node-exporter/textfile&quot;;
+}
+</code></pre>
+<h2 id="servicesprometheussmartmon-collectorenable"><a class="header" href="#servicesprometheussmartmon-collectorenable">services.prometheus.smartmon-collector.enable</a></h2>
+<p>Whether to enable the prometheus smartmon collector.</p>
+<h4 id="type-115"><a class="header" href="#type-115">type</a></h4>
+<p>boolean</p>
+<h4 id="example-16"><a class="header" href="#example-16">example</a></h4>
+<pre><code class="language-nix">{
+  services.prometheus.smartmon-collector.enable = true;
+}
+</code></pre>
+<h4 id="default-108"><a class="header" href="#default-108">default</a></h4>
+<pre><code class="language-nix">{
+  services.prometheus.smartmon-collector.enable = false;
+}
+</code></pre>
+<h2 id="servicesprometheussmartmon-collectorinterval"><a class="header" href="#servicesprometheussmartmon-collectorinterval">services.prometheus.smartmon-collector.interval</a></h2>
+<p>Interval to collect smartmon information on.</p>
+<h4 id="type-116"><a class="header" href="#type-116">type</a></h4>
+<p>string</p>
+<h4 id="default-109"><a class="header" href="#default-109">default</a></h4>
+<pre><code class="language-nix">{
+  services.prometheus.smartmon-collector.interval = &quot;2m&quot;;
+}
+</code></pre>
+<h2 id="servicesprometheussmartmon-collectortextfiledir"><a class="header" href="#servicesprometheussmartmon-collectortextfiledir">services.prometheus.smartmon-collector.textfileDir</a></h2>
+<p>Textfile directory that node-exporter is watching</p>
+<h4 id="type-117"><a class="header" href="#type-117">type</a></h4>
+<p>string</p>
+<h4 id="default-110"><a class="header" href="#default-110">default</a></h4>
+<pre><code class="language-nix">{
+  services.prometheus.smartmon-collector.textfileDir = &quot;/var/lib/prometheus/node-exporter/textfile&quot;;
+}
+</code></pre>
+<h2 id="servicesprometheusunbound-exporterenable"><a class="header" href="#servicesprometheusunbound-exporterenable">services.prometheus.unbound-exporter.enable</a></h2>
+<p>Whether to enable the prometheus unbound exporter.</p>
+<h4 id="type-118"><a class="header" href="#type-118">type</a></h4>
+<p>boolean</p>
+<h4 id="example-17"><a class="header" href="#example-17">example</a></h4>
+<pre><code class="language-nix">{
+  services.prometheus.unbound-exporter.enable = true;
+}
+</code></pre>
+<h4 id="default-111"><a class="header" href="#default-111">default</a></h4>
+<pre><code class="language-nix">{
+  services.prometheus.unbound-exporter.enable = false;
+}
+</code></pre>
+<h2 id="servicesprometheusunbound-exportercontrolcert"><a class="header" href="#servicesprometheusunbound-exportercontrolcert">services.prometheus.unbound-exporter.controlCert</a></h2>
+<h4 id="type-119"><a class="header" href="#type-119">type</a></h4>
+<p>string</p>
+<h2 id="servicesprometheusunbound-exportercontrolkey"><a class="header" href="#servicesprometheusunbound-exportercontrolkey">services.prometheus.unbound-exporter.controlKey</a></h2>
+<h4 id="type-120"><a class="header" href="#type-120">type</a></h4>
+<p>string</p>
+<h2 id="servicesprometheusunbound-exporterlistenaddress"><a class="header" href="#servicesprometheusunbound-exporterlistenaddress">services.prometheus.unbound-exporter.listenAddress</a></h2>
+<p>Address to listen on.</p>
+<h4 id="type-121"><a class="header" href="#type-121">type</a></h4>
+<p>string</p>
+<h4 id="default-112"><a class="header" href="#default-112">default</a></h4>
+<pre><code class="language-nix">{
+  services.prometheus.unbound-exporter.listenAddress = &quot;0.0.0.0&quot;;
+}
+</code></pre>
+<h2 id="servicesprometheusunbound-exporterport"><a class="header" href="#servicesprometheusunbound-exporterport">services.prometheus.unbound-exporter.port</a></h2>
+<p>Port to listen on.</p>
+<h4 id="type-122"><a class="header" href="#type-122">type</a></h4>
+<p>signed integer</p>
+<h4 id="default-113"><a class="header" href="#default-113">default</a></h4>
+<pre><code class="language-nix">{
+  services.prometheus.unbound-exporter.port = 9167;
+}
+</code></pre>
+<h2 id="servicesprometheusunbound-exporterserverca"><a class="header" href="#servicesprometheusunbound-exporterserverca">services.prometheus.unbound-exporter.serverCA</a></h2>
+<h4 id="type-123"><a class="header" href="#type-123">type</a></h4>
+<p>string</p>
+<h2 id="servicesrandom-wallpaperenable"><a class="header" href="#servicesrandom-wallpaperenable">services.random-wallpaper.enable</a></h2>
+<p>Whether to enable random desktop wallpaper.</p>
+<h4 id="type-124"><a class="header" href="#type-124">type</a></h4>
+<p>boolean</p>
+<h4 id="example-18"><a class="header" href="#example-18">example</a></h4>
+<pre><code class="language-nix">{
+  services.random-wallpaper.enable = true;
+}
+</code></pre>
+<h4 id="default-114"><a class="header" href="#default-114">default</a></h4>
+<pre><code class="language-nix">{
+  services.random-wallpaper.enable = false;
+}
+</code></pre>
+<h2 id="servicesrandom-wallpaperaltmapping"><a class="header" href="#servicesrandom-wallpaperaltmapping">services.random-wallpaper.altMapping</a></h2>
+<h4 id="type-125"><a class="header" href="#type-125">type</a></h4>
+<p>attribute set of list of string</p>
+<h4 id="example-19"><a class="header" href="#example-19">example</a></h4>
+<pre><code class="language-nix">{
+  services.random-wallpaper.altMapping = {
+    1080x1920 = [
+      &quot;vertical&quot;
+    ];
+    1368x768 = [
+      &quot;1920x1080&quot;
+    ];
+  };
+}
+</code></pre>
+<h4 id="default-115"><a class="header" href="#default-115">default</a></h4>
+<pre><code class="language-nix">{
+  services.random-wallpaper.altMapping = {};
+}
+</code></pre>
+<h2 id="servicesrandom-wallpaperbackend"><a class="header" href="#servicesrandom-wallpaperbackend">services.random-wallpaper.backend</a></h2>
+<h4 id="type-126"><a class="header" href="#type-126">type</a></h4>
+<p>one of &quot;xorg&quot;, &quot;sway&quot;</p>
+<h4 id="default-116"><a class="header" href="#default-116">default</a></h4>
+<pre><code class="language-nix">{
+  services.random-wallpaper.backend = &quot;xorg&quot;;
+}
+</code></pre>
+<h2 id="servicesrandom-wallpaperdirectories"><a class="header" href="#servicesrandom-wallpaperdirectories">services.random-wallpaper.directories</a></h2>
+<h4 id="type-127"><a class="header" href="#type-127">type</a></h4>
+<p>list of string</p>
+<h2 id="servicesrandom-wallpaperinterval"><a class="header" href="#servicesrandom-wallpaperinterval">services.random-wallpaper.interval</a></h2>
+<p>The duration between changing wallpaper image, set to null
+to only set wallpaper when logging in.
+Should be formatted as a duration understood by systemd.</p>
+<h4 id="type-128"><a class="header" href="#type-128">type</a></h4>
+<p>null or string</p>
+<h4 id="default-117"><a class="header" href="#default-117">default</a></h4>
+<pre><code class="language-nix">{
+  services.random-wallpaper.interval = null;
+}
+</code></pre>
+<h2 id="servicessolaredge-influxenable"><a class="header" href="#servicessolaredge-influxenable">services.solaredge-influx.enable</a></h2>
+<p>Whether to enable Import Solaredge data into InfluxDB.</p>
+<h4 id="type-129"><a class="header" href="#type-129">type</a></h4>
+<p>boolean</p>
+<h4 id="example-20"><a class="header" href="#example-20">example</a></h4>
+<pre><code class="language-nix">{
+  services.solaredge-influx.enable = true;
+}
+</code></pre>
+<h4 id="default-118"><a class="header" href="#default-118">default</a></h4>
+<pre><code class="language-nix">{
+  services.solaredge-influx.enable = false;
+}
+</code></pre>
+<h2 id="servicessolaredge-influxapikeyfile"><a class="header" href="#servicessolaredge-influxapikeyfile">services.solaredge-influx.apiKeyFile</a></h2>
+<p>File path to the API key</p>
+<h4 id="type-130"><a class="header" href="#type-130">type</a></h4>
+<p>string</p>
+<h2 id="servicessolaredge-influxenergyinterval"><a class="header" href="#servicessolaredge-influxenergyinterval">services.solaredge-influx.energy.interval</a></h2>
+<p>OnUnitActiveSec specification</p>
+<h4 id="type-131"><a class="header" href="#type-131">type</a></h4>
+<p>string</p>
+<h4 id="default-119"><a class="header" href="#default-119">default</a></h4>
+<pre><code class="language-nix">{
+  services.solaredge-influx.energy.interval = &quot;15min&quot;;
+}
+</code></pre>
+<h2 id="servicessolaredge-influxenergyperiod"><a class="header" href="#servicessolaredge-influxenergyperiod">services.solaredge-influx.energy.period</a></h2>
+<p>Period to scrape in minutes</p>
+<h4 id="type-132"><a class="header" href="#type-132">type</a></h4>
+<p>signed integer</p>
+<h4 id="default-120"><a class="header" href="#default-120">default</a></h4>
+<pre><code class="language-nix">{
+  services.solaredge-influx.energy.period = 60;
+}
+</code></pre>
+<h2 id="servicessolaredge-influxinfluxdb"><a class="header" href="#servicessolaredge-influxinfluxdb">services.solaredge-influx.influx.db</a></h2>
+<h4 id="type-133"><a class="header" href="#type-133">type</a></h4>
+<p>string</p>
+<h4 id="default-121"><a class="header" href="#default-121">default</a></h4>
+<pre><code class="language-nix">{
+  services.solaredge-influx.influx.db = &quot;power&quot;;
+}
+</code></pre>
+<h2 id="servicessolaredge-influxinfluxhost"><a class="header" href="#servicessolaredge-influxinfluxhost">services.solaredge-influx.influx.host</a></h2>
+<h4 id="type-134"><a class="header" href="#type-134">type</a></h4>
+<p>string</p>
+<h4 id="example-21"><a class="header" href="#example-21">example</a></h4>
+<pre><code class="language-nix">{
+  services.solaredge-influx.influx.host = &quot;127.0.0.1&quot;;
+}
+</code></pre>
+<h4 id="default-122"><a class="header" href="#default-122">default</a></h4>
+<pre><code class="language-nix">{
+  services.solaredge-influx.influx.host = &quot;localhost&quot;;
+}
+</code></pre>
+<h2 id="servicessolaredge-influxinfluxport"><a class="header" href="#servicessolaredge-influxinfluxport">services.solaredge-influx.influx.port</a></h2>
+<h4 id="type-135"><a class="header" href="#type-135">type</a></h4>
+<p>signed integer</p>
+<h4 id="default-123"><a class="header" href="#default-123">default</a></h4>
+<pre><code class="language-nix">{
+  services.solaredge-influx.influx.port = 8086;
+}
+</code></pre>
+<h2 id="servicessolaredge-influxinverterinterval"><a class="header" href="#servicessolaredge-influxinverterinterval">services.solaredge-influx.inverter.interval</a></h2>
+<p>OnUnitActiveSec specification</p>
+<h4 id="type-136"><a class="header" href="#type-136">type</a></h4>
+<p>string</p>
+<h4 id="default-124"><a class="header" href="#default-124">default</a></h4>
+<pre><code class="language-nix">{
+  services.solaredge-influx.inverter.interval = &quot;60min&quot;;
+}
+</code></pre>
+<h2 id="servicessolaredge-influxinverterperiod"><a class="header" href="#servicessolaredge-influxinverterperiod">services.solaredge-influx.inverter.period</a></h2>
+<p>Period to scrape in minutes</p>
+<h4 id="type-137"><a class="header" href="#type-137">type</a></h4>
+<p>signed integer</p>
+<h4 id="default-125"><a class="header" href="#default-125">default</a></h4>
+<pre><code class="language-nix">{
+  services.solaredge-influx.inverter.period = 120;
+}
+</code></pre>
+<h2 id="servicessolaredge-influxinverterserial"><a class="header" href="#servicessolaredge-influxinverterserial">services.solaredge-influx.inverter.serial</a></h2>
+<p>Serial number of the inverter</p>
+<h4 id="type-138"><a class="header" href="#type-138">type</a></h4>
+<p>string</p>
+<h2 id="servicessolaredge-influxpowerinterval"><a class="header" href="#servicessolaredge-influxpowerinterval">services.solaredge-influx.power.interval</a></h2>
+<p>OnUnitActiveSec specification</p>
+<h4 id="type-139"><a class="header" href="#type-139">type</a></h4>
+<p>string</p>
+<h4 id="default-126"><a class="header" href="#default-126">default</a></h4>
+<pre><code class="language-nix">{
+  services.solaredge-influx.power.interval = &quot;15min&quot;;
+}
+</code></pre>
+<h2 id="servicessolaredge-influxpowerperiod"><a class="header" href="#servicessolaredge-influxpowerperiod">services.solaredge-influx.power.period</a></h2>
+<p>Period to scrape in minutes</p>
+<h4 id="type-140"><a class="header" href="#type-140">type</a></h4>
+<p>signed integer</p>
+<h4 id="default-127"><a class="header" href="#default-127">default</a></h4>
+<pre><code class="language-nix">{
+  services.solaredge-influx.power.period = 60;
+}
+</code></pre>
+<h2 id="servicessolaredge-influxsiteid"><a class="header" href="#servicessolaredge-influxsiteid">services.solaredge-influx.siteId</a></h2>
+<p>Solaredge site id</p>
+<h4 id="type-141"><a class="header" href="#type-141">type</a></h4>
+<p>signed integer</p>
+<h2 id="servicessolaredge-influxversioncheckinterval"><a class="header" href="#servicessolaredge-influxversioncheckinterval">services.solaredge-influx.versionCheck.interval</a></h2>
+<p>OnCalendar specification</p>
+<h4 id="type-142"><a class="header" href="#type-142">type</a></h4>
+<p>string</p>
+<h4 id="default-128"><a class="header" href="#default-128">default</a></h4>
+<pre><code class="language-nix">{
+  services.solaredge-influx.versionCheck.interval = &quot;daily&quot;;
+}
+</code></pre>
+<h2 id="servicesswayidleenable"><a class="header" href="#servicesswayidleenable">services.swayidle.enable</a></h2>
+<p>Whether to enable Idle manager for Wayland.</p>
+<h4 id="type-143"><a class="header" href="#type-143">type</a></h4>
+<p>boolean</p>
+<h4 id="example-22"><a class="header" href="#example-22">example</a></h4>
+<pre><code class="language-nix">{
+  services.swayidle.enable = true;
+}
+</code></pre>
+<h4 id="default-129"><a class="header" href="#default-129">default</a></h4>
+<pre><code class="language-nix">{
+  services.swayidle.enable = false;
+}
+</code></pre>
+<h2 id="servicesswayidleevents"><a class="header" href="#servicesswayidleevents">services.swayidle.events</a></h2>
+<h4 id="type-144"><a class="header" href="#type-144">type</a></h4>
+<p>list of submodule</p>
+<h4 id="example-23"><a class="header" href="#example-23">example</a></h4>
+<pre><code class="language-nix">{
+  services.swayidle.events = ''
+    [
+      { event = &quot;before-sleep&quot;; command = &quot;swaylock&quot;; }
+      { event = &quot;lock&quot;; command = &quot;lock&quot;; }
+    ]
+    
+  '';
+}
+</code></pre>
+<h4 id="default-130"><a class="header" href="#default-130">default</a></h4>
+<pre><code class="language-nix">{
+  services.swayidle.events = [];
+}
+</code></pre>
+<h2 id="servicesswayidleeventscommand"><a class="header" href="#servicesswayidleeventscommand">services.swayidle.events.*.command</a></h2>
+<p>Command to run when event occurs</p>
+<h4 id="type-145"><a class="header" href="#type-145">type</a></h4>
+<p>string</p>
+<h2 id="servicesswayidleeventsevent"><a class="header" href="#servicesswayidleeventsevent">services.swayidle.events.*.event</a></h2>
+<h4 id="type-146"><a class="header" href="#type-146">type</a></h4>
+<p>one of &quot;before-sleep&quot;, &quot;after-resume&quot;, &quot;lock&quot;, &quot;unlock&quot;</p>
+<h2 id="servicesswayidleextraargs"><a class="header" href="#servicesswayidleextraargs">services.swayidle.extraArgs</a></h2>
+<h4 id="type-147"><a class="header" href="#type-147">type</a></h4>
+<p>list of string</p>
+<h4 id="default-131"><a class="header" href="#default-131">default</a></h4>
+<pre><code class="language-nix">{
+  services.swayidle.extraArgs = [];
+}
+</code></pre>
+<h2 id="servicesswayidletimeouts"><a class="header" href="#servicesswayidletimeouts">services.swayidle.timeouts</a></h2>
+<h4 id="type-148"><a class="header" href="#type-148">type</a></h4>
+<p>list of submodule</p>
+<h4 id="default-132"><a class="header" href="#default-132">default</a></h4>
+<pre><code class="language-nix">{
+  services.swayidle.timeouts = [];
+}
+</code></pre>
+<h2 id="servicesswayidletimeoutscommand"><a class="header" href="#servicesswayidletimeoutscommand">services.swayidle.timeouts.*.command</a></h2>
+<p>Command to run after timeout seconds of inactivity</p>
+<h4 id="type-149"><a class="header" href="#type-149">type</a></h4>
+<p>string</p>
+<h2 id="servicesswayidletimeoutsresumecommand"><a class="header" href="#servicesswayidletimeoutsresumecommand">services.swayidle.timeouts.*.resumeCommand</a></h2>
+<p>Command to run when there is activity again</p>
+<h4 id="type-150"><a class="header" href="#type-150">type</a></h4>
+<p>null or string</p>
+<h4 id="default-133"><a class="header" href="#default-133">default</a></h4>
+<pre><code class="language-nix">{
+  services.swayidle.timeouts.*.resumeCommand = null;
+}
+</code></pre>
+<h2 id="servicesswayidletimeoutstimeout"><a class="header" href="#servicesswayidletimeoutstimeout">services.swayidle.timeouts.*.timeout</a></h2>
+<p>Timeout in seconds</p>
+<h4 id="type-151"><a class="header" href="#type-151">type</a></h4>
+<p>positive integer, meaning &gt;0</p>
+<h4 id="example-24"><a class="header" href="#example-24">example</a></h4>
+<pre><code class="language-nix">{
+  services.swayidle.timeouts.*.timeout = 60;
+}
+</code></pre>
+<h2 id="serviceswordpress"><a class="header" href="#serviceswordpress">services.wordpress</a></h2>
+<p>Specification of one or more WordPress sites to serve via NGINX.</p>
+<h4 id="type-152"><a class="header" href="#type-152">type</a></h4>
+<p>attribute set of submodule</p>
+<h4 id="default-134"><a class="header" href="#default-134">default</a></h4>
+<pre><code class="language-nix">{
+  services.wordpress = {};
+}
+</code></pre>
+<h2 id="serviceswordpressnamepackage"><a class="header" href="#serviceswordpressnamepackage">services.wordpress.&lt;name&gt;.package</a></h2>
+<p>Which WordPress package to use.</p>
+<h4 id="type-153"><a class="header" href="#type-153">type</a></h4>
+<p>package</p>
+<h4 id="default-135"><a class="header" href="#default-135">default</a></h4>
+<pre><code class="language-nix">{
+  services.wordpress.&lt;name&gt;.package = {
+    drvPath = &quot;wordpress-5.9.3&quot;;
+    name = &quot;wordpress-5.9.3&quot;;
+    outPath = &quot;wordpress-5.9.3&quot;;
+    type = &quot;derivation&quot;;
+  };
+}
+</code></pre>
+<h2 id="serviceswordpressnamedatabasecreatelocally"><a class="header" href="#serviceswordpressnamedatabasecreatelocally">services.wordpress.&lt;name&gt;.database.createLocally</a></h2>
+<p>Create the database and database user locally.</p>
+<h4 id="type-154"><a class="header" href="#type-154">type</a></h4>
+<p>boolean</p>
+<h4 id="default-136"><a class="header" href="#default-136">default</a></h4>
+<pre><code class="language-nix">{
+  services.wordpress.&lt;name&gt;.database.createLocally = true;
+}
+</code></pre>
+<h2 id="serviceswordpressnamedatabasehost"><a class="header" href="#serviceswordpressnamedatabasehost">services.wordpress.&lt;name&gt;.database.host</a></h2>
+<p>Database host address.</p>
+<h4 id="type-155"><a class="header" href="#type-155">type</a></h4>
+<p>string</p>
+<h4 id="default-137"><a class="header" href="#default-137">default</a></h4>
+<pre><code class="language-nix">{
+  services.wordpress.&lt;name&gt;.database.host = &quot;localhost&quot;;
+}
+</code></pre>
+<h2 id="serviceswordpressnamedatabasename"><a class="header" href="#serviceswordpressnamedatabasename">services.wordpress.&lt;name&gt;.database.name</a></h2>
+<p>Database name.</p>
+<h4 id="type-156"><a class="header" href="#type-156">type</a></h4>
+<p>string</p>
+<h4 id="default-138"><a class="header" href="#default-138">default</a></h4>
+<pre><code class="language-nix">{
+  services.wordpress.&lt;name&gt;.database.name = &quot;wordpress&quot;;
+}
+</code></pre>
+<h2 id="serviceswordpressnamedatabasepasswordfile"><a class="header" href="#serviceswordpressnamedatabasepasswordfile">services.wordpress.&lt;name&gt;.database.passwordFile</a></h2>
+<p>A file containing the password corresponding to</p>
+<option>database.user</option>.
+<h4 id="type-157"><a class="header" href="#type-157">type</a></h4>
+<p>null or path</p>
+<h4 id="example-25"><a class="header" href="#example-25">example</a></h4>
+<pre><code class="language-nix">{
+  services.wordpress.&lt;name&gt;.database.passwordFile = &quot;/run/keys/wordpress-dbpassword&quot;;
+}
+</code></pre>
+<h4 id="default-139"><a class="header" href="#default-139">default</a></h4>
+<pre><code class="language-nix">{
+  services.wordpress.&lt;name&gt;.database.passwordFile = null;
+}
+</code></pre>
+<h2 id="serviceswordpressnamedatabaseport"><a class="header" href="#serviceswordpressnamedatabaseport">services.wordpress.&lt;name&gt;.database.port</a></h2>
+<p>Database host port.</p>
+<h4 id="type-158"><a class="header" href="#type-158">type</a></h4>
+<p>16 bit unsigned integer; between 0 and 65535 (both inclusive)</p>
+<h4 id="default-140"><a class="header" href="#default-140">default</a></h4>
+<pre><code class="language-nix">{
+  services.wordpress.&lt;name&gt;.database.port = 3306;
+}
+</code></pre>
+<h2 id="serviceswordpressnamedatabasesocket"><a class="header" href="#serviceswordpressnamedatabasesocket">services.wordpress.&lt;name&gt;.database.socket</a></h2>
+<p>Path to the unix socket file to use for authentication.</p>
+<h4 id="type-159"><a class="header" href="#type-159">type</a></h4>
+<p>null or path</p>
+<h4 id="default-141"><a class="header" href="#default-141">default</a></h4>
+<pre><code class="language-nix">{
+  services.wordpress.&lt;name&gt;.database.socket = &quot;/run/mysqld/mysqld.sock&quot;;
+}
+</code></pre>
+<h2 id="serviceswordpressnamedatabasetableprefix"><a class="header" href="#serviceswordpressnamedatabasetableprefix">services.wordpress.&lt;name&gt;.database.tablePrefix</a></h2>
+<p>The $table_prefix is the value placed in the front of your database tables.
+Change the value if you want to use something other than wp_ for your database
+prefix. Typically this is changed if you are installing multiple WordPress blogs
+in the same database.</p>
+<p>See <link xlink:href='https://codex.wordpress.org/Editing_wp-config.php#table_prefix'/>.</p>
+<h4 id="type-160"><a class="header" href="#type-160">type</a></h4>
+<p>string</p>
+<h4 id="default-142"><a class="header" href="#default-142">default</a></h4>
+<pre><code class="language-nix">{
+  services.wordpress.&lt;name&gt;.database.tablePrefix = &quot;wp_&quot;;
+}
+</code></pre>
+<h2 id="serviceswordpressnamedatabaseuser"><a class="header" href="#serviceswordpressnamedatabaseuser">services.wordpress.&lt;name&gt;.database.user</a></h2>
+<p>Database user.</p>
+<h4 id="type-161"><a class="header" href="#type-161">type</a></h4>
+<p>string</p>
+<h4 id="default-143"><a class="header" href="#default-143">default</a></h4>
+<pre><code class="language-nix">{
+  services.wordpress.&lt;name&gt;.database.user = &quot;wordpress&quot;;
+}
+</code></pre>
+<h2 id="serviceswordpressnameextraconfig"><a class="header" href="#serviceswordpressnameextraconfig">services.wordpress.&lt;name&gt;.extraConfig</a></h2>
+<p>Any additional text to be appended to the wp-config.php
+configuration file. This is a PHP script. For configuration
+settings, see <link xlink:href='https://codex.wordpress.org/Editing_wp-config.php'/>.</p>
+<h4 id="type-162"><a class="header" href="#type-162">type</a></h4>
+<p>strings concatenated with &quot;\n&quot;</p>
+<h4 id="example-26"><a class="header" href="#example-26">example</a></h4>
+<pre><code class="language-nix">{
+  services.wordpress.&lt;name&gt;.extraConfig = ''
+    define( 'AUTOSAVE_INTERVAL', 60 ); // Seconds
+    
+  '';
+}
+</code></pre>
+<h4 id="default-144"><a class="header" href="#default-144">default</a></h4>
+<pre><code class="language-nix">{
+  services.wordpress.&lt;name&gt;.extraConfig = &quot;&quot;;
+}
+</code></pre>
+<h2 id="serviceswordpressnamehostname"><a class="header" href="#serviceswordpressnamehostname">services.wordpress.&lt;name&gt;.hostName</a></h2>
+<p>Hostname for this wordpress installation</p>
+<h4 id="type-163"><a class="header" href="#type-163">type</a></h4>
+<p>string</p>
+<h4 id="example-27"><a class="header" href="#example-27">example</a></h4>
+<pre><code class="language-nix">{
+  services.wordpress.&lt;name&gt;.hostName = &quot;wordpress.local&quot;;
+}
+</code></pre>
+<h2 id="serviceswordpressnamehttps"><a class="header" href="#serviceswordpressnamehttps">services.wordpress.&lt;name&gt;.https</a></h2>
+<h4 id="type-164"><a class="header" href="#type-164">type</a></h4>
+<p>boolean</p>
+<h4 id="default-145"><a class="header" href="#default-145">default</a></h4>
+<pre><code class="language-nix">{
+  services.wordpress.&lt;name&gt;.https = true;
+}
+</code></pre>
+<h2 id="serviceswordpressnamemaxuploadsize"><a class="header" href="#serviceswordpressnamemaxuploadsize">services.wordpress.&lt;name&gt;.maxUploadSize</a></h2>
+<p>Defines the upload limit for files. This changes the relevant options
+in php.ini and nginx if enabled.</p>
+<h4 id="type-165"><a class="header" href="#type-165">type</a></h4>
+<p>string</p>
+<h4 id="default-146"><a class="header" href="#default-146">default</a></h4>
+<pre><code class="language-nix">{
+  services.wordpress.&lt;name&gt;.maxUploadSize = &quot;128M&quot;;
+}
+</code></pre>
+<h2 id="serviceswordpressnamephpoptions"><a class="header" href="#serviceswordpressnamephpoptions">services.wordpress.&lt;name&gt;.phpOptions</a></h2>
+<p>Options for PHP's php.ini file for nextcloud.</p>
+<h4 id="type-166"><a class="header" href="#type-166">type</a></h4>
+<p>attribute set of string</p>
+<h4 id="default-147"><a class="header" href="#default-147">default</a></h4>
+<pre><code class="language-nix">{
+  services.wordpress.&lt;name&gt;.phpOptions = {
+    catch_workers_output = &quot;yes&quot;;
+    display_errors = &quot;stderr&quot;;
+    error_reporting = &quot;E_ALL &amp; ~E_DEPRECATED &amp; ~E_STRICT&quot;;
+    expose_php = &quot;Off&quot;;
+    &quot;opcache.enable_cli&quot; = &quot;1&quot;;
+    &quot;opcache.fast_shutdown&quot; = &quot;1&quot;;
+    &quot;opcache.interned_strings_buffer&quot; = &quot;8&quot;;
+    &quot;opcache.max_accelerated_files&quot; = &quot;10000&quot;;
+    &quot;opcache.memory_consumption&quot; = &quot;128&quot;;
+    &quot;opcache.revalidate_freq&quot; = &quot;1&quot;;
+    &quot;openssl.cafile&quot; = &quot;/etc/ssl/certs/ca-certificates.crt&quot;;
+    short_open_tag = &quot;Off&quot;;
+  };
+}
+</code></pre>
+<h2 id="serviceswordpressnameplugins"><a class="header" href="#serviceswordpressnameplugins">services.wordpress.&lt;name&gt;.plugins</a></h2>
+<p>List of path(s) to respective plugin(s) which are copied from the 'plugins' directory.
+<note><para>These plugins need to be packaged before use, see example.</para></note></p>
+<h4 id="type-167"><a class="header" href="#type-167">type</a></h4>
+<p>list of path</p>
+<h4 id="example-28"><a class="header" href="#example-28">example</a></h4>
+<pre><code class="language-nix">{
+  services.wordpress.&lt;name&gt;.plugins = ''
+    # Wordpress plugin 'embed-pdf-viewer' installation example
+    embedPdfViewerPlugin = pkgs.stdenv.mkDerivation {
+      name = &quot;embed-pdf-viewer-plugin&quot;;
+      # Download the theme from the wordpress site
+      src = pkgs.fetchurl {
+        url = &quot;https://downloads.wordpress.org/plugin/embed-pdf-viewer.2.0.3.zip&quot;;
+        sha256 = &quot;1rhba5h5fjlhy8p05zf0p14c9iagfh96y91r36ni0rmk6y891lyd&quot;;
+      };
+      # We need unzip to build this package
+      buildInputs = [ pkgs.unzip ];
+      # Installing simply means copying all files to the output directory
+      installPhase = &quot;mkdir -p $out; cp -R * $out/&quot;;
+    };
+    
+    And then pass this theme to the themes list like this:
+      plugins = [ embedPdfViewerPlugin ];
+    
+  '';
+}
+</code></pre>
+<h4 id="default-148"><a class="header" href="#default-148">default</a></h4>
+<pre><code class="language-nix">{
+  services.wordpress.&lt;name&gt;.plugins = [];
+}
+</code></pre>
+<h2 id="serviceswordpressnamepluginspath"><a class="header" href="#serviceswordpressnamepluginspath">services.wordpress.&lt;name&gt;.pluginsPath</a></h2>
+<p>Path to the directory containing the plugins.
+This option can't be used together with 'plugins'.</p>
+<h4 id="type-168"><a class="header" href="#type-168">type</a></h4>
+<p>null or path</p>
+<h4 id="default-149"><a class="header" href="#default-149">default</a></h4>
+<pre><code class="language-nix">{
+  services.wordpress.&lt;name&gt;.pluginsPath = null;
+}
+</code></pre>
+<h2 id="serviceswordpressnamepoolconfig"><a class="header" href="#serviceswordpressnamepoolconfig">services.wordpress.&lt;name&gt;.poolConfig</a></h2>
+<p>Options for the WordPress PHP pool. See the documentation on <literal>php-fpm.conf</literal>
+for details on configuration directives.</p>
+<h4 id="type-169"><a class="header" href="#type-169">type</a></h4>
+<p>attribute set of string or signed integer or boolean</p>
+<h4 id="default-150"><a class="header" href="#default-150">default</a></h4>
+<pre><code class="language-nix">{
+  services.wordpress.&lt;name&gt;.poolConfig = {
+    pm = &quot;dynamic&quot;;
+    &quot;pm.max_children&quot; = 32;
+    &quot;pm.max_requests&quot; = 500;
+    &quot;pm.max_spare_servers&quot; = 4;
+    &quot;pm.min_spare_servers&quot; = 2;
+    &quot;pm.start_servers&quot; = 2;
+  };
+}
+</code></pre>
+<h2 id="serviceswordpressnamethemes"><a class="header" href="#serviceswordpressnamethemes">services.wordpress.&lt;name&gt;.themes</a></h2>
+<p>List of path(s) to respective theme(s) which are copied from the 'theme' directory.
+<note><para>These themes need to be packaged before use, see example.</para></note></p>
+<h4 id="type-170"><a class="header" href="#type-170">type</a></h4>
+<p>list of path</p>
+<h4 id="example-29"><a class="header" href="#example-29">example</a></h4>
+<pre><code class="language-nix">{
+  services.wordpress.&lt;name&gt;.themes = ''
+    # Let's package the responsive theme
+    responsiveTheme = pkgs.stdenv.mkDerivation {
+      name = &quot;responsive-theme&quot;;
+      # Download the theme from the wordpress site
+      src = pkgs.fetchurl {
+        url = &quot;https://downloads.wordpress.org/theme/responsive.3.14.zip&quot;;
+        sha256 = &quot;0rjwm811f4aa4q43r77zxlpklyb85q08f9c8ns2akcarrvj5ydx3&quot;;
+      };
+      # We need unzip to build this package
+      buildInputs = [ pkgs.unzip ];
+      # Installing simply means copying all files to the output directory
+      installPhase = &quot;mkdir -p $out; cp -R * $out/&quot;;
+    };
+    
+    And then pass this theme to the themes list like this:
+      themes = [ responsiveTheme ];
+    
+  '';
+}
+</code></pre>
+<h4 id="default-151"><a class="header" href="#default-151">default</a></h4>
+<pre><code class="language-nix">{
+  services.wordpress.&lt;name&gt;.themes = [];
+}
+</code></pre>
+<h2 id="serviceswordpressnamethemespath"><a class="header" href="#serviceswordpressnamethemespath">services.wordpress.&lt;name&gt;.themesPath</a></h2>
+<p>Path to the directory containing the themes.
+This option can't be used together with 'themes'.</p>
+<h4 id="type-171"><a class="header" href="#type-171">type</a></h4>
+<p>null or path</p>
+<h4 id="default-152"><a class="header" href="#default-152">default</a></h4>
+<pre><code class="language-nix">{
+  services.wordpress.&lt;name&gt;.themesPath = null;
+}
+</code></pre>
+<h2 id="serviceswordpressnameuploadsdir"><a class="header" href="#serviceswordpressnameuploadsdir">services.wordpress.&lt;name&gt;.uploadsDir</a></h2>
+<p>This directory is used for uploads of pictures. The directory passed here is automatically
+created and permissions adjusted as required.</p>
+<h4 id="type-172"><a class="header" href="#type-172">type</a></h4>
+<p>path</p>
+<h4 id="default-153"><a class="header" href="#default-153">default</a></h4>
+<pre><code class="language-nix">{
+  services.wordpress.&lt;name&gt;.uploadsDir = &quot;/var/lib/wordpress/‹name›/uploads&quot;;
+}
+</code></pre>
+<h2 id="xdgapps"><a class="header" href="#xdgapps">xdg.apps</a></h2>
+<p>Configure XDG default apps for mime types.</p>
+<h4 id="type-173"><a class="header" href="#type-173">type</a></h4>
+<p>attribute set of submodule</p>
+<h4 id="default-154"><a class="header" href="#default-154">default</a></h4>
+<pre><code class="language-nix">{
+  xdg.apps = {};
+}
+</code></pre>
+<h2 id="xdgappsnamepackage"><a class="header" href="#xdgappsnamepackage">xdg.apps.&lt;name&gt;.package</a></h2>
+<h4 id="type-174"><a class="header" href="#type-174">type</a></h4>
+<p>null or package</p>
+<h4 id="default-155"><a class="header" href="#default-155">default</a></h4>
+<pre><code class="language-nix">{
+  xdg.apps.&lt;name&gt;.package = null;
+}
+</code></pre>
+<h2 id="xdgappsnamemimetypes"><a class="header" href="#xdgappsnamemimetypes">xdg.apps.&lt;name&gt;.mimeTypes</a></h2>
+<h4 id="type-175"><a class="header" href="#type-175">type</a></h4>
+<p>list of string</p>
+<h2 id="xdgappsnamename"><a class="header" href="#xdgappsnamename">xdg.apps.&lt;name&gt;.name</a></h2>
+<h4 id="type-176"><a class="header" href="#type-176">type</a></h4>
+<p>string</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="nur-combined-berbiche.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="nur-combined-crazazy.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="nur-combined-berbiche.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="nur-combined-crazazy.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

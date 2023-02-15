@@ -1,0 +1,1911 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>arc</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="hugosenari.html"><strong aria-hidden="true">2.</strong> Hugosenari</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="hlissner.html"><strong aria-hidden="true">3.</strong> hlissner</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="cocada-boa.html"><strong aria-hidden="true">4.</strong> Thiago</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="climod.html"><strong aria-hidden="true">5.</strong> Climod</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="ew.html"><strong aria-hidden="true">6.</strong> Lucas</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="marcosrdac.html"><strong aria-hidden="true">7.</strong> Marcos</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="flake-gemini.html"><strong aria-hidden="true">8.</strong> Flake Gemini</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="impermanence.html"><strong aria-hidden="true">9.</strong> Impermanence</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="impermanence-hm.html"><strong aria-hidden="true">9.1.</strong> Impermanence HM</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="kubenix.html"><strong aria-hidden="true">10.</strong> KubeNix</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops.html"><strong aria-hidden="true">11.</strong> NixOps</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops-aws.html"><strong aria-hidden="true">12.</strong> NixOps AWS</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="nixops-aws-data.html"><strong aria-hidden="true">12.1.</strong> data</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpn-connection.html"><strong aria-hidden="true">12.2.</strong> vpn-connection</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpn-connection-route.html"><strong aria-hidden="true">12.3.</strong> vpn-connection-route</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpn-gateway.html"><strong aria-hidden="true">12.4.</strong> vpn-gateway</a></li><li class="chapter-item expanded "><a href="nixops-aws-cloudwatch-log-group.html"><strong aria-hidden="true">12.5.</strong> cloudwatch-log-group</a></li><li class="chapter-item expanded "><a href="nixops-aws-cloudwatch-log-stream.html"><strong aria-hidden="true">12.6.</strong> cloudwatch-log-stream</a></li><li class="chapter-item expanded "><a href="nixops-aws-ec2-keypair.html"><strong aria-hidden="true">12.7.</strong> ec2-keypair</a></li><li class="chapter-item expanded "><a href="nixops-aws-ec2-placement.html"><strong aria-hidden="true">12.8.</strong> ec2-placement</a></li><li class="chapter-item expanded "><a href="nixops-aws-ec2-rds-dbinstance.html"><strong aria-hidden="true">12.9.</strong> ec2-rds-dbinstance</a></li><li class="chapter-item expanded "><a href="nixops-aws-ec2-rds-dbsecurity.html"><strong aria-hidden="true">12.10.</strong> ec2-rds-dbsecurity</a></li><li class="chapter-item expanded "><a href="nixops-aws-ec2-security.html"><strong aria-hidden="true">12.11.</strong> ec2-security</a></li><li class="chapter-item expanded "><a href="nixops-aws-eslatic-file-system.html"><strong aria-hidden="true">12.12.</strong> eslatic-file-system</a></li><li class="chapter-item expanded "><a href="nixops-aws-eslatic-file-sistem-mount.html"><strong aria-hidden="true">12.13.</strong> eslatic-file-sistem-mount</a></li><li class="chapter-item expanded "><a href="nixops-aws-eslatic-ip.html"><strong aria-hidden="true">12.14.</strong> eslatic-ip</a></li><li class="chapter-item expanded "><a href="nixops-aws-iam.html"><strong aria-hidden="true">12.15.</strong> iam</a></li><li class="chapter-item expanded "><a href="nixops-aws-rds.html"><strong aria-hidden="true">12.16.</strong> rds</a></li><li class="chapter-item expanded "><a href="nixops-aws-route53.html"><strong aria-hidden="true">12.17.</strong> route53</a></li><li class="chapter-item expanded "><a href="nixops-aws-s3.html"><strong aria-hidden="true">12.18.</strong> s3</a></li><li class="chapter-item expanded "><a href="nixops-aws-sqs.html"><strong aria-hidden="true">12.19.</strong> sqs</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc.html"><strong aria-hidden="true">12.20.</strong> vpc</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-customer.html"><strong aria-hidden="true">12.21.</strong> vpc-customer</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-dhcp.html"><strong aria-hidden="true">12.22.</strong> vpc-dhcp</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-egress.html"><strong aria-hidden="true">12.23.</strong> vpc-egress</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-endpoint.html"><strong aria-hidden="true">12.24.</strong> vpc-endpoint</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-internet.html"><strong aria-hidden="true">12.25.</strong> vpc-internet</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-nat.html"><strong aria-hidden="true">12.26.</strong> vpc-nat</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-network-interface.html"><strong aria-hidden="true">12.27.</strong> vpc-network-interface</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-network-interface-attachment.html"><strong aria-hidden="true">12.28.</strong> vpc-network-interface-attachment</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-route.html"><strong aria-hidden="true">12.29.</strong> vpc-route</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-route-table.html"><strong aria-hidden="true">12.30.</strong> vpc-route-table</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-route-table-association.html"><strong aria-hidden="true">12.31.</strong> vpc-route-table-association</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-subnet.html"><strong aria-hidden="true">12.32.</strong> vpc-subnet</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="nixops-datadog-monitor.html"><strong aria-hidden="true">13.</strong> NixOps Datadog</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops-digitalocean.html"><strong aria-hidden="true">14.</strong> NixOps DigitalOcean</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops-gce.html"><strong aria-hidden="true">15.</strong> NixOps GCE</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops-hcloud.html"><strong aria-hidden="true">16.</strong> NixOps HCloud</a></li><li class="chapter-item expanded "><a href="nixops-hcloud-volume.html"><strong aria-hidden="true">17.</strong> NixOps HCloud Volume</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops-libvirtd.html"><strong aria-hidden="true">18.</strong> NixOps LibVirtd</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixos-firehol.html"><strong aria-hidden="true">19.</strong> NixOS-FireHOL</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixos-hardware.html"><strong aria-hidden="true">20.</strong> NixOS Hardware</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="nixos-hardware-asus.html"><strong aria-hidden="true">20.1.</strong> asus</a></li><li class="chapter-item expanded "><a href="nixos-hardware-surface.html"><strong aria-hidden="true">20.2.</strong> surface</a></li><li class="chapter-item expanded "><a href="nixos-hardware-raspberry.html"><strong aria-hidden="true">20.3.</strong> raspberry</a></li><li class="chapter-item expanded "><a href="nixos-hardware-system76.html"><strong aria-hidden="true">20.4.</strong> system76</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="nur-combined.html"><strong aria-hidden="true">21.</strong> NUR Combined</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="nur-combined-aasg.html"><strong aria-hidden="true">21.1.</strong> aasg</a></li><li class="chapter-item expanded "><a href="nur-combined-afreakk.html"><strong aria-hidden="true">21.2.</strong> afreakk</a></li><li class="chapter-item expanded "><a href="nur-combined-alarsyo.html"><strong aria-hidden="true">21.3.</strong> alarsyo</a></li><li class="chapter-item expanded "><a href="nur-combined-ambroisie.html"><strong aria-hidden="true">21.4.</strong> ambroisie</a></li><li class="chapter-item expanded "><a href="nur-combined-arc.html" class="active"><strong aria-hidden="true">21.5.</strong> arc</a></li><li class="chapter-item expanded "><a href="nur-combined-bb010g.html"><strong aria-hidden="true">21.6.</strong> bb010g</a></li><li class="chapter-item expanded "><a href="nur-combined-bendlas.html"><strong aria-hidden="true">21.7.</strong> bendlas</a></li><li class="chapter-item expanded "><a href="nur-combined-berbiche.html"><strong aria-hidden="true">21.8.</strong> berbiche</a></li><li class="chapter-item expanded "><a href="nur-combined-c0deaddict.html"><strong aria-hidden="true">21.9.</strong> c0deaddict</a></li><li class="chapter-item expanded "><a href="nur-combined-crazazy.html"><strong aria-hidden="true">21.10.</strong> crazazy</a></li><li class="chapter-item expanded "><a href="nur-combined-crtified.html"><strong aria-hidden="true">21.11.</strong> crtified</a></li><li class="chapter-item expanded "><a href="nur-combined-cwyc.html"><strong aria-hidden="true">21.12.</strong> cwyc</a></li><li class="chapter-item expanded "><a href="nur-combined-dawidsowa.html"><strong aria-hidden="true">21.13.</strong> dawidsowa</a></li><li class="chapter-item expanded "><a href="nur-combined-dguibert.html"><strong aria-hidden="true">21.14.</strong> dguibert</a></li><li class="chapter-item expanded "><a href="nur-combined-dtz.html"><strong aria-hidden="true">21.15.</strong> dtz</a></li><li class="chapter-item expanded "><a href="nur-combined-dukzcry.html"><strong aria-hidden="true">21.16.</strong> dukzcry</a></li><li class="chapter-item expanded "><a href="nur-combined-emmanuelrosa.html"><strong aria-hidden="true">21.17.</strong> emmanuelrosa</a></li><li class="chapter-item expanded "><a href="nur-combined-heph2.html"><strong aria-hidden="true">21.18.</strong> heph2</a></li><li class="chapter-item expanded "><a href="nur-combined-ilya-fedin.html"><strong aria-hidden="true">21.19.</strong> ilya-fedin</a></li><li class="chapter-item expanded "><a href="nur-combined-immae.html"><strong aria-hidden="true">21.20.</strong> immae</a></li><li class="chapter-item expanded "><a href="nur-combined-instantos.html"><strong aria-hidden="true">21.21.</strong> instantos</a></li><li class="chapter-item expanded "><a href="nur-combined-jbarthelmes.html"><strong aria-hidden="true">21.22.</strong> jbarthelmes</a></li><li class="chapter-item expanded "><a href="nur-combined-johnazoidberg.html"><strong aria-hidden="true">21.23.</strong> johnazoidberg</a></li><li class="chapter-item expanded "><a href="nur-combined-jomik.html"><strong aria-hidden="true">21.24.</strong> jomik</a></li><li class="chapter-item expanded "><a href="nur-combined-kampka.html"><strong aria-hidden="true">21.25.</strong> kampka</a></li><li class="chapter-item expanded "><a href="nur-combined-kapack.html"><strong aria-hidden="true">21.26.</strong> kapack</a></li><li class="chapter-item expanded "><a href="nur-combined-kira-bruneau.html"><strong aria-hidden="true">21.27.</strong> kira-bruneau</a></li><li class="chapter-item expanded "><a href="nur-combined-kolloch.html"><strong aria-hidden="true">21.28.</strong> kolloch</a></li><li class="chapter-item expanded "><a href="nur-combined-krebs.html"><strong aria-hidden="true">21.29.</strong> krebs</a></li><li class="chapter-item expanded "><a href="nur-combined-kreisys.html"><strong aria-hidden="true">21.30.</strong> kreisys</a></li><li class="chapter-item expanded "><a href="nur-combined-linyinfeng.html"><strong aria-hidden="true">21.31.</strong> linyinfeng</a></li><li class="chapter-item expanded "><a href="nur-combined-lschuermann.html"><strong aria-hidden="true">21.32.</strong> lschuermann</a></li><li class="chapter-item expanded "><a href="nur-combined-lucasew.html"><strong aria-hidden="true">21.33.</strong> lucasew</a></li><li class="chapter-item expanded "><a href="nur-combined-misterio.html"><strong aria-hidden="true">21.34.</strong> misterio</a></li><li class="chapter-item expanded "><a href="nur-combined-mmilata.html"><strong aria-hidden="true">21.35.</strong> mmilata</a></li><li class="chapter-item expanded "><a href="nur-combined-moredhel.html"><strong aria-hidden="true">21.36.</strong> moredhel</a></li><li class="chapter-item expanded "><a href="nur-combined-moredread.html"><strong aria-hidden="true">21.37.</strong> moredread</a></li><li class="chapter-item expanded "><a href="nur-combined-noneucat.html"><strong aria-hidden="true">21.38.</strong> noneucat</a></li><li class="chapter-item expanded "><a href="nur-combined-onny.html"><strong aria-hidden="true">21.39.</strong> onny</a></li><li class="chapter-item expanded "><a href="nur-combined-pamplemousse.html"><strong aria-hidden="true">21.40.</strong> pamplemousse</a></li><li class="chapter-item expanded "><a href="nur-combined-pborzenkov.html"><strong aria-hidden="true">21.41.</strong> pborzenkov</a></li><li class="chapter-item expanded "><a href="nur-combined-peel.html"><strong aria-hidden="true">21.42.</strong> peel</a></li><li class="chapter-item expanded "><a href="nur-combined-priegger.html"><strong aria-hidden="true">21.43.</strong> priegger</a></li><li class="chapter-item expanded "><a href="nur-combined-qchem.html"><strong aria-hidden="true">21.44.</strong> qchem</a></li><li class="chapter-item expanded "><a href="nur-combined-rycee.html"><strong aria-hidden="true">21.45.</strong> rycee</a></li><li class="chapter-item expanded "><a href="nur-combined-sehqlr.html"><strong aria-hidden="true">21.46.</strong> sehqlr</a></li><li class="chapter-item expanded "><a href="nur-combined-shamilton.html"><strong aria-hidden="true">21.47.</strong> shamilton</a></li><li class="chapter-item expanded "><a href="nur-combined-sikmir.html"><strong aria-hidden="true">21.48.</strong> sikmir</a></li><li class="chapter-item expanded "><a href="nur-combined-splintah.html"><strong aria-hidden="true">21.49.</strong> splintah</a></li><li class="chapter-item expanded "><a href="nur-combined-syberant.html"><strong aria-hidden="true">21.50.</strong> syberant</a></li><li class="chapter-item expanded "><a href="nur-combined-tilpner.html"><strong aria-hidden="true">21.51.</strong> tilpner</a></li><li class="chapter-item expanded "><a href="nur-combined-tukuan.html"><strong aria-hidden="true">21.52.</strong> tukuan</a></li><li class="chapter-item expanded "><a href="nur-combined-tox.html"><strong aria-hidden="true">21.53.</strong> tox</a></li><li class="chapter-item expanded "><a href="nur-combined-vdmeester.html"><strong aria-hidden="true">21.54.</strong> vdmeester</a></li><li class="chapter-item expanded "><a href="nur-combined-vroad.html"><strong aria-hidden="true">21.55.</strong> vroad</a></li><li class="chapter-item expanded "><a href="nur-combined-xeals.html"><strong aria-hidden="true">21.56.</strong> xeals</a></li><li class="chapter-item expanded "><a href="nur-combined-zeratax.html"><strong aria-hidden="true">21.57.</strong> zeratax</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="bootmodprobeenable"><a class="header" href="#bootmodprobeenable">boot.modprobe.enable</a></h2>
+<h4 id="type"><a class="header" href="#type">type</a></h4>
+<p>boolean</p>
+<h4 id="default"><a class="header" href="#default">default</a></h4>
+<pre><code class="language-nix">{
+  boot.modprobe.enable = false;
+}
+</code></pre>
+<h2 id="bootmodprobemodules"><a class="header" href="#bootmodprobemodules">boot.modprobe.modules</a></h2>
+<h4 id="type-1"><a class="header" href="#type-1">type</a></h4>
+<p>attribute set of submodule</p>
+<h4 id="default-1"><a class="header" href="#default-1">default</a></h4>
+<pre><code class="language-nix">{
+  boot.modprobe.modules = {};
+}
+</code></pre>
+<h2 id="bootmodprobemodulesnamealiases"><a class="header" href="#bootmodprobemodulesnamealiases">boot.modprobe.modules.&lt;name&gt;.aliases</a></h2>
+<h4 id="type-2"><a class="header" href="#type-2">type</a></h4>
+<p>list of string</p>
+<h4 id="default-2"><a class="header" href="#default-2">default</a></h4>
+<pre><code class="language-nix">{
+  boot.modprobe.modules.&lt;name&gt;.aliases = [];
+}
+</code></pre>
+<h2 id="bootmodprobemodulesnameblacklist"><a class="header" href="#bootmodprobemodulesnameblacklist">boot.modprobe.modules.&lt;name&gt;.blacklist</a></h2>
+<h4 id="type-3"><a class="header" href="#type-3">type</a></h4>
+<p>boolean</p>
+<h4 id="default-3"><a class="header" href="#default-3">default</a></h4>
+<pre><code class="language-nix">{
+  boot.modprobe.modules.&lt;name&gt;.blacklist = false;
+}
+</code></pre>
+<h2 id="bootmodprobemodulesnameextraconfig"><a class="header" href="#bootmodprobemodulesnameextraconfig">boot.modprobe.modules.&lt;name&gt;.extraConfig</a></h2>
+<h4 id="type-4"><a class="header" href="#type-4">type</a></h4>
+<p>strings concatenated with &quot;\n&quot;</p>
+<h4 id="default-4"><a class="header" href="#default-4">default</a></h4>
+<pre><code class="language-nix">{
+  boot.modprobe.modules.&lt;name&gt;.extraConfig = &quot;&quot;;
+}
+</code></pre>
+<h2 id="bootmodprobemodulesnameincludeininitrd"><a class="header" href="#bootmodprobemodulesnameincludeininitrd">boot.modprobe.modules.&lt;name&gt;.includeInInitrd</a></h2>
+<h4 id="type-5"><a class="header" href="#type-5">type</a></h4>
+<p>boolean</p>
+<h4 id="default-5"><a class="header" href="#default-5">default</a></h4>
+<pre><code class="language-nix">{
+  boot.modprobe.modules.&lt;name&gt;.includeInInitrd = true;
+}
+</code></pre>
+<h2 id="bootmodprobemodulesnameinstallcommands"><a class="header" href="#bootmodprobemodulesnameinstallcommands">boot.modprobe.modules.&lt;name&gt;.installCommands</a></h2>
+<h4 id="type-6"><a class="header" href="#type-6">type</a></h4>
+<p>list of string</p>
+<h4 id="default-6"><a class="header" href="#default-6">default</a></h4>
+<pre><code class="language-nix">{
+  boot.modprobe.modules.&lt;name&gt;.installCommands = [];
+}
+</code></pre>
+<h2 id="bootmodprobemodulesnamemodprobeconfig"><a class="header" href="#bootmodprobemodulesnamemodprobeconfig">boot.modprobe.modules.&lt;name&gt;.modprobeConfig</a></h2>
+<h4 id="type-7"><a class="header" href="#type-7">type</a></h4>
+<p>strings concatenated with &quot;\n&quot;</p>
+<h2 id="bootmodprobemodulesnamemodulename"><a class="header" href="#bootmodprobemodulesnamemodulename">boot.modprobe.modules.&lt;name&gt;.moduleName</a></h2>
+<h4 id="type-8"><a class="header" href="#type-8">type</a></h4>
+<p>string</p>
+<h4 id="default-7"><a class="header" href="#default-7">default</a></h4>
+<pre><code class="language-nix">{
+  boot.modprobe.modules.&lt;name&gt;.moduleName = &quot;‹name›&quot;;
+}
+</code></pre>
+<h2 id="bootmodprobemodulesnameoptions"><a class="header" href="#bootmodprobemodulesnameoptions">boot.modprobe.modules.&lt;name&gt;.options</a></h2>
+<h4 id="type-9"><a class="header" href="#type-9">type</a></h4>
+<p>attribute set of unspecified</p>
+<h4 id="default-8"><a class="header" href="#default-8">default</a></h4>
+<pre><code class="language-nix">{
+  boot.modprobe.modules.&lt;name&gt;.options = {};
+}
+</code></pre>
+<h2 id="bootmodprobemodulesnameremovecommands"><a class="header" href="#bootmodprobemodulesnameremovecommands">boot.modprobe.modules.&lt;name&gt;.removeCommands</a></h2>
+<h4 id="type-10"><a class="header" href="#type-10">type</a></h4>
+<p>list of string</p>
+<h4 id="default-9"><a class="header" href="#default-9">default</a></h4>
+<pre><code class="language-nix">{
+  boot.modprobe.modules.&lt;name&gt;.removeCommands = [];
+}
+</code></pre>
+<h2 id="filesystems"><a class="header" href="#filesystems">fileSystems</a></h2>
+<h4 id="type-11"><a class="header" href="#type-11">type</a></h4>
+<p>attribute set of submodule</p>
+<h2 id="filesystemsnamecrypttabenable"><a class="header" href="#filesystemsnamecrypttabenable">fileSystems.&lt;name&gt;.crypttab.enable</a></h2>
+<p>Whether to enable crypttab.</p>
+<h4 id="type-12"><a class="header" href="#type-12">type</a></h4>
+<p>boolean</p>
+<h4 id="example"><a class="header" href="#example">example</a></h4>
+<pre><code class="language-nix">{
+  fileSystems.&lt;name&gt;.crypttab.enable = true;
+}
+</code></pre>
+<h4 id="default-10"><a class="header" href="#default-10">default</a></h4>
+<pre><code class="language-nix">{
+  fileSystems.&lt;name&gt;.crypttab.enable = false;
+}
+</code></pre>
+<h2 id="filesystemsnamecrypttaboptions"><a class="header" href="#filesystemsnamecrypttaboptions">fileSystems.&lt;name&gt;.crypttab.options</a></h2>
+<h4 id="type-13"><a class="header" href="#type-13">type</a></h4>
+<p>list of string</p>
+<h4 id="default-11"><a class="header" href="#default-11">default</a></h4>
+<pre><code class="language-nix">{
+  fileSystems.&lt;name&gt;.crypttab.options = [
+    &quot;luks&quot;
+  ];
+}
+</code></pre>
+<h2 id="hardwarepulseaudiobluetoothenable"><a class="header" href="#hardwarepulseaudiobluetoothenable">hardware.pulseaudio.bluetooth.enable</a></h2>
+<p>Whether to enable pulseaudio bluetooth.</p>
+<h4 id="type-14"><a class="header" href="#type-14">type</a></h4>
+<p>boolean</p>
+<h4 id="example-1"><a class="header" href="#example-1">example</a></h4>
+<pre><code class="language-nix">{
+  hardware.pulseaudio.bluetooth.enable = true;
+}
+</code></pre>
+<h4 id="default-12"><a class="header" href="#default-12">default</a></h4>
+<pre><code class="language-nix">{
+  hardware.pulseaudio.bluetooth.enable = false;
+}
+</code></pre>
+<h2 id="hardwarepulseaudiobluetoothprovider"><a class="header" href="#hardwarepulseaudiobluetoothprovider">hardware.pulseaudio.bluetooth.provider</a></h2>
+<h4 id="type-15"><a class="header" href="#type-15">type</a></h4>
+<p>one of &quot;auto&quot;, &quot;native&quot;, &quot;ofono&quot;</p>
+<h4 id="default-13"><a class="header" href="#default-13">default</a></h4>
+<pre><code class="language-nix">{
+  hardware.pulseaudio.bluetooth.provider = &quot;native&quot;;
+}
+</code></pre>
+<h2 id="hardwarepulseaudiocleardefaults"><a class="header" href="#hardwarepulseaudiocleardefaults">hardware.pulseaudio.clearDefaults</a></h2>
+<h4 id="type-16"><a class="header" href="#type-16">type</a></h4>
+<p>boolean</p>
+<h4 id="default-14"><a class="header" href="#default-14">default</a></h4>
+<pre><code class="language-nix">{
+  hardware.pulseaudio.clearDefaults = false;
+}
+</code></pre>
+<h2 id="hardwarepulseaudiodefaultssink"><a class="header" href="#hardwarepulseaudiodefaultssink">hardware.pulseaudio.defaults.sink</a></h2>
+<h4 id="type-17"><a class="header" href="#type-17">type</a></h4>
+<p>null or string</p>
+<h4 id="default-15"><a class="header" href="#default-15">default</a></h4>
+<pre><code class="language-nix">{
+  hardware.pulseaudio.defaults.sink = null;
+}
+</code></pre>
+<h2 id="hardwarepulseaudiodefaultssource"><a class="header" href="#hardwarepulseaudiodefaultssource">hardware.pulseaudio.defaults.source</a></h2>
+<h4 id="type-18"><a class="header" href="#type-18">type</a></h4>
+<p>null or string</p>
+<h4 id="default-16"><a class="header" href="#default-16">default</a></h4>
+<pre><code class="language-nix">{
+  hardware.pulseaudio.defaults.source = null;
+}
+</code></pre>
+<h2 id="hardwarepulseaudioloadmodule"><a class="header" href="#hardwarepulseaudioloadmodule">hardware.pulseaudio.loadModule</a></h2>
+<h4 id="type-19"><a class="header" href="#type-19">type</a></h4>
+<p>list of submodule or string convertible to it</p>
+<h4 id="default-17"><a class="header" href="#default-17">default</a></h4>
+<pre><code class="language-nix">{
+  hardware.pulseaudio.loadModule = [];
+}
+</code></pre>
+<h2 id="hardwarepulseaudioloadmodulemodule"><a class="header" href="#hardwarepulseaudioloadmodulemodule">hardware.pulseaudio.loadModule.*.module</a></h2>
+<h4 id="type-20"><a class="header" href="#type-20">type</a></h4>
+<p>string</p>
+<h2 id="hardwarepulseaudioloadmoduleopts"><a class="header" href="#hardwarepulseaudioloadmoduleopts">hardware.pulseaudio.loadModule.*.opts</a></h2>
+<h4 id="type-21"><a class="header" href="#type-21">type</a></h4>
+<p>attribute set of null or string or signed integer or boolean or floating point number or attribute set of null or string or signed integer or boolean or floating point number or list of null or string or signed integer or boolean or floating point number</p>
+<h4 id="default-18"><a class="header" href="#default-18">default</a></h4>
+<pre><code class="language-nix">{
+  hardware.pulseaudio.loadModule.*.opts = {};
+}
+</code></pre>
+<h2 id="hardwarepulseaudiosamples"><a class="header" href="#hardwarepulseaudiosamples">hardware.pulseaudio.samples</a></h2>
+<h4 id="type-22"><a class="header" href="#type-22">type</a></h4>
+<p>attribute set of path</p>
+<h4 id="default-19"><a class="header" href="#default-19">default</a></h4>
+<pre><code class="language-nix">{
+  hardware.pulseaudio.samples = {};
+}
+</code></pre>
+<h2 id="hardwarepulseaudiox11bellenable"><a class="header" href="#hardwarepulseaudiox11bellenable">hardware.pulseaudio.x11bell.enable</a></h2>
+<p>Whether to enable x11bell.</p>
+<h4 id="type-23"><a class="header" href="#type-23">type</a></h4>
+<p>boolean</p>
+<h4 id="example-2"><a class="header" href="#example-2">example</a></h4>
+<pre><code class="language-nix">{
+  hardware.pulseaudio.x11bell.enable = true;
+}
+</code></pre>
+<h4 id="default-20"><a class="header" href="#default-20">default</a></h4>
+<pre><code class="language-nix">{
+  hardware.pulseaudio.x11bell.enable = false;
+}
+</code></pre>
+<h2 id="hardwarepulseaudiox11belldisplay"><a class="header" href="#hardwarepulseaudiox11belldisplay">hardware.pulseaudio.x11bell.display</a></h2>
+<h4 id="type-24"><a class="header" href="#type-24">type</a></h4>
+<p>string</p>
+<h4 id="default-21"><a class="header" href="#default-21">default</a></h4>
+<pre><code class="language-nix">{
+  hardware.pulseaudio.x11bell.display = &quot;:0&quot;;
+}
+</code></pre>
+<h2 id="hardwarepulseaudiox11bellsample"><a class="header" href="#hardwarepulseaudiox11bellsample">hardware.pulseaudio.x11bell.sample</a></h2>
+<h4 id="type-25"><a class="header" href="#type-25">type</a></h4>
+<p>string</p>
+<h4 id="default-22"><a class="header" href="#default-22">default</a></h4>
+<pre><code class="language-nix">{
+  hardware.pulseaudio.x11bell.sample = &quot;x11-bell&quot;;
+}
+</code></pre>
+<h2 id="hardwarepulseaudiox11bellsamplepath"><a class="header" href="#hardwarepulseaudiox11bellsamplepath">hardware.pulseaudio.x11bell.samplePath</a></h2>
+<h4 id="type-26"><a class="header" href="#type-26">type</a></h4>
+<p>path</p>
+<h4 id="default-23"><a class="header" href="#default-23">default</a></h4>
+<pre><code class="language-nix">{
+  hardware.pulseaudio.x11bell.samplePath = &quot;${pkgs.sound-theme-freedesktop}/share/sounds/freedesktop/stereo/message.oga&quot;;
+}
+</code></pre>
+<h2 id="homeshellaliases"><a class="header" href="#homeshellaliases">home.shell.aliases</a></h2>
+<h4 id="type-27"><a class="header" href="#type-27">type</a></h4>
+<p>attribute set of string</p>
+<h4 id="default-24"><a class="header" href="#default-24">default</a></h4>
+<pre><code class="language-nix">{
+  home.shell.aliases = {};
+}
+</code></pre>
+<h2 id="homeshellfunctions"><a class="header" href="#homeshellfunctions">home.shell.functions</a></h2>
+<h4 id="type-28"><a class="header" href="#type-28">type</a></h4>
+<p>attribute set of strings concatenated with &quot;\n&quot;</p>
+<h4 id="default-25"><a class="header" href="#default-25">default</a></h4>
+<pre><code class="language-nix">{
+  home.shell.functions = {};
+}
+</code></pre>
+<h2 id="programsbashlocalvariables"><a class="header" href="#programsbashlocalvariables">programs.bash.localVariables</a></h2>
+<h4 id="type-29"><a class="header" href="#type-29">type</a></h4>
+<p>attribute set of string</p>
+<h4 id="default-26"><a class="header" href="#default-26">default</a></h4>
+<pre><code class="language-nix">{
+  programs.bash.localVariables = {};
+}
+</code></pre>
+<h2 id="programsfilebinenable"><a class="header" href="#programsfilebinenable">programs.filebin.enable</a></h2>
+<p>Whether to enable filebin path monitor.</p>
+<h4 id="type-30"><a class="header" href="#type-30">type</a></h4>
+<p>boolean</p>
+<h4 id="example-3"><a class="header" href="#example-3">example</a></h4>
+<pre><code class="language-nix">{
+  programs.filebin.enable = true;
+}
+</code></pre>
+<h4 id="default-27"><a class="header" href="#default-27">default</a></h4>
+<pre><code class="language-nix">{
+  programs.filebin.enable = false;
+}
+</code></pre>
+<h2 id="programsfilebinconfig"><a class="header" href="#programsfilebinconfig">programs.filebin.config</a></h2>
+<h4 id="type-31"><a class="header" href="#type-31">type</a></h4>
+<p>attribute set of string</p>
+<h4 id="default-28"><a class="header" href="#default-28">default</a></h4>
+<pre><code class="language-nix">{
+  programs.filebin.config = {};
+}
+</code></pre>
+<h2 id="programsfilebinextraconfig"><a class="header" href="#programsfilebinextraconfig">programs.filebin.extraConfig</a></h2>
+<h4 id="type-32"><a class="header" href="#type-32">type</a></h4>
+<p>strings concatenated with &quot;\n&quot;</p>
+<h4 id="default-29"><a class="header" href="#default-29">default</a></h4>
+<pre><code class="language-nix">{
+  programs.filebin.extraConfig = &quot;&quot;;
+}
+</code></pre>
+<h2 id="programsfilebinextraconfigfiles"><a class="header" href="#programsfilebinextraconfigfiles">programs.filebin.extraConfigFiles</a></h2>
+<h4 id="type-33"><a class="header" href="#type-33">type</a></h4>
+<p>list of path</p>
+<h4 id="default-30"><a class="header" href="#default-30">default</a></h4>
+<pre><code class="language-nix">{
+  programs.filebin.extraConfigFiles = [];
+}
+</code></pre>
+<h2 id="programsgitbitbucketenable"><a class="header" href="#programsgitbitbucketenable">programs.git.bitbucket.enable</a></h2>
+<h4 id="type-34"><a class="header" href="#type-34">type</a></h4>
+<p>boolean</p>
+<h4 id="default-31"><a class="header" href="#default-31">default</a></h4>
+<pre><code class="language-nix">{
+  programs.git.bitbucket.enable = true;
+}
+</code></pre>
+<h2 id="programsgitbitbucketsharedrepos"><a class="header" href="#programsgitbitbucketsharedrepos">programs.git.bitbucket.sharedRepos</a></h2>
+<h4 id="type-35"><a class="header" href="#type-35">type</a></h4>
+<p>attribute set of submodule</p>
+<h4 id="default-32"><a class="header" href="#default-32">default</a></h4>
+<pre><code class="language-nix">{
+  programs.git.bitbucket.sharedRepos = {};
+}
+</code></pre>
+<h2 id="programsgitbitbucketsharedreposnameuser"><a class="header" href="#programsgitbitbucketsharedreposnameuser">programs.git.bitbucket.sharedRepos.&lt;name&gt;.user</a></h2>
+<p>User to reference from programs.git.bitbucket.users</p>
+<h4 id="type-36"><a class="header" href="#type-36">type</a></h4>
+<p>string</p>
+<h2 id="programsgitbitbucketteams"><a class="header" href="#programsgitbitbucketteams">programs.git.bitbucket.teams</a></h2>
+<h4 id="type-37"><a class="header" href="#type-37">type</a></h4>
+<p>attribute set of submodule</p>
+<h4 id="default-33"><a class="header" href="#default-33">default</a></h4>
+<pre><code class="language-nix">{
+  programs.git.bitbucket.teams = {};
+}
+</code></pre>
+<h2 id="programsgitbitbucketteamsnameuser"><a class="header" href="#programsgitbitbucketteamsnameuser">programs.git.bitbucket.teams.&lt;name&gt;.user</a></h2>
+<p>User to reference from programs.git.bitbucket.users</p>
+<h4 id="type-38"><a class="header" href="#type-38">type</a></h4>
+<p>string</p>
+<h2 id="programsgitbitbucketusers"><a class="header" href="#programsgitbitbucketusers">programs.git.bitbucket.users</a></h2>
+<h4 id="type-39"><a class="header" href="#type-39">type</a></h4>
+<p>attribute set of submodule</p>
+<h4 id="default-34"><a class="header" href="#default-34">default</a></h4>
+<pre><code class="language-nix">{
+  programs.git.bitbucket.users = {};
+}
+</code></pre>
+<h2 id="programsgitbitbucketusersnameemail"><a class="header" href="#programsgitbitbucketusersnameemail">programs.git.bitbucket.users.&lt;name&gt;.email</a></h2>
+<p>git commit email address</p>
+<h4 id="type-40"><a class="header" href="#type-40">type</a></h4>
+<p>null or string</p>
+<h4 id="default-35"><a class="header" href="#default-35">default</a></h4>
+<pre><code class="language-nix">{
+  programs.git.bitbucket.users.&lt;name&gt;.email = null;
+}
+</code></pre>
+<h2 id="programsgitbitbucketusersnameid"><a class="header" href="#programsgitbitbucketusersnameid">programs.git.bitbucket.users.&lt;name&gt;.id</a></h2>
+<p>Bitbucket user ID</p>
+<h4 id="type-41"><a class="header" href="#type-41">type</a></h4>
+<p>null or string</p>
+<h4 id="default-36"><a class="header" href="#default-36">default</a></h4>
+<pre><code class="language-nix">{
+  programs.git.bitbucket.users.&lt;name&gt;.id = null;
+}
+</code></pre>
+<h2 id="programsgitbitbucketusersnamename"><a class="header" href="#programsgitbitbucketusersnamename">programs.git.bitbucket.users.&lt;name&gt;.name</a></h2>
+<p>git commit name</p>
+<h4 id="type-42"><a class="header" href="#type-42">type</a></h4>
+<p>null or string</p>
+<h4 id="default-37"><a class="header" href="#default-37">default</a></h4>
+<pre><code class="language-nix">{
+  programs.git.bitbucket.users.&lt;name&gt;.name = null;
+}
+</code></pre>
+<h2 id="programsgitbitbucketusersnamesigningkey"><a class="header" href="#programsgitbitbucketusersnamesigningkey">programs.git.bitbucket.users.&lt;name&gt;.signingKey</a></h2>
+<p>GPG signing key</p>
+<h4 id="type-43"><a class="header" href="#type-43">type</a></h4>
+<p>null or string</p>
+<h4 id="default-38"><a class="header" href="#default-38">default</a></h4>
+<pre><code class="language-nix">{
+  programs.git.bitbucket.users.&lt;name&gt;.signingKey = null;
+}
+</code></pre>
+<h2 id="programsgitbitbucketusersnamesshkeyprivate"><a class="header" href="#programsgitbitbucketusersnamesshkeyprivate">programs.git.bitbucket.users.&lt;name&gt;.sshKeyPrivate</a></h2>
+<p>SSH Key</p>
+<h4 id="type-44"><a class="header" href="#type-44">type</a></h4>
+<p>null or path</p>
+<h4 id="default-39"><a class="header" href="#default-39">default</a></h4>
+<pre><code class="language-nix">{
+  programs.git.bitbucket.users.&lt;name&gt;.sshKeyPrivate = null;
+}
+</code></pre>
+<h2 id="programsgitbitbucketusersnamesshkeypublic"><a class="header" href="#programsgitbitbucketusersnamesshkeypublic">programs.git.bitbucket.users.&lt;name&gt;.sshKeyPublic</a></h2>
+<p>SSH Key</p>
+<h4 id="type-45"><a class="header" href="#type-45">type</a></h4>
+<p>null or path</p>
+<h4 id="default-40"><a class="header" href="#default-40">default</a></h4>
+<pre><code class="language-nix">{
+  programs.git.bitbucket.users.&lt;name&gt;.sshKeyPublic = null;
+}
+</code></pre>
+<h2 id="programsgitbitbucketusersnameusername"><a class="header" href="#programsgitbitbucketusersnameusername">programs.git.bitbucket.users.&lt;name&gt;.username</a></h2>
+<p>Bitbucket user name</p>
+<h4 id="type-46"><a class="header" href="#type-46">type</a></h4>
+<p>string</p>
+<h4 id="default-41"><a class="header" href="#default-41">default</a></h4>
+<pre><code class="language-nix">{
+  programs.git.bitbucket.users.&lt;name&gt;.username = &quot;‹name›&quot;;
+}
+</code></pre>
+<h2 id="programsgitconfigemail"><a class="header" href="#programsgitconfigemail">programs.git.configEmail</a></h2>
+<h4 id="type-47"><a class="header" href="#type-47">type</a></h4>
+<p>attribute set of submodule</p>
+<h4 id="default-42"><a class="header" href="#default-42">default</a></h4>
+<pre><code class="language-nix">{
+  programs.git.configEmail = {};
+}
+</code></pre>
+<h2 id="programsgitconfigemailnamealiases"><a class="header" href="#programsgitconfigemailnamealiases">programs.git.configEmail.&lt;name&gt;.aliases</a></h2>
+<p>git-config-email short name aliases</p>
+<h4 id="type-48"><a class="header" href="#type-48">type</a></h4>
+<p>list of string</p>
+<h4 id="default-43"><a class="header" href="#default-43">default</a></h4>
+<pre><code class="language-nix">{
+  programs.git.configEmail.&lt;name&gt;.aliases = [];
+}
+</code></pre>
+<h2 id="programsgitconfigemailnameemail"><a class="header" href="#programsgitconfigemailnameemail">programs.git.configEmail.&lt;name&gt;.email</a></h2>
+<p>git commit email address</p>
+<h4 id="type-49"><a class="header" href="#type-49">type</a></h4>
+<p>string</p>
+<h2 id="programsgitconfigemailnamename"><a class="header" href="#programsgitconfigemailnamename">programs.git.configEmail.&lt;name&gt;.name</a></h2>
+<p>git commit full name</p>
+<h4 id="type-50"><a class="header" href="#type-50">type</a></h4>
+<p>string</p>
+<h2 id="programsgitconfigemailnamesigningkey"><a class="header" href="#programsgitconfigemailnamesigningkey">programs.git.configEmail.&lt;name&gt;.signingKey</a></h2>
+<p>git-config-email GPG signing key</p>
+<h4 id="type-51"><a class="header" href="#type-51">type</a></h4>
+<p>null or string</p>
+<h4 id="default-44"><a class="header" href="#default-44">default</a></h4>
+<pre><code class="language-nix">{
+  programs.git.configEmail.&lt;name&gt;.signingKey = null;
+}
+</code></pre>
+<h2 id="programsgitgithubenable"><a class="header" href="#programsgitgithubenable">programs.git.gitHub.enable</a></h2>
+<h4 id="type-52"><a class="header" href="#type-52">type</a></h4>
+<p>boolean</p>
+<h4 id="default-45"><a class="header" href="#default-45">default</a></h4>
+<pre><code class="language-nix">{
+  programs.git.gitHub.enable = true;
+}
+</code></pre>
+<h2 id="programsgitgithuborgs"><a class="header" href="#programsgitgithuborgs">programs.git.gitHub.orgs</a></h2>
+<h4 id="type-53"><a class="header" href="#type-53">type</a></h4>
+<p>attribute set of submodule</p>
+<h4 id="default-46"><a class="header" href="#default-46">default</a></h4>
+<pre><code class="language-nix">{
+  programs.git.gitHub.orgs = {};
+}
+</code></pre>
+<h2 id="programsgitgithuborgsnameuser"><a class="header" href="#programsgitgithuborgsnameuser">programs.git.gitHub.orgs.&lt;name&gt;.user</a></h2>
+<p>User to reference from programs.git.gitHub.users</p>
+<h4 id="type-54"><a class="header" href="#type-54">type</a></h4>
+<p>string</p>
+<h2 id="programsgitgithubsharedrepos"><a class="header" href="#programsgitgithubsharedrepos">programs.git.gitHub.sharedRepos</a></h2>
+<h4 id="type-55"><a class="header" href="#type-55">type</a></h4>
+<p>attribute set of submodule</p>
+<h4 id="default-47"><a class="header" href="#default-47">default</a></h4>
+<pre><code class="language-nix">{
+  programs.git.gitHub.sharedRepos = {};
+}
+</code></pre>
+<h2 id="programsgitgithubsharedreposnameuser"><a class="header" href="#programsgitgithubsharedreposnameuser">programs.git.gitHub.sharedRepos.&lt;name&gt;.user</a></h2>
+<p>User to reference from programs.git.gitHub.users</p>
+<h4 id="type-56"><a class="header" href="#type-56">type</a></h4>
+<p>string</p>
+<h2 id="programsgitgithubusers"><a class="header" href="#programsgitgithubusers">programs.git.gitHub.users</a></h2>
+<h4 id="type-57"><a class="header" href="#type-57">type</a></h4>
+<p>attribute set of submodule</p>
+<h4 id="default-48"><a class="header" href="#default-48">default</a></h4>
+<pre><code class="language-nix">{
+  programs.git.gitHub.users = {};
+}
+</code></pre>
+<h2 id="programsgitgithubusersnameemail"><a class="header" href="#programsgitgithubusersnameemail">programs.git.gitHub.users.&lt;name&gt;.email</a></h2>
+<p>git commit email address</p>
+<h4 id="type-58"><a class="header" href="#type-58">type</a></h4>
+<p>null or string</p>
+<h4 id="default-49"><a class="header" href="#default-49">default</a></h4>
+<pre><code class="language-nix">{
+  programs.git.gitHub.users.&lt;name&gt;.email = null;
+}
+</code></pre>
+<h2 id="programsgitgithubusersnamekeyshash"><a class="header" href="#programsgitgithubusersnamekeyshash">programs.git.gitHub.users.&lt;name&gt;.keysHash</a></h2>
+<p>Fixed-output derivation hash</p>
+<h4 id="type-59"><a class="header" href="#type-59">type</a></h4>
+<p>string</p>
+<h2 id="programsgitgithubusersnamename"><a class="header" href="#programsgitgithubusersnamename">programs.git.gitHub.users.&lt;name&gt;.name</a></h2>
+<p>git commit name</p>
+<h4 id="type-60"><a class="header" href="#type-60">type</a></h4>
+<p>null or string</p>
+<h4 id="default-50"><a class="header" href="#default-50">default</a></h4>
+<pre><code class="language-nix">{
+  programs.git.gitHub.users.&lt;name&gt;.name = null;
+}
+</code></pre>
+<h2 id="programsgitgithubusersnamesigningkey"><a class="header" href="#programsgitgithubusersnamesigningkey">programs.git.gitHub.users.&lt;name&gt;.signingKey</a></h2>
+<p>GPG signing key</p>
+<h4 id="type-61"><a class="header" href="#type-61">type</a></h4>
+<p>null or string</p>
+<h4 id="default-51"><a class="header" href="#default-51">default</a></h4>
+<pre><code class="language-nix">{
+  programs.git.gitHub.users.&lt;name&gt;.signingKey = null;
+}
+</code></pre>
+<h2 id="programsgitgithubusersnamesshkeyprivate"><a class="header" href="#programsgitgithubusersnamesshkeyprivate">programs.git.gitHub.users.&lt;name&gt;.sshKeyPrivate</a></h2>
+<p>SSH Key</p>
+<h4 id="type-62"><a class="header" href="#type-62">type</a></h4>
+<p>null or path</p>
+<h4 id="default-52"><a class="header" href="#default-52">default</a></h4>
+<pre><code class="language-nix">{
+  programs.git.gitHub.users.&lt;name&gt;.sshKeyPrivate = null;
+}
+</code></pre>
+<h2 id="programsgitgithubusersnamesshkeypublic"><a class="header" href="#programsgitgithubusersnamesshkeypublic">programs.git.gitHub.users.&lt;name&gt;.sshKeyPublic</a></h2>
+<p>SSH Key</p>
+<h4 id="type-63"><a class="header" href="#type-63">type</a></h4>
+<p>null or path</p>
+<h4 id="default-53"><a class="header" href="#default-53">default</a></h4>
+<pre><code class="language-nix">{
+  programs.git.gitHub.users.&lt;name&gt;.sshKeyPublic = null;
+}
+</code></pre>
+<h2 id="programsimvenable"><a class="header" href="#programsimvenable">programs.imv.enable</a></h2>
+<p>Whether to enable imv image viewer.</p>
+<h4 id="type-64"><a class="header" href="#type-64">type</a></h4>
+<p>boolean</p>
+<h4 id="example-4"><a class="header" href="#example-4">example</a></h4>
+<pre><code class="language-nix">{
+  programs.imv.enable = true;
+}
+</code></pre>
+<h4 id="default-54"><a class="header" href="#default-54">default</a></h4>
+<pre><code class="language-nix">{
+  programs.imv.enable = false;
+}
+</code></pre>
+<h2 id="programsimvpackage"><a class="header" href="#programsimvpackage">programs.imv.package</a></h2>
+<h4 id="type-65"><a class="header" href="#type-65">type</a></h4>
+<p>package</p>
+<h4 id="default-55"><a class="header" href="#default-55">default</a></h4>
+<pre><code class="language-nix">{
+  programs.imv.package = &quot;pkgs.imv&quot;;
+}
+</code></pre>
+<h2 id="programsimvaliases"><a class="header" href="#programsimvaliases">programs.imv.aliases</a></h2>
+<h4 id="type-66"><a class="header" href="#type-66">type</a></h4>
+<p>attribute set of string</p>
+<h4 id="default-56"><a class="header" href="#default-56">default</a></h4>
+<pre><code class="language-nix">{
+  programs.imv.aliases = {};
+}
+</code></pre>
+<h2 id="programsimvconfig"><a class="header" href="#programsimvconfig">programs.imv.config</a></h2>
+<h4 id="type-67"><a class="header" href="#type-67">type</a></h4>
+<p>attribute set of null or boolean or signed integer or string or string</p>
+<h2 id="programsimvconfigbackground"><a class="header" href="#programsimvconfigbackground">programs.imv.config.background</a></h2>
+<h4 id="type-68"><a class="header" href="#type-68">type</a></h4>
+<p>null or value &quot;checks&quot; (singular enum) or string</p>
+<h4 id="default-57"><a class="header" href="#default-57">default</a></h4>
+<pre><code class="language-nix">{
+  programs.imv.config.background = &quot;000000&quot;;
+}
+</code></pre>
+<h2 id="programsimvconfigfullscreen"><a class="header" href="#programsimvconfigfullscreen">programs.imv.config.fullscreen</a></h2>
+<h4 id="type-69"><a class="header" href="#type-69">type</a></h4>
+<p>null or boolean</p>
+<h4 id="default-58"><a class="header" href="#default-58">default</a></h4>
+<pre><code class="language-nix">{
+  programs.imv.config.fullscreen = &quot;false&quot;;
+}
+</code></pre>
+<h2 id="programsimvconfigheight"><a class="header" href="#programsimvconfigheight">programs.imv.config.height</a></h2>
+<h4 id="type-70"><a class="header" href="#type-70">type</a></h4>
+<p>null or signed integer</p>
+<h4 id="default-59"><a class="header" href="#default-59">default</a></h4>
+<pre><code class="language-nix">{
+  programs.imv.config.height = &quot;720&quot;;
+}
+</code></pre>
+<h2 id="programsimvconfiglist_files_at_exit"><a class="header" href="#programsimvconfiglist_files_at_exit">programs.imv.config.list_files_at_exit</a></h2>
+<h4 id="type-71"><a class="header" href="#type-71">type</a></h4>
+<p>null or boolean</p>
+<h4 id="default-60"><a class="header" href="#default-60">default</a></h4>
+<pre><code class="language-nix">{
+  programs.imv.config.list_files_at_exit = &quot;false&quot;;
+}
+</code></pre>
+<h2 id="programsimvconfigloop_input"><a class="header" href="#programsimvconfigloop_input">programs.imv.config.loop_input</a></h2>
+<h4 id="type-72"><a class="header" href="#type-72">type</a></h4>
+<p>null or boolean</p>
+<h4 id="default-61"><a class="header" href="#default-61">default</a></h4>
+<pre><code class="language-nix">{
+  programs.imv.config.loop_input = &quot;true&quot;;
+}
+</code></pre>
+<h2 id="programsimvconfigrecursively"><a class="header" href="#programsimvconfigrecursively">programs.imv.config.recursively</a></h2>
+<h4 id="type-73"><a class="header" href="#type-73">type</a></h4>
+<p>null or boolean</p>
+<h4 id="default-62"><a class="header" href="#default-62">default</a></h4>
+<pre><code class="language-nix">{
+  programs.imv.config.recursively = &quot;false&quot;;
+}
+</code></pre>
+<h2 id="programsimvconfigscaling_mode"><a class="header" href="#programsimvconfigscaling_mode">programs.imv.config.scaling_mode</a></h2>
+<h4 id="type-74"><a class="header" href="#type-74">type</a></h4>
+<p>null or one of &quot;none&quot;, &quot;shrink&quot;, &quot;full&quot;, &quot;crop&quot;</p>
+<h4 id="default-63"><a class="header" href="#default-63">default</a></h4>
+<pre><code class="language-nix">{
+  programs.imv.config.scaling_mode = &quot;full&quot;;
+}
+</code></pre>
+<h2 id="programsimvconfigslideshow_duration"><a class="header" href="#programsimvconfigslideshow_duration">programs.imv.config.slideshow_duration</a></h2>
+<h4 id="type-75"><a class="header" href="#type-75">type</a></h4>
+<p>null or signed integer</p>
+<h4 id="default-64"><a class="header" href="#default-64">default</a></h4>
+<pre><code class="language-nix">{
+  programs.imv.config.slideshow_duration = &quot;0&quot;;
+}
+</code></pre>
+<h2 id="programsimvconfigsuppress_default_binds"><a class="header" href="#programsimvconfigsuppress_default_binds">programs.imv.config.suppress_default_binds</a></h2>
+<h4 id="type-76"><a class="header" href="#type-76">type</a></h4>
+<p>null or boolean</p>
+<h4 id="default-65"><a class="header" href="#default-65">default</a></h4>
+<pre><code class="language-nix">{
+  programs.imv.config.suppress_default_binds = &quot;false&quot;;
+}
+</code></pre>
+<h2 id="programsimvconfigtitle_text"><a class="header" href="#programsimvconfigtitle_text">programs.imv.config.title_text</a></h2>
+<h4 id="type-77"><a class="header" href="#type-77">type</a></h4>
+<p>null or string</p>
+<h4 id="default-66"><a class="header" href="#default-66">default</a></h4>
+<pre><code class="language-nix">{
+  programs.imv.config.title_text = null;
+}
+</code></pre>
+<h2 id="programsimvconfigupscaling_method"><a class="header" href="#programsimvconfigupscaling_method">programs.imv.config.upscaling_method</a></h2>
+<h4 id="type-78"><a class="header" href="#type-78">type</a></h4>
+<p>null or one of &quot;linear&quot;, &quot;nearest_neighbour&quot;</p>
+<h4 id="default-67"><a class="header" href="#default-67">default</a></h4>
+<pre><code class="language-nix">{
+  programs.imv.config.upscaling_method = &quot;linear&quot;;
+}
+</code></pre>
+<h2 id="programsimvconfigwidth"><a class="header" href="#programsimvconfigwidth">programs.imv.config.width</a></h2>
+<h4 id="type-79"><a class="header" href="#type-79">type</a></h4>
+<p>null or signed integer</p>
+<h4 id="default-68"><a class="header" href="#default-68">default</a></h4>
+<pre><code class="language-nix">{
+  programs.imv.config.width = &quot;1280&quot;;
+}
+</code></pre>
+<h2 id="programsimvconfigcontent"><a class="header" href="#programsimvconfigcontent">programs.imv.configContent</a></h2>
+<h4 id="type-80"><a class="header" href="#type-80">type</a></h4>
+<p>attribute set of attribute set of INI atom (null, bool, int, float or string)</p>
+<h2 id="programsimvinitialpanx"><a class="header" href="#programsimvinitialpanx">programs.imv.initialPan.x</a></h2>
+<h4 id="type-81"><a class="header" href="#type-81">type</a></h4>
+<p>signed integer</p>
+<h4 id="default-69"><a class="header" href="#default-69">default</a></h4>
+<pre><code class="language-nix">{
+  programs.imv.initialPan.x = &quot;50%&quot;;
+}
+</code></pre>
+<h2 id="programsimvinitialpany"><a class="header" href="#programsimvinitialpany">programs.imv.initialPan.y</a></h2>
+<h4 id="type-82"><a class="header" href="#type-82">type</a></h4>
+<p>signed integer</p>
+<h4 id="default-70"><a class="header" href="#default-70">default</a></h4>
+<pre><code class="language-nix">{
+  programs.imv.initialPan.y = &quot;50%&quot;;
+}
+</code></pre>
+<h2 id="programsimvoverlayenable"><a class="header" href="#programsimvoverlayenable">programs.imv.overlay.enable</a></h2>
+<h4 id="type-83"><a class="header" href="#type-83">type</a></h4>
+<p>null or boolean</p>
+<h4 id="default-71"><a class="header" href="#default-71">default</a></h4>
+<pre><code class="language-nix">{
+  programs.imv.overlay.enable = &quot;false&quot;;
+}
+</code></pre>
+<h2 id="programsimvoverlayalpha"><a class="header" href="#programsimvoverlayalpha">programs.imv.overlay.alpha</a></h2>
+<h4 id="type-84"><a class="header" href="#type-84">type</a></h4>
+<p>null or 8 bit unsigned integer; between 0 and 255 (both inclusive)</p>
+<h4 id="default-72"><a class="header" href="#default-72">default</a></h4>
+<pre><code class="language-nix">{
+  programs.imv.overlay.alpha = &quot;0xff&quot;;
+}
+</code></pre>
+<h2 id="programsimvoverlaybackgroundalpha"><a class="header" href="#programsimvoverlaybackgroundalpha">programs.imv.overlay.backgroundAlpha</a></h2>
+<h4 id="type-85"><a class="header" href="#type-85">type</a></h4>
+<p>null or 8 bit unsigned integer; between 0 and 255 (both inclusive)</p>
+<h4 id="default-73"><a class="header" href="#default-73">default</a></h4>
+<pre><code class="language-nix">{
+  programs.imv.overlay.backgroundAlpha = &quot;0xc3&quot;;
+}
+</code></pre>
+<h2 id="programsimvoverlaybackgroundcolor"><a class="header" href="#programsimvoverlaybackgroundcolor">programs.imv.overlay.backgroundColor</a></h2>
+<h4 id="type-86"><a class="header" href="#type-86">type</a></h4>
+<p>null or string</p>
+<h4 id="default-74"><a class="header" href="#default-74">default</a></h4>
+<pre><code class="language-nix">{
+  programs.imv.overlay.backgroundColor = &quot;000000&quot;;
+}
+</code></pre>
+<h2 id="programsimvoverlaycolor"><a class="header" href="#programsimvoverlaycolor">programs.imv.overlay.color</a></h2>
+<h4 id="type-87"><a class="header" href="#type-87">type</a></h4>
+<p>null or string</p>
+<h4 id="default-75"><a class="header" href="#default-75">default</a></h4>
+<pre><code class="language-nix">{
+  programs.imv.overlay.color = &quot;ffffff&quot;;
+}
+</code></pre>
+<h2 id="programsimvoverlayfont"><a class="header" href="#programsimvoverlayfont">programs.imv.overlay.font</a></h2>
+<h4 id="type-88"><a class="header" href="#type-88">type</a></h4>
+<p>null or string</p>
+<h4 id="default-76"><a class="header" href="#default-76">default</a></h4>
+<pre><code class="language-nix">{
+  programs.imv.overlay.font = &quot;Monospace:24&quot;;
+}
+</code></pre>
+<h2 id="programsimvoverlayposition"><a class="header" href="#programsimvoverlayposition">programs.imv.overlay.position</a></h2>
+<h4 id="type-89"><a class="header" href="#type-89">type</a></h4>
+<p>null or one of &quot;bottom&quot;, &quot;top&quot;</p>
+<h4 id="default-77"><a class="header" href="#default-77">default</a></h4>
+<pre><code class="language-nix">{
+  programs.imv.overlay.position = &quot;top&quot;;
+}
+</code></pre>
+<h2 id="programsimvoverlaytext"><a class="header" href="#programsimvoverlaytext">programs.imv.overlay.text</a></h2>
+<h4 id="type-90"><a class="header" href="#type-90">type</a></h4>
+<p>null or string</p>
+<h4 id="default-78"><a class="header" href="#default-78">default</a></h4>
+<pre><code class="language-nix">{
+  programs.imv.overlay.text = null;
+}
+</code></pre>
+<h2 id="programskakounecolors"><a class="header" href="#programskakounecolors">programs.kakoune.colors</a></h2>
+<p>kakoune color schemes</p>
+<h4 id="type-91"><a class="header" href="#type-91">type</a></h4>
+<p>list of path</p>
+<h4 id="default-79"><a class="header" href="#default-79">default</a></h4>
+<pre><code class="language-nix">{
+  programs.kakoune.colors = [];
+}
+</code></pre>
+<h2 id="programskakounepluginsext"><a class="header" href="#programskakounepluginsext">programs.kakoune.pluginsExt</a></h2>
+<p>kakoune plugins</p>
+<h4 id="type-92"><a class="header" href="#type-92">type</a></h4>
+<p>list of package</p>
+<h4 id="default-80"><a class="header" href="#default-80">default</a></h4>
+<pre><code class="language-nix">{
+  programs.kakoune.pluginsExt = [];
+}
+</code></pre>
+<h2 id="programslessenable"><a class="header" href="#programslessenable">programs.less.enable</a></h2>
+<p>Whether to enable less.</p>
+<h4 id="type-93"><a class="header" href="#type-93">type</a></h4>
+<p>boolean</p>
+<h4 id="example-5"><a class="header" href="#example-5">example</a></h4>
+<pre><code class="language-nix">{
+  programs.less.enable = true;
+}
+</code></pre>
+<h4 id="default-81"><a class="header" href="#default-81">default</a></h4>
+<pre><code class="language-nix">{
+  programs.less.enable = false;
+}
+</code></pre>
+<h2 id="programslesslesskeyextraconfig"><a class="header" href="#programslesslesskeyextraconfig">programs.less.lesskey.extraConfig</a></h2>
+<h4 id="type-94"><a class="header" href="#type-94">type</a></h4>
+<p>strings concatenated with &quot;\n&quot;</p>
+<h4 id="default-82"><a class="header" href="#default-82">default</a></h4>
+<pre><code class="language-nix">{
+  programs.less.lesskey.extraConfig = &quot;&quot;;
+}
+</code></pre>
+<h2 id="programsncmpcppmpdhost"><a class="header" href="#programsncmpcppmpdhost">programs.ncmpcpp.mpdHost</a></h2>
+<h4 id="type-95"><a class="header" href="#type-95">type</a></h4>
+<p>null or string</p>
+<h4 id="default-83"><a class="header" href="#default-83">default</a></h4>
+<pre><code class="language-nix">{
+  programs.ncmpcpp.mpdHost = null;
+}
+</code></pre>
+<h2 id="programsncmpcppmpdpassword"><a class="header" href="#programsncmpcppmpdpassword">programs.ncmpcpp.mpdPassword</a></h2>
+<h4 id="type-96"><a class="header" href="#type-96">type</a></h4>
+<p>null or string</p>
+<h4 id="default-84"><a class="header" href="#default-84">default</a></h4>
+<pre><code class="language-nix">{
+  programs.ncmpcpp.mpdPassword = null;
+}
+</code></pre>
+<h2 id="programsncmpcppmpdport"><a class="header" href="#programsncmpcppmpdport">programs.ncmpcpp.mpdPort</a></h2>
+<h4 id="type-97"><a class="header" href="#type-97">type</a></h4>
+<p>null or 16 bit unsigned integer; between 0 and 65535 (both inclusive)</p>
+<h4 id="default-85"><a class="header" href="#default-85">default</a></h4>
+<pre><code class="language-nix">{
+  programs.ncmpcpp.mpdPort = null;
+}
+</code></pre>
+<h2 id="programsncpamixerenable"><a class="header" href="#programsncpamixerenable">programs.ncpamixer.enable</a></h2>
+<p>Whether to enable ncpamixer.</p>
+<h4 id="type-98"><a class="header" href="#type-98">type</a></h4>
+<p>boolean</p>
+<h4 id="example-6"><a class="header" href="#example-6">example</a></h4>
+<pre><code class="language-nix">{
+  programs.ncpamixer.enable = true;
+}
+</code></pre>
+<h4 id="default-86"><a class="header" href="#default-86">default</a></h4>
+<pre><code class="language-nix">{
+  programs.ncpamixer.enable = false;
+}
+</code></pre>
+<h2 id="programsncpamixerextraconfig"><a class="header" href="#programsncpamixerextraconfig">programs.ncpamixer.extraConfig</a></h2>
+<h4 id="type-99"><a class="header" href="#type-99">type</a></h4>
+<p>attribute set of string or signed integer or boolean</p>
+<h4 id="default-87"><a class="header" href="#default-87">default</a></h4>
+<pre><code class="language-nix">{
+  programs.ncpamixer.extraConfig = {};
+}
+</code></pre>
+<h2 id="programsncpamixerkeybinds"><a class="header" href="#programsncpamixerkeybinds">programs.ncpamixer.keybinds</a></h2>
+<h4 id="type-100"><a class="header" href="#type-100">type</a></h4>
+<p>attribute set of one of &quot;switch&quot;, &quot;select&quot;, &quot;quit&quot;, &quot;dropdown&quot;, &quot;quit&quot;, &quot;mute&quot;, &quot;set_default&quot;, &quot;volume_up&quot;, &quot;volume_down&quot;, &quot;volume_up&quot;, &quot;volume_down&quot;, &quot;move_up&quot;, &quot;move_down&quot;, &quot;move_up&quot;, &quot;move_down&quot;, &quot;page_up&quot;, &quot;page_down&quot;, &quot;tab_next&quot;, &quot;tab_prev&quot;, &quot;tab_playback&quot;, &quot;tab_recording&quot;, &quot;tab_output&quot;, &quot;tab_input&quot;, &quot;tab_config&quot;, &quot;tab_playback&quot;, &quot;tab_recording&quot;, &quot;tab_output&quot;, &quot;tab_input&quot;, &quot;tab_config&quot;, &quot;move_last&quot;, &quot;move_first&quot;, &quot;set_volume_0&quot;, &quot;set_volume_10&quot;, &quot;set_volume_20&quot;, &quot;set_volume_30&quot;, &quot;set_volume_40&quot;, &quot;set_volume_50&quot;, &quot;set_volume_60&quot;, &quot;set_volume_70&quot;, &quot;set_volume_80&quot;, &quot;set_volume_90&quot;, &quot;set_volume_100&quot;</p>
+<h4 id="default-88"><a class="header" href="#default-88">default</a></h4>
+<pre><code class="language-nix">{
+  programs.ncpamixer.keybinds = {};
+}
+</code></pre>
+<h2 id="programsncpamixertheme"><a class="header" href="#programsncpamixertheme">programs.ncpamixer.theme</a></h2>
+<h4 id="type-101"><a class="header" href="#type-101">type</a></h4>
+<p>string</p>
+<h4 id="default-89"><a class="header" href="#default-89">default</a></h4>
+<pre><code class="language-nix">{
+  programs.ncpamixer.theme = &quot;default&quot;;
+}
+</code></pre>
+<h2 id="programsncpamixerthemes"><a class="header" href="#programsncpamixerthemes">programs.ncpamixer.themes</a></h2>
+<h4 id="type-102"><a class="header" href="#type-102">type</a></h4>
+<p>attribute set of attribute set of string or signed integer or boolean</p>
+<h4 id="default-90"><a class="header" href="#default-90">default</a></h4>
+<pre><code class="language-nix">{
+  programs.ncpamixer.themes = {};
+}
+</code></pre>
+<h2 id="programspulsemixerenable"><a class="header" href="#programspulsemixerenable">programs.pulsemixer.enable</a></h2>
+<p>Whether to enable pulsemixer.</p>
+<h4 id="type-103"><a class="header" href="#type-103">type</a></h4>
+<p>boolean</p>
+<h4 id="example-7"><a class="header" href="#example-7">example</a></h4>
+<pre><code class="language-nix">{
+  programs.pulsemixer.enable = true;
+}
+</code></pre>
+<h4 id="default-91"><a class="header" href="#default-91">default</a></h4>
+<pre><code class="language-nix">{
+  programs.pulsemixer.enable = false;
+}
+</code></pre>
+<h2 id="programspulsemixerpackage"><a class="header" href="#programspulsemixerpackage">programs.pulsemixer.package</a></h2>
+<h4 id="type-104"><a class="header" href="#type-104">type</a></h4>
+<p>package</p>
+<h4 id="default-92"><a class="header" href="#default-92">default</a></h4>
+<pre><code class="language-nix">{
+  programs.pulsemixer.package = &quot;pkgs.pulsemixer&quot;;
+}
+</code></pre>
+<h2 id="programspulsemixerconfiggeneral"><a class="header" href="#programspulsemixerconfiggeneral">programs.pulsemixer.config.general</a></h2>
+<h4 id="type-105"><a class="header" href="#type-105">type</a></h4>
+<p>attribute set of signed integer or string or boolean</p>
+<h4 id="default-93"><a class="header" href="#default-93">default</a></h4>
+<pre><code class="language-nix">{
+  programs.pulsemixer.config.general = {};
+}
+</code></pre>
+<h2 id="programspulsemixerconfigrenames"><a class="header" href="#programspulsemixerconfigrenames">programs.pulsemixer.config.renames</a></h2>
+<h4 id="type-106"><a class="header" href="#type-106">type</a></h4>
+<p>attribute set of string</p>
+<h4 id="default-94"><a class="header" href="#default-94">default</a></h4>
+<pre><code class="language-nix">{
+  programs.pulsemixer.config.renames = {};
+}
+</code></pre>
+<h2 id="programspulsemixerconfigstyle"><a class="header" href="#programspulsemixerconfigstyle">programs.pulsemixer.config.style</a></h2>
+<h4 id="type-107"><a class="header" href="#type-107">type</a></h4>
+<p>attribute set of string</p>
+<h4 id="default-95"><a class="header" href="#default-95">default</a></h4>
+<pre><code class="language-nix">{
+  programs.pulsemixer.config.style = {};
+}
+</code></pre>
+<h2 id="programspulsemixerconfigui"><a class="header" href="#programspulsemixerconfigui">programs.pulsemixer.config.ui</a></h2>
+<h4 id="type-108"><a class="header" href="#type-108">type</a></h4>
+<p>attribute set of signed integer or string or boolean</p>
+<h4 id="default-96"><a class="header" href="#default-96">default</a></h4>
+<pre><code class="language-nix">{
+  programs.pulsemixer.config.ui = {};
+}
+</code></pre>
+<h2 id="programspulsemixerconfigcontent"><a class="header" href="#programspulsemixerconfigcontent">programs.pulsemixer.configContent</a></h2>
+<h4 id="type-109"><a class="header" href="#type-109">type</a></h4>
+<p>attribute set of attribute set of INI atom (null, bool, int, float or string)</p>
+<h2 id="programsrustfmtenable"><a class="header" href="#programsrustfmtenable">programs.rustfmt.enable</a></h2>
+<p>Whether to enable rustfmt.</p>
+<h4 id="type-110"><a class="header" href="#type-110">type</a></h4>
+<p>boolean</p>
+<h4 id="example-8"><a class="header" href="#example-8">example</a></h4>
+<pre><code class="language-nix">{
+  programs.rustfmt.enable = true;
+}
+</code></pre>
+<h4 id="default-97"><a class="header" href="#default-97">default</a></h4>
+<pre><code class="language-nix">{
+  programs.rustfmt.enable = false;
+}
+</code></pre>
+<h2 id="programsrustfmtpackage"><a class="header" href="#programsrustfmtpackage">programs.rustfmt.package</a></h2>
+<h4 id="type-111"><a class="header" href="#type-111">type</a></h4>
+<p>null or package</p>
+<h4 id="default-98"><a class="header" href="#default-98">default</a></h4>
+<pre><code class="language-nix">{
+  programs.rustfmt.package = &quot;pkgs.rustfmt&quot;;
+}
+</code></pre>
+<h2 id="programsrustfmtconfig"><a class="header" href="#programsrustfmtconfig">programs.rustfmt.config</a></h2>
+<h4 id="type-112"><a class="header" href="#type-112">type</a></h4>
+<p>attribute set</p>
+<h4 id="default-99"><a class="header" href="#default-99">default</a></h4>
+<pre><code class="language-nix">{
+  programs.rustfmt.config = {};
+}
+</code></pre>
+<h2 id="programsrustfmtextraconfig"><a class="header" href="#programsrustfmtextraconfig">programs.rustfmt.extraConfig</a></h2>
+<h4 id="type-113"><a class="header" href="#type-113">type</a></h4>
+<p>strings concatenated with &quot;\n&quot;</p>
+<h4 id="default-100"><a class="header" href="#default-100">default</a></h4>
+<pre><code class="language-nix">{
+  programs.rustfmt.extraConfig = &quot;&quot;;
+}
+</code></pre>
+<h2 id="programssshknownhosts"><a class="header" href="#programssshknownhosts">programs.ssh.knownHosts</a></h2>
+<p>SSH host keys to allow connections to</p>
+<h4 id="type-114"><a class="header" href="#type-114">type</a></h4>
+<p>list of string</p>
+<h4 id="default-101"><a class="header" href="#default-101">default</a></h4>
+<pre><code class="language-nix">{
+  programs.ssh.knownHosts = [];
+}
+</code></pre>
+<h2 id="programssshstricthostkeychecking"><a class="header" href="#programssshstricthostkeychecking">programs.ssh.strictHostKeyChecking</a></h2>
+<p>Decide how keys are automatically added to known_hosts</p>
+<h4 id="type-115"><a class="header" href="#type-115">type</a></h4>
+<p>one of &quot;yes&quot;, &quot;ask&quot;, &quot;accept-new&quot;, &quot;no&quot;</p>
+<h4 id="default-102"><a class="header" href="#default-102">default</a></h4>
+<pre><code class="language-nix">{
+  programs.ssh.strictHostKeyChecking = &quot;ask&quot;;
+}
+</code></pre>
+<h2 id="programssyncplayenable"><a class="header" href="#programssyncplayenable">programs.syncplay.enable</a></h2>
+<p>Whether to enable syncplay.</p>
+<h4 id="type-116"><a class="header" href="#type-116">type</a></h4>
+<p>boolean</p>
+<h4 id="example-9"><a class="header" href="#example-9">example</a></h4>
+<pre><code class="language-nix">{
+  programs.syncplay.enable = true;
+}
+</code></pre>
+<h4 id="default-103"><a class="header" href="#default-103">default</a></h4>
+<pre><code class="language-nix">{
+  programs.syncplay.enable = false;
+}
+</code></pre>
+<h2 id="programssyncplaypackage"><a class="header" href="#programssyncplaypackage">programs.syncplay.package</a></h2>
+<h4 id="type-117"><a class="header" href="#type-117">type</a></h4>
+<p>package</p>
+<h4 id="example-10"><a class="header" href="#example-10">example</a></h4>
+<pre><code class="language-nix">{
+  programs.syncplay.package = &quot;pkgs.syncplay-cli&quot;;
+}
+</code></pre>
+<h4 id="default-104"><a class="header" href="#default-104">default</a></h4>
+<pre><code class="language-nix">{
+  programs.syncplay.package = &quot;pkgs.syncplay&quot;;
+}
+</code></pre>
+<h2 id="programssyncplayargs"><a class="header" href="#programssyncplayargs">programs.syncplay.args</a></h2>
+<h4 id="type-118"><a class="header" href="#type-118">type</a></h4>
+<p>list of string</p>
+<h4 id="default-105"><a class="header" href="#default-105">default</a></h4>
+<pre><code class="language-nix">{
+  programs.syncplay.args = &quot;[ &quot;--no-store&quot; ]&quot;;
+}
+</code></pre>
+<h2 id="programssyncplayconfig"><a class="header" href="#programssyncplayconfig">programs.syncplay.config</a></h2>
+<h4 id="type-119"><a class="header" href="#type-119">type</a></h4>
+<p>attribute set of attribute set of null or boolean or signed integer or floating point number or string or list of string or attribute set of null or boolean or signed integer or floating point number or string or list of string</p>
+<h4 id="default-106"><a class="header" href="#default-106">default</a></h4>
+<pre><code class="language-nix">{
+  programs.syncplay.config = {};
+}
+</code></pre>
+<h2 id="programssyncplayconfigini"><a class="header" href="#programssyncplayconfigini">programs.syncplay.configIni</a></h2>
+<h4 id="type-120"><a class="header" href="#type-120">type</a></h4>
+<p>strings concatenated with &quot;\n&quot;</p>
+<h2 id="programssyncplaydefaultroom"><a class="header" href="#programssyncplaydefaultroom">programs.syncplay.defaultRoom</a></h2>
+<h4 id="type-121"><a class="header" href="#type-121">type</a></h4>
+<p>null or string</p>
+<h4 id="default-107"><a class="header" href="#default-107">default</a></h4>
+<pre><code class="language-nix">{
+  programs.syncplay.defaultRoom = null;
+}
+</code></pre>
+<h2 id="programssyncplayextraconfig"><a class="header" href="#programssyncplayextraconfig">programs.syncplay.extraConfig</a></h2>
+<h4 id="type-122"><a class="header" href="#type-122">type</a></h4>
+<p>strings concatenated with &quot;\n&quot;</p>
+<h4 id="default-108"><a class="header" href="#default-108">default</a></h4>
+<pre><code class="language-nix">{
+  programs.syncplay.extraConfig = &quot;&quot;;
+}
+</code></pre>
+<h2 id="programssyncplaygui"><a class="header" href="#programssyncplaygui">programs.syncplay.gui</a></h2>
+<h4 id="type-123"><a class="header" href="#type-123">type</a></h4>
+<p>boolean</p>
+<h4 id="default-109"><a class="header" href="#default-109">default</a></h4>
+<pre><code class="language-nix">{
+  programs.syncplay.gui = true;
+}
+</code></pre>
+<h2 id="programssyncplayplayer"><a class="header" href="#programssyncplayplayer">programs.syncplay.player</a></h2>
+<h4 id="type-124"><a class="header" href="#type-124">type</a></h4>
+<p>path</p>
+<h4 id="default-110"><a class="header" href="#default-110">default</a></h4>
+<pre><code class="language-nix">{
+  programs.syncplay.player = &quot;${pkgs.mpv}/bin/mpv&quot;;
+}
+</code></pre>
+<h2 id="programssyncplayplayerargs"><a class="header" href="#programssyncplayplayerargs">programs.syncplay.playerArgs</a></h2>
+<h4 id="type-125"><a class="header" href="#type-125">type</a></h4>
+<p>list of string</p>
+<h4 id="default-111"><a class="header" href="#default-111">default</a></h4>
+<pre><code class="language-nix">{
+  programs.syncplay.playerArgs = [];
+}
+</code></pre>
+<h2 id="programssyncplayserverhost"><a class="header" href="#programssyncplayserverhost">programs.syncplay.server.host</a></h2>
+<h4 id="type-126"><a class="header" href="#type-126">type</a></h4>
+<p>null or string</p>
+<h4 id="default-112"><a class="header" href="#default-112">default</a></h4>
+<pre><code class="language-nix">{
+  programs.syncplay.server.host = null;
+}
+</code></pre>
+<h2 id="programssyncplayserverpassword"><a class="header" href="#programssyncplayserverpassword">programs.syncplay.server.password</a></h2>
+<h4 id="type-127"><a class="header" href="#type-127">type</a></h4>
+<p>null or string</p>
+<h4 id="default-113"><a class="header" href="#default-113">default</a></h4>
+<pre><code class="language-nix">{
+  programs.syncplay.server.password = null;
+}
+</code></pre>
+<h2 id="programssyncplayserverport"><a class="header" href="#programssyncplayserverport">programs.syncplay.server.port</a></h2>
+<h4 id="type-128"><a class="header" href="#type-128">type</a></h4>
+<p>16 bit unsigned integer; between 0 and 65535 (both inclusive)</p>
+<h4 id="default-114"><a class="header" href="#default-114">default</a></h4>
+<pre><code class="language-nix">{
+  programs.syncplay.server.port = 8999;
+}
+</code></pre>
+<h2 id="programssyncplaytrusteddomains"><a class="header" href="#programssyncplaytrusteddomains">programs.syncplay.trustedDomains</a></h2>
+<h4 id="type-129"><a class="header" href="#type-129">type</a></h4>
+<p>list of string</p>
+<h2 id="programssyncplayusername"><a class="header" href="#programssyncplayusername">programs.syncplay.username</a></h2>
+<h4 id="type-130"><a class="header" href="#type-130">type</a></h4>
+<p>string</p>
+<h4 id="default-115"><a class="header" href="#default-115">default</a></h4>
+<pre><code class="language-nix">{
+  programs.syncplay.username = &quot;${config.home.username}&quot;;
+}
+</code></pre>
+<h2 id="programstaskwarrioractivecontext"><a class="header" href="#programstaskwarrioractivecontext">programs.taskwarrior.activeContext</a></h2>
+<p>The active context applies a permanent filter to all task commands.</p>
+<h4 id="type-131"><a class="header" href="#type-131">type</a></h4>
+<p>null or string</p>
+<h4 id="default-116"><a class="header" href="#default-116">default</a></h4>
+<pre><code class="language-nix">{
+  programs.taskwarrior.activeContext = null;
+}
+</code></pre>
+<h2 id="programstaskwarrioraliases"><a class="header" href="#programstaskwarrioraliases">programs.taskwarrior.aliases</a></h2>
+<p>Provide an alternate name for a command.</p>
+<h4 id="type-132"><a class="header" href="#type-132">type</a></h4>
+<p>attribute set of string</p>
+<h4 id="default-117"><a class="header" href="#default-117">default</a></h4>
+<pre><code class="language-nix">{
+  programs.taskwarrior.aliases = {
+    rm = &quot;delete&quot;;
+  };
+}
+</code></pre>
+<h2 id="programstaskwarriorcontexts"><a class="header" href="#programstaskwarriorcontexts">programs.taskwarrior.contexts</a></h2>
+<p>User-defined context filters.</p>
+<h4 id="type-133"><a class="header" href="#type-133">type</a></h4>
+<p>attribute set of string</p>
+<h4 id="example-11"><a class="header" href="#example-11">example</a></h4>
+<pre><code class="language-nix">{
+  programs.taskwarrior.contexts = {
+    work = &quot;project:work&quot;;
+  };
+}
+</code></pre>
+<h4 id="default-118"><a class="header" href="#default-118">default</a></h4>
+<pre><code class="language-nix">{
+  programs.taskwarrior.contexts = {};
+}
+</code></pre>
+<h2 id="programstaskwarriorreports"><a class="header" href="#programstaskwarriorreports">programs.taskwarrior.reports</a></h2>
+<p>Specify custom taskwarrior reports.</p>
+<h4 id="type-134"><a class="header" href="#type-134">type</a></h4>
+<p>attribute set of submodule</p>
+<h4 id="example-12"><a class="header" href="#example-12">example</a></h4>
+<pre><code class="language-nix">{
+  programs.taskwarrior.reports = {
+    _type = &quot;literalExpression&quot;;
+    text = ''
+      {
+        short = {
+          description = &quot;My custom filter&quot;;
+          filter = &quot;status:pending +READY&quot;;
+          columns = [
+            {
+              label = &quot;ID&quot;;
+              id = &quot;id&quot;;
+            }
+            {
+              label = &quot;Description&quot;;
+              id = &quot;description&quot;;
+              format = &quot;count&quot;;
+            }
+            {
+              id = &quot;urgency&quot;;
+              label = &quot;Urgency&quot;;
+              sort.order = &quot;descending&quot;;
+            }
+          ];
+        };
+      };
+      
+    '';
+  };
+}
+</code></pre>
+<h4 id="default-119"><a class="header" href="#default-119">default</a></h4>
+<pre><code class="language-nix">{
+  programs.taskwarrior.reports = {};
+}
+</code></pre>
+<h2 id="programstaskwarriorreportsnamecolumns"><a class="header" href="#programstaskwarriorreportsnamecolumns">programs.taskwarrior.reports.&lt;name&gt;.columns</a></h2>
+<p>The report's columns and their formatting specifiers.</p>
+<h4 id="type-135"><a class="header" href="#type-135">type</a></h4>
+<p>list of submodule</p>
+<h2 id="programstaskwarriorreportsnamecolumnsformat"><a class="header" href="#programstaskwarriorreportsnamecolumnsformat">programs.taskwarrior.reports.&lt;name&gt;.columns.*.format</a></h2>
+<p>Optional formatting specifier for the column value.</p>
+<p>See the command 'task columns' for a full list of supported formats.</p>
+<h4 id="type-136"><a class="header" href="#type-136">type</a></h4>
+<p>null or string</p>
+<h4 id="default-120"><a class="header" href="#default-120">default</a></h4>
+<pre><code class="language-nix">{
+  programs.taskwarrior.reports.&lt;name&gt;.columns.*.format = null;
+}
+</code></pre>
+<h2 id="programstaskwarriorreportsnamecolumnsid"><a class="header" href="#programstaskwarriorreportsnamecolumnsid">programs.taskwarrior.reports.&lt;name&gt;.columns.*.id</a></h2>
+<p>Column value type name.</p>
+<p>See the command 'task columns' for a full list of options and examples.</p>
+<h4 id="type-137"><a class="header" href="#type-137">type</a></h4>
+<p>string</p>
+<h2 id="programstaskwarriorreportsnamecolumnslabel"><a class="header" href="#programstaskwarriorreportsnamecolumnslabel">programs.taskwarrior.reports.&lt;name&gt;.columns.*.label</a></h2>
+<p>The label for the column that will be used when generating the report.</p>
+<h4 id="type-138"><a class="header" href="#type-138">type</a></h4>
+<p>null or string</p>
+<h4 id="default-121"><a class="header" href="#default-121">default</a></h4>
+<pre><code class="language-nix">{
+  programs.taskwarrior.reports.&lt;name&gt;.columns.*.label = null;
+}
+</code></pre>
+<h2 id="programstaskwarriorreportsnamecolumnssort"><a class="header" href="#programstaskwarriorreportsnamecolumnssort">programs.taskwarrior.reports.&lt;name&gt;.columns.*.sort</a></h2>
+<p>Set this to sort the report based on the value in this column.</p>
+<h4 id="type-139"><a class="header" href="#type-139">type</a></h4>
+<p>null or submodule</p>
+<h4 id="default-122"><a class="header" href="#default-122">default</a></h4>
+<pre><code class="language-nix">{
+  programs.taskwarrior.reports.&lt;name&gt;.columns.*.sort = null;
+}
+</code></pre>
+<h2 id="programstaskwarriorreportsnamecolumnssortorder"><a class="header" href="#programstaskwarriorreportsnamecolumnssortorder">programs.taskwarrior.reports.&lt;name&gt;.columns.*.sort.order</a></h2>
+<p>Column data sort order.</p>
+<h4 id="type-140"><a class="header" href="#type-140">type</a></h4>
+<p>one of &quot;ascending&quot;, &quot;descending&quot;</p>
+<h4 id="default-123"><a class="header" href="#default-123">default</a></h4>
+<pre><code class="language-nix">{
+  programs.taskwarrior.reports.&lt;name&gt;.columns.*.sort.order = &quot;ascending&quot;;
+}
+</code></pre>
+<h2 id="programstaskwarriorreportsnamecolumnssortpriority"><a class="header" href="#programstaskwarriorreportsnamecolumnssortpriority">programs.taskwarrior.reports.&lt;name&gt;.columns.*.sort.priority</a></h2>
+<p>The order in which the column is sorted,
+where zero is the highest priority.</p>
+<p>Use this when the column display order
+differs from the sort order.</p>
+<h4 id="type-141"><a class="header" href="#type-141">type</a></h4>
+<p>signed integer</p>
+<h4 id="default-124"><a class="header" href="#default-124">default</a></h4>
+<pre><code class="language-nix">{
+  programs.taskwarrior.reports.&lt;name&gt;.columns.*.sort.priority = 1000;
+}
+</code></pre>
+<h2 id="programstaskwarriorreportsnamecolumnssortvisualbreak"><a class="header" href="#programstaskwarriorreportsnamecolumnssortvisualbreak">programs.taskwarrior.reports.&lt;name&gt;.columns.*.sort.visualBreak</a></h2>
+<p>Indicates that there are breaks after the column values change.</p>
+<p>A listing break is simply a blank line
+that provides a visual grouping.</p>
+<h4 id="type-142"><a class="header" href="#type-142">type</a></h4>
+<p>boolean</p>
+<h4 id="default-125"><a class="header" href="#default-125">default</a></h4>
+<pre><code class="language-nix">{
+  programs.taskwarrior.reports.&lt;name&gt;.columns.*.sort.visualBreak = false;
+}
+</code></pre>
+<h2 id="programstaskwarriorreportsnamedateformat"><a class="header" href="#programstaskwarriorreportsnamedateformat">programs.taskwarrior.reports.&lt;name&gt;.dateFormat</a></h2>
+<p>Used by the 'due date' column.</p>
+<p>See the DATES section in 'man 5 taskrc' for details.</p>
+<h4 id="type-143"><a class="header" href="#type-143">type</a></h4>
+<p>null or string</p>
+<h4 id="default-126"><a class="header" href="#default-126">default</a></h4>
+<pre><code class="language-nix">{
+  programs.taskwarrior.reports.&lt;name&gt;.dateFormat = null;
+}
+</code></pre>
+<h2 id="programstaskwarriorreportsnamedescription"><a class="header" href="#programstaskwarriorreportsnamedescription">programs.taskwarrior.reports.&lt;name&gt;.description</a></h2>
+<p>The description when running the 'task help' command.</p>
+<h4 id="type-144"><a class="header" href="#type-144">type</a></h4>
+<p>null or string</p>
+<h4 id="default-127"><a class="header" href="#default-127">default</a></h4>
+<pre><code class="language-nix">{
+  programs.taskwarrior.reports.&lt;name&gt;.description = null;
+}
+</code></pre>
+<h2 id="programstaskwarriorreportsnamefilter"><a class="header" href="#programstaskwarriorreportsnamefilter">programs.taskwarrior.reports.&lt;name&gt;.filter</a></h2>
+<p>Only tasks matching the filter criteria are
+displayed in the generated report.</p>
+<h4 id="type-145"><a class="header" href="#type-145">type</a></h4>
+<p>null or string</p>
+<h4 id="default-128"><a class="header" href="#default-128">default</a></h4>
+<pre><code class="language-nix">{
+  programs.taskwarrior.reports.&lt;name&gt;.filter = null;
+}
+</code></pre>
+<h2 id="programstaskwarriortaskdauthoritycertificate"><a class="header" href="#programstaskwarriortaskdauthoritycertificate">programs.taskwarrior.taskd.authorityCertificate</a></h2>
+<p>Specifies the path to the CA certificate in the event
+that your Taskserver is using a self-signed certificate.</p>
+<h4 id="type-146"><a class="header" href="#type-146">type</a></h4>
+<p>null or path</p>
+<h4 id="default-129"><a class="header" href="#default-129">default</a></h4>
+<pre><code class="language-nix">{
+  programs.taskwarrior.taskd.authorityCertificate = null;
+}
+</code></pre>
+<h2 id="programstaskwarriortaskdclientcertificate"><a class="header" href="#programstaskwarriortaskdclientcertificate">programs.taskwarrior.taskd.clientCertificate</a></h2>
+<p>Specifies the path to the client certificate
+used for identification with the Taskserver.</p>
+<h4 id="type-147"><a class="header" href="#type-147">type</a></h4>
+<p>path</p>
+<h2 id="programstaskwarriortaskdclientcredentials"><a class="header" href="#programstaskwarriortaskdclientcredentials">programs.taskwarrior.taskd.clientCredentials</a></h2>
+<p>User identification for the Taskserver,
+which includes a private key.</p>
+<h4 id="type-148"><a class="header" href="#type-148">type</a></h4>
+<p>null or string</p>
+<h4 id="example-13"><a class="header" href="#example-13">example</a></h4>
+<pre><code class="language-nix">{
+  programs.taskwarrior.taskd.clientCredentials = &quot;&lt;organization&gt;/&lt;user&gt;/&lt;key&gt;&quot;;
+}
+</code></pre>
+<h4 id="default-130"><a class="header" href="#default-130">default</a></h4>
+<pre><code class="language-nix">{
+  programs.taskwarrior.taskd.clientCredentials = null;
+}
+</code></pre>
+<h2 id="programstaskwarriortaskdclientkey"><a class="header" href="#programstaskwarriortaskdclientkey">programs.taskwarrior.taskd.clientKey</a></h2>
+<p>Specifies the path to the client key used for
+encrypted communication with the Taskserver.</p>
+<h4 id="type-149"><a class="header" href="#type-149">type</a></h4>
+<p>path</p>
+<h2 id="programstaskwarriortaskdserver"><a class="header" href="#programstaskwarriortaskdserver">programs.taskwarrior.taskd.server</a></h2>
+<p>Specifies the hostname and port of the Taskserver.</p>
+<p>Hostname may be an IPv4 or IPv6 address, or domain.
+Port is an integer.</p>
+<h4 id="type-150"><a class="header" href="#type-150">type</a></h4>
+<p>null or string</p>
+<h4 id="example-14"><a class="header" href="#example-14">example</a></h4>
+<pre><code class="language-nix">{
+  programs.taskwarrior.taskd.server = &quot;host.name:53589&quot;;
+}
+</code></pre>
+<h4 id="default-131"><a class="header" href="#default-131">default</a></h4>
+<pre><code class="language-nix">{
+  programs.taskwarrior.taskd.server = null;
+}
+</code></pre>
+<h2 id="programstaskwarriortaskdtrust"><a class="header" href="#programstaskwarriortaskdtrust">programs.taskwarrior.taskd.trust</a></h2>
+<p>This settings allows you to override the trust level
+when server certificates are validated.</p>
+<p>With 'allow all', the server certificate is trusted automatically.</p>
+<p>With 'ignore hostname', the server certificate is verified
+but the hostname is ignored.</p>
+<p>With 'strict', the server certificate is verified.</p>
+<h4 id="type-151"><a class="header" href="#type-151">type</a></h4>
+<p>one of &quot;strict&quot;, &quot;ignore hostname&quot;, &quot;allow all&quot;</p>
+<h4 id="default-132"><a class="header" href="#default-132">default</a></h4>
+<pre><code class="language-nix">{
+  programs.taskwarrior.taskd.trust = &quot;strict&quot;;
+}
+</code></pre>
+<h2 id="programstaskwarrioruserdefinedattributes"><a class="header" href="#programstaskwarrioruserdefinedattributes">programs.taskwarrior.userDefinedAttributes</a></h2>
+<p>Custom UDA definitions.</p>
+<h4 id="type-152"><a class="header" href="#type-152">type</a></h4>
+<p>attribute set of submodule</p>
+<h4 id="default-133"><a class="header" href="#default-133">default</a></h4>
+<pre><code class="language-nix">{
+  programs.taskwarrior.userDefinedAttributes = {};
+}
+</code></pre>
+<h2 id="programstaskwarrioruserdefinedattributesnamecolor"><a class="header" href="#programstaskwarrioruserdefinedattributesnamecolor">programs.taskwarrior.userDefinedAttributes.&lt;name&gt;.color</a></h2>
+<p>Color any task that has this attribute.</p>
+<h4 id="type-153"><a class="header" href="#type-153">type</a></h4>
+<p>null or submodule</p>
+<h4 id="default-134"><a class="header" href="#default-134">default</a></h4>
+<pre><code class="language-nix">{
+  programs.taskwarrior.userDefinedAttributes.&lt;name&gt;.color = null;
+}
+</code></pre>
+<h2 id="programstaskwarrioruserdefinedattributesnamecolorbackground"><a class="header" href="#programstaskwarrioruserdefinedattributesnamecolorbackground">programs.taskwarrior.userDefinedAttributes.&lt;name&gt;.color.background</a></h2>
+<p>Background color.</p>
+<h4 id="type-154"><a class="header" href="#type-154">type</a></h4>
+<p>null or string</p>
+<h4 id="default-135"><a class="header" href="#default-135">default</a></h4>
+<pre><code class="language-nix">{
+  programs.taskwarrior.userDefinedAttributes.&lt;name&gt;.color.background = null;
+}
+</code></pre>
+<h2 id="programstaskwarrioruserdefinedattributesnamecolorforeground"><a class="header" href="#programstaskwarrioruserdefinedattributesnamecolorforeground">programs.taskwarrior.userDefinedAttributes.&lt;name&gt;.color.foreground</a></h2>
+<p>Foreground color.</p>
+<h4 id="type-155"><a class="header" href="#type-155">type</a></h4>
+<p>null or string</p>
+<h4 id="default-136"><a class="header" href="#default-136">default</a></h4>
+<pre><code class="language-nix">{
+  programs.taskwarrior.userDefinedAttributes.&lt;name&gt;.color.foreground = null;
+}
+</code></pre>
+<h2 id="programstaskwarrioruserdefinedattributesnamedefault"><a class="header" href="#programstaskwarrioruserdefinedattributesnamedefault">programs.taskwarrior.userDefinedAttributes.&lt;name&gt;.default</a></h2>
+<p>Default value when using the 'task add' command.</p>
+<h4 id="type-156"><a class="header" href="#type-156">type</a></h4>
+<p>null or string</p>
+<h4 id="default-137"><a class="header" href="#default-137">default</a></h4>
+<pre><code class="language-nix">{
+  programs.taskwarrior.userDefinedAttributes.&lt;name&gt;.default = null;
+}
+</code></pre>
+<h2 id="programstaskwarrioruserdefinedattributesnameindicator"><a class="header" href="#programstaskwarrioruserdefinedattributesnameindicator">programs.taskwarrior.userDefinedAttributes.&lt;name&gt;.indicator</a></h2>
+<p>The character or string to show in the 'uda.indicator' report column.</p>
+<h4 id="type-157"><a class="header" href="#type-157">type</a></h4>
+<p>null or string</p>
+<h4 id="default-138"><a class="header" href="#default-138">default</a></h4>
+<pre><code class="language-nix">{
+  programs.taskwarrior.userDefinedAttributes.&lt;name&gt;.indicator = null;
+}
+</code></pre>
+<h2 id="programstaskwarrioruserdefinedattributesnamelabel"><a class="header" href="#programstaskwarrioruserdefinedattributesnamelabel">programs.taskwarrior.userDefinedAttributes.&lt;name&gt;.label</a></h2>
+<p>A default report label for the attribute.</p>
+<h4 id="type-158"><a class="header" href="#type-158">type</a></h4>
+<p>string</p>
+<h2 id="programstaskwarrioruserdefinedattributesnamenonecolor"><a class="header" href="#programstaskwarrioruserdefinedattributesnamenonecolor">programs.taskwarrior.userDefinedAttributes.&lt;name&gt;.noneColor</a></h2>
+<p>Color any task that does not have this attribute.</p>
+<h4 id="type-159"><a class="header" href="#type-159">type</a></h4>
+<p>null or submodule</p>
+<h4 id="default-139"><a class="header" href="#default-139">default</a></h4>
+<pre><code class="language-nix">{
+  programs.taskwarrior.userDefinedAttributes.&lt;name&gt;.noneColor = null;
+}
+</code></pre>
+<h2 id="programstaskwarrioruserdefinedattributesnamenonecolorbackground"><a class="header" href="#programstaskwarrioruserdefinedattributesnamenonecolorbackground">programs.taskwarrior.userDefinedAttributes.&lt;name&gt;.noneColor.background</a></h2>
+<p>Background color.</p>
+<h4 id="type-160"><a class="header" href="#type-160">type</a></h4>
+<p>null or string</p>
+<h4 id="default-140"><a class="header" href="#default-140">default</a></h4>
+<pre><code class="language-nix">{
+  programs.taskwarrior.userDefinedAttributes.&lt;name&gt;.noneColor.background = null;
+}
+</code></pre>
+<h2 id="programstaskwarrioruserdefinedattributesnamenonecolorforeground"><a class="header" href="#programstaskwarrioruserdefinedattributesnamenonecolorforeground">programs.taskwarrior.userDefinedAttributes.&lt;name&gt;.noneColor.foreground</a></h2>
+<p>Foreground color.</p>
+<h4 id="type-161"><a class="header" href="#type-161">type</a></h4>
+<p>null or string</p>
+<h4 id="default-141"><a class="header" href="#default-141">default</a></h4>
+<pre><code class="language-nix">{
+  programs.taskwarrior.userDefinedAttributes.&lt;name&gt;.noneColor.foreground = null;
+}
+</code></pre>
+<h2 id="programstaskwarrioruserdefinedattributesnametype"><a class="header" href="#programstaskwarrioruserdefinedattributesnametype">programs.taskwarrior.userDefinedAttributes.&lt;name&gt;.type</a></h2>
+<p>The value type of the attribute.</p>
+<h4 id="type-162"><a class="header" href="#type-162">type</a></h4>
+<p>one of &quot;string&quot;, &quot;numeric&quot;, &quot;date&quot;, &quot;duration&quot;</p>
+<h2 id="programstaskwarrioruserdefinedattributesnameurgencycoefficient"><a class="header" href="#programstaskwarrioruserdefinedattributesnameurgencycoefficient">programs.taskwarrior.userDefinedAttributes.&lt;name&gt;.urgencyCoefficient</a></h2>
+<p>Task urgency coefficient based on the presence of this attribute.</p>
+<h4 id="type-163"><a class="header" href="#type-163">type</a></h4>
+<p>null or string</p>
+<h4 id="default-142"><a class="header" href="#default-142">default</a></h4>
+<pre><code class="language-nix">{
+  programs.taskwarrior.userDefinedAttributes.&lt;name&gt;.urgencyCoefficient = null;
+}
+</code></pre>
+<h2 id="programstaskwarrioruserdefinedattributesnamevalues"><a class="header" href="#programstaskwarrioruserdefinedattributesnamevalues">programs.taskwarrior.userDefinedAttributes.&lt;name&gt;.values</a></h2>
+<p>A list of acceptable values for a string attribute.</p>
+<h4 id="type-164"><a class="header" href="#type-164">type</a></h4>
+<p>list of submodule</p>
+<h4 id="default-143"><a class="header" href="#default-143">default</a></h4>
+<pre><code class="language-nix">{
+  programs.taskwarrior.userDefinedAttributes.&lt;name&gt;.values = [];
+}
+</code></pre>
+<h2 id="programstaskwarrioruserdefinedattributesnamevaluescolor"><a class="header" href="#programstaskwarrioruserdefinedattributesnamevaluescolor">programs.taskwarrior.userDefinedAttributes.&lt;name&gt;.values.*.color</a></h2>
+<p>Color any task that has this value.</p>
+<h4 id="type-165"><a class="header" href="#type-165">type</a></h4>
+<p>null or submodule</p>
+<h4 id="default-144"><a class="header" href="#default-144">default</a></h4>
+<pre><code class="language-nix">{
+  programs.taskwarrior.userDefinedAttributes.&lt;name&gt;.values.*.color = null;
+}
+</code></pre>
+<h2 id="programstaskwarrioruserdefinedattributesnamevaluescolorbackground"><a class="header" href="#programstaskwarrioruserdefinedattributesnamevaluescolorbackground">programs.taskwarrior.userDefinedAttributes.&lt;name&gt;.values.*.color.background</a></h2>
+<p>Background color.</p>
+<h4 id="type-166"><a class="header" href="#type-166">type</a></h4>
+<p>null or string</p>
+<h4 id="default-145"><a class="header" href="#default-145">default</a></h4>
+<pre><code class="language-nix">{
+  programs.taskwarrior.userDefinedAttributes.&lt;name&gt;.values.*.color.background = null;
+}
+</code></pre>
+<h2 id="programstaskwarrioruserdefinedattributesnamevaluescolorforeground"><a class="header" href="#programstaskwarrioruserdefinedattributesnamevaluescolorforeground">programs.taskwarrior.userDefinedAttributes.&lt;name&gt;.values.*.color.foreground</a></h2>
+<p>Foreground color.</p>
+<h4 id="type-167"><a class="header" href="#type-167">type</a></h4>
+<p>null or string</p>
+<h4 id="default-146"><a class="header" href="#default-146">default</a></h4>
+<pre><code class="language-nix">{
+  programs.taskwarrior.userDefinedAttributes.&lt;name&gt;.values.*.color.foreground = null;
+}
+</code></pre>
+<h2 id="programstaskwarrioruserdefinedattributesnamevaluesurgencycoefficient"><a class="header" href="#programstaskwarrioruserdefinedattributesnamevaluesurgencycoefficient">programs.taskwarrior.userDefinedAttributes.&lt;name&gt;.values.*.urgencyCoefficient</a></h2>
+<p>Task urgency coefficient used when this value is set.</p>
+<h4 id="type-168"><a class="header" href="#type-168">type</a></h4>
+<p>null or string</p>
+<h4 id="default-147"><a class="header" href="#default-147">default</a></h4>
+<pre><code class="language-nix">{
+  programs.taskwarrior.userDefinedAttributes.&lt;name&gt;.values.*.urgencyCoefficient = null;
+}
+</code></pre>
+<h2 id="programstaskwarrioruserdefinedattributesnamevaluesvalue"><a class="header" href="#programstaskwarrioruserdefinedattributesnamevaluesvalue">programs.taskwarrior.userDefinedAttributes.&lt;name&gt;.values.*.value</a></h2>
+<p>Acceptable attribute value.</p>
+<h4 id="type-169"><a class="header" href="#type-169">type</a></h4>
+<p>string</p>
+<h2 id="servicesfilebinenable"><a class="header" href="#servicesfilebinenable">services.filebin.enable</a></h2>
+<p>Whether to enable filebin path monitor.</p>
+<h4 id="type-170"><a class="header" href="#type-170">type</a></h4>
+<p>boolean</p>
+<h4 id="example-15"><a class="header" href="#example-15">example</a></h4>
+<pre><code class="language-nix">{
+  services.filebin.enable = true;
+}
+</code></pre>
+<h4 id="default-148"><a class="header" href="#default-148">default</a></h4>
+<pre><code class="language-nix">{
+  services.filebin.enable = false;
+}
+</code></pre>
+<h2 id="servicesfilebinnotify"><a class="header" href="#servicesfilebinnotify">services.filebin.notify</a></h2>
+<h4 id="type-171"><a class="header" href="#type-171">type</a></h4>
+<p>boolean</p>
+<h4 id="default-149"><a class="header" href="#default-149">default</a></h4>
+<pre><code class="language-nix">{
+  services.filebin.notify = true;
+}
+</code></pre>
+<h2 id="servicesfilebinpath"><a class="header" href="#servicesfilebinpath">services.filebin.path</a></h2>
+<h4 id="type-172"><a class="header" href="#type-172">type</a></h4>
+<p>path</p>
+<h4 id="default-150"><a class="header" href="#default-150">default</a></h4>
+<pre><code class="language-nix">{
+  services.filebin.path = &quot;/run/filebin&quot;;
+}
+</code></pre>
+<h2 id="servicesfilebinuser"><a class="header" href="#servicesfilebinuser">services.filebin.user</a></h2>
+<h4 id="type-173"><a class="header" href="#type-173">type</a></h4>
+<p>null or string</p>
+<h4 id="default-151"><a class="header" href="#default-151">default</a></h4>
+<pre><code class="language-nix">{
+  services.filebin.user = null;
+}
+</code></pre>
+<h2 id="serviceskonawallenable"><a class="header" href="#serviceskonawallenable">services.konawall.enable</a></h2>
+<p>Whether to enable enable konawall.</p>
+<h4 id="type-174"><a class="header" href="#type-174">type</a></h4>
+<p>boolean</p>
+<h4 id="example-16"><a class="header" href="#example-16">example</a></h4>
+<pre><code class="language-nix">{
+  services.konawall.enable = true;
+}
+</code></pre>
+<h4 id="default-152"><a class="header" href="#default-152">default</a></h4>
+<pre><code class="language-nix">{
+  services.konawall.enable = false;
+}
+</code></pre>
+<h2 id="serviceskonawallpackage"><a class="header" href="#serviceskonawallpackage">services.konawall.package</a></h2>
+<h4 id="type-175"><a class="header" href="#type-175">type</a></h4>
+<p>package</p>
+<h4 id="default-153"><a class="header" href="#default-153">default</a></h4>
+<pre><code class="language-nix">{
+  services.konawall.package = {
+    drvPath = &quot;konawall-rs-0.1.0&quot;;
+    name = &quot;konawall-rs-0.1.0&quot;;
+    outPath = &quot;konawall-rs-0.1.0&quot;;
+    type = &quot;derivation&quot;;
+  };
+}
+</code></pre>
+<h2 id="serviceskonawallcommontags"><a class="header" href="#serviceskonawallcommontags">services.konawall.commonTags</a></h2>
+<h4 id="type-176"><a class="header" href="#type-176">type</a></h4>
+<p>list of string</p>
+<h4 id="default-154"><a class="header" href="#default-154">default</a></h4>
+<pre><code class="language-nix">{
+  services.konawall.commonTags = [
+    &quot;score:&gt;=200&quot;
+    &quot;width:&gt;=1600&quot;
+  ];
+}
+</code></pre>
+<h2 id="serviceskonawallinterval"><a class="header" href="#serviceskonawallinterval">services.konawall.interval</a></h2>
+<p>How often to rotate backgrounds (specify as a systemd interval)</p>
+<h4 id="type-177"><a class="header" href="#type-177">type</a></h4>
+<p>null or string</p>
+<h4 id="example-17"><a class="header" href="#example-17">example</a></h4>
+<pre><code class="language-nix">{
+  services.konawall.interval = &quot;20m&quot;;
+}
+</code></pre>
+<h4 id="default-155"><a class="header" href="#default-155">default</a></h4>
+<pre><code class="language-nix">{
+  services.konawall.interval = null;
+}
+</code></pre>
+<h2 id="serviceskonawallkonashow"><a class="header" href="#serviceskonawallkonashow">services.konawall.konashow</a></h2>
+<h4 id="type-178"><a class="header" href="#type-178">type</a></h4>
+<p>package</p>
+<h4 id="default-156"><a class="header" href="#default-156">default</a></h4>
+<pre><code class="language-nix">{
+  services.konawall.konashow = {
+    drvPath = &quot;konashow&quot;;
+    name = &quot;konashow&quot;;
+    outPath = &quot;konashow&quot;;
+    type = &quot;derivation&quot;;
+  };
+}
+</code></pre>
+<h2 id="serviceskonawallmode"><a class="header" href="#serviceskonawallmode">services.konawall.mode</a></h2>
+<h4 id="type-179"><a class="header" href="#type-179">type</a></h4>
+<p>one of &quot;random&quot;, &quot;shuffle&quot;, &quot;map&quot;</p>
+<h4 id="default-157"><a class="header" href="#default-157">default</a></h4>
+<pre><code class="language-nix">{
+  services.konawall.mode = &quot;random&quot;;
+}
+</code></pre>
+<h2 id="serviceskonawalltaglist"><a class="header" href="#serviceskonawalltaglist">services.konawall.tagList</a></h2>
+<h4 id="type-180"><a class="header" href="#type-180">type</a></h4>
+<p>list of list of string</p>
+<h4 id="default-158"><a class="header" href="#default-158">default</a></h4>
+<pre><code class="language-nix">{
+  services.konawall.tagList = [
+    [
+      &quot;nobody&quot;
+    ]
+  ];
+}
+</code></pre>
+<h2 id="serviceskonawalltags"><a class="header" href="#serviceskonawalltags">services.konawall.tags</a></h2>
+<h4 id="type-181"><a class="header" href="#type-181">type</a></h4>
+<p>list of string</p>
+<h4 id="default-159"><a class="header" href="#default-159">default</a></h4>
+<pre><code class="language-nix">{
+  services.konawall.tags = [
+    &quot;nobody&quot;
+  ];
+}
+</code></pre>
+<h2 id="serviceslorriusenix"><a class="header" href="#serviceslorriusenix">services.lorri.useNix</a></h2>
+<h4 id="type-182"><a class="header" href="#type-182">type</a></h4>
+<p>boolean</p>
+<h4 id="default-160"><a class="header" href="#default-160">default</a></h4>
+<pre><code class="language-nix">{
+  services.lorri.useNix = true;
+}
+</code></pre>
+<h2 id="servicesmoshenable"><a class="header" href="#servicesmoshenable">services.mosh.enable</a></h2>
+<p>Whether to enable mosh-server.</p>
+<h4 id="type-183"><a class="header" href="#type-183">type</a></h4>
+<p>boolean</p>
+<h4 id="example-18"><a class="header" href="#example-18">example</a></h4>
+<pre><code class="language-nix">{
+  services.mosh.enable = true;
+}
+</code></pre>
+<h4 id="default-161"><a class="header" href="#default-161">default</a></h4>
+<pre><code class="language-nix">{
+  services.mosh.enable = false;
+}
+</code></pre>
+<h2 id="servicesmoshpackage"><a class="header" href="#servicesmoshpackage">services.mosh.package</a></h2>
+<h4 id="type-184"><a class="header" href="#type-184">type</a></h4>
+<p>package</p>
+<h4 id="default-162"><a class="header" href="#default-162">default</a></h4>
+<pre><code class="language-nix">{
+  services.mosh.package = &quot;pkgs.mosh&quot;;
+}
+</code></pre>
+<h2 id="servicesmoshextraarguments"><a class="header" href="#servicesmoshextraarguments">services.mosh.extraArguments</a></h2>
+<h4 id="type-185"><a class="header" href="#type-185">type</a></h4>
+<p>list of string</p>
+<h4 id="default-163"><a class="header" href="#default-163">default</a></h4>
+<pre><code class="language-nix">{
+  services.mosh.extraArguments = [];
+}
+</code></pre>
+<h2 id="servicesmoshportsfrom"><a class="header" href="#servicesmoshportsfrom">services.mosh.ports.from</a></h2>
+<h4 id="type-186"><a class="header" href="#type-186">type</a></h4>
+<p>null or 16 bit unsigned integer; between 0 and 65535 (both inclusive)</p>
+<h4 id="example-19"><a class="header" href="#example-19">example</a></h4>
+<pre><code class="language-nix">{
+  services.mosh.ports.from = &quot;30000&quot;;
+}
+</code></pre>
+<h4 id="default-164"><a class="header" href="#default-164">default</a></h4>
+<pre><code class="language-nix">{
+  services.mosh.ports.from = null;
+}
+</code></pre>
+<h2 id="servicesmoshportsto"><a class="header" href="#servicesmoshportsto">services.mosh.ports.to</a></h2>
+<h4 id="type-187"><a class="header" href="#type-187">type</a></h4>
+<p>null or 16 bit unsigned integer; between 0 and 65535 (both inclusive)</p>
+<h4 id="example-20"><a class="header" href="#example-20">example</a></h4>
+<pre><code class="language-nix">{
+  services.mosh.ports.to = &quot;40000&quot;;
+}
+</code></pre>
+<h4 id="default-165"><a class="header" href="#default-165">default</a></h4>
+<pre><code class="language-nix">{
+  services.mosh.ports.to = null;
+}
+</code></pre>
+<h2 id="servicesofflineimapenable"><a class="header" href="#servicesofflineimapenable">services.offlineimap.enable</a></h2>
+<p>Whether to enable offlineimap sync.</p>
+<h4 id="type-188"><a class="header" href="#type-188">type</a></h4>
+<p>boolean</p>
+<h4 id="example-21"><a class="header" href="#example-21">example</a></h4>
+<pre><code class="language-nix">{
+  services.offlineimap.enable = true;
+}
+</code></pre>
+<h4 id="default-166"><a class="header" href="#default-166">default</a></h4>
+<pre><code class="language-nix">{
+  services.offlineimap.enable = false;
+}
+</code></pre>
+<h2 id="servicesofflineimappackage"><a class="header" href="#servicesofflineimappackage">services.offlineimap.package</a></h2>
+<h4 id="type-189"><a class="header" href="#type-189">type</a></h4>
+<p>package</p>
+<h4 id="default-167"><a class="header" href="#default-167">default</a></h4>
+<pre><code class="language-nix">{
+  services.offlineimap.package = &quot;pkgs.offlineimap&quot;;
+}
+</code></pre>
+<h2 id="servicesofflineimapperiod"><a class="header" href="#servicesofflineimapperiod">services.offlineimap.period</a></h2>
+<p>Periodic sync only</p>
+<h4 id="type-190"><a class="header" href="#type-190">type</a></h4>
+<p>null or string</p>
+<h4 id="example-22"><a class="header" href="#example-22">example</a></h4>
+<pre><code class="language-nix">{
+  services.offlineimap.period = &quot;hourly&quot;;
+}
+</code></pre>
+<h4 id="default-168"><a class="header" href="#default-168">default</a></h4>
+<pre><code class="language-nix">{
+  services.offlineimap.period = null;
+}
+</code></pre>
+<h2 id="servicessshdauthorizedkeys"><a class="header" href="#servicessshdauthorizedkeys">services.sshd.authorizedKeys</a></h2>
+<p>SSH public keys to allow logins from</p>
+<h4 id="type-191"><a class="header" href="#type-191">type</a></h4>
+<p>list of string</p>
+<h4 id="default-169"><a class="header" href="#default-169">default</a></h4>
+<pre><code class="language-nix">{
+  services.sshd.authorizedKeys = [];
+}
+</code></pre>
+<h2 id="systemdpackage"><a class="header" href="#systemdpackage">systemd.package</a></h2>
+<h4 id="type-192"><a class="header" href="#type-192">type</a></h4>
+<p>package</p>
+<h4 id="default-170"><a class="header" href="#default-170">default</a></h4>
+<pre><code class="language-nix">{
+  systemd.package = &quot;pkgs.systemd&quot;;
+}
+</code></pre>
+<h2 id="systemdwatchdogenable"><a class="header" href="#systemdwatchdogenable">systemd.watchdog.enable</a></h2>
+<p>Whether to enable runtime watchdog.</p>
+<h4 id="type-193"><a class="header" href="#type-193">type</a></h4>
+<p>boolean</p>
+<h4 id="example-23"><a class="header" href="#example-23">example</a></h4>
+<pre><code class="language-nix">{
+  systemd.watchdog.enable = true;
+}
+</code></pre>
+<h4 id="default-171"><a class="header" href="#default-171">default</a></h4>
+<pre><code class="language-nix">{
+  systemd.watchdog.enable = false;
+}
+</code></pre>
+<h2 id="systemdwatchdogreboottimeout"><a class="header" href="#systemdwatchdogreboottimeout">systemd.watchdog.rebootTimeout</a></h2>
+<h4 id="type-194"><a class="header" href="#type-194">type</a></h4>
+<p>null or string</p>
+<h4 id="default-172"><a class="header" href="#default-172">default</a></h4>
+<pre><code class="language-nix">{
+  systemd.watchdog.rebootTimeout = &quot;10min&quot;;
+}
+</code></pre>
+<h2 id="systemdwatchdogtimeout"><a class="header" href="#systemdwatchdogtimeout">systemd.watchdog.timeout</a></h2>
+<h4 id="type-195"><a class="header" href="#type-195">type</a></h4>
+<p>string</p>
+<h4 id="default-173"><a class="header" href="#default-173">default</a></h4>
+<pre><code class="language-nix">{
+  systemd.watchdog.timeout = &quot;60s&quot;;
+}
+</code></pre>
+<h2 id="xdguserdirsabsolute"><a class="header" href="#xdguserdirsabsolute">xdg.userDirs.absolute</a></h2>
+<h4 id="type-196"><a class="header" href="#type-196">type</a></h4>
+<p>attribute set of path</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="nur-combined-ambroisie.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="nur-combined-bb010g.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="nur-combined-ambroisie.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="nur-combined-bb010g.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

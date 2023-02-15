@@ -1,0 +1,938 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>kapack</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="hugosenari.html"><strong aria-hidden="true">2.</strong> Hugosenari</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="hlissner.html"><strong aria-hidden="true">3.</strong> hlissner</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="cocada-boa.html"><strong aria-hidden="true">4.</strong> Thiago</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="climod.html"><strong aria-hidden="true">5.</strong> Climod</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="ew.html"><strong aria-hidden="true">6.</strong> Lucas</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="marcosrdac.html"><strong aria-hidden="true">7.</strong> Marcos</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="flake-gemini.html"><strong aria-hidden="true">8.</strong> Flake Gemini</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="impermanence.html"><strong aria-hidden="true">9.</strong> Impermanence</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="impermanence-hm.html"><strong aria-hidden="true">9.1.</strong> Impermanence HM</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="kubenix.html"><strong aria-hidden="true">10.</strong> KubeNix</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops.html"><strong aria-hidden="true">11.</strong> NixOps</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops-aws.html"><strong aria-hidden="true">12.</strong> NixOps AWS</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="nixops-aws-data.html"><strong aria-hidden="true">12.1.</strong> data</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpn-connection.html"><strong aria-hidden="true">12.2.</strong> vpn-connection</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpn-connection-route.html"><strong aria-hidden="true">12.3.</strong> vpn-connection-route</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpn-gateway.html"><strong aria-hidden="true">12.4.</strong> vpn-gateway</a></li><li class="chapter-item expanded "><a href="nixops-aws-cloudwatch-log-group.html"><strong aria-hidden="true">12.5.</strong> cloudwatch-log-group</a></li><li class="chapter-item expanded "><a href="nixops-aws-cloudwatch-log-stream.html"><strong aria-hidden="true">12.6.</strong> cloudwatch-log-stream</a></li><li class="chapter-item expanded "><a href="nixops-aws-ec2-keypair.html"><strong aria-hidden="true">12.7.</strong> ec2-keypair</a></li><li class="chapter-item expanded "><a href="nixops-aws-ec2-placement.html"><strong aria-hidden="true">12.8.</strong> ec2-placement</a></li><li class="chapter-item expanded "><a href="nixops-aws-ec2-rds-dbinstance.html"><strong aria-hidden="true">12.9.</strong> ec2-rds-dbinstance</a></li><li class="chapter-item expanded "><a href="nixops-aws-ec2-rds-dbsecurity.html"><strong aria-hidden="true">12.10.</strong> ec2-rds-dbsecurity</a></li><li class="chapter-item expanded "><a href="nixops-aws-ec2-security.html"><strong aria-hidden="true">12.11.</strong> ec2-security</a></li><li class="chapter-item expanded "><a href="nixops-aws-eslatic-file-system.html"><strong aria-hidden="true">12.12.</strong> eslatic-file-system</a></li><li class="chapter-item expanded "><a href="nixops-aws-eslatic-file-sistem-mount.html"><strong aria-hidden="true">12.13.</strong> eslatic-file-sistem-mount</a></li><li class="chapter-item expanded "><a href="nixops-aws-eslatic-ip.html"><strong aria-hidden="true">12.14.</strong> eslatic-ip</a></li><li class="chapter-item expanded "><a href="nixops-aws-iam.html"><strong aria-hidden="true">12.15.</strong> iam</a></li><li class="chapter-item expanded "><a href="nixops-aws-rds.html"><strong aria-hidden="true">12.16.</strong> rds</a></li><li class="chapter-item expanded "><a href="nixops-aws-route53.html"><strong aria-hidden="true">12.17.</strong> route53</a></li><li class="chapter-item expanded "><a href="nixops-aws-s3.html"><strong aria-hidden="true">12.18.</strong> s3</a></li><li class="chapter-item expanded "><a href="nixops-aws-sqs.html"><strong aria-hidden="true">12.19.</strong> sqs</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc.html"><strong aria-hidden="true">12.20.</strong> vpc</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-customer.html"><strong aria-hidden="true">12.21.</strong> vpc-customer</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-dhcp.html"><strong aria-hidden="true">12.22.</strong> vpc-dhcp</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-egress.html"><strong aria-hidden="true">12.23.</strong> vpc-egress</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-endpoint.html"><strong aria-hidden="true">12.24.</strong> vpc-endpoint</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-internet.html"><strong aria-hidden="true">12.25.</strong> vpc-internet</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-nat.html"><strong aria-hidden="true">12.26.</strong> vpc-nat</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-network-interface.html"><strong aria-hidden="true">12.27.</strong> vpc-network-interface</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-network-interface-attachment.html"><strong aria-hidden="true">12.28.</strong> vpc-network-interface-attachment</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-route.html"><strong aria-hidden="true">12.29.</strong> vpc-route</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-route-table.html"><strong aria-hidden="true">12.30.</strong> vpc-route-table</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-route-table-association.html"><strong aria-hidden="true">12.31.</strong> vpc-route-table-association</a></li><li class="chapter-item expanded "><a href="nixops-aws-vpc-subnet.html"><strong aria-hidden="true">12.32.</strong> vpc-subnet</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="nixops-datadog-monitor.html"><strong aria-hidden="true">13.</strong> NixOps Datadog</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops-digitalocean.html"><strong aria-hidden="true">14.</strong> NixOps DigitalOcean</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops-gce.html"><strong aria-hidden="true">15.</strong> NixOps GCE</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops-hcloud.html"><strong aria-hidden="true">16.</strong> NixOps HCloud</a></li><li class="chapter-item expanded "><a href="nixops-hcloud-volume.html"><strong aria-hidden="true">17.</strong> NixOps HCloud Volume</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixops-libvirtd.html"><strong aria-hidden="true">18.</strong> NixOps LibVirtd</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixos-firehol.html"><strong aria-hidden="true">19.</strong> NixOS-FireHOL</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="nixos-hardware.html"><strong aria-hidden="true">20.</strong> NixOS Hardware</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="nixos-hardware-asus.html"><strong aria-hidden="true">20.1.</strong> asus</a></li><li class="chapter-item expanded "><a href="nixos-hardware-surface.html"><strong aria-hidden="true">20.2.</strong> surface</a></li><li class="chapter-item expanded "><a href="nixos-hardware-raspberry.html"><strong aria-hidden="true">20.3.</strong> raspberry</a></li><li class="chapter-item expanded "><a href="nixos-hardware-system76.html"><strong aria-hidden="true">20.4.</strong> system76</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="nur-combined.html"><strong aria-hidden="true">21.</strong> NUR Combined</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="nur-combined-aasg.html"><strong aria-hidden="true">21.1.</strong> aasg</a></li><li class="chapter-item expanded "><a href="nur-combined-afreakk.html"><strong aria-hidden="true">21.2.</strong> afreakk</a></li><li class="chapter-item expanded "><a href="nur-combined-alarsyo.html"><strong aria-hidden="true">21.3.</strong> alarsyo</a></li><li class="chapter-item expanded "><a href="nur-combined-ambroisie.html"><strong aria-hidden="true">21.4.</strong> ambroisie</a></li><li class="chapter-item expanded "><a href="nur-combined-arc.html"><strong aria-hidden="true">21.5.</strong> arc</a></li><li class="chapter-item expanded "><a href="nur-combined-bb010g.html"><strong aria-hidden="true">21.6.</strong> bb010g</a></li><li class="chapter-item expanded "><a href="nur-combined-bendlas.html"><strong aria-hidden="true">21.7.</strong> bendlas</a></li><li class="chapter-item expanded "><a href="nur-combined-berbiche.html"><strong aria-hidden="true">21.8.</strong> berbiche</a></li><li class="chapter-item expanded "><a href="nur-combined-c0deaddict.html"><strong aria-hidden="true">21.9.</strong> c0deaddict</a></li><li class="chapter-item expanded "><a href="nur-combined-crazazy.html"><strong aria-hidden="true">21.10.</strong> crazazy</a></li><li class="chapter-item expanded "><a href="nur-combined-crtified.html"><strong aria-hidden="true">21.11.</strong> crtified</a></li><li class="chapter-item expanded "><a href="nur-combined-cwyc.html"><strong aria-hidden="true">21.12.</strong> cwyc</a></li><li class="chapter-item expanded "><a href="nur-combined-dawidsowa.html"><strong aria-hidden="true">21.13.</strong> dawidsowa</a></li><li class="chapter-item expanded "><a href="nur-combined-dguibert.html"><strong aria-hidden="true">21.14.</strong> dguibert</a></li><li class="chapter-item expanded "><a href="nur-combined-dtz.html"><strong aria-hidden="true">21.15.</strong> dtz</a></li><li class="chapter-item expanded "><a href="nur-combined-dukzcry.html"><strong aria-hidden="true">21.16.</strong> dukzcry</a></li><li class="chapter-item expanded "><a href="nur-combined-emmanuelrosa.html"><strong aria-hidden="true">21.17.</strong> emmanuelrosa</a></li><li class="chapter-item expanded "><a href="nur-combined-heph2.html"><strong aria-hidden="true">21.18.</strong> heph2</a></li><li class="chapter-item expanded "><a href="nur-combined-ilya-fedin.html"><strong aria-hidden="true">21.19.</strong> ilya-fedin</a></li><li class="chapter-item expanded "><a href="nur-combined-immae.html"><strong aria-hidden="true">21.20.</strong> immae</a></li><li class="chapter-item expanded "><a href="nur-combined-instantos.html"><strong aria-hidden="true">21.21.</strong> instantos</a></li><li class="chapter-item expanded "><a href="nur-combined-jbarthelmes.html"><strong aria-hidden="true">21.22.</strong> jbarthelmes</a></li><li class="chapter-item expanded "><a href="nur-combined-johnazoidberg.html"><strong aria-hidden="true">21.23.</strong> johnazoidberg</a></li><li class="chapter-item expanded "><a href="nur-combined-jomik.html"><strong aria-hidden="true">21.24.</strong> jomik</a></li><li class="chapter-item expanded "><a href="nur-combined-kampka.html"><strong aria-hidden="true">21.25.</strong> kampka</a></li><li class="chapter-item expanded "><a href="nur-combined-kapack.html" class="active"><strong aria-hidden="true">21.26.</strong> kapack</a></li><li class="chapter-item expanded "><a href="nur-combined-kira-bruneau.html"><strong aria-hidden="true">21.27.</strong> kira-bruneau</a></li><li class="chapter-item expanded "><a href="nur-combined-kolloch.html"><strong aria-hidden="true">21.28.</strong> kolloch</a></li><li class="chapter-item expanded "><a href="nur-combined-krebs.html"><strong aria-hidden="true">21.29.</strong> krebs</a></li><li class="chapter-item expanded "><a href="nur-combined-kreisys.html"><strong aria-hidden="true">21.30.</strong> kreisys</a></li><li class="chapter-item expanded "><a href="nur-combined-linyinfeng.html"><strong aria-hidden="true">21.31.</strong> linyinfeng</a></li><li class="chapter-item expanded "><a href="nur-combined-lschuermann.html"><strong aria-hidden="true">21.32.</strong> lschuermann</a></li><li class="chapter-item expanded "><a href="nur-combined-lucasew.html"><strong aria-hidden="true">21.33.</strong> lucasew</a></li><li class="chapter-item expanded "><a href="nur-combined-misterio.html"><strong aria-hidden="true">21.34.</strong> misterio</a></li><li class="chapter-item expanded "><a href="nur-combined-mmilata.html"><strong aria-hidden="true">21.35.</strong> mmilata</a></li><li class="chapter-item expanded "><a href="nur-combined-moredhel.html"><strong aria-hidden="true">21.36.</strong> moredhel</a></li><li class="chapter-item expanded "><a href="nur-combined-moredread.html"><strong aria-hidden="true">21.37.</strong> moredread</a></li><li class="chapter-item expanded "><a href="nur-combined-noneucat.html"><strong aria-hidden="true">21.38.</strong> noneucat</a></li><li class="chapter-item expanded "><a href="nur-combined-onny.html"><strong aria-hidden="true">21.39.</strong> onny</a></li><li class="chapter-item expanded "><a href="nur-combined-pamplemousse.html"><strong aria-hidden="true">21.40.</strong> pamplemousse</a></li><li class="chapter-item expanded "><a href="nur-combined-pborzenkov.html"><strong aria-hidden="true">21.41.</strong> pborzenkov</a></li><li class="chapter-item expanded "><a href="nur-combined-peel.html"><strong aria-hidden="true">21.42.</strong> peel</a></li><li class="chapter-item expanded "><a href="nur-combined-priegger.html"><strong aria-hidden="true">21.43.</strong> priegger</a></li><li class="chapter-item expanded "><a href="nur-combined-qchem.html"><strong aria-hidden="true">21.44.</strong> qchem</a></li><li class="chapter-item expanded "><a href="nur-combined-rycee.html"><strong aria-hidden="true">21.45.</strong> rycee</a></li><li class="chapter-item expanded "><a href="nur-combined-sehqlr.html"><strong aria-hidden="true">21.46.</strong> sehqlr</a></li><li class="chapter-item expanded "><a href="nur-combined-shamilton.html"><strong aria-hidden="true">21.47.</strong> shamilton</a></li><li class="chapter-item expanded "><a href="nur-combined-sikmir.html"><strong aria-hidden="true">21.48.</strong> sikmir</a></li><li class="chapter-item expanded "><a href="nur-combined-splintah.html"><strong aria-hidden="true">21.49.</strong> splintah</a></li><li class="chapter-item expanded "><a href="nur-combined-syberant.html"><strong aria-hidden="true">21.50.</strong> syberant</a></li><li class="chapter-item expanded "><a href="nur-combined-tilpner.html"><strong aria-hidden="true">21.51.</strong> tilpner</a></li><li class="chapter-item expanded "><a href="nur-combined-tukuan.html"><strong aria-hidden="true">21.52.</strong> tukuan</a></li><li class="chapter-item expanded "><a href="nur-combined-tox.html"><strong aria-hidden="true">21.53.</strong> tox</a></li><li class="chapter-item expanded "><a href="nur-combined-vdmeester.html"><strong aria-hidden="true">21.54.</strong> vdmeester</a></li><li class="chapter-item expanded "><a href="nur-combined-vroad.html"><strong aria-hidden="true">21.55.</strong> vroad</a></li><li class="chapter-item expanded "><a href="nur-combined-xeals.html"><strong aria-hidden="true">21.56.</strong> xeals</a></li><li class="chapter-item expanded "><a href="nur-combined-zeratax.html"><strong aria-hidden="true">21.57.</strong> zeratax</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="servicesbatskyenable"><a class="header" href="#servicesbatskyenable">services.batsky.enable</a></h2>
+<p>Whether to enable batsky.</p>
+<h4 id="type"><a class="header" href="#type">type</a></h4>
+<p>boolean</p>
+<h4 id="example"><a class="header" href="#example">example</a></h4>
+<pre><code class="language-nix">{
+  services.batsky.enable = true;
+}
+</code></pre>
+<h4 id="default"><a class="header" href="#default">default</a></h4>
+<pre><code class="language-nix">{
+  services.batsky.enable = false;
+}
+</code></pre>
+<h2 id="servicesbatskypackage"><a class="header" href="#servicesbatskypackage">services.batsky.package</a></h2>
+<h4 id="type-1"><a class="header" href="#type-1">type</a></h4>
+<p>package</p>
+<h4 id="default-1"><a class="header" href="#default-1">default</a></h4>
+<pre><code class="language-nix">{
+  services.batsky.package = &quot; pkgs.nur.repos.kapack.batsky&quot;;
+}
+</code></pre>
+<h2 id="servicesbatskyargs"><a class="header" href="#servicesbatskyargs">services.batsky.args</a></h2>
+<p>Basic options for Batsky.</p>
+<h4 id="type-2"><a class="header" href="#type-2">type</a></h4>
+<p>null or string</p>
+<h4 id="default-2"><a class="header" href="#default-2">default</a></h4>
+<pre><code class="language-nix">{
+  services.batsky.args = &quot;-d -l /tmp/batsky.log&quot;;
+}
+</code></pre>
+<h2 id="servicesbatskycontroller"><a class="header" href="#servicesbatskycontroller">services.batsky.controller</a></h2>
+<p>Hostname which controls the forgered time.</p>
+<h4 id="type-3"><a class="header" href="#type-3">type</a></h4>
+<p>null or string</p>
+<h4 id="default-3"><a class="header" href="#default-3">default</a></h4>
+<pre><code class="language-nix">{
+  services.batsky.controller = null;
+}
+</code></pre>
+<h2 id="servicesbatskyctrl_args"><a class="header" href="#servicesbatskyctrl_args">services.batsky.ctrl_args</a></h2>
+<p>Basic options for controller.</p>
+<h4 id="type-4"><a class="header" href="#type-4">type</a></h4>
+<p>null or string</p>
+<h4 id="default-4"><a class="header" href="#default-4">default</a></h4>
+<pre><code class="language-nix">{
+  services.batsky.ctrl_args = &quot; '-d -l /tmp/batsky-controller.log'&quot;;
+}
+</code></pre>
+<h2 id="servicesbs-mungeenable"><a class="header" href="#servicesbs-mungeenable">services.bs-munge.enable</a></h2>
+<p>Whether to enable bs-munge service.</p>
+<h4 id="type-5"><a class="header" href="#type-5">type</a></h4>
+<p>boolean</p>
+<h4 id="example-1"><a class="header" href="#example-1">example</a></h4>
+<pre><code class="language-nix">{
+  services.bs-munge.enable = true;
+}
+</code></pre>
+<h4 id="default-5"><a class="header" href="#default-5">default</a></h4>
+<pre><code class="language-nix">{
+  services.bs-munge.enable = false;
+}
+</code></pre>
+<h2 id="servicesbs-mungepassword"><a class="header" href="#servicesbs-mungepassword">services.bs-munge.password</a></h2>
+<p>The path to a daemon's secret key.</p>
+<h4 id="type-6"><a class="header" href="#type-6">type</a></h4>
+<p>path</p>
+<h4 id="default-6"><a class="header" href="#default-6">default</a></h4>
+<pre><code class="language-nix">{
+  services.bs-munge.password = &quot;/etc/munge/munge.key&quot;;
+}
+</code></pre>
+<h2 id="servicescigripackage"><a class="header" href="#servicescigripackage">services.cigri.package</a></h2>
+<h4 id="type-7"><a class="header" href="#type-7">type</a></h4>
+<p>package</p>
+<h4 id="default-7"><a class="header" href="#default-7">default</a></h4>
+<pre><code class="language-nix">{
+  services.cigri.package = &quot;pkgs.nur.repos.kapack.cigri&quot;;
+}
+</code></pre>
+<h2 id="servicescigriclientenable"><a class="header" href="#servicescigriclientenable">services.cigri.client.enable</a></h2>
+<p>Whether to enable CiGri client.</p>
+<h4 id="type-8"><a class="header" href="#type-8">type</a></h4>
+<p>boolean</p>
+<h4 id="example-2"><a class="header" href="#example-2">example</a></h4>
+<pre><code class="language-nix">{
+  services.cigri.client.enable = true;
+}
+</code></pre>
+<h4 id="default-8"><a class="header" href="#default-8">default</a></h4>
+<pre><code class="language-nix">{
+  services.cigri.client.enable = false;
+}
+</code></pre>
+<h2 id="servicescigridatabasedbname"><a class="header" href="#servicescigridatabasedbname">services.cigri.database.dbname</a></h2>
+<p>Name of the postgresql database</p>
+<h4 id="type-9"><a class="header" href="#type-9">type</a></h4>
+<p>string</p>
+<h4 id="default-9"><a class="header" href="#default-9">default</a></h4>
+<pre><code class="language-nix">{
+  services.cigri.database.dbname = &quot;cigri&quot;;
+}
+</code></pre>
+<h2 id="servicescigridatabasehost"><a class="header" href="#servicescigridatabasehost">services.cigri.database.host</a></h2>
+<p>Host of the postgresql server. </p>
+<h4 id="type-10"><a class="header" href="#type-10">type</a></h4>
+<p>string</p>
+<h4 id="default-10"><a class="header" href="#default-10">default</a></h4>
+<pre><code class="language-nix">{
+  services.cigri.database.host = &quot;localhost&quot;;
+}
+</code></pre>
+<h2 id="servicescigridatabasepasswordfile"><a class="header" href="#servicescigridatabasepasswordfile">services.cigri.database.passwordFile</a></h2>
+<p>A file containing the usernames/passwords for database, content example:</p>
+<p>DATABASE_USER_NAME=&quot;cigri&quot;
+DATABASE_USER_PASSWORD=&quot;cigri&quot;</p>
+<h4 id="type-11"><a class="header" href="#type-11">type</a></h4>
+<p>null or path</p>
+<h4 id="example-3"><a class="header" href="#example-3">example</a></h4>
+<pre><code class="language-nix">{
+  services.cigri.database.passwordFile = &quot;/run/keys/cigri-dbpassword&quot;;
+}
+</code></pre>
+<h4 id="default-11"><a class="header" href="#default-11">default</a></h4>
+<pre><code class="language-nix">{
+  services.cigri.database.passwordFile = null;
+}
+</code></pre>
+<h2 id="servicescigridbserverenable"><a class="header" href="#servicescigridbserverenable">services.cigri.dbserver.enable</a></h2>
+<p>Whether to enable CiGri database.</p>
+<h4 id="type-12"><a class="header" href="#type-12">type</a></h4>
+<p>boolean</p>
+<h4 id="example-4"><a class="header" href="#example-4">example</a></h4>
+<pre><code class="language-nix">{
+  services.cigri.dbserver.enable = true;
+}
+</code></pre>
+<h4 id="default-12"><a class="header" href="#default-12">default</a></h4>
+<pre><code class="language-nix">{
+  services.cigri.dbserver.enable = false;
+}
+</code></pre>
+<h2 id="servicescigriextraconfig"><a class="header" href="#servicescigriextraconfig">services.cigri.extraConfig</a></h2>
+<p>Extra configuration options that will replace default.</p>
+<h4 id="type-13"><a class="header" href="#type-13">type</a></h4>
+<p>attribute set</p>
+<h4 id="example-5"><a class="header" href="#example-5">example</a></h4>
+<pre><code class="language-nix">{
+  services.cigri.extraConfig = {
+    DEFAULT_JOB_RESOURCES = &quot;/resource_id=1&quot;;
+    LOG_LEVEL = &quot;3&quot;;
+  };
+}
+</code></pre>
+<h4 id="default-13"><a class="header" href="#default-13">default</a></h4>
+<pre><code class="language-nix">{
+  services.cigri.extraConfig = {};
+}
+</code></pre>
+<h2 id="servicescigriserverenable"><a class="header" href="#servicescigriserverenable">services.cigri.server.enable</a></h2>
+<p>Whether to enable CiGri server.</p>
+<h4 id="type-14"><a class="header" href="#type-14">type</a></h4>
+<p>boolean</p>
+<h4 id="example-6"><a class="header" href="#example-6">example</a></h4>
+<pre><code class="language-nix">{
+  services.cigri.server.enable = true;
+}
+</code></pre>
+<h4 id="default-14"><a class="header" href="#default-14">default</a></h4>
+<pre><code class="language-nix">{
+  services.cigri.server.enable = false;
+}
+</code></pre>
+<h2 id="servicescigriserverapi_ssl"><a class="header" href="#servicescigriserverapi_ssl">services.cigri.server.api_SSL</a></h2>
+<p>Whether to enable Enable API_SSL.</p>
+<h4 id="type-15"><a class="header" href="#type-15">type</a></h4>
+<p>boolean</p>
+<h4 id="example-7"><a class="header" href="#example-7">example</a></h4>
+<pre><code class="language-nix">{
+  services.cigri.server.api_SSL = true;
+}
+</code></pre>
+<h4 id="default-15"><a class="header" href="#default-15">default</a></h4>
+<pre><code class="language-nix">{
+  services.cigri.server.api_SSL = false;
+}
+</code></pre>
+<h2 id="servicescigriserverapi_base"><a class="header" href="#servicescigriserverapi_base">services.cigri.server.api_base</a></h2>
+<p>Base location to Cigir's Rest API.</p>
+<h4 id="type-16"><a class="header" href="#type-16">type</a></h4>
+<p>string</p>
+<h4 id="default-16"><a class="header" href="#default-16">default</a></h4>
+<pre><code class="language-nix">{
+  services.cigri.server.api_base = &quot;/cigri-api&quot;;
+}
+</code></pre>
+<h2 id="servicescigriserverapi_port"><a class="header" href="#servicescigriserverapi_port">services.cigri.server.api_port</a></h2>
+<p>Port to access to Cigir's Rest API.</p>
+<h4 id="type-17"><a class="header" href="#type-17">type</a></h4>
+<p>signed integer</p>
+<h4 id="default-17"><a class="header" href="#default-17">default</a></h4>
+<pre><code class="language-nix">{
+  services.cigri.server.api_port = 80;
+}
+</code></pre>
+<h2 id="servicescigriserverhost"><a class="header" href="#servicescigriserverhost">services.cigri.server.host</a></h2>
+<p>Host of the CiGri server. </p>
+<h4 id="type-18"><a class="header" href="#type-18">type</a></h4>
+<p>string</p>
+<h4 id="default-18"><a class="header" href="#default-18">default</a></h4>
+<pre><code class="language-nix">{
+  services.cigri.server.host = &quot;localhost&quot;;
+}
+</code></pre>
+<h2 id="servicescigriserverlogfile"><a class="header" href="#servicescigriserverlogfile">services.cigri.server.logfile</a></h2>
+<p>Specify the log file name.</p>
+<h4 id="type-19"><a class="header" href="#type-19">type</a></h4>
+<p>string</p>
+<h4 id="example-8"><a class="header" href="#example-8">example</a></h4>
+<pre><code class="language-nix">{
+  services.cigri.server.logfile = &quot;/var/cigri/state/home/cigri.log&quot;;
+}
+</code></pre>
+<h4 id="default-19"><a class="header" href="#default-19">default</a></h4>
+<pre><code class="language-nix">{
+  services.cigri.server.logfile = &quot;/dev/null&quot;;
+}
+</code></pre>
+<h2 id="servicescigriserverstatepath"><a class="header" href="#servicescigriserverstatepath">services.cigri.server.statePath</a></h2>
+<p>Cigri state directory. Configuration, repositories and
+logs, among other things, are stored here.</p>
+<p>The directory will be created automatically if it doesn't
+exist already.</p>
+<h4 id="type-20"><a class="header" href="#type-20">type</a></h4>
+<p>string</p>
+<h4 id="default-20"><a class="header" href="#default-20">default</a></h4>
+<pre><code class="language-nix">{
+  services.cigri.server.statePath = &quot;/var/cigri/state&quot;;
+}
+</code></pre>
+<h2 id="servicescigriserverwebenable"><a class="header" href="#servicescigriserverwebenable">services.cigri.server.web.enable</a></h2>
+<p>Whether to enable Web server to serve rest-api.</p>
+<h4 id="type-21"><a class="header" href="#type-21">type</a></h4>
+<p>boolean</p>
+<h4 id="example-9"><a class="header" href="#example-9">example</a></h4>
+<pre><code class="language-nix">{
+  services.cigri.server.web.enable = true;
+}
+</code></pre>
+<h4 id="default-21"><a class="header" href="#default-21">default</a></h4>
+<pre><code class="language-nix">{
+  services.cigri.server.web.enable = false;
+}
+</code></pre>
+<h2 id="servicesmy-startupenable"><a class="header" href="#servicesmy-startupenable">services.my-startup.enable</a></h2>
+<p>Whether to enable My startup .</p>
+<h4 id="type-22"><a class="header" href="#type-22">type</a></h4>
+<p>boolean</p>
+<h4 id="example-10"><a class="header" href="#example-10">example</a></h4>
+<pre><code class="language-nix">{
+  services.my-startup.enable = true;
+}
+</code></pre>
+<h4 id="default-22"><a class="header" href="#default-22">default</a></h4>
+<pre><code class="language-nix">{
+  services.my-startup.enable = false;
+}
+</code></pre>
+<h2 id="servicesmy-startuppath"><a class="header" href="#servicesmy-startuppath">services.my-startup.path</a></h2>
+<p>Path to tools used by provided script</p>
+<h4 id="type-23"><a class="header" href="#type-23">type</a></h4>
+<p>path</p>
+<h4 id="default-23"><a class="header" href="#default-23">default</a></h4>
+<pre><code class="language-nix">{
+  services.my-startup.path = [];
+}
+</code></pre>
+<h2 id="servicesmy-startupscript"><a class="header" href="#servicesmy-startupscript">services.my-startup.script</a></h2>
+<p>Script File to execute a start time</p>
+<h4 id="type-24"><a class="header" href="#type-24">type</a></h4>
+<p>string</p>
+<h4 id="default-24"><a class="header" href="#default-24">default</a></h4>
+<pre><code class="language-nix">{
+  services.my-startup.script = &quot;/etc/my-startup.sh&quot;;
+}
+</code></pre>
+<h2 id="servicesoarpackage"><a class="header" href="#servicesoarpackage">services.oar.package</a></h2>
+<h4 id="type-25"><a class="header" href="#type-25">type</a></h4>
+<p>package</p>
+<h4 id="default-25"><a class="header" href="#default-25">default</a></h4>
+<pre><code class="language-nix">{
+  services.oar.package = &quot;pkgs.nur.repos.kapack.oar&quot;;
+}
+</code></pre>
+<h2 id="servicesoarclientenable"><a class="header" href="#servicesoarclientenable">services.oar.client.enable</a></h2>
+<p>Whether to enable OAR client.</p>
+<h4 id="type-26"><a class="header" href="#type-26">type</a></h4>
+<p>boolean</p>
+<h4 id="example-11"><a class="header" href="#example-11">example</a></h4>
+<pre><code class="language-nix">{
+  services.oar.client.enable = true;
+}
+</code></pre>
+<h4 id="default-26"><a class="header" href="#default-26">default</a></h4>
+<pre><code class="language-nix">{
+  services.oar.client.enable = false;
+}
+</code></pre>
+<h2 id="servicesoardatabasedbname"><a class="header" href="#servicesoardatabasedbname">services.oar.database.dbname</a></h2>
+<p>Name of the postgresql database</p>
+<h4 id="type-27"><a class="header" href="#type-27">type</a></h4>
+<p>string</p>
+<h4 id="default-27"><a class="header" href="#default-27">default</a></h4>
+<pre><code class="language-nix">{
+  services.oar.database.dbname = &quot;oar&quot;;
+}
+</code></pre>
+<h2 id="servicesoardatabasehost"><a class="header" href="#servicesoardatabasehost">services.oar.database.host</a></h2>
+<p>Host of the postgresql server. </p>
+<h4 id="type-28"><a class="header" href="#type-28">type</a></h4>
+<p>string</p>
+<h4 id="default-28"><a class="header" href="#default-28">default</a></h4>
+<pre><code class="language-nix">{
+  services.oar.database.host = &quot;localhost&quot;;
+}
+</code></pre>
+<h2 id="servicesoardatabasepasswordfile"><a class="header" href="#servicesoardatabasepasswordfile">services.oar.database.passwordFile</a></h2>
+<p>A file containing the usernames/passwords for database, content example:</p>
+<h1 id="database-user-name"><a class="header" href="#database-user-name">DataBase user name</a></h1>
+<p>DB_BASE_LOGIN=&quot;oar&quot;</p>
+<h1 id="database-user-password"><a class="header" href="#database-user-password">DataBase user password</a></h1>
+<p>DB_BASE_PASSWD=&quot;oar&quot;</p>
+<h1 id="database-read-only-user-name"><a class="header" href="#database-read-only-user-name">DataBase read only user name</a></h1>
+<p>DB_BASE_LOGIN_RO=&quot;oar_ro&quot;</p>
+<h1 id="database-read-only-user-password"><a class="header" href="#database-read-only-user-password">DataBase read only user password</a></h1>
+<p>DB_BASE_PASSWD_RO=&quot;oar_ro&quot;</p>
+<h4 id="type-29"><a class="header" href="#type-29">type</a></h4>
+<p>null or path</p>
+<h4 id="example-12"><a class="header" href="#example-12">example</a></h4>
+<pre><code class="language-nix">{
+  services.oar.database.passwordFile = &quot;/run/keys/oar-dbpassword&quot;;
+}
+</code></pre>
+<h4 id="default-29"><a class="header" href="#default-29">default</a></h4>
+<pre><code class="language-nix">{
+  services.oar.database.passwordFile = null;
+}
+</code></pre>
+<h2 id="servicesoardbserverenable"><a class="header" href="#servicesoardbserverenable">services.oar.dbserver.enable</a></h2>
+<p>Whether to enable OAR database.</p>
+<h4 id="type-30"><a class="header" href="#type-30">type</a></h4>
+<p>boolean</p>
+<h4 id="example-13"><a class="header" href="#example-13">example</a></h4>
+<pre><code class="language-nix">{
+  services.oar.dbserver.enable = true;
+}
+</code></pre>
+<h4 id="default-30"><a class="header" href="#default-30">default</a></h4>
+<pre><code class="language-nix">{
+  services.oar.dbserver.enable = false;
+}
+</code></pre>
+<h2 id="servicesoarextraconfig"><a class="header" href="#servicesoarextraconfig">services.oar.extraConfig</a></h2>
+<p>Extra configuration options that will replace default.</p>
+<h4 id="type-31"><a class="header" href="#type-31">type</a></h4>
+<p>attribute set</p>
+<h4 id="example-14"><a class="header" href="#example-14">example</a></h4>
+<pre><code class="language-nix">{
+  services.oar.extraConfig = {
+    LOG_LEVEL = &quot;3&quot;;
+    OARSUB_DEFAULT_RESOURCES = &quot;/resource_id=1&quot;;
+  };
+}
+</code></pre>
+<h4 id="default-31"><a class="header" href="#default-31">default</a></h4>
+<pre><code class="language-nix">{
+  services.oar.extraConfig = {};
+}
+</code></pre>
+<h2 id="servicesoarnodeenable"><a class="header" href="#servicesoarnodeenable">services.oar.node.enable</a></h2>
+<p>Whether to enable OAR node.</p>
+<h4 id="type-32"><a class="header" href="#type-32">type</a></h4>
+<p>boolean</p>
+<h4 id="example-15"><a class="header" href="#example-15">example</a></h4>
+<pre><code class="language-nix">{
+  services.oar.node.enable = true;
+}
+</code></pre>
+<h4 id="default-32"><a class="header" href="#default-32">default</a></h4>
+<pre><code class="language-nix">{
+  services.oar.node.enable = false;
+}
+</code></pre>
+<h2 id="servicesoarnoderegisterenable"><a class="header" href="#servicesoarnoderegisterenable">services.oar.node.register.enable</a></h2>
+<p>Whether to enable Register node into OAR server.</p>
+<h4 id="type-33"><a class="header" href="#type-33">type</a></h4>
+<p>boolean</p>
+<h4 id="example-16"><a class="header" href="#example-16">example</a></h4>
+<pre><code class="language-nix">{
+  services.oar.node.register.enable = true;
+}
+</code></pre>
+<h4 id="default-33"><a class="header" href="#default-33">default</a></h4>
+<pre><code class="language-nix">{
+  services.oar.node.register.enable = false;
+}
+</code></pre>
+<h2 id="servicesoarnoderegisteradd"><a class="header" href="#servicesoarnoderegisteradd">services.oar.node.register.add</a></h2>
+<p>Execute oarnodesseting</p>
+<h4 id="type-34"><a class="header" href="#type-34">type</a></h4>
+<p>boolean</p>
+<h4 id="default-34"><a class="header" href="#default-34">default</a></h4>
+<pre><code class="language-nix">{
+  services.oar.node.register.add = true;
+}
+</code></pre>
+<h2 id="servicesoarnoderegisterextracommand"><a class="header" href="#servicesoarnoderegisterextracommand">services.oar.node.register.extraCommand</a></h2>
+<p>Extra command called once after registration</p>
+<h4 id="type-35"><a class="header" href="#type-35">type</a></h4>
+<p>string</p>
+<h4 id="default-35"><a class="header" href="#default-35">default</a></h4>
+<pre><code class="language-nix">{
+  services.oar.node.register.extraCommand = &quot;&quot;;
+}
+</code></pre>
+<h2 id="servicesoaroarhomedir"><a class="header" href="#servicesoaroarhomedir">services.oar.oarHomeDir</a></h2>
+<p>Home for oar user </p>
+<h4 id="type-36"><a class="header" href="#type-36">type</a></h4>
+<p>string</p>
+<h4 id="default-36"><a class="header" href="#default-36">default</a></h4>
+<pre><code class="language-nix">{
+  services.oar.oarHomeDir = &quot;/var/lib/oar&quot;;
+}
+</code></pre>
+<h2 id="servicesoarprivatekeyfile"><a class="header" href="#servicesoarprivatekeyfile">services.oar.privateKeyFile</a></h2>
+<p>Private key for oar user</p>
+<h4 id="type-37"><a class="header" href="#type-37">type</a></h4>
+<p>string</p>
+<h4 id="default-37"><a class="header" href="#default-37">default</a></h4>
+<pre><code class="language-nix">{
+  services.oar.privateKeyFile = &quot;/run/keys/oar_id_rsa_key&quot;;
+}
+</code></pre>
+<h2 id="servicesoarpublickeyfile"><a class="header" href="#servicesoarpublickeyfile">services.oar.publicKeyFile</a></h2>
+<p>Public key for oar user</p>
+<h4 id="type-38"><a class="header" href="#type-38">type</a></h4>
+<p>string</p>
+<h4 id="default-38"><a class="header" href="#default-38">default</a></h4>
+<pre><code class="language-nix">{
+  services.oar.publicKeyFile = &quot;/run/keys/oar_id_rsa_key.pub&quot;;
+}
+</code></pre>
+<h2 id="servicesoarserverenable"><a class="header" href="#servicesoarserverenable">services.oar.server.enable</a></h2>
+<p>Whether to enable OAR server.</p>
+<h4 id="type-39"><a class="header" href="#type-39">type</a></h4>
+<p>boolean</p>
+<h4 id="example-17"><a class="header" href="#example-17">example</a></h4>
+<pre><code class="language-nix">{
+  services.oar.server.enable = true;
+}
+</code></pre>
+<h4 id="default-39"><a class="header" href="#default-39">default</a></h4>
+<pre><code class="language-nix">{
+  services.oar.server.enable = false;
+}
+</code></pre>
+<h2 id="servicesoarserverhost"><a class="header" href="#servicesoarserverhost">services.oar.server.host</a></h2>
+<p>Host of the OAR server. </p>
+<h4 id="type-40"><a class="header" href="#type-40">type</a></h4>
+<p>string</p>
+<h4 id="default-40"><a class="header" href="#default-40">default</a></h4>
+<pre><code class="language-nix">{
+  services.oar.server.host = &quot;localhost&quot;;
+}
+</code></pre>
+<h2 id="servicesoarwebenable"><a class="header" href="#servicesoarwebenable">services.oar.web.enable</a></h2>
+<p>Whether to enable OAR web server and rest-api.</p>
+<h4 id="type-41"><a class="header" href="#type-41">type</a></h4>
+<p>boolean</p>
+<h4 id="example-18"><a class="header" href="#example-18">example</a></h4>
+<pre><code class="language-nix">{
+  services.oar.web.enable = true;
+}
+</code></pre>
+<h4 id="default-41"><a class="header" href="#default-41">default</a></h4>
+<pre><code class="language-nix">{
+  services.oar.web.enable = false;
+}
+</code></pre>
+<h2 id="servicesoarwebdrawganttenable"><a class="header" href="#servicesoarwebdrawganttenable">services.oar.web.drawgantt.enable</a></h2>
+<p>Whether to enable Drawgantt web page.</p>
+<h4 id="type-42"><a class="header" href="#type-42">type</a></h4>
+<p>boolean</p>
+<h4 id="example-19"><a class="header" href="#example-19">example</a></h4>
+<pre><code class="language-nix">{
+  services.oar.web.drawgantt.enable = true;
+}
+</code></pre>
+<h4 id="default-42"><a class="header" href="#default-42">default</a></h4>
+<pre><code class="language-nix">{
+  services.oar.web.drawgantt.enable = false;
+}
+</code></pre>
+<h2 id="servicesoarwebextraconfig"><a class="header" href="#servicesoarwebextraconfig">services.oar.web.extraConfig</a></h2>
+<p>Extra configuration to append to Nginx's one. </p>
+<h4 id="type-43"><a class="header" href="#type-43">type</a></h4>
+<p>string</p>
+<h4 id="default-43"><a class="header" href="#default-43">default</a></h4>
+<pre><code class="language-nix">{
+  services.oar.web.extraConfig = &quot;&quot;;
+}
+</code></pre>
+<h2 id="servicesoarwebmonikaenable"><a class="header" href="#servicesoarwebmonikaenable">services.oar.web.monika.enable</a></h2>
+<p>Whether to enable Monkia resources' status web page.</p>
+<h4 id="type-44"><a class="header" href="#type-44">type</a></h4>
+<p>boolean</p>
+<h4 id="example-20"><a class="header" href="#example-20">example</a></h4>
+<pre><code class="language-nix">{
+  services.oar.web.monika.enable = true;
+}
+</code></pre>
+<h4 id="default-44"><a class="header" href="#default-44">default</a></h4>
+<pre><code class="language-nix">{
+  services.oar.web.monika.enable = false;
+}
+</code></pre>
+<h2 id="servicesoarwebproxyenable"><a class="header" href="#servicesoarwebproxyenable">services.oar.web.proxy.enable</a></h2>
+<p>Whether to enable Enable proxy service based on Traefik.</p>
+<h4 id="type-45"><a class="header" href="#type-45">type</a></h4>
+<p>boolean</p>
+<h4 id="example-21"><a class="header" href="#example-21">example</a></h4>
+<pre><code class="language-nix">{
+  services.oar.web.proxy.enable = true;
+}
+</code></pre>
+<h4 id="default-45"><a class="header" href="#default-45">default</a></h4>
+<pre><code class="language-nix">{
+  services.oar.web.proxy.enable = false;
+}
+</code></pre>
+<h2 id="servicesoarwebproxyconfigoptions"><a class="header" href="#servicesoarwebproxyconfigoptions">services.oar.web.proxy.configOptions</a></h2>
+<p>Config for Traefik.</p>
+<h4 id="type-46"><a class="header" href="#type-46">type</a></h4>
+<p>attribute set</p>
+<h4 id="default-46"><a class="header" href="#default-46">default</a></h4>
+<pre><code class="language-nix">{
+  services.oar.web.proxy.configOptions = {
+    defaultentrypoints = [
+      &quot;http&quot;
+    ];
+    file = {
+      filename = &quot;/etc/oar/proxy/rules_oar_traefik.toml&quot;;
+      watch = true;
+    };
+    wss = {
+      protocol = &quot;http&quot;;
+    };
+  };
+}
+</code></pre>
+<h2 id="servicesoarwebproxyentrypointhttp"><a class="header" href="#servicesoarwebproxyentrypointhttp">services.oar.web.proxy.entryPointHttp</a></h2>
+<p>Entry Point for proxy server (example &quot;server:5000&quot;). </p>
+<h4 id="type-47"><a class="header" href="#type-47">type</a></h4>
+<p>string</p>
+<h4 id="default-47"><a class="header" href="#default-47">default</a></h4>
+<pre><code class="language-nix">{
+  services.oar.web.proxy.entryPointHttp = &quot;&quot;;
+}
+</code></pre>
+<h2 id="servicesphpfpm0extraconfig"><a class="header" href="#servicesphpfpm0extraconfig">services.phpfpm0.extraConfig</a></h2>
+<p>Extra configuration that should be put in the global section of
+the PHP-FPM configuration file. Do not specify the options
+<literal>error_log</literal> or
+<literal>daemonize</literal> here, since they are generated by
+NixOS.</p>
+<h4 id="type-48"><a class="header" href="#type-48">type</a></h4>
+<p>null or strings concatenated with &quot;\n&quot;</p>
+<h4 id="default-48"><a class="header" href="#default-48">default</a></h4>
+<pre><code class="language-nix">{
+  services.phpfpm0.extraConfig = null;
+}
+</code></pre>
+<h2 id="servicesphpfpm0phpoptions"><a class="header" href="#servicesphpfpm0phpoptions">services.phpfpm0.phpOptions</a></h2>
+<p>Options appended to the PHP configuration file <filename>php.ini</filename>.</p>
+<h4 id="type-49"><a class="header" href="#type-49">type</a></h4>
+<p>strings concatenated with &quot;\n&quot;</p>
+<h4 id="example-22"><a class="header" href="#example-22">example</a></h4>
+<pre><code class="language-nix">{
+  services.phpfpm0.phpOptions = ''
+    date.timezone = &quot;CET&quot;
+    
+  '';
+}
+</code></pre>
+<h4 id="default-49"><a class="header" href="#default-49">default</a></h4>
+<pre><code class="language-nix">{
+  services.phpfpm0.phpOptions = &quot;&quot;;
+}
+</code></pre>
+<h2 id="servicesphpfpm0phppackage"><a class="header" href="#servicesphpfpm0phppackage">services.phpfpm0.phpPackage</a></h2>
+<p>The PHP package to use for running the PHP-FPM service.</p>
+<h4 id="type-50"><a class="header" href="#type-50">type</a></h4>
+<p>package</p>
+<h4 id="default-50"><a class="header" href="#default-50">default</a></h4>
+<pre><code class="language-nix">{
+  services.phpfpm0.phpPackage = &quot;pkgs.php&quot;;
+}
+</code></pre>
+<h2 id="servicesphpfpm0pools"><a class="header" href="#servicesphpfpm0pools">services.phpfpm0.pools</a></h2>
+<p>PHP-FPM pools. If no pools are defined, the PHP-FPM
+service is disabled.</p>
+<h4 id="type-51"><a class="header" href="#type-51">type</a></h4>
+<p>attribute set of submodule</p>
+<h4 id="example-23"><a class="header" href="#example-23">example</a></h4>
+<pre><code class="language-nix">{
+  services.phpfpm0.pools = {
+    _type = &quot;literalExpression&quot;;
+    text = ''
+      {
+        mypool = {
+          user = &quot;php&quot;;
+          group = &quot;php&quot;;
+          phpPackage = pkgs.php;
+          settings = ''
+            &quot;pm&quot; = &quot;dynamic&quot;;
+            &quot;pm.max_children&quot; = 75;
+            &quot;pm.start_servers&quot; = 10;
+            &quot;pm.min_spare_servers&quot; = 5;
+            &quot;pm.max_spare_servers&quot; = 20;
+            &quot;pm.max_requests&quot; = 500;
+          '';
+        }
+      }
+    '';
+  };
+}
+</code></pre>
+<h4 id="default-51"><a class="header" href="#default-51">default</a></h4>
+<pre><code class="language-nix">{
+  services.phpfpm0.pools = {};
+}
+</code></pre>
+<h2 id="servicesphpfpm0poolsnameextraconfig"><a class="header" href="#servicesphpfpm0poolsnameextraconfig">services.phpfpm0.pools.&lt;name&gt;.extraConfig</a></h2>
+<p>Extra lines that go into the pool configuration.
+See the documentation on <literal>php-fpm.conf</literal> for
+details on configuration directives.</p>
+<h4 id="type-52"><a class="header" href="#type-52">type</a></h4>
+<p>null or strings concatenated with &quot;\n&quot;</p>
+<h4 id="default-52"><a class="header" href="#default-52">default</a></h4>
+<pre><code class="language-nix">{
+  services.phpfpm0.pools.&lt;name&gt;.extraConfig = null;
+}
+</code></pre>
+<h2 id="servicesphpfpm0poolsnamegroup"><a class="header" href="#servicesphpfpm0poolsnamegroup">services.phpfpm0.pools.&lt;name&gt;.group</a></h2>
+<p>Group account under which this pool runs.</p>
+<h4 id="type-53"><a class="header" href="#type-53">type</a></h4>
+<p>string</p>
+<h2 id="servicesphpfpm0poolsnamelisten"><a class="header" href="#servicesphpfpm0poolsnamelisten">services.phpfpm0.pools.&lt;name&gt;.listen</a></h2>
+<p>The address on which to accept FastCGI requests.</p>
+<h4 id="type-54"><a class="header" href="#type-54">type</a></h4>
+<p>string</p>
+<h4 id="example-24"><a class="header" href="#example-24">example</a></h4>
+<pre><code class="language-nix">{
+  services.phpfpm0.pools.&lt;name&gt;.listen = &quot;/path/to/unix/socket&quot;;
+}
+</code></pre>
+<h4 id="default-53"><a class="header" href="#default-53">default</a></h4>
+<pre><code class="language-nix">{
+  services.phpfpm0.pools.&lt;name&gt;.listen = &quot;&quot;;
+}
+</code></pre>
+<h2 id="servicesphpfpm0poolsnamephpenv"><a class="header" href="#servicesphpfpm0poolsnamephpenv">services.phpfpm0.pools.&lt;name&gt;.phpEnv</a></h2>
+<p>Environment variables used for this PHP-FPM pool.</p>
+<h4 id="type-55"><a class="header" href="#type-55">type</a></h4>
+<p>attribute set of string</p>
+<h4 id="example-25"><a class="header" href="#example-25">example</a></h4>
+<pre><code class="language-nix">{
+  services.phpfpm0.pools.&lt;name&gt;.phpEnv = {
+    _type = &quot;literalExpression&quot;;
+    text = ''
+      {
+        HOSTNAME = &quot;$HOSTNAME&quot;;
+        TMP = &quot;/tmp&quot;;
+        TMPDIR = &quot;/tmp&quot;;
+        TEMP = &quot;/tmp&quot;;
+      }
+      
+    '';
+  };
+}
+</code></pre>
+<h4 id="default-54"><a class="header" href="#default-54">default</a></h4>
+<pre><code class="language-nix">{
+  services.phpfpm0.pools.&lt;name&gt;.phpEnv = {};
+}
+</code></pre>
+<h2 id="servicesphpfpm0poolsnamephpoptions"><a class="header" href="#servicesphpfpm0poolsnamephpoptions">services.phpfpm0.pools.&lt;name&gt;.phpOptions</a></h2>
+<p>&quot;Options appended to the PHP configuration file <filename>php.ini</filename> used for this PHP-FPM pool.&quot;</p>
+<h4 id="type-56"><a class="header" href="#type-56">type</a></h4>
+<p>strings concatenated with &quot;\n&quot;</p>
+<h2 id="servicesphpfpm0poolsnamephppackage"><a class="header" href="#servicesphpfpm0poolsnamephppackage">services.phpfpm0.pools.&lt;name&gt;.phpPackage</a></h2>
+<p>The PHP package to use for running this PHP-FPM pool.</p>
+<h4 id="type-57"><a class="header" href="#type-57">type</a></h4>
+<p>package</p>
+<h4 id="default-55"><a class="header" href="#default-55">default</a></h4>
+<pre><code class="language-nix">{
+  services.phpfpm0.pools.&lt;name&gt;.phpPackage = &quot;config.services.phpfpm.phpPackage&quot;;
+}
+</code></pre>
+<h2 id="servicesphpfpm0poolsnamesettings"><a class="header" href="#servicesphpfpm0poolsnamesettings">services.phpfpm0.pools.&lt;name&gt;.settings</a></h2>
+<p>PHP-FPM pool directives. Refer to the &quot;List of pool directives&quot; section of</p>
+<link xlink:href="https://www.php.net/manual/en/install.fpm.configuration.php"/>
+for details. Note that settings names must be enclosed in quotes (e.g.
+<literal>"pm.max_children"</literal> instead of <literal>pm.max_children</literal>).
+<h4 id="type-58"><a class="header" href="#type-58">type</a></h4>
+<p>attribute set of string or signed integer or boolean</p>
+<h4 id="example-26"><a class="header" href="#example-26">example</a></h4>
+<pre><code class="language-nix">{
+  services.phpfpm0.pools.&lt;name&gt;.settings = {
+    _type = &quot;literalExpression&quot;;
+    text = ''
+      {
+        &quot;pm&quot; = &quot;dynamic&quot;;
+        &quot;pm.max_children&quot; = 75;
+        &quot;pm.start_servers&quot; = 10;
+        &quot;pm.min_spare_servers&quot; = 5;
+        &quot;pm.max_spare_servers&quot; = 20;
+        &quot;pm.max_requests&quot; = 500;
+      }
+      
+    '';
+  };
+}
+</code></pre>
+<h4 id="default-56"><a class="header" href="#default-56">default</a></h4>
+<pre><code class="language-nix">{
+  services.phpfpm0.pools.&lt;name&gt;.settings = {};
+}
+</code></pre>
+<h2 id="servicesphpfpm0poolsnamesocket"><a class="header" href="#servicesphpfpm0poolsnamesocket">services.phpfpm0.pools.&lt;name&gt;.socket</a></h2>
+<p>Path to the unix socket file on which to accept FastCGI requests.
+<note><para>This option is read-only and managed by NixOS.</para></note></p>
+<h4 id="type-59"><a class="header" href="#type-59">type</a></h4>
+<p>string</p>
+<h2 id="servicesphpfpm0poolsnameuser"><a class="header" href="#servicesphpfpm0poolsnameuser">services.phpfpm0.pools.&lt;name&gt;.user</a></h2>
+<p>User account under which this pool runs.</p>
+<h4 id="type-60"><a class="header" href="#type-60">type</a></h4>
+<p>string</p>
+<h2 id="servicesphpfpm0settings"><a class="header" href="#servicesphpfpm0settings">services.phpfpm0.settings</a></h2>
+<p>PHP-FPM global directives. Refer to the &quot;List of global php-fpm.conf directives&quot; section of</p>
+<link xlink:href="https://www.php.net/manual/en/install.fpm.configuration.php"/>
+for details. Note that settings names must be enclosed in quotes (e.g.
+<literal>"pm.max_children"</literal> instead of <literal>pm.max_children</literal>).
+You need not specify the options <literal>error_log</literal> or
+<literal>daemonize</literal> here, since they are generated by NixOS.
+<h4 id="type-61"><a class="header" href="#type-61">type</a></h4>
+<p>attribute set of string or signed integer or boolean</p>
+<h4 id="default-57"><a class="header" href="#default-57">default</a></h4>
+<pre><code class="language-nix">{
+  services.phpfpm0.settings = {};
+}
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="nur-combined-kampka.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="nur-combined-kira-bruneau.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="nur-combined-kampka.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="nur-combined-kira-bruneau.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
